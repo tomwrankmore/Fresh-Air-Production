@@ -5,11 +5,17 @@ import {
   filterOutDocsWithoutSlugs,
   filterOutDocsPublishedInTheFuture
 } from "../lib/helpers";
+import styled from "styled-components";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import ProjectPreviewGrid from "../components/project-preview-grid";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
+
+const Poop = styled.h1` 
+  font-size: 4rem;
+  color: red;
+`
 
 export const query = graphql`
   query IndexPageQuery {
@@ -87,7 +93,8 @@ const IndexPage = props => {
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <Container>
-        <h1>Welcome to {site.title}</h1>
+        <h1>Welcome tooooo {site.title}</h1>
+        <Poop>Poop</Poop>
         {projectNodes && (
           <ProjectPreviewGrid
             title="Latest projects"
