@@ -15,7 +15,22 @@ body {
 
 html,
 body,
-body > div,
-body > div > div {
+body>div,
+body>div>div {
   height: 100%;
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+}
+
+line {
+  stroke: #c2f0fe;
+  stroke-width: 20;
+  stroke-linecap: round;
 }

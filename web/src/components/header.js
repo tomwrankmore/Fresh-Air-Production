@@ -2,12 +2,32 @@ import { Link } from "gatsby";
 import React from "react";
 import Icon from "./icon";
 import { cn } from "../lib/helpers";
-
+import styled from "styled-components";
+import { device } from "../styles/media-queries";
 import * as styles from "./header.module.css";
 
+const StyledHeader = styled.div` 
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  position: fixed;
+`
+
+const Wrapper = styled.div` 
+box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 1em;
+  display: flex;
+
+  @media ${device.mediaMinSmall} {
+    padding: 1.5em 1.5em;
+  }
+`
+
 const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
-  <div className={styles.root}>
-    <div className={styles.wrapper}>
+  <StyledHeader>
+    <Wrapper>
       <div className={styles.branding}>
         <Link to="/">{siteTitle}</Link>
       </div>
@@ -23,8 +43,8 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
           </li>
         </ul>
       </nav>
-    </div>
-  </div>
+    </Wrapper>
+  </StyledHeader>
 );
 
 export default Header;

@@ -11,6 +11,7 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import ProjectPreviewGrid from "../components/project-preview-grid";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
+import Scroll from "../components/Scroll"
 
 const Poop = styled.h1` 
   font-size: 4rem;
@@ -90,20 +91,20 @@ const IndexPage = props => {
   }
 
   return (
-    <Layout>
-      <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      <Container>
-        <h1>Welcome tooooo {site.title}</h1>
-        <Poop>Poop</Poop>
-        {projectNodes && (
-          <ProjectPreviewGrid
-            title="Latest projects"
-            nodes={projectNodes}
-            browseMoreHref="/archive/"
-          />
-        )}
-      </Container>
-    </Layout>
+    
+      <Layout>
+        <SEO title={site.title} description={site.description} keywords={site.keywords} />
+          <Container>
+            <h1>Welcome tooooo {site.title}</h1>
+            {projectNodes && (
+              <ProjectPreviewGrid
+                title="Latest projects"
+                nodes={projectNodes}
+                browseMoreHref="/archive/"
+              />
+            )}
+          </Container>
+      </Layout>
   );
 };
 
