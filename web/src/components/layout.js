@@ -2,15 +2,17 @@ import React, {useEffect, useRef, useState} from "react";
 import Header from "./header";
 import styled from "styled-components";
 import gsap from "gsap";
-import useWindowSize from "../hooks/useWindowSize"
+import useScrollPosition from "../hooks/useScrollPosition";
 import "../styles/layout.css";
-import {Content, Footer, FooterWrapper, CompanyAddress, SiteInfo} from './layout.styled'
-
-console.log('useWindowSize: ', useWindowSize)
+import {Content, Footer, FooterWrapper, CompanyAddress, SiteInfo} from './layout.styled';
 
 const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
 
   const svgRef = useRef(null);
+
+  const scrollPosition = useScrollPosition();
+
+  console.log(scrollPosition);
 
   useEffect(()=>{
 
