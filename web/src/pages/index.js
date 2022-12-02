@@ -12,11 +12,7 @@ import ProjectPreviewGrid from "../components/project-preview-grid";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import Scroll from "../components/Scroll"
-
-const Poop = styled.h1` 
-  font-size: 4rem;
-  color: red;
-`
+import Hero from "../components/hero";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -94,16 +90,16 @@ const IndexPage = props => {
     
       <Layout>
         <SEO title={site.title} description={site.description} keywords={site.keywords} />
-          <Container>
-            <h1>Welcome tooooo {site.title}</h1>
-            {projectNodes && (
-              <ProjectPreviewGrid
-                title="Latest projects"
-                nodes={projectNodes}
-                browseMoreHref="/archive/"
-              />
-            )}
-          </Container>
+        <Container>
+          <Hero />
+          {projectNodes && (
+            <ProjectPreviewGrid
+              title="Latest projects"
+              nodes={projectNodes}
+              browseMoreHref="/archive/"
+            />
+          )}
+        </Container>
       </Layout>
   );
 };

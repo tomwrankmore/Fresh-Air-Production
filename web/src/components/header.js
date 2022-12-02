@@ -16,7 +16,7 @@ const StyledHeader = styled.div`
 const Wrapper = styled.div` 
 box-sizing: border-box;
   margin: 0 auto;
-  max-width: 960px;
+  /* max-width: 960px; */
   padding: 1em;
   display: flex;
 

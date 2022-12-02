@@ -27,7 +27,7 @@ export const Footer = styled.div`
 
 export const FooterWrapper = styled.div` 
     box-sizing: border-box;
-    max-width: 960px;
+    /* max-width: 960px; */
     padding: 4.5em 1.5em 1.5em;
     margin: 0 auto;
     @media ${device.mediaMinSmall} {

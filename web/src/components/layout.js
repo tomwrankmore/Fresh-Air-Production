@@ -3,16 +3,13 @@ import Header from "./header";
 import styled from "styled-components";
 import gsap from "gsap";
 import useScrollPosition from "../hooks/useScrollPosition";
+import Scroll from "./Scroll";
 import "../styles/layout.css";
 import {Content, Footer, FooterWrapper, CompanyAddress, SiteInfo} from './layout.styled';
 
 const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
 
   const svgRef = useRef(null);
-
-  const scrollPosition = useScrollPosition();
-
-  console.log(scrollPosition);
 
   useEffect(()=>{
 
@@ -80,18 +77,19 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
   
   return (
     <>
-    <svg ref={svgRef}></svg>
-      <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} />
-      <Content>
-        {children}
-      </Content>
-      <Footer>
-        <FooterWrapper>
-          <SiteInfo>
-            © {new Date().getFullYear()}, Fresh Air Productions
-          </SiteInfo>
-        </FooterWrapper>
-      </Footer>
+      <svg ref={svgRef}></svg>
+
+        <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} />
+        <Content>
+          {children}
+        </Content>
+        <Footer>
+          <FooterWrapper>
+            <SiteInfo>
+              © {new Date().getFullYear()}, Fresh Air Productions
+            </SiteInfo>
+          </FooterWrapper>
+        </Footer>
     </>
   )
 };
