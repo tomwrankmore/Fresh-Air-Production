@@ -12,7 +12,9 @@ module.exports = {
   plugins: [
     'gatsby-plugin-postcss',
     'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-source-sanity',
       options: {
@@ -21,6 +23,13 @@ module.exports = {
         watchMode: !isProd,
         overlayDrafts: !isProd && token
       }
-    }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/assets/`,
+      },
+    },
   ]
 }

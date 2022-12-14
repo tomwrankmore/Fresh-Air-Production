@@ -3,46 +3,38 @@ import React from "react";
 import Icon from "./icon";
 import { cn } from "../lib/helpers";
 import styled from "styled-components";
-import { device } from "../styles/media-queries";
+import { device } from "../styles/mediaQueries";
 import * as styles from "./header.module.css";
+import {Wrapper, StyledHeader, Nav, ToggleNavButton } from "./header.styled";
 
-const StyledHeader = styled.div` 
-  position: relative;
-  z-index: 100;
-  width: 100%;
-  position: fixed;
-`
-
-const Wrapper = styled.div` 
-box-sizing: border-box;
-  margin: 0 auto;
-  /* max-width: 960px; */
-  padding: 1em;
-  display: flex;
-
-  @media ${device.mediaMinSmall} {
-    padding: 1.5em 1.5em;
-  }
-`
 
 const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
   <StyledHeader>
     <Wrapper>
-      <div className={styles.branding}>
+      {/* <div className={styles.branding}>
         <Link to="/">{siteTitle}</Link>
-      </div>
+      </div> */}
 
-      <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
-        <Icon symbol="hamburger" />
-      </button>
+      <ToggleNavButton onClick={showNav ? onHideNav : onShowNav}>
+        {showNav ? <Icon symbol="close" /> : <Icon symbol="hamburger" />}
+      </ToggleNavButton>
 
-      <nav className={cn(styles.nav, showNav && styles.showNav)}>
+      <Nav className={showNav && 'showNav'}>
         <ul>
           <li>
-            <Link to="/archive/">Archive</Link>
+            <Link to="/archive/">Who We Are</Link>
+          </li>
+          <li>
+            <Link to="/archive/">What We Do</Link>
+          </li>
+          <li>
+            <Link to="/archive/">Our Podcasts</Link>
+          </li>
+          <li>
+            <Link to="/archive/">Editorials</Link>
           </li>
         </ul>
-      </nav>
+      </Nav>
     </Wrapper>
   </StyledHeader>
 );

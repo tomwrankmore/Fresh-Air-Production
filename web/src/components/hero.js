@@ -1,47 +1,31 @@
 import React from "react";
-import styled from "styled-components";
-import { colors } from "../styles/colors";
-import { device } from "../styles/media-queries";
-
-const HeroWrapper = styled.div` 
-    background-color: ${colors.freshAirBlue};
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-`
-
-const HeroInner = styled.div` 
-    background-color: ${colors.freshAirTurquoise};
-    height: 50vh;
-    width: 960px;
-`
-
-const Fresh = styled.h1` 
-    position: absolute;
-    bottom: 0;
-    color: white;
-    font-size: 9rem;
-    right: 50%;
-`
-
-const Air = styled.h2` 
-    position: absolute;
-    top: 0;
-    color: white;
-    font-size: 6rem;
-    left: 50%;
-`
+import { StaticImage } from "gatsby-plugin-image";
+import {HeroWrapper, Fresh, Air, HeroInner, HeroGrid} from "./hero.styled";
 
 const Hero = (props) => {
     return (
         <HeroWrapper>
             <Fresh>Fresh</Fresh>
             <Air>Air</Air>
-            <HeroInner>
-                Image goes here
-            </HeroInner>
+            <HeroGrid>
+                <HeroInner>
+                    {/* <p>empty content to display content replace with SVG to animate</p> */}
+                    <StaticImage
+                        src="../assets/hero-people.png"
+                        alt="Smiling people"
+                        placeholder="blurred"
+                        layout="constrained"
+                        className="heroPeopleImgWrapper"
+                        imgClassName="heroPeopleImg"
+                    />
+                </HeroInner>
+            </HeroGrid>
+            
+            {/* <Marquee>
+                <div>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
+                <div>Box 2 Box 2 Box 2</div>
+                <div>Box 3 Box 3 Box 3</div>
+            </Marquee> */}
         </HeroWrapper>
     )
 }

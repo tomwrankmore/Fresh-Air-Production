@@ -1,8 +1,11 @@
 import React from "react";
 import HamburgerIcon from "./hamburger";
+import CloseIcon from "./close"
 
 function Icon(props) {
   switch (props.symbol) {
+    case 'close':
+      return <CloseIcon />;
     case "hamburger":
       return <HamburgerIcon />;
     default:

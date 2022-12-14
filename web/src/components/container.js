@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { device } from "../styles/media-queries"
+import { device } from "../styles/mediaQueries"
 
 const StyledContainer = styled.div` 
   box-sizing: border-box;

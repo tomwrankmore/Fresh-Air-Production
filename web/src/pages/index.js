@@ -13,6 +13,7 @@ import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import Scroll from "../components/Scroll"
 import Hero from "../components/hero";
+import Podcasts from "../components/home-section-podcasts"
 
 export const query = graphql`
   query IndexPageQuery {
@@ -92,13 +93,14 @@ const IndexPage = props => {
         <SEO title={site.title} description={site.description} keywords={site.keywords} />
         <Container>
           <Hero />
-          {projectNodes && (
+          <Podcasts />
+          {/* {projectNodes && (
             <ProjectPreviewGrid
               title="Latest projects"
               nodes={projectNodes}
               browseMoreHref="/archive/"
             />
-          )}
+          )} */}
         </Container>
       </Layout>
   );

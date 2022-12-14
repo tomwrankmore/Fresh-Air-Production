@@ -1,5 +1,5 @@
 import React from "react";
-import { device } from "../styles/media-queries";
+import { device } from "../styles/mediaQueries";
 import styled from "styled-components";
 
 // @import '../styles/custom-media.css';
