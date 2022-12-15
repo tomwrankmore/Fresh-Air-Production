@@ -51,10 +51,13 @@ const MarqueeLine = styled.div`
             padding-right: 42px;
             color: rgba(256, 256, 256, 0.5); 
         }
-        a:hover {
-            color: rgba(256, 256, 256, 1);
-        }
     }
+    .hoverGrey {a:hover {color: ${colors.FABlue}}}
+    .hoverBlue {a:hover {color: ${colors.FATurquoise}}}
+    .hoverGreen {a:hover {color: ${colors.FADarkerBlue}}}
+    .hoverOrange {a:hover {color: ${colors.FAGrey}}}
+    .hoverTurq {a:hover {color: ${colors.FADarkerBlue}}}
+   
 `
 
 const TagCloud = React.forwardRef((props, ref) => {
@@ -71,11 +74,13 @@ const TagCloud = React.forwardRef((props, ref) => {
     return (
         <TagCloudWrapper style={bgColor} ref={ref}>
             <ExtendedContainer>
-                <MarqueeLine className="cloudMarqueeLine">
+                <MarqueeLine 
+                    className="cloudMarqueeLine"
+                    onMouseEnter={() => setBgColor(grey)} 
+                    onMouseLeave={() => setBgColor(blue)}
+                >
                     <div 
-                        className="marqueeContent marqueeContent1" 
-                        onMouseEnter={() => setBgColor(grey)} 
-                        onMouseLeave={() => setBgColor(blue)}
+                        className="marqueeContent marqueeContent1 hoverGrey" 
                     >
                         <Link to="/">NEWS</Link>
                         <Link to="/">SCIENCE</Link>
@@ -84,9 +89,7 @@ const TagCloud = React.forwardRef((props, ref) => {
                         <Link to="/">WELLBEING</Link>
                     </div>
                     <div 
-                        className="marqueeContent marqueeContent1" 
-                        onMouseEnter={() => setBgColor(grey)} 
-                        onMouseLeave={() => setBgColor(blue)}
+                        className="marqueeContent marqueeContent1 hoverGrey"
                     >
                         <Link to="/">NEWS</Link>
                         <Link to="/">SCIENCE</Link>
@@ -95,11 +98,12 @@ const TagCloud = React.forwardRef((props, ref) => {
                         <Link to="/">WELLBEING</Link>
                     </div>
                 </MarqueeLine>
-                <MarqueeLine className="cloudMarqueeLine">
+                <MarqueeLine 
+                    className="cloudMarqueeLine" 
+                    onMouseEnter={() => setBgColor(darkBlue)} 
+                    onMouseLeave={() => setBgColor(blue)}>
                     <div 
-                        className="marqueeContent marqueeContent2" 
-                        onMouseEnter={() => setBgColor(darkBlue)} 
-                        onMouseLeave={() => setBgColor(blue)}
+                        className="marqueeContent marqueeContent2 hoverBlue"
                     >
                         <Link to="/">SCIENCE</Link>
                         <Link to="/">SPORT</Link>
@@ -108,9 +112,7 @@ const TagCloud = React.forwardRef((props, ref) => {
                         <Link to="/">NEWS</Link>
                     </div>
                     <div 
-                        className="marqueeContent marqueeContent2" 
-                        onMouseEnter={() => setBgColor(darkBlue)} 
-                        onMouseLeave={() => setBgColor(blue)}
+                        className="marqueeContent marqueeContent2 hoverBlue"
                     >
                         <Link to="/">SCIENCE</Link>
                         <Link to="/">SPORT</Link>
@@ -119,11 +121,13 @@ const TagCloud = React.forwardRef((props, ref) => {
                         <Link to="/">NEWS</Link>
                     </div>
                 </MarqueeLine>
-                <MarqueeLine className="cloudMarqueeLine">
+                <MarqueeLine 
+                    className="cloudMarqueeLine" 
+                    onMouseEnter={() => setBgColor(lightGreen)} 
+                    onMouseLeave={() => setBgColor(blue)}
+                    >
                     <div 
-                        className="marqueeContent marqueeContent1" 
-                        onMouseEnter={() => setBgColor(lightGreen)} 
-                        onMouseLeave={() => setBgColor(blue)}
+                        className="marqueeContent marqueeContent1 hoverGreen"
                     >
                         <Link to="/">SPORT</Link>
                         <Link to="/">HEALTH</Link>
@@ -132,9 +136,7 @@ const TagCloud = React.forwardRef((props, ref) => {
                         <Link to="/">SCIENCE</Link>
                     </div>
                     <div 
-                        className="marqueeContent marqueeContent1" 
-                        onMouseEnter={() => setBgColor(lightGreen)} 
-                        onMouseLeave={() => setBgColor(blue)}
+                        className="marqueeContent marqueeContent1 hoverGreen"
                     >
                         <Link to="/">SPORT</Link>
                         <Link to="/">HEALTH</Link>
@@ -143,11 +145,13 @@ const TagCloud = React.forwardRef((props, ref) => {
                         <Link to="/">SCIENCE</Link>
                     </div>
                 </MarqueeLine>
-                <MarqueeLine className="cloudMarqueeLine">
+                <MarqueeLine 
+                    className="cloudMarqueeLine"
+                    onMouseEnter={() => setBgColor(orange)} 
+                    onMouseLeave={() => setBgColor(blue)}
+                >
                     <div 
-                        className="marqueeContent marqueeContent2" 
-                        onMouseEnter={() => setBgColor(orange)} 
-                        onMouseLeave={() => setBgColor(blue)}
+                        className="marqueeContent marqueeContent2 hoverOrange"
                     >
                         <Link to="/">HEALTH</Link>
                         <Link to="/">WELLBEING</Link>
@@ -156,9 +160,7 @@ const TagCloud = React.forwardRef((props, ref) => {
                         <Link to="/">SPORT</Link>
                     </div>
                     <div 
-                        className="marqueeContent marqueeContent2" 
-                        onMouseEnter={() => setBgColor(orange)} 
-                        onMouseLeave={() => setBgColor(blue)}
+                        className="marqueeContent marqueeContent2 hoverOrange" 
                     >
                         <Link to="/">HEALTH</Link>
                         <Link to="/">WELLBEING</Link>
@@ -167,11 +169,13 @@ const TagCloud = React.forwardRef((props, ref) => {
                         <Link to="/">SPORT</Link>
                     </div>
                 </MarqueeLine>
-                <MarqueeLine className="cloudMarqueeLine">
+                <MarqueeLine 
+                    className="cloudMarqueeLine"
+                    onMouseEnter={() => setBgColor(turq)} 
+                    onMouseLeave={() => setBgColor(blue)}
+                >
                     <div 
-                        className="marqueeContent marqueeContent1" 
-                        onMouseEnter={() => setBgColor(turq)} 
-                        onMouseLeave={() => setBgColor(blue)}
+                        className="marqueeContent marqueeContent1 hoverTurq"
                     >
                         <Link to="/">WELLBEING</Link>
                         <Link to="/">NEWS</Link>
@@ -180,9 +184,7 @@ const TagCloud = React.forwardRef((props, ref) => {
                         <Link to="/">HEALTH</Link>
                     </div>
                     <div 
-                        className="marqueeContent marqueeContent1" 
-                        onMouseEnter={() => setBgColor(turq)} 
-                        onMouseLeave={() => setBgColor(blue)}
+                        className="marqueeContent marqueeContent1 hoverTurq" 
                     >
                         <Link to="/">WELLBEING</Link>
                         <Link to="/">NEWS</Link>
