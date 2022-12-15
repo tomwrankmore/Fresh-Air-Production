@@ -8,6 +8,8 @@ import {
   filterOutDocsPublishedInTheFuture
 } from "../lib/helpers";
 import styled from "styled-components";
+import { colors } from "../styles/colors";
+import HeroCta from "../components/hero-cta";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import ProjectPreviewGrid from "../components/project-preview-grid";
@@ -16,12 +18,13 @@ import Layout from "../containers/layout";
 import Scroll from "../components/Scroll"
 import Hero from "../components/hero";
 import Podcasts from "../components/home-section-podcasts"
+import Marquee from "../components/home-section-marquee"
 import Work from "../components/home-section-work"
 import Testimonials from "../components/home-section-testimonials";
 import Blog from "../components/home-section-blog-grid";
 import TagCloud from "../components/home-section-cloud"
 
-import { workHorizontalAnim,  showNavAnim} from "../animations";
+import { workHorizontalAnim, marqueeAnim } from "../animations";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -81,8 +84,12 @@ const horizontalTl = useRef(null)
 
 // Section Refs
 const horizontalPanelsRef = useRef(null)
+const heroMarqueeRef = useRef(null)
+const marqueeRef = useRef(null)
 
   useEffect(() => {
+    marqueeAnim(heroMarqueeRef.current)
+    marqueeAnim(marqueeRef.current)
     workHorizontalAnim(horizontalPanelsRef.current, horizontalTl.current)
   }, [horizontalTl, horizontalPanelsRef])
 
@@ -111,9 +118,14 @@ const horizontalPanelsRef = useRef(null)
     
       <Layout>
         <SEO title={site.title} description={site.description} keywords={site.keywords} />
+        <HeroCta />
         <Container>
-          <Hero />
+          <Hero heroMarqueeRef={heroMarqueeRef} />
           <Podcasts />
+          <Marquee 
+            style={{color: colors.FABlue}}
+            textContent="whatever you're looking to create, our skilled and experienced production team will build the perfect podcast. whatever" 
+            ref={marqueeRef}/>
           <Work ref={horizontalPanelsRef}/>
           <Testimonials />
           <Blog/>

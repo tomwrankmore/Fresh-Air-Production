@@ -60,6 +60,9 @@ const Panel = styled.div`
         line-height: 2.25rem;
         font-size: 1.75rem;
       }
+      h4, h5 {
+        margin-bottom: 2rem;
+      }
     }
   }
 
@@ -110,6 +113,7 @@ const Work = React.forwardRef((props, ref) => {
                 </div>
                 <div className="panel1-right-content">
                   <BsArrowRight style={{fontSize: '3rem', marginBottom: '1rem'}}/>
+                  <h4>Take a scroll with us</h4>
                   <h3>Whatever stage of the process you're at, we can take your podcast from an idea straight to your the ears of your customers.</h3>
                 </div>
               </Panel>

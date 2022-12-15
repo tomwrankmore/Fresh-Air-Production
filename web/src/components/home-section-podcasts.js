@@ -15,7 +15,7 @@ const PodcastsWrapper = styled.div`
 
         &.leftCol {
             div {
-                /* height: 65vh; */
+                height: 100vh;
             }
             h3 {
                 text-align: center;
@@ -45,6 +45,8 @@ const PodcastsWrapper = styled.div`
 
 const Podcast = styled.div` 
     position: relative;
+    display: flex;
+    flex-direction: column;
     /* height: 50px; */
 `
 
@@ -60,10 +62,10 @@ const Podcasts = (props) => {
                         layout="fullWidth"
                         className="podcastImgWrapper"
                         imgClassName="podcastImg"
-                        aspectRatio={16/9}
-                        objectPosition="0 0"
+                        // aspectRatio={16/9}
+                        // objectPosition="0 0"
                     />
-                    <h3>podcast 1</h3>
+                    <h3>What makes us stronger</h3>
                 </Podcast>
                 <Podcast>
                     <StaticImage
@@ -73,10 +75,10 @@ const Podcasts = (props) => {
                         layout="fullWidth"
                         className="podcastImgWrapper"
                         imgClassName="podcastImg"
-                        aspectRatio={16/9}
-                        objectPosition="0 0"
+                        // aspectRatio={16/9}
+                        // objectPosition="0 0"
                     />
-                    <h3>podcast 2</h3>
+                    <h3>The beauty podcast with sali hughes for avon</h3>
                 </Podcast>
                 <Podcast>
                     <StaticImage
@@ -86,8 +88,8 @@ const Podcasts = (props) => {
                         layout="fullWidth"
                         className="podcastImgWrapper"
                         imgClassName="podcastImg"
-                        aspectRatio={16/9}
-                        objectPosition="0 0"
+                        // aspectRatio={16/9}
+                        // objectPosition="0 0"
                     />
                     <h3>podcast 3</h3>
                 </Podcast>
