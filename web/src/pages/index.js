@@ -19,6 +19,7 @@ import Podcasts from "../components/home-section-podcasts"
 import Work from "../components/home-section-work"
 import Testimonials from "../components/home-section-testimonials";
 import Blog from "../components/home-section-blog-grid";
+import TagCloud from "../components/home-section-cloud"
 
 import { workHorizontalAnim,  showNavAnim} from "../animations";
 
@@ -116,6 +117,7 @@ const horizontalPanelsRef = useRef(null)
           <Work ref={horizontalPanelsRef}/>
           <Testimonials />
           <Blog/>
+          <TagCloud />
           {/* {projectNodes && (
             <ProjectPreviewGrid
               title="Latest projects"
