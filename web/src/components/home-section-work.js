@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { device } from "../styles/mediaQueries";
 import { colors } from "../styles/colors";
 import { BsArrowRight } from "react-icons/bs";
+import SvgBg from "../assets/work-svg-path.inline.svg"
 
 const HorizontalContainer = styled.div` 
     width: 300%;
@@ -14,6 +15,16 @@ const HorizontalContainer = styled.div`
     /* @media ${device.mediaMinMedium} {
       height: 90vh;
     } */
+
+    .svg-bg {
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      z-index: 1;
+      width: 200vw;
+      transform: translateY(-50%);
+    }
 `
 
 const Panel = styled.div` 
@@ -30,6 +41,7 @@ const Panel = styled.div`
   position: relative;
   box-sizing: border-box;
   padding: 0;
+  overflow: visible;
 
   &.panel1 {
     width: 100%;
@@ -70,6 +82,7 @@ const Panel = styled.div`
     flex: 1;
     padding: 0 120px;
     text-align: center;
+    z-index: 101;
     h2 {
       margin-bottom: 2rem;
     }
@@ -118,6 +131,7 @@ const Work = React.forwardRef((props, ref) => {
                 </div>
               </Panel>
               <Panel className="panel panel2">
+                <SvgBg className="svg-bg" />
                 <div className="panel-equal-column">
                   <h2>Creative Development</h2>
                   <p className="panel-paragraph">Whatever stage of the process you're at, we can take your podcast from an idea straight to your the ears of your customers. Whatever stage of the process you're at, we can take your podcast from an idea straight to your the ears of your customers.</p>

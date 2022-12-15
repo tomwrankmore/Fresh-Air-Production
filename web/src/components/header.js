@@ -5,6 +5,7 @@ import { cn } from "../lib/helpers";
 import styled from "styled-components";
 import { device } from "../styles/mediaQueries";
 import * as styles from "./header.module.css";
+import Logo from "../assets/FA-nav-logo.inline.svg"
 import {Wrapper, StyledHeader, Nav, ToggleNavButton } from "./header.styled";
 
 
@@ -26,6 +27,11 @@ const Header = React.forwardRef(({ onHideNav, onShowNav, showNav, siteTitle }, r
           </li>
           <li>
             <Link to="/archive/">What We Do</Link>
+          </li>
+          <li>
+            <Link to="/">
+              <Logo className="logoSVG" style={{width: '140px', height: 'auto'}}/>
+            </Link>
           </li>
           <li>
             <Link to="/archive/">Our Podcasts</Link>

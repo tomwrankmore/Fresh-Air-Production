@@ -14,7 +14,7 @@ export const HeroWrapper = styled.div`
 export const HeroInner = styled.div` 
     background-color: ${colors.FATurquoise};
     position: relative;
-    width: clamp(20rem, 60vw, 70rem);
+    width: clamp(20rem, 50vw, 70rem);
     aspect-ratio: 16 / 9;
 
     img {

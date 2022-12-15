@@ -24,7 +24,7 @@ import Testimonials from "../components/home-section-testimonials";
 import Blog from "../components/home-section-blog-grid";
 import TagCloud from "../components/home-section-cloud"
 
-import { workHorizontalAnim, marqueeAnim } from "../animations";
+import { workHorizontalAnim, marqueeAnim, cloudMarqueeAnim } from "../animations";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -86,11 +86,13 @@ const horizontalTl = useRef(null)
 const horizontalPanelsRef = useRef(null)
 const heroMarqueeRef = useRef(null)
 const marqueeRef = useRef(null)
+const tagCloudRef = useRef(null)
 
   useEffect(() => {
     marqueeAnim(heroMarqueeRef.current)
     marqueeAnim(marqueeRef.current)
     workHorizontalAnim(horizontalPanelsRef.current, horizontalTl.current)
+    cloudMarqueeAnim(tagCloudRef.current)
   }, [horizontalTl, horizontalPanelsRef])
 
   if (errors) {
@@ -129,7 +131,7 @@ const marqueeRef = useRef(null)
           <Work ref={horizontalPanelsRef}/>
           <Testimonials />
           <Blog/>
-          <TagCloud />
+          <TagCloud ref={tagCloudRef} />
           {/* {projectNodes && (
             <ProjectPreviewGrid
               title="Latest projects"
