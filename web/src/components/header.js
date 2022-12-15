@@ -8,8 +8,8 @@ import * as styles from "./header.module.css";
 import {Wrapper, StyledHeader, Nav, ToggleNavButton } from "./header.styled";
 
 
-const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
-  <StyledHeader>
+const Header = React.forwardRef(({ onHideNav, onShowNav, showNav, siteTitle }, ref) => (
+  <StyledHeader ref={ref}>
     <Wrapper>
       {/* <div className={styles.branding}>
         <Link to="/">{siteTitle}</Link>
@@ -37,6 +37,7 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
       </Nav>
     </Wrapper>
   </StyledHeader>
+)
 );
 
 export default Header;

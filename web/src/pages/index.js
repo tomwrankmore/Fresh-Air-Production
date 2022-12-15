@@ -1,5 +1,7 @@
-import React from "react";
+import React, {useRef, useState, useEffect} from "react";
 import { graphql } from "gatsby";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
@@ -14,6 +16,12 @@ import Layout from "../containers/layout";
 import Scroll from "../components/Scroll"
 import Hero from "../components/hero";
 import Podcasts from "../components/home-section-podcasts"
+import Work from "../components/home-section-work"
+import Testimonials from "../components/home-section-testimonials";
+
+import { workHorizontalAnim,  showNavAnim} from "../animations";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const query = graphql`
   query IndexPageQuery {
@@ -66,6 +74,16 @@ export const query = graphql`
 const IndexPage = props => {
   const { data, errors } = props;
 
+  // GSAP Timeline Refs
+const horizontalTl = useRef(null)
+
+// Section Refs
+const horizontalPanelsRef = useRef(null)
+
+  useEffect(() => {
+    workHorizontalAnim(horizontalPanelsRef.current, horizontalTl.current)
+  }, [horizontalTl, horizontalPanelsRef])
+
   if (errors) {
     return (
       <Layout>
@@ -94,6 +112,8 @@ const IndexPage = props => {
         <Container>
           <Hero />
           <Podcasts />
+          <Work ref={horizontalPanelsRef}/>
+          <Testimonials />
           {/* {projectNodes && (
             <ProjectPreviewGrid
               title="Latest projects"

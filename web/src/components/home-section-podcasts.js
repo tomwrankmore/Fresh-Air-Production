@@ -20,10 +20,9 @@ const PodcastsWrapper = styled.div`
             h3 {
                 text-align: center;
                 font-weight: normal;
-                background-color: ${colors.freshAirBlue};
+                background-color: ${colors.FABlue};
                 color: white;
                 padding: 0.5rem 0;
-                text-transform: uppercase;
             }
         }
 
@@ -44,43 +43,78 @@ const PodcastsWrapper = styled.div`
     }
 `
 
+const Podcast = styled.div` 
+    position: relative;
+    /* height: 50px; */
+`
+
 const Podcasts = (props) => {
     return (
         <PodcastsWrapper>
             <div className="leftCol">
-                <div>
+                <Podcast>
                     <StaticImage
-                        src="../assets/hero-people.png"
+                        src="../assets/unnamed-1.jpg"
                         alt="Smiling people"
                         placeholder="blurred"
-                        layout="constrained"
+                        layout="fullWidth"
                         className="podcastImgWrapper"
                         imgClassName="podcastImg"
+                        aspectRatio={16/9}
+                        objectPosition="0 0"
                     />
                     <h3>podcast 1</h3>
-                </div>
-                <div>
+                </Podcast>
+                <Podcast>
                     <StaticImage
-                        src="../assets/hero-people.png"
+                        src="../assets/unnamed-2.jpg"
                         alt="Smiling people"
                         placeholder="blurred"
-                        layout="constrained"
+                        layout="fullWidth"
                         className="podcastImgWrapper"
                         imgClassName="podcastImg"
+                        aspectRatio={16/9}
+                        objectPosition="0 0"
                     />
                     <h3>podcast 2</h3>
-                </div>
-                <div>
+                </Podcast>
+                <Podcast>
                     <StaticImage
-                        src="../assets/hero-people.png"
+                        src="../assets/unnamed.jpg"
                         alt="Smiling people"
                         placeholder="blurred"
-                        layout="constrained"
+                        layout="fullWidth"
                         className="podcastImgWrapper"
                         imgClassName="podcastImg"
+                        aspectRatio={16/9}
+                        objectPosition="0 0"
                     />
                     <h3>podcast 3</h3>
-                </div>
+                </Podcast>
+                <Podcast>
+                    <StaticImage
+                        src="../assets/unnamed-2.jpg"
+                        alt="Smiling people"
+                        placeholder="blurred"
+                        layout="fullWidth"
+                        className="podcastImgWrapper"
+                        imgClassName="podcastImg"
+                        aspectRatio={16/9}
+                    />
+                    <h3>podcast 4</h3>
+                </Podcast>
+                <Podcast>
+                    <StaticImage
+                        src="../assets/unnamed.jpg"
+                        alt="Smiling people"
+                        placeholder="blurred"
+                        layout="fullWidth"
+                        className="podcastImgWrapper"
+                        imgClassName="podcastImg"
+                        aspectRatio={16/9}
+                    />
+                    <h3>podcast 5</h3>
+                </Podcast>
             </div>
             <div className="rightCol">
                 <h2>We produce 100 podcasts listened to over 2 million times every month</h2>

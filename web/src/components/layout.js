@@ -6,10 +6,17 @@ import useScrollPosition from "../hooks/useScrollPosition";
 import Scroll from "./Scroll";
 import "../styles/layout.css";
 import {Content, Footer, FooterWrapper, CompanyAddress, SiteInfo} from './layout.styled';
+import {showNavAnim} from "../animations";
 
 const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
 
   const svgRef = useRef(null);
+
+  const navigationRef = useRef(null)
+
+  useEffect(()=>{
+    showNavAnim(navigationRef.current)
+  }, [navigationRef])
 
   // useEffect(()=>{
 
@@ -76,10 +83,9 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
   // },[])
   
   return (
-    <>
-      <svg ref={svgRef} className="svgLine"></svg>
-
-        <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} />
+    <div>
+      {/* <svg ref={svgRef} className="svgLine"></svg> */}
+        <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} ref={navigationRef}/>
         <Content>
           {children}
         </Content>
@@ -90,7 +96,7 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
             </SiteInfo>
           </FooterWrapper>
         </Footer>
-    </>
+    </div>
   )
 };
 

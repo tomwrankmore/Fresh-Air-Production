@@ -3,7 +3,6 @@ import { device } from "../styles/mediaQueries";
 import { colors } from "../styles/colors";
 
 export const Wrapper = styled.div` 
-box-sizing: border-box;
   margin: 0 auto;
   /* max-width: 960px; */
   padding: 1em;

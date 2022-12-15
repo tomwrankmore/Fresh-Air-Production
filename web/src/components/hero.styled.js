@@ -3,7 +3,7 @@ import { device } from "../styles/mediaQueries"
 import styled from "styled-components"
 
 export const HeroWrapper = styled.div` 
-    background-color: ${colors.freshAirBlue};
+    background-color: ${colors.FABlue};
     height: 100vh;
     display: flex;
     align-items: center;
@@ -12,10 +12,17 @@ export const HeroWrapper = styled.div`
 `
 
 export const HeroInner = styled.div` 
-    background-color: ${colors.freshAirTurquoise};
-    grid-column: 2/4;
-    grid-row: 1;
+    background-color: ${colors.FATurquoise};
     position: relative;
+    width: clamp(20rem, 60vw, 70rem);
+    aspect-ratio: 16 / 9;
+
+    img {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        right: -20px;
+    }
 
     /* .heroPeopleImgWrapper {
         position: absolute;
