@@ -5,8 +5,9 @@ import gsap from "gsap";
 import useScrollPosition from "../hooks/useScrollPosition";
 import Scroll from "./Scroll";
 import "../styles/layout.css";
-import {Content, Footer, FooterWrapper, CompanyAddress, SiteInfo} from './layout.styled';
+import {Content} from './layout.styled';
 import {showNavAnim} from "../animations";
+import Footer from "./footer";
 
 const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
 
@@ -89,13 +90,7 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
         <Content>
           {children}
         </Content>
-        <Footer>
-          <FooterWrapper>
-            <SiteInfo>
-              © {new Date().getFullYear()}, Fresh Air Productions
-            </SiteInfo>
-          </FooterWrapper>
-        </Footer>
+        <Footer/>
     </div>
   )
 };

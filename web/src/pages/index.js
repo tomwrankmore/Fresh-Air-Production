@@ -18,6 +18,7 @@ import Hero from "../components/hero";
 import Podcasts from "../components/home-section-podcasts"
 import Work from "../components/home-section-work"
 import Testimonials from "../components/home-section-testimonials";
+import Blog from "../components/home-section-blog-grid";
 
 import { workHorizontalAnim,  showNavAnim} from "../animations";
 
@@ -114,6 +115,7 @@ const horizontalPanelsRef = useRef(null)
           <Podcasts />
           <Work ref={horizontalPanelsRef}/>
           <Testimonials />
+          <Blog/>
           {/* {projectNodes && (
             <ProjectPreviewGrid
               title="Latest projects"
