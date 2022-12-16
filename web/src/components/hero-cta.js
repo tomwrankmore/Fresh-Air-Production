@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 import styled from "styled-components";
 import { colors } from "../styles/colors";
 import { device } from "../styles/mediaQueries"
@@ -29,12 +30,13 @@ const StyledCTA = styled.div`
   }
 `
 
-const HeroCta = (props) => {
+const HeroCta = React.forwardRef((props, ref) => {
   return (
-    <StyledCTA>
+    <StyledCTA ref={ref}>
         <p>Get in<br/>touch</p>
     </StyledCTA>
-    );
-};
+  );
+}
+);
 
 export default HeroCta;

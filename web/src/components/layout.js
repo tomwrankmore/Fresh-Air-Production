@@ -1,19 +1,45 @@
 import React, {useEffect, useRef, useState} from "react";
+import { Link } from "gatsby";
 import Header from "./header";
 import styled from "styled-components";
 import gsap from "gsap";
+import CustomEase from "gsap/CustomEase";
+import CustomBounce from "gsap/CustomBounce";
 import useScrollPosition from "../hooks/useScrollPosition";
-import Scroll from "./Scroll";
 import "../styles/layout.css";
+import Scroll from "./Scroll";
+import HeroCta from "../components/hero-cta";
 import {Content} from './layout.styled';
 import {showNavAnim} from "../animations";
 import Footer from "./footer";
 
+gsap.registerPlugin(CustomEase, CustomBounce);
+
 const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
 
-  const svgRef = useRef(null);
-
+  const svgRef = useRef(null)
+  const ctaRef = useRef(null)
+  const ctaTween = useRef(null)
   const navigationRef = useRef(null)
+
+  CustomBounce.create("myBounce", {strength: 0.7, squash: 3});
+
+  useEffect(() => {
+    ctaTween.current = gsap.to(ctaRef.current, {
+      duration: 0.15,
+      scale: 1.2,
+      rotation: 5,
+      ease: "back",
+      paused: true
+    });
+  }, [])
+
+  const onMouseEnterHandler = () => {
+    ctaTween.current.play();
+  };
+  const onMouseLeaveHandler = () => {
+    ctaTween.current.reverse();
+  };
 
   useEffect(()=>{
     showNavAnim(navigationRef.current)
@@ -84,8 +110,17 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
   },[])
   
   return (
-    <div>
+    <div style={{position: 'relative'}}>
       <svg ref={svgRef} className="svgLine"></svg>
+      <Link 
+        to="/"
+        onMouseEnter={onMouseEnterHandler}
+        onMouseLeave={onMouseLeaveHandler}>
+        <HeroCta 
+          
+          ref={ctaRef}
+        />
+       </Link>
         <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} ref={navigationRef}/>
         <Content>
           {children}

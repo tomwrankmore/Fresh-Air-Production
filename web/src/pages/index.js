@@ -10,7 +10,6 @@ import {
 import styled from "styled-components";
 import { colors } from "../styles/colors";
 import CentralLogo from "../components/central-logo"
-import HeroCta from "../components/hero-cta";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import ProjectPreviewGrid from "../components/project-preview-grid";
@@ -26,7 +25,7 @@ import Blog from "../components/home-section-blog-grid";
 import Editorials from "../components/home-section-editorials";
 import TagCloud from "../components/home-section-cloud"
 
-import { ctaAnim, centralLogoAnim, workHorizontalAnim, podcastAnim,  marqueeAnim, cloudMarqueeAnim } from "../animations";
+import { heroAnim, ctaAnim, centralLogoAnim, workHorizontalAnim, podcastAnim,  marqueeAnim, cloudMarqueeAnim } from "../animations";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -95,6 +94,7 @@ const marqueeRef = useRef(null)
 const tagCloudRef = useRef(null)
 
   useEffect(() => {
+      heroAnim(heroRef.current)
       centralLogoAnim(centralLogoRef.current, podcastsRef.current)
       marqueeAnim(heroMarqueeRef.current)
       marqueeAnim(marqueeRef.current)
@@ -128,7 +128,6 @@ const tagCloudRef = useRef(null)
   return (
       <Layout>
         <SEO title={site.title} description={site.description} keywords={site.keywords} />
-        <HeroCta />
         <Container>
           <CentralLogo ref={centralLogoRef} />
           <Hero ref={heroRef} heroMarqueeRef={heroMarqueeRef} />

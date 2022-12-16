@@ -69,6 +69,9 @@ const Panel = styled.div`
       flex: 2;
       text-align: center;
       padding-right: 2rem;
+      h3, h4, h5 {
+        font-family: 'Polysans';
+      }
       h3 {
         line-height: 2.25rem;
         font-size: 1.75rem;

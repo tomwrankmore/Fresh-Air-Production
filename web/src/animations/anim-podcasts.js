@@ -33,7 +33,7 @@ const podcastAnim = (podcastsRef, tl) => {
       autoAlpha: 0,
       ease: 'back',
       stagger: {
-        amount: 0.1,
+        amount: 0.25,
       }
     })
     
