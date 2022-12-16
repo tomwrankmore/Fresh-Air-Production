@@ -16,6 +16,7 @@ export const HeroInner = styled.div`
     position: relative;
     width: clamp(20rem, 50vw, 70rem);
     aspect-ratio: 16 / 9;
+    margin-top: 20px;
 
     img {
         position: absolute;

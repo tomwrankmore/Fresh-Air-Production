@@ -86,6 +86,7 @@ const horizontalTl = useRef(null)
 const podcastTl = useRef(null)
 
 // Section Refs
+const heroRef = useRef(null)
 const centralLogoRef = useRef(null)
 const podcastsRef = useRef(null)
 const horizontalPanelsRef = useRef(null)
@@ -125,13 +126,12 @@ const tagCloudRef = useRef(null)
   }
 
   return (
-    
       <Layout>
         <SEO title={site.title} description={site.description} keywords={site.keywords} />
         <HeroCta />
         <Container>
           <CentralLogo ref={centralLogoRef} />
-          <Hero heroMarqueeRef={heroMarqueeRef} />
+          <Hero ref={heroRef} heroMarqueeRef={heroMarqueeRef} />
           <Podcasts ref={podcastsRef} />
           <Marquee 
             style={{color: colors.FABlue}}

@@ -1,13 +1,50 @@
 import React from "react";
+import styled from "styled-components";
 import Marquee from "../components/home-section-marquee"
 import {HeroWrapper, Fresh, Air, HeroInner, HeroGrid} from "./hero.styled";
 import heroPeople from '../assets/hero-people-crop.png';
+import FreshSvg from '../assets/Fresh.inline.svg'
+import AirSvg from '../assets/Air.inline.svg'
 
-const Hero = ({heroMarqueeRef}) => {
+const SvgLogoWrapper = styled.div` 
+    height: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    width: 720px;
+    align-items: flex-end;
+    padding: 1.5rem 0;
+
+    .LogoContainer {
+        margin: 0 auto;
+    }
+
+    .fresh-svg {
+        width: 300px;
+        height: auto;
+    }
+
+    .air-svg {
+        width: 110px;
+        height: auto;
+        padding-bottom: 100px;
+        margin-left: 6px;
+    }
+`
+
+const Hero = React.forwardRef(({heroMarqueeRef}, ref) => {
     return (
-        <HeroWrapper>
-            <Fresh>Fresh</Fresh>
-            <Air>Air</Air>
+        <HeroWrapper ref={ref}>
+            <SvgLogoWrapper>
+                <div className="LogoContainer">
+                    <FreshSvg className="fresh-svg" />
+                    <AirSvg className="air-svg" />
+                </div>
+            </SvgLogoWrapper>
             {/* <HeroGrid> */}
                 <HeroInner>
                     {/* <p>empty content to display content replace with SVG to animate</p> */}
@@ -31,5 +68,6 @@ const Hero = ({heroMarqueeRef}) => {
         </HeroWrapper>
     )
 }
+)
 
 export default Hero;
