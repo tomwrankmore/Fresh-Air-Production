@@ -7,6 +7,15 @@
     src: url(/fonts/Ambit-Regular.ttf) format("ttf");
 }
 
+@font-face {
+    font-family: 'PolySansSlim';
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+    font-named-instance: 'Regular';
+    src: url(/fonts/PolySansSlim.ttf) format("ttf");
+}
+
 * {
     box-sizing: border-box;
     font-family: Ambit-Regular;

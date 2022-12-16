@@ -14,6 +14,11 @@ export const StyledFooter = styled.div`
             color: red;
         }
     }
+
+    .footerLogo {
+        width: 120px;
+        height: auto;
+    }
 `
 
 export const NavigationWrapper = styled.div` 

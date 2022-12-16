@@ -29,7 +29,7 @@ const Header = React.forwardRef(({ onHideNav, onShowNav, showNav, siteTitle }, r
             <Link to="/archive/">What We Do</Link>
           </li>
           <li>
-            <Link to="/">
+            <Link to="/" className="navigationLogo">
               <Logo className="logoSVG" style={{width: '140px', height: 'auto'}}/>
             </Link>
           </li>

@@ -12,6 +12,22 @@ export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
     <link
       rel="preload"
+      href="/fonts/PolySansSlim.ttf"
+      as="font"
+      type="font/woff2"
+      crossOrigin="anonymous"
+      key="interFont"
+    />,
+    <link
+      rel="preload"
+      href="/fonts/PolySansSlim.otf"
+      as="font"
+      type="font/woff2"
+      crossOrigin="anonymous"
+      key="interFont"
+    />,
+    <link
+      rel="preload"
       href="/fonts/Ambit-Bold.ttf"
       as="font"
       type="font/woff2"

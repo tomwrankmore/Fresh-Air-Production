@@ -1,5 +1,6 @@
 import React from "react";
 import { StyledFooter, FooterWrapper, NavigationWrapper, SiteInfo, LinkList, Subscribe} from './footer.styled';
+import Logo from "../assets/FA-logo.inline.svg"
 
 const Footer = ({ children }) => {
     return (
@@ -34,6 +35,7 @@ const Footer = ({ children }) => {
                 </Subscribe>
             </NavigationWrapper>
             <SiteInfo>
+                <Logo className="footerLogo" />
               © {new Date().getFullYear()}, Fresh Air Productions
             </SiteInfo>
           </FooterWrapper>

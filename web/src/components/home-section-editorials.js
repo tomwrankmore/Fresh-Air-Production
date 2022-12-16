@@ -18,7 +18,7 @@ const EditorialsTitleWrapper = styled.div`
 const EditorialsWrapper = styled.div` 
     display: flex;
     position: relative;
-    padding: 1rem 0;
+    padding: 0.5rem;
 
     .titleWrapper {
         width: 100%;
@@ -44,7 +44,7 @@ const EditorialsWrapper = styled.div`
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        padding: 1rem;
+        padding: 0.5rem;
     }
 
     .editorials-right-col {
@@ -61,7 +61,7 @@ const EditorialsWrapper = styled.div`
             justify-content: center;
             flex-direction: column;
             height: 450px;
-            padding: 1rem;
+            padding: 0.5rem 0.5rem 0 0.5rem;
         }
     }
 `
