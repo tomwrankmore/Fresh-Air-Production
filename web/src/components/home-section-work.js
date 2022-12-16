@@ -61,6 +61,7 @@ const Panel = styled.div`
       flex: 5;
       h1 {
         font-size: 4rem;
+        text-transform: uppercase;
       }
     }
 
@@ -71,6 +72,8 @@ const Panel = styled.div`
       h3 {
         line-height: 2.25rem;
         font-size: 1.75rem;
+        text-transform: initial;
+        font-weight: normal;
       }
       h4, h5 {
         margin-bottom: 2rem;
@@ -85,11 +88,13 @@ const Panel = styled.div`
     z-index: 101;
     h2 {
       margin-bottom: 2rem;
+      text-transform: uppercase;
     }
     p {
       margin-bottom: 4rem;
       font-weight: normal;
       line-height: 1.5rem;
+      font-size: 1.275rem;
     }
 
     .img {

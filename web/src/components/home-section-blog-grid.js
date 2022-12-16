@@ -31,6 +31,8 @@ const BlogPost = styled.div`
     padding: 1rem 1rem 0 1rem;
     h3 {
         line-height: 2rem;
+        text-transform: uppercase;
+        font-weight: normal;
     }
 `
 

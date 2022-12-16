@@ -22,9 +22,10 @@ import Marquee from "../components/home-section-marquee"
 import Work from "../components/home-section-work"
 import Testimonials from "../components/home-section-testimonials";
 import Blog from "../components/home-section-blog-grid";
+import Editorials from "../components/home-section-editorials";
 import TagCloud from "../components/home-section-cloud"
 
-import { workHorizontalAnim, marqueeAnim, cloudMarqueeAnim } from "../animations";
+import { ctaAnim, workHorizontalAnim, podcastAnim,  marqueeAnim, cloudMarqueeAnim } from "../animations";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -81,19 +82,23 @@ const IndexPage = props => {
 
   // GSAP Timeline Refs
 const horizontalTl = useRef(null)
+const podcastTl = useRef(null)
 
 // Section Refs
+const podcastsRef = useRef(null)
 const horizontalPanelsRef = useRef(null)
 const heroMarqueeRef = useRef(null)
 const marqueeRef = useRef(null)
 const tagCloudRef = useRef(null)
 
   useEffect(() => {
-    marqueeAnim(heroMarqueeRef.current)
-    marqueeAnim(marqueeRef.current)
-    workHorizontalAnim(horizontalPanelsRef.current, horizontalTl.current)
-    cloudMarqueeAnim(tagCloudRef.current)
-  }, [horizontalTl, horizontalPanelsRef])
+      marqueeAnim(heroMarqueeRef.current)
+      marqueeAnim(marqueeRef.current)
+      podcastAnim(podcastsRef.current, podcastTl.current)
+      workHorizontalAnim(horizontalPanelsRef.current, horizontalTl.current)
+      cloudMarqueeAnim(tagCloudRef.current)
+    }, [horizontalTl, horizontalPanelsRef]
+  )
 
   if (errors) {
     return (
@@ -123,14 +128,15 @@ const tagCloudRef = useRef(null)
         <HeroCta />
         <Container>
           <Hero heroMarqueeRef={heroMarqueeRef} />
-          <Podcasts />
+          <Podcasts ref={podcastsRef} />
           <Marquee 
             style={{color: colors.FABlue}}
             textContent="whatever you're looking to create, our skilled and experienced production team will build the perfect podcast. whatever" 
             ref={marqueeRef}/>
           <Work ref={horizontalPanelsRef}/>
           <Testimonials />
-          <Blog/>
+          <Editorials/>
+          {/* <Blog/> */}
           <TagCloud ref={tagCloudRef} />
           {/* {projectNodes && (
             <ProjectPreviewGrid

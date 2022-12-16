@@ -48,11 +48,14 @@ const Podcast = styled.div`
     display: flex;
     flex-direction: column;
     /* height: 50px; */
+    h3 {
+        text-transform: uppercase;
+    }
 `
 
-const Podcasts = (props) => {
+const Podcasts = React.forwardRef((props, ref) => {
     return (
-        <PodcastsWrapper>
+        <PodcastsWrapper ref={ref}>
             <div className="leftCol">
                 <Podcast>
                     <StaticImage
@@ -91,38 +94,15 @@ const Podcasts = (props) => {
                         // aspectRatio={16/9}
                         // objectPosition="0 0"
                     />
-                    <h3>podcast 3</h3>
-                </Podcast>
-                <Podcast>
-                    <StaticImage
-                        src="../assets/unnamed-2.jpg"
-                        alt="Smiling people"
-                        placeholder="blurred"
-                        layout="fullWidth"
-                        className="podcastImgWrapper"
-                        imgClassName="podcastImg"
-                        aspectRatio={16/9}
-                    />
-                    <h3>podcast 4</h3>
-                </Podcast>
-                <Podcast>
-                    <StaticImage
-                        src="../assets/unnamed.jpg"
-                        alt="Smiling people"
-                        placeholder="blurred"
-                        layout="fullWidth"
-                        className="podcastImgWrapper"
-                        imgClassName="podcastImg"
-                        aspectRatio={16/9}
-                    />
-                    <h3>podcast 5</h3>
+                    <h3>Call of The Wild - WWF</h3>
                 </Podcast>
             </div>
             <div className="rightCol">
-                <h2>We produce 100 podcasts listened to over 2 million times every month</h2>
+                <h2 className="podcastHeading">We produce 100 podcasts listened to over 2 million times every month</h2>
             </div>
         </PodcastsWrapper>
     )
 }
+)
 
 export default Podcasts
