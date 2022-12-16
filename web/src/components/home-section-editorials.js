@@ -33,6 +33,7 @@ const EditorialsWrapper = styled.div`
         width: 100%;
         padding: 0 0.5rem;
         h3 {
+            font-family: 'Polysans';
             font-weight: normal;
             text-transform: uppercase;
             text-align: left;
