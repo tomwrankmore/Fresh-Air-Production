@@ -41,7 +41,8 @@ export const Nav = styled.nav`
 
   @media (hover: hover) {
     ul li a:hover {
-        color: grey
+        /* color: grey */
+        text-decoration: underline;
     }
   }
 
@@ -77,6 +78,7 @@ export const Nav = styled.nav`
     }
 
     & ul li a {
+      font-family: "Polysans";
     }
   }
 `
@@ -86,6 +88,11 @@ export const StyledHeader = styled.div`
   z-index: 100;
   width: 100%;
   position: fixed;
+
+
+  .navigationLogo {
+    display: none;
+  }
 `
 
 export const ToggleNavButton = styled.button `   

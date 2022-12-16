@@ -9,6 +9,7 @@ import {
 } from "../lib/helpers";
 import styled from "styled-components";
 import { colors } from "../styles/colors";
+import CentralLogo from "../components/central-logo"
 import HeroCta from "../components/hero-cta";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
@@ -25,7 +26,7 @@ import Blog from "../components/home-section-blog-grid";
 import Editorials from "../components/home-section-editorials";
 import TagCloud from "../components/home-section-cloud"
 
-import { ctaAnim, workHorizontalAnim, podcastAnim,  marqueeAnim, cloudMarqueeAnim } from "../animations";
+import { ctaAnim, centralLogoAnim, workHorizontalAnim, podcastAnim,  marqueeAnim, cloudMarqueeAnim } from "../animations";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,6 +86,7 @@ const horizontalTl = useRef(null)
 const podcastTl = useRef(null)
 
 // Section Refs
+const centralLogoRef = useRef(null)
 const podcastsRef = useRef(null)
 const horizontalPanelsRef = useRef(null)
 const heroMarqueeRef = useRef(null)
@@ -92,6 +94,7 @@ const marqueeRef = useRef(null)
 const tagCloudRef = useRef(null)
 
   useEffect(() => {
+      centralLogoAnim(centralLogoRef.current, podcastsRef.current)
       marqueeAnim(heroMarqueeRef.current)
       marqueeAnim(marqueeRef.current)
       podcastAnim(podcastsRef.current, podcastTl.current)
@@ -127,6 +130,7 @@ const tagCloudRef = useRef(null)
         <SEO title={site.title} description={site.description} keywords={site.keywords} />
         <HeroCta />
         <Container>
+          <CentralLogo ref={centralLogoRef} />
           <Hero heroMarqueeRef={heroMarqueeRef} />
           <Podcasts ref={podcastsRef} />
           <Marquee 
