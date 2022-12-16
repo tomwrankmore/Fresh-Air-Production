@@ -105,9 +105,7 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
   
     return pos;
   }
-
-
-  },[])
+},[])
   
   return (
     <div style={{position: 'relative'}}>
