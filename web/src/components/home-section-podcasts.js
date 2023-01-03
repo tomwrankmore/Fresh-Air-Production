@@ -5,14 +5,18 @@ import { colors } from "../styles/colors";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitText from "gsap/SplitText";
-
-gsap.registerPlugin(ScrollTrigger, SplitText);
+import { device } from "../styles/mediaQueries"
 
 const PodcastsWrapper = styled.div` 
     width: 100vw;
     /* height: 100vh; */
     display: flex;
     position: relative;
+    flex-direction: column-reverse;
+
+    @media ${device.mediaMinMedium} {
+        flex-direction: row;
+    }
 
     div {
         flex: 1;
@@ -20,7 +24,10 @@ const PodcastsWrapper = styled.div`
 
         &.leftCol {
             div {
-                height: 100vh;
+                height: 35vh;
+                @media ${device.mediaMinMedium} {
+                    height: 100vh;
+                }
             }
             h3 {
                 text-align: center;
@@ -32,17 +39,27 @@ const PodcastsWrapper = styled.div`
         }
 
         &.rightCol {
+            min-height: 35vh;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            position: sticky;
-            top: 0;
+            @media ${device.mediaMinMedium} {
+                min-height: 100vh;
+                position: sticky;
+                top: 0;
+            }
             h2 {
-                max-width: 65%;
+                max-width: 100%;
                 text-align: center;
-                line-height: 3.5rem;
-                font-size: 2.875rem;
+                line-height: inherit;
+                font-size: 1.5;
+                @media ${device.mediaMinMedium} {
+                    max-width: 65%;
+                    line-height: 3.5rem;
+                    /* font-size: 2.875rem; */
+                    font-size: clamp(1.875rem, 2rem, 3rem);
+                }
             }
         }
     }
@@ -60,8 +77,13 @@ const Podcast = styled.div`
 
 const Podcasts = React.forwardRef(({tl}, ref) => {
 
+    gsap.registerPlugin(ScrollTrigger, SplitText);
+
     useLayoutEffect(() => {
-        let ctx = gsap.context(() => {
+
+        let mm = gsap.matchMedia(ref);
+
+        mm.add("(min-width: 675px)", () => {
             const childLines = new SplitText('.podcastHeading', {
                 type: 'lines',
                 linesClass: 'lineChild',
@@ -90,8 +112,14 @@ const Podcasts = React.forwardRef(({tl}, ref) => {
                 amount: 0.25,
               }
             })
-        }, ref);
-        return () => ctx.revert()
+            
+            // when the matchMedia doesn't match anymore
+            return () => {
+                childLines.revert();
+                parentLines.revert();
+            };
+        })
+            return () => mm.revert();
       }, [])    
 
     return (
@@ -105,8 +133,6 @@ const Podcasts = React.forwardRef(({tl}, ref) => {
                         layout="fullWidth"
                         className="podcastImgWrapper"
                         imgClassName="podcastImg"
-                        // aspectRatio={16/9}
-                        // objectPosition="0 0"
                     />
                     <h3>What makes us stronger</h3>
                 </Podcast>
@@ -118,8 +144,6 @@ const Podcasts = React.forwardRef(({tl}, ref) => {
                         layout="fullWidth"
                         className="podcastImgWrapper"
                         imgClassName="podcastImg"
-                        // aspectRatio={16/9}
-                        // objectPosition="0 0"
                     />
                     <h3>The beauty podcast with sali hughes for avon</h3>
                 </Podcast>
@@ -131,8 +155,6 @@ const Podcasts = React.forwardRef(({tl}, ref) => {
                         layout="fullWidth"
                         className="podcastImgWrapper"
                         imgClassName="podcastImg"
-                        // aspectRatio={16/9}
-                        // objectPosition="0 0"
                     />
                     <h3>Call of The Wild - WWF</h3>
                 </Podcast>

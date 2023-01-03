@@ -36,9 +36,9 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
     ctaTween.current.reverse();
   };
 
-  useEffect(()=>{
-    showNavAnim(navigationRef.current)
-  }, [navigationRef])
+  // useEffect(()=>{
+  //   showNavAnim(navigationRef.current)
+  // }, [navigationRef])
 
 //   useEffect(()=>{
 
@@ -114,7 +114,7 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
       </Link> */}
       <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} ref={navigationRef}/>
       <Content>{children}</Content>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   )
 };

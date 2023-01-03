@@ -1,20 +1,6 @@
-import React from "react";
+import React from 'react';
+import { HiOutlineMenuAlt2 } from "react-icons/hi";
 
-const strokeStyle = { vectorEffect: "non-scaling-stroke" };
-
-const HamburgerIcon = () => (
-  <svg
-    viewBox="0 0 25 25"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    preserveAspectRatio="xMidYMid"
-    width="1em"
-    height="1em"
-  >
-    <path d="M5 7.5H20" stroke="currentColor" style={strokeStyle} />
-    <path d="M5 12.5H20" stroke="currentColor" style={strokeStyle} />
-    <path d="M5 17.5H20" stroke="currentColor" style={strokeStyle} />
-  </svg>
-);
+const HamburgerIcon = () => <HiOutlineMenuAlt2 style={{fill: 'white', color: 'white', fontSize: '2rem', cursor: 'pointer'}} />;
 
 export default HamburgerIcon;

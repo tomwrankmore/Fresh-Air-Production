@@ -1,12 +1,14 @@
 import React, {useLayoutEffect} from "react";
 import gsap from "gsap";
 import styled from "styled-components";
+import { useMediaQuery } from 'react-responsive'
 import Marquee from "../components/home-section-marquee"
 import {HeroWrapper, Fresh, Air, HeroInner, HeroGrid} from "./hero.styled";
 import heroPeople from '../assets/hero-people-crop.png';
 import FreshSvg from '../assets/Fresh.inline.svg'
 import AirSvg from '../assets/Air.inline.svg'
-import { device } from '../styles/mediaQueries'
+import { device } from "../styles/mediaQueries";
+import MobileLogo from "../assets/FA-logo.png"
 
 const SvgLogoWrapper = styled.div` 
     height: 100%;
@@ -17,13 +19,9 @@ const SvgLogoWrapper = styled.div`
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
-    width: 100%;
+    width: 720px;
     align-items: flex-end;
     padding: 1.5rem 0;
-
-    @media ${device.mediaMinMedium} {
-        width: 720px;
-    }
 
     .LogoContainer {
         margin: 0 auto;
@@ -43,6 +41,9 @@ const SvgLogoWrapper = styled.div`
 `
 
 const Hero = React.forwardRef(({heroMarqueeRef, tl}, ref) => {
+
+    const isMobile = useMediaQuery({ query: '(max-width: 449px)' })
+    const isLarger = useMediaQuery({ query: '(min-width: 450px)' })
     
     useLayoutEffect(() => {
         const mover = ref.current.clientHeight - 270
@@ -92,12 +93,15 @@ const Hero = React.forwardRef(({heroMarqueeRef, tl}, ref) => {
 
     return (
         <HeroWrapper ref={ref}>
-            {/* <SvgLogoWrapper>
+
+            {isLarger && 
+                <SvgLogoWrapper>
                 <div className="LogoContainer">
                     <FreshSvg className="fresh-svg" />
                     <AirSvg className="air-svg" />
                 </div>
-            </SvgLogoWrapper> */}
+            </SvgLogoWrapper>
+            }
             <HeroInner className="hero-inner">
                 {/* <p>empty content to display content replace with SVG to animate</p> */}
                 {/* <StaticImage
@@ -110,6 +114,9 @@ const Hero = React.forwardRef(({heroMarqueeRef, tl}, ref) => {
                 /> */}
                 <img src={heroPeople} alt="alt" className="hero-img" />
             </HeroInner>
+            {isMobile && 
+                <img src={MobileLogo} alt="" className="mobile-logo"/>  
+            }
             <Marquee 
                 style={{color: 'white', position: 'absolute'}}
                 textContent="WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE. WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE. WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE." 

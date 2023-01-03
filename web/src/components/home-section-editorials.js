@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import { colors } from "../styles/colors";
+import { device } from "../styles/mediaQueries";
 
 const EditorialsTitleWrapper = styled.div` 
     width: 100%;
@@ -19,6 +20,11 @@ const EditorialsWrapper = styled.div`
     display: flex;
     position: relative;
     padding: 0.5rem;
+    flex-direction: column;
+
+    @media ${device.mediaMinMedium} {
+        flex-direction: row;
+    }
 
     .editorials-link {
         text-decoration: none;
@@ -32,29 +38,39 @@ const EditorialsWrapper = styled.div`
     .titleWrapper {
         width: 100%;
         padding: 0 0.5rem;
+        flex: 1;
         h3 {
             font-family: 'Polysans';
             font-weight: normal;
             text-transform: uppercase;
             text-align: left;
-            padding: 0.875rem 0rem;
+            padding: 0 0rem 0.875rem 0rem;
+            @media ${device.mediaMinMedium} {
+                padding: 0.875rem 0rem;
+            }
         }
     }
 
     .editorials-left-col, 
     .editorials-right-col {
-        flex: 1;
+        @media ${device.mediaMinMedium} {
+            flex: 1;
+        }
     }
 
     .editorials-left-col {
-        position: sticky;
-        top: 0;
-        height: 100vh;
+        height: 50vh;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         padding: 0.5rem;
+        @media ${device.mediaMinMedium} {
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            justify-content: flex-start;
+        }
     }
 
     .editorials-right-col {
@@ -63,15 +79,27 @@ const EditorialsWrapper = styled.div`
 
     .editorials-right-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+        @media ${device.mediaMinMedium} {
+            grid-template-columns: 1fr 1fr;
+        }
 
         .post {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: flex-start;
+            justify-content: flex-start;
             flex-direction: column;
-            height: 450px;
+            height: auto;
             padding: 0.5rem 0.5rem 0 0.5rem;
+            flex-direction: row;
+            .imgWrapper {
+                flex: 1;
+            }
+            @media ${device.mediaMinMedium} {
+                /* height: 450px; */
+                flex-direction: column;
+                align-items: center;
+            }
         }
     }
 `

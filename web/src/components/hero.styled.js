@@ -9,6 +9,13 @@ export const HeroWrapper = styled.div`
     align-items: center;
     justify-content: center;
     position: relative;
+
+    .mobile-logo {
+        position: absolute;
+        bottom: 3rem;
+        left: 50%;
+        transform: translateX(-50%)
+    }
 `
 
 export const HeroInner = styled.div` 

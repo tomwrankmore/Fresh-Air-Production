@@ -7,8 +7,9 @@ export const Wrapper = styled.div`
   /* max-width: 960px; */
   padding: 1em;
   display: flex;
+  justify-content: flex-end;
 
-  @media ${device.mediaMinSmall} {
+  @media ${device.mediaMinMedium} {
     padding: 1.5em 1.5em;
   }
 `
@@ -24,6 +25,10 @@ export const Nav = styled.nav`
   ul {
     margin: 0;
     padding: 0;
+  }
+
+  ul li {
+    flex: 1;
   }
 
   ul li a {
@@ -46,24 +51,24 @@ export const Nav = styled.nav`
     }
   }
 
-  @media ${device.mediaMaxSmall} {
+  @media ${device.mediaMaxMedium} {
     position: absolute;
     left: 0;
     right: 0;
     top: 6rem;
     padding: 0 2rem;
+    background-color: white;
 
     ul {
       padding: 1rem 0;
     }
 
     ul li a {
-      padding: 0.5rem 1.5rem;
-      margin-bottom: 1.5rem;
+      padding: 1.5rem 1.5rem;
     }
   }
 
-  @media ${device.mediaMinSmall} {
+  @media ${device.mediaMinMedium} {
     display: flex;
     align-items: center;
     width: 100%;
@@ -85,7 +90,7 @@ export const Nav = styled.nav`
 
 export const StyledHeader = styled.div` 
   position: relative;
-  z-index: 100;
+  z-index: 200;
   width: 100vw;
   position: fixed;
 
@@ -110,7 +115,7 @@ export const ToggleNavButton = styled.button `
         fill: inherit;
     }
 
-    @media ${device.mediaMinSmall} {
+    @media ${device.mediaMinMedium} {
         display: none;
     }
 `

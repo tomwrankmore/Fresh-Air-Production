@@ -125,25 +125,25 @@ const tagCloudRef = useRef(null)
       <Layout>
         <SEO title={site.title} description={site.description} keywords={site.keywords} />
         <Container>
-          {/* <CentralLogo ref={centralLogoRef} podcastsRef={podcastsRef.current} /> */}
-          {/* <Hero ref={heroRef} heroMarqueeRef={heroMarqueeRef} tl={heroTl.current}/> */}
-          {/* <Podcasts ref={podcastsRef} />
+          <CentralLogo ref={centralLogoRef} podcastsRef={podcastsRef.current} />
+          <Hero ref={heroRef} heroMarqueeRef={heroMarqueeRef} tl={heroTl.current}/>
+          <Podcasts ref={podcastsRef} />
           <Marquee 
             style={{color: colors.FABlue}}
             textContent="whatever you're looking to create, our skilled and experienced production team will build the perfect podcast. whatever" 
             ref={marqueeRef}/>
-           <Work ref={horizontalPanelsRef} />
-          <Testimonials /> */}
-          {/* <Editorials/> */}
+           {/* <Work ref={horizontalPanelsRef} /> */}
+          <Testimonials />
+          <Editorials/>
           {/* <Blog/> */}
           <TagCloud ref={tagCloudRef} />
-          {projectNodes && (
+          {/* {projectNodes && (
             <ProjectPreviewGrid
               title="Latest projects"
               nodes={projectNodes}
               browseMoreHref="/archive/"
             />
-          )}
+          )} */}
         </Container>
       </Layout>
   );

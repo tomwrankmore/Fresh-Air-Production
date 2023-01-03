@@ -23,9 +23,14 @@ export const StyledFooter = styled.div`
 
 export const NavigationWrapper = styled.div` 
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     margin-bottom: 2rem;
+    @media ${device.mediaMinMedium} {
+        flex-direction: row;
+        align-items: flex-start;
+    }
 `
 
 export const FooterWrapper = styled.div` 
@@ -33,7 +38,7 @@ export const FooterWrapper = styled.div`
     /* max-width: 960px; */
     padding: 4.5em 1.5em 1.5em;
     margin: 0 auto;
-    @media ${device.mediaMinSmall} {
+    @media ${device.mediaMinMedium} {
         padding: 4rem 2rem;
     }
 `
@@ -51,15 +56,32 @@ export const SiteInfo = styled.div`
 
 export const LinkList = styled.ul` 
     flex: 1;
+    text-align: center;
+    width: 100%;
+    border-bottom: dotted 1px white;
+    padding: 0.5rem 0;
+    @media ${device.mediaMinMedium} {
+        text-align: left;
+        border-bottom: none;
+    }
     li {
         line-height: 1.875rem;
     }
 `
 
-export const Subscribe = styled.div` 
-    flex: 2;
+export const Subscribe = styled.div`
+    text-align: center;
+    padding-top: 1rem;
+    @media ${device.mediaMinMedium} {
+        text-align: left;
+        flex: 2;
+        padding-top: 0;
+    }
     p {
         margin-bottom: 1rem;
-        max-width: 75%;
+        max-width: 100%;
+        @media ${device.mediaMinMedium} {
+            max-width: 75%;
+        }
     }
 `
