@@ -3,12 +3,13 @@ import gsap from "gsap";
 import {colors} from "../../styles/colors"
 import {device} from "../../styles/mediaQueries"
 import { graphql, useStaticQuery } from 'gatsby'
+import styled from "styled-components";
 // import { getImage, GatsbyImage } from "gatsby-plugin-image"
 // import { convertToBgImage } from "gbimage-bridge"
 // import BackgroundImage from 'gatsby-background-image'
 
 const HeroWrapper = styled.div`
-  background: ${colors.FABlue};
+  background-color: ${colors.FABlue};
   width: 100%;
   height: 100vh;
   display: flex;
