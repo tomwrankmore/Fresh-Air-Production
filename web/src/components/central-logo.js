@@ -19,7 +19,23 @@ const StyledCentralLogo = styled.div`
     }
 `
 
-const CentralLogo = React.forwardRef(({podcastsRef}, ref) => {
+const CentralLogo = React.forwardRef((props, ref) => {
+
+    // useLayoutEffect(() => {
+    //     let ctx = gsap.context(() => {
+    //       gsap.set('.central-logo', { visibility: 'hidden' })
+    //       gsap.to('.central-logo', {
+    //           autoAlpha: 1,
+    //           scrollTrigger: {
+    //               trigger: podcastsRef.current,
+    //               start: "top top",
+    //               toggleActions: "play none none reverse"
+    //             }
+    //       })
+    //     }, ref);
+    //     return () => ctx.revert()
+    //   }, [])
+
     return (
         <StyledCentralLogo ref={ref}>
             <Link to="/" className="centralLogo">

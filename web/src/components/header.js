@@ -44,14 +44,11 @@ useLayoutEffect(() => {
         gsap.from(ref.current, { 
           yPercent: 55
         })
-      };
-
+      }
   });
 
   return () => mm.revert();
 },[])
-
-
 
   return (
   <StyledHeader ref={ref}>

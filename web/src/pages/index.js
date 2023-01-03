@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect} from "react";
+import React, {useRef, useState, useEffect, useLayoutEffect} from "react";
 import { graphql } from "gatsby";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -86,6 +86,7 @@ const horizontalTl = useRef(null)
 const podcastTl = useRef(null)
 
 // Section Refs
+const containerRef = useRef(null)
 const heroRef = useRef(null)
 const centralLogoRef = useRef(null)
 const podcastsRef = useRef(null)
@@ -95,10 +96,16 @@ const marqueeRef = useRef(null)
 const tagCloudRef = useRef(null)
 
   useEffect(() => {
-      centralLogoAnim(centralLogoRef.current, podcastsRef.current)
-      // workHorizontalAnim(horizontalPanelsRef.current, horizontalTl.current)
-    }, []
-  )
+    gsap.set(centralLogoRef.current, {visibility: 'hidden'})
+    gsap.to(centralLogoRef.current, {
+        autoAlpha: 1,
+        scrollTrigger: {
+            trigger: podcastsRef.current,
+            start: "bottom top",
+            toggleActions: "play none none reverse"
+          }
+    })
+  },[])
 
   if (errors) {
     return (
@@ -124,15 +131,15 @@ const tagCloudRef = useRef(null)
   return (
       <Layout>
         <SEO title={site.title} description={site.description} keywords={site.keywords} />
-        <Container>
-          <CentralLogo ref={centralLogoRef} podcastsRef={podcastsRef.current} />
+        <Container ref={containerRef}>
+          <CentralLogo ref={centralLogoRef}/>
           <Hero ref={heroRef} heroMarqueeRef={heroMarqueeRef} tl={heroTl.current}/>
           <Podcasts ref={podcastsRef} />
           <Marquee 
             style={{color: colors.FABlue}}
             textContent="whatever you're looking to create, our skilled and experienced production team will build the perfect podcast. whatever" 
             ref={marqueeRef}/>
-           {/* <Work ref={horizontalPanelsRef} /> */}
+           <Work ref={horizontalPanelsRef} />
           <Testimonials />
           <Editorials/>
           {/* <Blog/> */}

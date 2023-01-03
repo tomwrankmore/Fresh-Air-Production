@@ -41,9 +41,6 @@ const SvgLogoWrapper = styled.div`
 `
 
 const Hero = React.forwardRef(({heroMarqueeRef, tl}, ref) => {
-
-    const isMobile = useMediaQuery({ query: '(max-width: 449px)' })
-    const isLarger = useMediaQuery({ query: '(min-width: 450px)' })
     
     useLayoutEffect(() => {
         const mover = ref.current.clientHeight - 270
