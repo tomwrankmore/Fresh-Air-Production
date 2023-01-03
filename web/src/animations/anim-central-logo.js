@@ -4,9 +4,7 @@ const centralLogoAnim = (centralLogoRef, podcastsRef) => {
     
     let q = gsap.utils.selector(centralLogoRef);
 
-    gsap.set(q('.centralLogo'), {
-        visibility: 'hidden'
-      })
+    gsap.set(q('.centralLogo'), { visibility: 'hidden' })
 
     gsap.to(q('.centralLogo'), {
         autoAlpha: 1,

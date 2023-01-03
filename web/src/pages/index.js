@@ -25,7 +25,7 @@ import Blog from "../components/home-section-blog-grid";
 import Editorials from "../components/home-section-editorials";
 import TagCloud from "../components/home-section-cloud"
 
-import { heroAnim, ctaAnim, centralLogoAnim, workHorizontalAnim, podcastAnim,  marqueeAnim, cloudMarqueeAnim } from "../animations";
+import { centralLogoAnim } from "../animations";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -80,7 +80,8 @@ export const query = graphql`
 const IndexPage = props => {
   const { data, errors } = props;
 
-  // GSAP Timeline Refs
+// GSAP Timeline Refs
+const heroTl = useRef(null)
 const horizontalTl = useRef(null)
 const podcastTl = useRef(null)
 
@@ -94,14 +95,9 @@ const marqueeRef = useRef(null)
 const tagCloudRef = useRef(null)
 
   useEffect(() => {
-      heroAnim(heroRef.current)
       centralLogoAnim(centralLogoRef.current, podcastsRef.current)
-      marqueeAnim(heroMarqueeRef.current)
-      marqueeAnim(marqueeRef.current)
-      podcastAnim(podcastsRef.current, podcastTl.current)
-      workHorizontalAnim(horizontalPanelsRef.current, horizontalTl.current)
-      cloudMarqueeAnim(tagCloudRef.current)
-    }, [horizontalTl, horizontalPanelsRef]
+      // workHorizontalAnim(horizontalPanelsRef.current, horizontalTl.current)
+    }, []
   )
 
   if (errors) {
@@ -129,25 +125,25 @@ const tagCloudRef = useRef(null)
       <Layout>
         <SEO title={site.title} description={site.description} keywords={site.keywords} />
         <Container>
-          <CentralLogo ref={centralLogoRef} />
-          <Hero ref={heroRef} heroMarqueeRef={heroMarqueeRef} />
-          <Podcasts ref={podcastsRef} />
+          {/* <CentralLogo ref={centralLogoRef} podcastsRef={podcastsRef.current} /> */}
+          {/* <Hero ref={heroRef} heroMarqueeRef={heroMarqueeRef} tl={heroTl.current}/> */}
+          {/* <Podcasts ref={podcastsRef} />
           <Marquee 
             style={{color: colors.FABlue}}
             textContent="whatever you're looking to create, our skilled and experienced production team will build the perfect podcast. whatever" 
             ref={marqueeRef}/>
-          <Work ref={horizontalPanelsRef}/>
-          <Testimonials />
-          <Editorials/>
+           <Work ref={horizontalPanelsRef} />
+          <Testimonials /> */}
+          {/* <Editorials/> */}
           {/* <Blog/> */}
           <TagCloud ref={tagCloudRef} />
-          {/* {projectNodes && (
+          {projectNodes && (
             <ProjectPreviewGrid
               title="Latest projects"
               nodes={projectNodes}
               browseMoreHref="/archive/"
             />
-          )} */}
+          )}
         </Container>
       </Layout>
   );

@@ -1,8 +1,9 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, {useState, useEffect, useRef, useLayoutEffect} from "react";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import { colors } from "../styles/colors";
+import gsap from "gsap"
 
 const TagCloudWrapper = styled.div` 
     width: 200%;
@@ -70,6 +71,16 @@ const TagCloud = React.forwardRef((props, ref) => {
     const turq = {background: colors.FATurquoise}
 
     const [bgColor, setBgColor] = useState(blue)
+
+    useLayoutEffect(() => {
+        let ctx = gsap.context(() => {
+            gsap.set('.cloudMarqueeLine', {xPercent: 20});
+            gsap.to('.marqueeContent1', {xPercent: -100, repeat: -1, duration: 50, ease: 'linear'}).totalProgress(0.6);
+            gsap.to('.marqueeContent2', {xPercent: -100, repeat: -1, duration: 60, ease: 'linear'}).totalProgress(0.4);
+        }, ref);
+        return () => ctx.revert()
+      }, [])
+    
 
     return (
         <TagCloudWrapper style={bgColor} ref={ref}>

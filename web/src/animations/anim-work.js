@@ -11,20 +11,19 @@ const workHorizontalAnim = (horizontalPanelsRef, horizontalTl) => {
     let imagesR = gsap.utils.toArray(q('.img-r'));
     let paragraphs = gsap.utils.toArray(q('.panel-paragraph'));
 
-    console.log('paragraphs: ', paragraphs)
-
     let scrollTween = gsap.to(sections, {
-        xPercent: -100 * (sections.length - 1),
-        ease: "none", // <-- IMPORTANT!
-        scrollTrigger: {
-          trigger: q('.horizontalContainer'),
-          start: 'top top',
-          pin: true,
-          scrub: 0.1,
-          //snap: directionalSnap(1 / (sections.length - 1)),
-          end: "+=3000"
-        }
-      });
+      xPercent: -100 * (sections.length - 1),
+      ease: "none", // <-- IMPORTANT!
+      scrollTrigger: {
+        invalidateOnRefresh: true,
+        trigger: q('.horizontalContainer'),
+        start: 'top top',
+        pin: true,
+        scrub: 0.1,
+        //snap: directionalSnap(1 / (sections.length - 1)),
+        end: "+=3000"
+      }
+    });
 
       sections.forEach(panel => {
         return (
@@ -79,10 +78,6 @@ const workHorizontalAnim = (horizontalPanelsRef, horizontalTl) => {
           })
         )
       })
-
-      
-
-      
 }
 
 export default workHorizontalAnim

@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useLayoutEffect} from "react";
+import gsap from 'gsap'
 import { StaticImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import { device } from "../styles/mediaQueries";
@@ -117,6 +118,80 @@ const Panel = styled.div`
 `
 
 const Work = React.forwardRef((props, ref) => {
+    useLayoutEffect(() => {
+      let ctx = gsap.context(() => {
+        let sections = gsap.utils.toArray('.panel');
+        let imagesL = gsap.utils.toArray('.img-l');
+        let imagesR = gsap.utils.toArray('.img-r');
+        // let paragraphs = gsap.utils.toArray('.panel-paragraph');
+    
+        let scrollTween = gsap.to(sections, {
+          xPercent: -100 * (sections.length - 1),
+          ease: "none", // <-- IMPORTANT!
+          scrollTrigger: {
+            invalidateOnRefresh: true,
+            trigger: '.horizontalContainer',
+            start: 'top top',
+            pin: true,
+            scrub: 0.1,
+            //snap: directionalSnap(1 / (sections.length - 1)),
+            end: "+=3000"
+          }
+        });
+    
+          sections.forEach(panel => {
+            return (
+                gsap.from(panel, {
+                    ease: "none",
+                    scrollTrigger: {
+                      trigger: panel,
+                      containerAnimation: scrollTween,
+                      start: "left right",
+                      end: "center center",
+                      id: "1",
+                      scrub: true
+                    }
+                  })
+            )
+          })
+    
+          imagesL.forEach(img => {
+            return (
+              gsap.from(img, {
+                ease: "none",
+                rotation: 5,
+                scrollTrigger: {
+                  trigger: img,
+                  containerAnimation: scrollTween,
+                  start: "left right",
+                  end: "center center",
+                  id: "2",
+                  scrub: true
+                }
+              })
+            )
+          })
+    
+          imagesR.forEach(img => {
+            return (
+              gsap.from(img, {
+                ease: "none",
+                rotation: -5,
+                scrollTrigger: {
+                  trigger: img,
+                  containerAnimation: scrollTween,
+                  start: "left right",
+                  end: "center center",
+                  id: "3",
+                  scrub: true
+                }
+              })
+            )
+          })
+      }, ref);
+      return () => ctx.revert()
+    }, [])
+
     return (
         <div style={{position: 'relative'}} ref={ref}>
             <HorizontalContainer className="horizontalContainer">

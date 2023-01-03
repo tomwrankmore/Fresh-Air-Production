@@ -1,7 +1,12 @@
-import React from "react";
+import React, {useLayoutEffect} from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import { colors } from "../styles/colors";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import SplitText from "gsap/SplitText";
+
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const PodcastsWrapper = styled.div` 
     width: 100vw;
@@ -53,7 +58,42 @@ const Podcast = styled.div`
     }
 `
 
-const Podcasts = React.forwardRef((props, ref) => {
+const Podcasts = React.forwardRef(({tl}, ref) => {
+
+    useLayoutEffect(() => {
+        let ctx = gsap.context(() => {
+            const childLines = new SplitText('.podcastHeading', {
+                type: 'lines',
+                linesClass: 'lineChild',
+            });
+        
+            const parentLines = new SplitText('.podcastHeading', {
+              type: 'lines',
+              linesClass: 'lineParent',
+            });
+        
+            const { lines } = childLines;
+        
+            tl = gsap.timeline({
+                scrollTrigger: {
+                  trigger: ref.current,
+                  start: "top 50%",
+                //   end: "center 75%",
+                  toggleActions: "play none none reverse"
+                },
+              })
+            .from(lines, {
+              yPercent: 100, 
+              autoAlpha: 0,
+              ease: 'back',
+              stagger: {
+                amount: 0.25,
+              }
+            })
+        }, ref);
+        return () => ctx.revert()
+      }, [])    
+
     return (
         <PodcastsWrapper ref={ref}>
             <div className="leftCol">

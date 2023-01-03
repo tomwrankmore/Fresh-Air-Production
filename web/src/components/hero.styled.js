@@ -14,15 +14,24 @@ export const HeroWrapper = styled.div`
 export const HeroInner = styled.div` 
     background-color: ${colors.FATurquoise};
     position: relative;
-    width: clamp(20rem, 50vw, 70rem);
+    width: 300px;
     aspect-ratio: 16 / 9;
     margin-top: 20px;
+
+    @media ${device.mediaMinMedium} {
+        width: clamp(20rem, 50vw, 70rem);
+    }
+
+    /* --clip: 100% 0 0 0;
+    clip-path: inset(var(--clip)); */
 
     img {
         position: absolute;
         width: 100%;
         bottom: 0;
         right: -20px;
+        --clip: 100% 0 0 0;
+        clip-path: inset(var(--clip));
     }
 
     /* .heroPeopleImgWrapper {

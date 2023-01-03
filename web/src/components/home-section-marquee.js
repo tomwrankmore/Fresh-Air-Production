@@ -1,17 +1,22 @@
-import React, {useRef} from "react";
+import React, {useLayoutEffect} from "react";
 import { StaticImage } from "gatsby-plugin-image";
+import gsap from "gsap"
 import styled from "styled-components";
 import { colors } from "../styles/colors";
+import { device } from "../styles/mediaQueries";
 
 const StyledMarquee = styled.section` 
     /* background: #fff; */
     /* color: ${colors.FABlue}; */
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 1.667vw;
+    font-size: 1.25rem;
     padding: 32px 0;
     position: relative;
     overflow: hidden;
+    @media ${device.mediaMinMedium} {
+        font-size: 1.667vw;
+    }
 `
 
 const MarqueeInner = styled.div` 
@@ -28,6 +33,14 @@ const MarqueePart = styled.div`
     font-smooth: always;
 `
 const Marquee = React.forwardRef(({textContent, style}, ref) => {
+
+    useLayoutEffect(() => {
+        let ctx = gsap.context(() => {
+            gsap.set(".marquee__inner", {xPercent: -50});
+            gsap.to('.marquee__part', {xPercent: -100, repeat: -1, duration: 40, ease: "linear"}).totalProgress(0.5);
+        }, ref);
+        return () => ctx.revert()
+      }, [])
 
     return (
         <StyledMarquee className="marquee" ref={ref} style={style}>
