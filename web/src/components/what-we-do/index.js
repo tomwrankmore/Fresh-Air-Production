@@ -1,0 +1,7 @@
+export { default as WwdHero } from './wwd-hero'
+export { default as WwdSectionOne } from './wwd-section-one'
+export { default as WwdSectionTwo } from './wwd-section-two'
+export { default as WwdSectionThree } from './wwd-section-three'
+export { default as WwdSectionFour } from './wwd-section-four'
+export { default as WwdLogoCloud } from './wwd-logo-cloud'
+export { default as WwdQuoteSection } from './wwd-quote-section'

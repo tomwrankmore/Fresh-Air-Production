@@ -16,14 +16,14 @@ import ProjectPreviewGrid from "../components/project-preview-grid";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import Scroll from "../components/Scroll"
-import Hero from "../components/hero";
-import Podcasts from "../components/home-section-podcasts"
-import Marquee from "../components/home-section-marquee"
-import Work from "../components/home-section-work"
-import Testimonials from "../components/home-section-testimonials";
-import Blog from "../components/home-section-blog-grid";
-import Editorials from "../components/home-section-editorials";
-import TagCloud from "../components/home-section-cloud"
+import Hero from "../components/home/hero";
+import Podcasts from "../components/home/home-section-podcasts"
+import Marquee from "../components/home/home-section-marquee"
+import Work from "../components/home/home-section-work"
+import Testimonials from "../components/home/home-section-testimonials";
+import Blog from "../components/home/home-section-blog-grid";
+import Editorials from "../components/home/home-section-editorials";
+import TagCloud from "../components/home/home-section-cloud"
 
 import { centralLogoAnim } from "../animations";
 
