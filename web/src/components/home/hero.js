@@ -93,15 +93,12 @@ const Hero = React.forwardRef(({heroMarqueeRef, tl}, ref) => {
 
     return (
         <HeroWrapper ref={ref}>
-
-            {isLarger && 
-                <SvgLogoWrapper>
+            <SvgLogoWrapper>
                 <div className="LogoContainer">
                     <FreshSvg className="fresh-svg" />
                     <AirSvg className="air-svg" />
                 </div>
             </SvgLogoWrapper>
-            }
             <HeroInner className="hero-inner">
                 {/* <p>empty content to display content replace with SVG to animate</p> */}
                 {/* <StaticImage
@@ -114,9 +111,9 @@ const Hero = React.forwardRef(({heroMarqueeRef, tl}, ref) => {
                 /> */}
                 <img src={heroPeople} alt="alt" className="hero-img" />
             </HeroInner>
-            {isMobile && 
+            {/* {isMobile && 
                 <img src={MobileLogo} alt="" className="mobile-logo"/>  
-            }
+            } */}
             <Marquee 
                 style={{color: 'white', position: 'absolute'}}
                 textContent="WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE. WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE. WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE." 
