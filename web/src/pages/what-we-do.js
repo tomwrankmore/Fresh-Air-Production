@@ -27,16 +27,6 @@ const WhatWeDo = props => {
     const quoteSectionRef = useRef(null)
     const sectionLogoCloudRef = useRef(null)
 
-    const { data, errors } = props;
-    if (errors) {
-      return (
-        <Layout>
-          <GraphQLErrorList errors={errors} />
-        </Layout>
-      );
-    }
-    const projectNodes =
-      data && data.projects && mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs);
     return (
       <Layout>
         <SEO title="Archive" />

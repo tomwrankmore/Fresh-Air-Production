@@ -120,6 +120,8 @@ const WwdHero = React.forwardRef((props, ref) => {
                     </div>
                 </div>
             </Column> */}
+            <h1>col 1</h1>
+            <h1>col 2</h1>
         </HeroWrapper>
     )
 })
