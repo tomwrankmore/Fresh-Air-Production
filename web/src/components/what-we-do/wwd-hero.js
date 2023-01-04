@@ -28,16 +28,15 @@ const Column = styled.div`
   overflow: hidden;
 
   .heroTitle {
-    visibility: hidden;
     color: ${colors.streetEasyYellow};
-    font-size: 1.875rem;
+    font-size: 1.25rem;
     margin-bottom: 1.875rem;
-    font-family: 'Druk-Wide-Bold';
+    color: white;
     @media ${device.mediaMinMedium} {
-      font-size: 2.4rem;
+      font-size: 2rem;
     }
     @media ${device.mediaMinLarge} {
-      font-size: 3rem;
+      font-size: 2.4rem;
     }
   }
 
@@ -64,7 +63,6 @@ const Column = styled.div`
   div.heroText {
     padding: 2rem;
     text-align: center;
-    visibility: hidden;
     @media ${device.mediaMinMedium} {
         padding: 4rem;
         text-align: left;
@@ -87,42 +85,25 @@ const Column = styled.div`
 
 const WwdHero = React.forwardRef((props, ref) => {
 
-    // const { heroBackgroundImage } = useStaticQuery(
-    //     graphql`
-    //       query {
-    //         heroBackgroundImage: file(relativePath: { eq: "wwd-hero.png" }) {
-    //           childImageSharp {
-    //             gatsbyImageData(
-    //               width: 2000
-    //               quality: 50
-    //               webpOptions: { quality: 70 }
-    //             )
-    //           }
-    //         }
-    //       }
-    //     `
-    //   );
-
-    // const pluginImage = getImage(heroBackgroundImage);
-    // const bgImage = convertToBgImage(pluginImage);
 
     return (
         <HeroWrapper ref={ref}>
-            {/* <Column className='clipped'>
-                <BgImage image={pluginImage} className="background-image" Tag="section"/>
+            <Column className='clipped'>
+              BG Img
             </Column>
             <Column>
                 <div className="heroText">
-                    <h1 className="heroTitle">A new venue in the heart of exmouth market.</h1>
-                    <div className="smaller-text-wrapper">
+                    <h3 className="heroTitle">We're a team of passionate audio producers who have worked for some of the biggest brands.</h3>
+                    <h3 className="heroTitle">We take the essence of a brand and bring it to life in audio.</h3>
+                    <h3 className="heroTitle">Want to get in touch? Click here to email us.</h3>
+
+                    {/* <div className="smaller-text-wrapper">
                         <p className="smallPrint heroText">
                             Your friendly neighbourhood bringer of vibes and flavour!!
                         </p>
-                    </div>
+                    </div> */}
                 </div>
-            </Column> */}
-            <h1>col 1</h1>
-            <h1>col 2</h1>
+            </Column>
         </HeroWrapper>
     )
 })

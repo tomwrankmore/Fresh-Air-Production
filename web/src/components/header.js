@@ -67,7 +67,7 @@ useLayoutEffect(() => {
             <Link to="/archive/">Who We Are</Link>
           </li>
           <li>
-            <Link to="/archive/">What We Do</Link>
+            <Link to="/what-we-do/">What We Do</Link>
           </li>
           <li>
             <Link to="/" className="navigationLogo">
