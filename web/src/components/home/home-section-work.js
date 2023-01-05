@@ -42,8 +42,6 @@ const Panel = styled.div`
   justify-content: center;
   align-items: center;
   font-weight: 600;
-  /* font-size: 1.5em;
-  text-align: center;*/
   color: white; 
   position: relative;
   box-sizing: border-box;
@@ -147,6 +145,9 @@ const Panel = styled.div`
       .img-r {
         transform: rotate(10deg);
         transform-origin: center center;
+        @media ${device.mediaMinMedium} {
+          margin-bottom: 2rem;
+        }
       }
 
       .img-l {
