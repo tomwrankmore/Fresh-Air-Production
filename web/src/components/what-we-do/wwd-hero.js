@@ -1,17 +1,18 @@
-import React, {useLayoutEffect} from "react";
+import React, {useLayoutEffect, useRef} from "react";
 import gsap from "gsap";
 import {colors} from "../../styles/colors"
 import {device} from "../../styles/mediaQueries"
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from "styled-components";
-// import { getImage, GatsbyImage } from "gatsby-plugin-image"
-// import { convertToBgImage } from "gbimage-bridge"
-// import BackgroundImage from 'gatsby-background-image'
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { BgImage, convertToBgImage } from 'gbimage-bridge';
+import BackgroundImage from 'gatsby-background-image'
 
 const HeroWrapper = styled.div`
   background-color: ${colors.FABlue};
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   @media ${device.mediaMinMedium} {
@@ -28,7 +29,6 @@ const Column = styled.div`
   overflow: hidden;
 
   .heroTitle {
-    color: ${colors.streetEasyYellow};
     font-size: 1.25rem;
     margin-bottom: 1.875rem;
     color: white;
@@ -83,28 +83,70 @@ const Column = styled.div`
   }
 `;
 
-const WwdHero = React.forwardRef((props, ref) => {
+const WwdHero = React.forwardRef(({tl}, ref) => {
 
+    const { heroBackgroundImage } = useStaticQuery(
+      graphql`
+        query {
+          heroBackgroundImage: file(relativePath: { eq: "wwd-hero.png" }) {
+            childImageSharp {
+              gatsbyImageData(
+                width: 2000
+                quality: 50
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
+            }
+          }
+        }
+      `
+    )
+    const pluginImage = getImage(heroBackgroundImage);
+    const bgImage = convertToBgImage(pluginImage);
+
+    useLayoutEffect(() => {
+      let ctx = gsap.context(() => {
+        tl.current = gsap.timeline()
+        .to('.clipped', {
+          duration: 2,
+          ease: "power4.out",
+          "--clip": '0% 0% 0% 0%',
+          delay: 0.5
+        })
+        .fromTo('.heroTitle', {
+          yPercent: 20,
+          stagger: 0.75,
+          autoAlpha: 0
+        }, {
+          autoAlpha: 1,
+          yPercent: 0,
+          stagger: 0.25
+        }, '<+=0.5')
+      }, ref);
+      return () => ctx.revert()
+    }, [])
 
     return (
-        <HeroWrapper ref={ref}>
-            <Column className='clipped'>
-              BG Img
-            </Column>
-            <Column>
-                <div className="heroText">
-                    <h3 className="heroTitle">We're a team of passionate audio producers who have worked for some of the biggest brands.</h3>
-                    <h3 className="heroTitle">We take the essence of a brand and bring it to life in audio.</h3>
-                    <h3 className="heroTitle">Want to get in touch? Click here to email us.</h3>
-
-                    {/* <div className="smaller-text-wrapper">
-                        <p className="smallPrint heroText">
-                            Your friendly neighbourhood bringer of vibes and flavour!!
-                        </p>
-                    </div> */}
-                </div>
-            </Column>
-        </HeroWrapper>
+      <HeroWrapper ref={ref}>
+          <Column className='clipped'>
+            <BgImage 
+              image={pluginImage}
+              className="background-image" 
+            />
+          </Column>
+          <Column>
+              <div className="heroText">
+                <h3 className="heroTitle">We're a team of passionate audio producers who have worked for some of the biggest brands.</h3>
+                <h3 className="heroTitle">We take the essence of a brand and bring it to life in audio.</h3>
+                <h3 className="heroTitle">Want to get in touch? Click here to email us.</h3>
+                {/* <div className="smaller-text-wrapper">
+                    <p className="smallPrint heroText">
+                        Your friendly neighbourhood bringer of vibes and flavour!!
+                    </p>
+                </div> */}
+              </div>
+          </Column>
+      </HeroWrapper>
     )
 })
 

@@ -2,7 +2,7 @@ import React, {useLayoutEffect} from "react";
 import gsap from "gsap";
 import styled from "styled-components";
 import { useMediaQuery } from 'react-responsive'
-import Marquee from "./home-section-marquee"
+import Marquee from "../marquee"
 import {HeroWrapper, Fresh, Air, HeroInner, HeroGrid} from "./hero.styled";
 import heroPeople from '../../assets/hero-people-crop.png';
 import FreshSvg from '../../assets/Fresh.inline.svg'

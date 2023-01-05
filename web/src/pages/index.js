@@ -18,28 +18,26 @@ import Layout from "../containers/layout";
 import Scroll from "../components/Scroll"
 import Hero from "../components/home/hero";
 import Podcasts from "../components/home/home-section-podcasts"
-import Marquee from "../components/home/home-section-marquee"
+import Marquee from "../components/marquee"
 import Work from "../components/home/home-section-work"
 import Testimonials from "../components/home/home-section-testimonials";
 import Blog from "../components/home/home-section-blog-grid";
 import Editorials from "../components/home/home-section-editorials";
 import TagCloud from "../components/home/home-section-cloud"
 
-import { centralLogoAnim } from "../animations";
-
 gsap.registerPlugin(ScrollTrigger);
 
 export const query = graphql`
   query IndexPageQuery {
-    site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
+    site: sanitySiteSettings(_id: {regex: "/(drafts.|)siteSettings/"}) {
       title
       description
       keywords
     }
     projects: allSanitySampleProject(
       limit: 6
-      sort: { fields: [publishedAt], order: DESC }
-      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
+      sort: {publishedAt: DESC}
+      filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}
     ) {
       edges {
         node {
@@ -79,6 +77,7 @@ export const query = graphql`
 
 const IndexPage = props => {
   const { data, errors } = props;
+  console.log('props props props ', props)
 
 // GSAP Timeline Refs
 const heroTl = useRef(null)
@@ -131,27 +130,25 @@ const tagCloudRef = useRef(null)
   return (
       <Layout>
         <SEO title={site.title} description={site.description} keywords={site.keywords} />
-        <Container ref={containerRef}>
-          <CentralLogo ref={centralLogoRef}/>
-          <Hero ref={heroRef} heroMarqueeRef={heroMarqueeRef} tl={heroTl.current}/>
-          <Podcasts ref={podcastsRef} />
-          <Marquee 
-            style={{color: colors.FABlue}}
-            textContent="whatever you're looking to create, our skilled and experienced production team will build the perfect podcast. whatever" 
-            ref={marqueeRef}/>
-           <Work ref={horizontalPanelsRef} />
-          <Testimonials />
-          <Editorials/>
-          {/* <Blog/> */}
-          <TagCloud ref={tagCloudRef} />
-          {/* {projectNodes && (
-            <ProjectPreviewGrid
-              title="Latest projects"
-              nodes={projectNodes}
-              browseMoreHref="/archive/"
-            />
-          )} */}
-        </Container>
+        <CentralLogo ref={centralLogoRef}/>
+        <Hero ref={heroRef} heroMarqueeRef={heroMarqueeRef} tl={heroTl.current}/>
+        <Podcasts ref={podcastsRef} />
+        <Marquee 
+          style={{color: colors.FABlue}}
+          textContent="whatever you're looking to create, our skilled and experienced production team will build the perfect podcast. whatever" 
+          ref={marqueeRef}/>
+          <Work ref={horizontalPanelsRef} />
+        <Testimonials />
+        <Editorials/>
+        {/* <Blog/> */}
+        <TagCloud ref={tagCloudRef} />
+        {/* {projectNodes && (
+          <ProjectPreviewGrid
+            title="Latest projects"
+            nodes={projectNodes}
+            browseMoreHref="/archive/"
+          />
+        )} */}
       </Layout>
   );
 };

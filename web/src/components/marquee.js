@@ -1,9 +1,8 @@
 import React, {useLayoutEffect} from "react";
-import { StaticImage } from "gatsby-plugin-image";
 import gsap from "gsap"
 import styled from "styled-components";
-import { colors } from "../../styles/colors";
-import { device } from "../../styles/mediaQueries";
+import { colors } from "../styles/colors";
+import { device } from "../styles/mediaQueries";
 
 const StyledMarquee = styled.section` 
     /* background: #fff; */

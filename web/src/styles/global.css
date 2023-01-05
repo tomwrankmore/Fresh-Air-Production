@@ -100,3 +100,11 @@ body {
 .lineParent {
     overflow: hidden;
 }
+
+.split_outer {
+    overflow: hidden;
+}
+
+.split_inner {
+    display: inline-block;
+}
