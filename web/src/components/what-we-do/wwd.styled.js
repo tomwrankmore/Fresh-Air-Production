@@ -4,7 +4,6 @@ import { device } from "../../styles/mediaQueries";
 export const HeroWrapper = styled.div`
 background-color: white;
 width: 100%;
-/* min-height: 80vh; */
 padding: 2rem;
 display: flex;
 flex-direction: column;
