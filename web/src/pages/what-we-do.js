@@ -41,7 +41,7 @@ const WhatWeDo = props => {
 
     return (
       <Layout>
-        <SEO title="Archive" />
+        <SEO title="What We Do" />
         <CentralLogo />
         <WwdHero ref={heroRef} tl={heroTl}/>
         <Marquee 
@@ -58,6 +58,11 @@ const WhatWeDo = props => {
         <WwdSectionTwo ref={sectionTwoRef} tl={section2Tl}/>
         <WwdQuoteSection ref={quoteSectionRef} tl={quoteSection}/>
         <WwdSectionThree ref={sectionThreeRef} tl={section3Tl} />
+        <Marquee 
+          style={{color: colors.FABlue}}
+          textContent="Our Awards. Our Awards. Our Awards" 
+          ref={marqueeRef}
+        />
         <WwdSectionFour ref={sectionFourRef} tl={section4Tl} />
         <WwdLogoCloud ref={sectionLogoCloudRef} />
       </Layout>

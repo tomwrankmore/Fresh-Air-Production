@@ -16,6 +16,7 @@ const QuoteWrapper = styled.div`
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    margin-bottom: 2rem;
 
     .soundwaveGraphic {
         position: absolute;

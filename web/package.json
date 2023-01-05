@@ -12,6 +12,11 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.3",
+    "@mui/styled-engine-sc": "^5.11.0",
     "@portabletext/react": "^1.0.1",
     "@sanity/image-url": "^1.0.1",
     "babel-plugin-styled-components": "^2.0.7",
@@ -20,6 +25,7 @@
     "gatsby": "^5.3.3",
     "gatsby-background-image": "^1.6.0",
     "gatsby-plugin-image": "^3.3.2",
+    "gatsby-plugin-material-ui": "^4.0.2",
     "gatsby-plugin-postcss": "^6.3.0",
     "gatsby-plugin-react-helmet": "^5.6.0",
     "gatsby-plugin-react-svg": "^3.3.0",

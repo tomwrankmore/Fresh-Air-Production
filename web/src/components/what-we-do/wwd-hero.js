@@ -21,15 +21,16 @@ const HeroWrapper = styled.div`
 `;
 
 const Column = styled.div`
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   align-items: left;
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
+  flex: 1;
 
   .heroTitle {
-    font-size: 1.25rem;
+    font-size: 1.875rem;
     margin-bottom: 1.875rem;
     color: white;
     @media ${device.mediaMinMedium} {
@@ -40,9 +41,9 @@ const Column = styled.div`
     }
   }
 
-  @media ${device.mediaMinMedium} {
+  /* @media ${device.mediaMinMedium} {
     width: 50%;
-  }
+  } */
 
   .background-image {
     width: 100%;
@@ -75,6 +76,7 @@ const Column = styled.div`
   &.clipped {
     --clip: 0 100% 0 0;
     clip-path: inset(var(--clip));
+    justify-content: flex-start;
   }
 `;
 

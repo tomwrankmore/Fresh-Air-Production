@@ -64,7 +64,7 @@ const WwdSectionThree = React.forwardRef(({tl}, ref) => {
 
     return (
         <HeroWrapper ref={ref}>
-            <Column>
+            <Column className="text">
                 <SectionParagraph className="text_reveal">
                     At Fresh Air we're not playing at this. We make podcasts, radio ads, and radio programmes.
                 </SectionParagraph>

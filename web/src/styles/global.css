@@ -108,3 +108,16 @@ body {
 .split_inner {
     display: inline-block;
 }
+
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root.Mui-expanded {
+    margin: 0;
+}
+
+.css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root {
+    background-color: #32373e;
+    color: white;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+    color: white;
+}

@@ -10,8 +10,6 @@ import * as styles from "./header.module.css";
 import Logo from "../assets/FA-nav-logo.inline.svg"
 import {Wrapper, StyledHeader, Nav, ToggleNavButton } from "./header.styled";
 
-
-
 const Header = React.forwardRef(({ onHideNav, onShowNav, showNav, siteTitle }, ref) => {
 
 gsap.registerPlugin(ScrollTrigger)
@@ -64,7 +62,7 @@ useLayoutEffect(() => {
       <Nav className={showNav && 'showNav'}>
         <ul>
           <li>
-            <Link to="/archive/">Who We Are</Link>
+            <Link to="/who-we-are/">Who We Are</Link>
           </li>
           <li>
             <Link to="/what-we-do/">What We Do</Link>

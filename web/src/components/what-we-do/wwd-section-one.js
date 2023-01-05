@@ -65,7 +65,7 @@ const WwdSectionOne = React.forwardRef(({tl}, ref) => {
 
     return (
         <HeroWrapper ref={ref}>
-            <Column>
+            <Column className="text">
                 <SectionParagraph className="text_reveal">
                     Fresh Air grew out of years making shows for national radio, with a mission to bring broadcast quality production values into podcasting.
                 </SectionParagraph>
