@@ -69,7 +69,6 @@ const rootStyles =  {
  const btnStyles =  {
     color: '#ffffff',
     backgroundColor: colors.FAGrey,
-    textTransform: 'uppercase'
 }
 
 const WhoWeAre = () => {
@@ -126,6 +125,7 @@ const WhoWeAre = () => {
                                     expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
+                                    sx={btnStyles}
                                 >
                                     <Typography>Director of Content</Typography>
                                 </AccordionSummary>
@@ -157,6 +157,7 @@ const WhoWeAre = () => {
                                     expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
+                                    sx={btnStyles}
                                 >
                                 <Typography>Director of Markerting & Growth</Typography>
                                 </AccordionSummary>
@@ -189,6 +190,7 @@ const WhoWeAre = () => {
                                 expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
+                                sx={btnStyles}
                             >
                             <Typography>Senior Producer</Typography>
                             </AccordionSummary>
@@ -215,6 +217,7 @@ const WhoWeAre = () => {
                                 expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
+                                sx={btnStyles}
                             >
                             <Typography>Senior Producer</Typography>
                             </AccordionSummary>
@@ -241,6 +244,7 @@ const WhoWeAre = () => {
                                 expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
+                                sx={btnStyles}
                             >
                             <Typography>Senior Producer</Typography>
                             </AccordionSummary>
@@ -267,6 +271,7 @@ const WhoWeAre = () => {
                                 expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
+                                sx={btnStyles}
                             >
                             <Typography>Senior Producer</Typography>
                             </AccordionSummary>
@@ -293,6 +298,7 @@ const WhoWeAre = () => {
                                 expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
+                                sx={btnStyles}
                             >
                             <Typography>Senior Producer</Typography>
                             </AccordionSummary>
@@ -319,6 +325,7 @@ const WhoWeAre = () => {
                                 expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
+                                sx={btnStyles}
                             >
                             <Typography>Senior Producer</Typography>
                             </AccordionSummary>
@@ -345,6 +352,7 @@ const WhoWeAre = () => {
                                 expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
+                                sx={btnStyles}
                             >
                             <Typography>Senior Producer</Typography>
                             </AccordionSummary>
@@ -371,6 +379,7 @@ const WhoWeAre = () => {
                                 expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
+                                sx={btnStyles}
                             >
                             <Typography>Senior Producer</Typography>
                             </AccordionSummary>
@@ -397,6 +406,7 @@ const WhoWeAre = () => {
                                 expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
+                                sx={btnStyles}
                             >
                             <Typography>Senior Producer</Typography>
                             </AccordionSummary>
@@ -423,6 +433,7 @@ const WhoWeAre = () => {
                                 expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
+                                sx={btnStyles}
                             >
                             <Typography>Senior Producer</Typography>
                             </AccordionSummary>
@@ -449,6 +460,7 @@ const WhoWeAre = () => {
                                 expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
+                                sx={btnStyles}
                             >
                             <Typography>Senior Producer</Typography>
                             </AccordionSummary>
@@ -475,6 +487,7 @@ const WhoWeAre = () => {
                                 expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
+                                sx={btnStyles}
                             >
                             <Typography>Senior Producer</Typography>
                             </AccordionSummary>
