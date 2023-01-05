@@ -94,6 +94,10 @@ const IconList = styled.ul`
     }
 `
 
+const rootStyles =  {
+   boxShadow: 'none'
+}
+
 const btnStyles =  {
         color: '#ffffff',
         backgroundColor: colors.FABlue,
@@ -119,12 +123,11 @@ const OurPodcasts = () => {
                                 className="podcastsSectionImg"
                                 imgClassName=''
                             />
-                            <Accordion>
+                            <Accordion sx={rootStyles}>
                                 <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
+                                    expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
-                                    sx={btnStyles}
                                     sx={btnStyles}
                                 >
                                     <Typography>Find out more</Typography>
@@ -157,9 +160,9 @@ const OurPodcasts = () => {
                                 className="podcastsSectionImg"
                                 imgClassName=''
                             />
-                            <Accordion>
+                            <Accordion sx={rootStyles}>
                                 <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
+                                    expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
                                     sx={btnStyles}
@@ -194,9 +197,9 @@ const OurPodcasts = () => {
                                 className="podcastsSectionImg"
                                 imgClassName=''
                             />
-                            <Accordion>
+                            <Accordion sx={rootStyles}>
                                 <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
+                                    expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
                                     sx={btnStyles}
@@ -232,9 +235,9 @@ const OurPodcasts = () => {
                             className="wwaSectionImg"
                             imgClassName=''
                         />
-                        <Accordion>
+                        <Accordion sx={rootStyles}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                                 sx={btnStyles}
@@ -268,9 +271,9 @@ const OurPodcasts = () => {
                             className="wwaSectionImg"
                             imgClassName=''
                         />
-                        <Accordion>
+                        <Accordion sx={rootStyles}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                                 sx={btnStyles}
@@ -304,9 +307,9 @@ const OurPodcasts = () => {
                             className="wwaSectionImg"
                             imgClassName=''
                         />
-                        <Accordion>
+                        <Accordion sx={rootStyles}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                                 sx={btnStyles}
@@ -340,9 +343,9 @@ const OurPodcasts = () => {
                             className="wwaSectionImg"
                             imgClassName=''
                         />
-                        <Accordion>
+                        <Accordion sx={rootStyles}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                                 sx={btnStyles}
@@ -376,9 +379,9 @@ const OurPodcasts = () => {
                             className="wwaSectionImg"
                             imgClassName=''
                         />
-                        <Accordion>
+                        <Accordion sx={rootStyles}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                                 sx={btnStyles}
@@ -412,9 +415,9 @@ const OurPodcasts = () => {
                             className="wwaSectionImg"
                             imgClassName=''
                         />
-                        <Accordion>
+                        <Accordion sx={rootStyles}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                                 sx={btnStyles}
@@ -448,9 +451,9 @@ const OurPodcasts = () => {
                             className="wwaSectionImg"
                             imgClassName=''
                         />
-                        <Accordion>
+                        <Accordion sx={rootStyles}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                                 sx={btnStyles}
@@ -484,9 +487,9 @@ const OurPodcasts = () => {
                             className="wwaSectionImg"
                             imgClassName=''
                         />
-                        <Accordion>
+                        <Accordion sx={rootStyles}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                                 sx={btnStyles}

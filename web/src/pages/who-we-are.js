@@ -62,6 +62,16 @@ const StaffGrid = styled.div`
     }
 `
 
+const rootStyles =  {
+    boxShadow: 'none'
+ }
+ 
+ const btnStyles =  {
+    color: '#ffffff',
+    backgroundColor: colors.FAGrey,
+    textTransform: 'uppercase'
+}
+
 const WhoWeAre = () => {
 
     return (
@@ -82,11 +92,12 @@ const WhoWeAre = () => {
                                 imgClassName=''
                             />
                             <h3>Neil Cowling</h3>
-                            <Accordion>
+                            <Accordion sx={rootStyles}>
                                 <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
+                                    expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
+                                    sx={btnStyles}
                                 >
                                 <Typography>Founder</Typography>
                                 </AccordionSummary>
@@ -110,9 +121,9 @@ const WhoWeAre = () => {
                                 imgClassName=''
                             />
                             <h3>Michaela Hallam</h3>
-                            <Accordion>
+                            <Accordion sx={rootStyles}>
                                 <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
+                                    expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
                                 >
@@ -141,9 +152,9 @@ const WhoWeAre = () => {
                                 imgClassName=''
                             />
                             <h3>Richard Blake</h3>
-                            <Accordion>
+                            <Accordion sx={rootStyles}>
                                 <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
+                                    expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
                                 >
@@ -173,9 +184,9 @@ const WhoWeAre = () => {
                             imgClassName=''
                         />
                         <h3>Staff Member</h3>
-                        <Accordion>
+                        <Accordion sx={rootStyles}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                             >
@@ -199,9 +210,9 @@ const WhoWeAre = () => {
                             imgClassName=''
                         />
                         <h3>Staff Member</h3>
-                        <Accordion>
+                        <Accordion sx={rootStyles}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                             >
@@ -225,9 +236,9 @@ const WhoWeAre = () => {
                             imgClassName=''
                         />
                         <h3>Staff Member</h3>
-                        <Accordion>
+                        <Accordion sx={rootStyles}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                             >
@@ -251,9 +262,9 @@ const WhoWeAre = () => {
                             imgClassName=''
                         />
                         <h3>Staff Member</h3>
-                        <Accordion>
+                        <Accordion sx={rootStyles}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                             >
@@ -277,9 +288,9 @@ const WhoWeAre = () => {
                             imgClassName=''
                         />
                         <h3>Staff Member</h3>
-                        <Accordion>
+                        <Accordion sx={rootStyles}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                             >
@@ -303,9 +314,9 @@ const WhoWeAre = () => {
                             imgClassName=''
                         />
                         <h3>Staff Member</h3>
-                        <Accordion>
+                        <Accordion sx={rootStyles}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                             >
@@ -329,9 +340,9 @@ const WhoWeAre = () => {
                             imgClassName=''
                         />
                         <h3>Staff Member</h3>
-                        <Accordion>
+                        <Accordion sx={rootStyles}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                             >
@@ -355,9 +366,9 @@ const WhoWeAre = () => {
                             imgClassName=''
                         />
                         <h3>Staff Member</h3>
-                        <Accordion>
+                        <Accordion sx={rootStyles}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                             >
@@ -381,9 +392,9 @@ const WhoWeAre = () => {
                             imgClassName=''
                         />
                         <h3>Staff Member</h3>
-                        <Accordion>
+                        <Accordion sx={rootStyles}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                             >
@@ -407,9 +418,9 @@ const WhoWeAre = () => {
                             imgClassName=''
                         />
                         <h3>Staff Member</h3>
-                        <Accordion>
+                        <Accordion sx={rootStyles}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                             >
@@ -433,9 +444,9 @@ const WhoWeAre = () => {
                             imgClassName=''
                         />
                         <h3>Staff Member</h3>
-                        <Accordion>
+                        <Accordion sx={rootStyles}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                             >
@@ -459,9 +470,9 @@ const WhoWeAre = () => {
                             imgClassName=''
                         />
                         <h3>Staff Member</h3>
-                        <Accordion>
+                        <Accordion sx={rootStyles}>
                             <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                             >
