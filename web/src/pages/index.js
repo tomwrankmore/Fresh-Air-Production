@@ -77,7 +77,6 @@ export const query = graphql`
 
 const IndexPage = props => {
   const { data, errors } = props;
-  console.log('props props props ', props)
 
 // GSAP Timeline Refs
 const heroTl = useRef(null)
