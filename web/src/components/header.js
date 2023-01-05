@@ -73,7 +73,7 @@ useLayoutEffect(() => {
             </Link>
           </li>
           <li>
-            <Link to="/archive/">Our Podcasts</Link>
+            <Link to="/our-podcasts/">Our Podcasts</Link>
           </li>
           <li>
             <Link to="/archive/">Editorials</Link>
