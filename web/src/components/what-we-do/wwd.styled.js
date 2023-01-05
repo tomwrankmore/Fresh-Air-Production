@@ -8,8 +8,14 @@ padding: 2rem;
 display: flex;
 flex-direction: column;
 gap: 2rem;
+&.flex-reverse-on-mobile {
+  flex-direction: column-reverse;
+}
 @media ${device.mediaMinMedium} {
   flex-direction: row;
+  &.flex-reverse-on-mobile {
+    flex-direction: row;
+  }
 }
 `;
 

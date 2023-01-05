@@ -62,7 +62,7 @@ const WwdSectionTwo = React.forwardRef(({tl}, ref) => {
     }, [])
 
     return (
-        <HeroWrapper ref={ref}>
+        <HeroWrapper ref={ref} className='flex-reverse-on-mobile'>
             <Column className="clipped">
                 <StaticImage
                     src="../../assets/wwd-section-2.png"

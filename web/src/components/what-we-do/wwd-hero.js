@@ -40,11 +40,6 @@ const Column = styled.div`
     }
   }
 
-  /* .heroTitle,
-  .heroText {
-    visibility: hidden;
-  } */
-
   @media ${device.mediaMinMedium} {
     width: 50%;
   }

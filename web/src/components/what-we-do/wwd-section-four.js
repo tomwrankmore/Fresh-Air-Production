@@ -15,18 +15,23 @@ const HeroWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  @media ${device.mediaMinMedium} {
+  @media ${device.mediaMinLarge} {
     flex-direction: row;
   }
 `;
 
 const Column = styled.div`
-  width: 100%;
+  /* width: 100%; */
+  flex: 1;
   display: flex;
   align-items: left;
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
+
+  @media ${device.mediaMinLarge} {
+    /* width: 50%; */
+  }
 
   .title {
     font-size: 1.25rem;
@@ -38,15 +43,6 @@ const Column = styled.div`
     @media ${device.mediaMinLarge} {
       font-size: 2rem;
     }
-  }
-
-  /* .heroTitle,
-  .heroText {
-    visibility: hidden;
-  } */
-
-  @media ${device.mediaMinMedium} {
-    width: 50%;
   }
 
   .background-image {
