@@ -36,6 +36,9 @@ const OurPodcastsWrapper = styled.div`
             text-decoration: underline;
         }
     }
+    .css-6bxxch-MuiPaper-root-MuiAccordion-root.Mui-expanded {
+        margin: 0  !important;
+    }
 `
 
 const FeaturedPodcasts = styled.ul` 
@@ -103,6 +106,8 @@ const btnStyles =  {
         backgroundColor: colors.FABlue,
         textTransform: 'uppercase'
     }
+
+    
 
 const OurPodcasts = () => {
     return (

@@ -21,6 +21,13 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 const WhoWeAreWrapper = styled.div` 
     padding: 120px 2rem 2rem;
     position: relative;
+    .css-6bxxch-MuiPaper-root-MuiAccordion-root.Mui-expanded,
+    .css-o4b71y-MuiAccordionSummary-content.Mui-expanded {
+        margin: 0 !important;
+    }
+    .css-14ihzw6-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+        min-height: 48px;
+    }
 `
 
 const Directors = styled.ul` 
@@ -66,10 +73,17 @@ const rootStyles =  {
     boxShadow: 'none'
  }
  
- const btnStyles =  {
+const btnStyles =  {
     color: '#ffffff',
     backgroundColor: colors.FAGrey,
 }
+
+const textContentStyles = {
+    position: 'absolute',
+    backgroundColor: 'white',
+    zIndex: '101'
+}
+
 
 const WhoWeAre = () => {
 
@@ -100,7 +114,7 @@ const WhoWeAre = () => {
                                 >
                                 <Typography>Founder</Typography>
                                 </AccordionSummary>
-                                <AccordionDetails>
+                                <AccordionDetails sx={textContentStyles}>
                                     <Typography>Neil founded Fresh Air Production in 2003, after spending his early career as a producer with BBC Radio 5Live.</Typography>
                                     <Typography>He's gone on to be of the most experienced, well-connected and highly regarded producers in independent radio production. He's directed David Attenborough, managed the promotional campaigns for five Olympic Games, and written the lyrics for a ridiculous World Cup song that no-one bought.</Typography>
                                     <Typography>Neil has also been Creative Development Director at RadioWorks, and is a regular event speaker.  In 2017 he decided that Fresh Air should focus on branded podcasts, and the rest is history.</Typography>
