@@ -35,6 +35,14 @@ const OurPodcastsWrapper = styled.div`
             text-decoration: underline;
         }
     }
+    .our-podcasts-wrapper .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root {
+        background-color: #00AFEE;
+        color: white;
+    }
+
+    .our-podcasts-wrapper .css-o4b71y-MuiAccordionSummary-content p {
+        text-transform: uppercase;
+    }
 `
 
 const FeaturedPodcasts = styled.ul` 
