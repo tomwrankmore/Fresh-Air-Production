@@ -20,6 +20,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { red } from "@mui/material/colors";
 
 const OurPodcastsWrapper = styled.div` 
     padding: 120px 2rem 2rem;
@@ -34,14 +35,6 @@ const OurPodcastsWrapper = styled.div`
         &:hover {
             text-decoration: underline;
         }
-    }
-    .our-podcasts-wrapper .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root {
-        background-color: #00AFEE;
-        color: white;
-    }
-
-    .our-podcasts-wrapper .css-o4b71y-MuiAccordionSummary-content p {
-        text-transform: uppercase;
     }
 `
 
@@ -101,6 +94,12 @@ const IconList = styled.ul`
     }
 `
 
+const btnStyles =  {
+        color: '#ffffff',
+        backgroundColor: colors.FABlue,
+        textTransform: 'uppercase'
+    }
+
 const OurPodcasts = () => {
     return (
         <Layout>
@@ -125,6 +124,8 @@ const OurPodcasts = () => {
                                     expandIcon={<ExpandMoreIcon />}
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
+                                    sx={btnStyles}
+                                    sx={btnStyles}
                                 >
                                     <Typography>Find out more</Typography>
                                 </AccordionSummary>
@@ -161,6 +162,7 @@ const OurPodcasts = () => {
                                     expandIcon={<ExpandMoreIcon />}
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
+                                    sx={btnStyles}
                                 >
                                     <Typography>Find out more</Typography>
                                 </AccordionSummary>
@@ -197,6 +199,7 @@ const OurPodcasts = () => {
                                     expandIcon={<ExpandMoreIcon />}
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
+                                    sx={btnStyles}
                                 >
                                     <Typography>Find out more</Typography>
                                 </AccordionSummary>
@@ -234,6 +237,7 @@ const OurPodcasts = () => {
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
+                                sx={btnStyles}
                             >
                             <Typography>Find Our More</Typography>
                             </AccordionSummary>
@@ -269,6 +273,7 @@ const OurPodcasts = () => {
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
+                                sx={btnStyles}
                             >
                             <Typography>Find Our More</Typography>
                             </AccordionSummary>
@@ -304,6 +309,7 @@ const OurPodcasts = () => {
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
+                                sx={btnStyles}
                             >
                             <Typography>Find Our More</Typography>
                             </AccordionSummary>
@@ -339,6 +345,7 @@ const OurPodcasts = () => {
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
+                                sx={btnStyles}
                             >
                             <Typography>Find Our More</Typography>
                             </AccordionSummary>
@@ -374,6 +381,7 @@ const OurPodcasts = () => {
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
+                                sx={btnStyles}
                             >
                             <Typography>Find Our More</Typography>
                             </AccordionSummary>
@@ -409,6 +417,7 @@ const OurPodcasts = () => {
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
+                                sx={btnStyles}
                             >
                             <Typography>Find Our More</Typography>
                             </AccordionSummary>
@@ -444,6 +453,7 @@ const OurPodcasts = () => {
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
+                                sx={btnStyles}
                             >
                             <Typography>Find Our More</Typography>
                             </AccordionSummary>
@@ -479,6 +489,7 @@ const OurPodcasts = () => {
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
+                                sx={btnStyles}
                             >
                             <Typography>Find Our More</Typography>
                             </AccordionSummary>
