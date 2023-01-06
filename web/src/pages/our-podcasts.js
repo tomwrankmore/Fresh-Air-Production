@@ -128,7 +128,10 @@ const OurPodcasts = () => {
                                 className="podcastsSectionImg"
                                 imgClassName=''
                             />
-                            <Accordion sx={rootStyles}>
+                            <Accordion 
+                                disableGutters={true}
+                                sx={rootStyles}
+                            >
                                 <AccordionSummary
                                     expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                     aria-controls="panel1a-content"
@@ -165,7 +168,10 @@ const OurPodcasts = () => {
                                 className="podcastsSectionImg"
                                 imgClassName=''
                             />
-                            <Accordion sx={rootStyles}>
+                            <Accordion 
+                                disableGutters={true}
+                                sx={rootStyles}
+                            >
                                 <AccordionSummary
                                     expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                     aria-controls="panel1a-content"
@@ -202,7 +208,10 @@ const OurPodcasts = () => {
                                 className="podcastsSectionImg"
                                 imgClassName=''
                             />
-                            <Accordion sx={rootStyles}>
+                            <Accordion 
+                                disableGutters={true}
+                                sx={rootStyles}
+                            >
                                 <AccordionSummary
                                     expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                     aria-controls="panel1a-content"
@@ -240,7 +249,10 @@ const OurPodcasts = () => {
                             className="wwaSectionImg"
                             imgClassName=''
                         />
-                        <Accordion sx={rootStyles}>
+                        <Accordion 
+                            disableGutters={true}
+                            sx={rootStyles}
+                        >
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                 aria-controls="panel1a-content"
@@ -276,7 +288,10 @@ const OurPodcasts = () => {
                             className="wwaSectionImg"
                             imgClassName=''
                         />
-                        <Accordion sx={rootStyles}>
+                        <Accordion 
+                            disableGutters={true}
+                            sx={rootStyles}
+                        >
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                 aria-controls="panel1a-content"
@@ -312,7 +327,10 @@ const OurPodcasts = () => {
                             className="wwaSectionImg"
                             imgClassName=''
                         />
-                        <Accordion sx={rootStyles}>
+                        <Accordion 
+                            disableGutters={true}
+                            sx={rootStyles}
+                        >
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                 aria-controls="panel1a-content"
@@ -348,7 +366,10 @@ const OurPodcasts = () => {
                             className="wwaSectionImg"
                             imgClassName=''
                         />
-                        <Accordion sx={rootStyles}>
+                        <Accordion 
+                            disableGutters={true}
+                            sx={rootStyles}
+                        >
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                 aria-controls="panel1a-content"
@@ -384,7 +405,10 @@ const OurPodcasts = () => {
                             className="wwaSectionImg"
                             imgClassName=''
                         />
-                        <Accordion sx={rootStyles}>
+                       <Accordion 
+                            disableGutters={true}
+                            sx={rootStyles}
+                        >
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                 aria-controls="panel1a-content"
@@ -420,7 +444,10 @@ const OurPodcasts = () => {
                             className="wwaSectionImg"
                             imgClassName=''
                         />
-                        <Accordion sx={rootStyles}>
+                       <Accordion 
+                            disableGutters={true}
+                            sx={rootStyles}
+                        >
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                 aria-controls="panel1a-content"
@@ -456,7 +483,10 @@ const OurPodcasts = () => {
                             className="wwaSectionImg"
                             imgClassName=''
                         />
-                        <Accordion sx={rootStyles}>
+                       <Accordion 
+                            disableGutters={true}
+                            sx={rootStyles}
+                        >
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                 aria-controls="panel1a-content"
@@ -492,7 +522,10 @@ const OurPodcasts = () => {
                             className="wwaSectionImg"
                             imgClassName=''
                         />
-                        <Accordion sx={rootStyles}>
+                        <Accordion 
+                            disableGutters={true}
+                            sx={rootStyles}
+                        >
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
                                 aria-controls="panel1a-content"
