@@ -11,27 +11,30 @@ import Layout from "../containers/layout";
 import Marquee from "../components/marquee"
 
 const EditorialsWrapper = styled.div`
-
+    padding: 120px 0 0;
 `
 
 const EditorialsGrid = styled.div` 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 50vh;
+    grid-template-rows: auto;
     @media ${device.mediaMinMedium} {
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 50vh;
     }
 
     .editorials-link {
         text-decoration: none;
         color: black;
-        &.featured-post {
-            grid-row: span 2;
-            grid-column: span 2;
-            max-height: 100vh;
-            height: 100%;
-            .post {
-                max-height: 100%;
+        @media ${device.mediaMinMedium} {
+            &.featured-post {
+                grid-row: span 2;
+                grid-column: span 2;
+                max-height: 100vh;
+                height: 100%;
+                .post {
+                    max-height: 100%;
+                }
             }
         }
         /* &.featured-post-left {
@@ -98,7 +101,7 @@ const OurPodcasts = () => {
                                 placeholder="blurred"
                                 objectFit="cover"
                                 className="imgWrapper"
-                                aspectRatio={6/9}
+                                // aspectRatio={6/9}
                             />
                             <div className="titleWrapper">
                                 <h3>Six ways to grow a podcast</h3>
@@ -113,7 +116,7 @@ const OurPodcasts = () => {
                                 placeholder="blurred"
                                 objectFit="cover"
                                 className="imgWrapper"
-                                aspectRatio={6/9}
+                                // aspectRatio={6/9}
                             />
                             <div className="titleWrapper">
                                 <h3>Six ways to grow a podcast</h3>
@@ -128,7 +131,7 @@ const OurPodcasts = () => {
                                 placeholder="blurred"
                                 objectFit="cover"
                                 className="imgWrapper"
-                                aspectRatio={6/9}
+                                // aspectRatio={6/9}
                             />
                             <div className="titleWrapper">
                                 <h3>Six ways to grow a podcast</h3>
@@ -143,7 +146,7 @@ const OurPodcasts = () => {
                                 placeholder="blurred"
                                 objectFit="cover"
                                 className="imgWrapper"
-                                aspectRatio={6/9}
+                                // aspectRatio={6/9}
                             />
                             <div className="titleWrapper">
                                 <h3>Six ways to grow a podcast</h3>
@@ -158,7 +161,7 @@ const OurPodcasts = () => {
                                 placeholder="blurred"
                                 objectFit="cover"
                                 className="imgWrapper"
-                                aspectRatio={6/9}
+                                // aspectRatio={6/9}
                             />
                             <div className="titleWrapper">
                                 <h3>We talk to the winner of our Stopping to Notice competition</h3>
@@ -173,7 +176,7 @@ const OurPodcasts = () => {
                                 placeholder="blurred"
                                 objectFit="cover"
                                 className="imgWrapper"
-                                aspectRatio={6/9}
+                                // aspectRatio={6/9}
                             />
                             <div className="titleWrapper">
                                 <h3>Fresh Air win Best Corporate Story Tellers 2022 award</h3>
@@ -188,7 +191,7 @@ const OurPodcasts = () => {
                                 placeholder="blurred"
                                 objectFit="cover"
                                 className="imgWrapper"
-                                aspectRatio={6/9}
+                                // aspectRatio={6/9}
                             />
                             <div className="titleWrapper">
                                 <h3>Six ways to grow a podcast</h3>
@@ -203,7 +206,7 @@ const OurPodcasts = () => {
                                 placeholder="blurred"
                                 objectFit="cover"
                                 className="imgWrapper"
-                                aspectRatio={6/9}
+                                // aspectRatio={6/9}
                             />
                             <div className="titleWrapper">
                                 <h3>Behind the scenes of making a podcast </h3>
@@ -218,7 +221,7 @@ const OurPodcasts = () => {
                                 placeholder="blurred"
                                 objectFit="cover"
                                 className="imgWrapper"
-                                aspectRatio={6/9}
+                                // aspectRatio={6/9}
                             />
                             <div className="titleWrapper">
                                 <h3>Post Title 5</h3>
