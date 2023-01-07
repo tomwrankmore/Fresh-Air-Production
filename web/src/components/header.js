@@ -8,7 +8,7 @@ import styled from "styled-components";
 import { device } from "../styles/mediaQueries";
 import * as styles from "./header.module.css";
 import Logo from "../assets/FA-nav-logo.inline.svg"
-import {Wrapper, StyledHeader, Nav, ToggleNavButton } from "./header.styled";
+import { Wrapper, StyledHeader, Nav, ToggleNavButton } from "./header.styled";
 
 const Header = React.forwardRef(({ onHideNav, onShowNav, showNav, siteTitle }, ref) => {
 
@@ -51,9 +51,6 @@ useLayoutEffect(() => {
   return (
   <StyledHeader ref={ref}>
     <Wrapper>
-      {/* <div className={styles.branding}>
-        <Link to="/">{siteTitle}</Link>
-      </div> */}
 
       <ToggleNavButton onClick={showNav ? onHideNav : onShowNav}>
         {showNav ? <Icon symbol="close" /> : <Icon symbol="hamburger" />}
@@ -76,7 +73,7 @@ useLayoutEffect(() => {
             <Link to="/our-podcasts/">Our Podcasts</Link>
           </li>
           <li>
-            <Link to="/archive/">Editorials</Link>
+            <Link to="/editorials/">Editorials</Link>
           </li>
         </ul>
       </Nav>

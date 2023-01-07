@@ -107,8 +107,6 @@ const btnStyles =  {
         textTransform: 'uppercase'
     }
 
-    
-
 const OurPodcasts = () => {
     return (
         <Layout>

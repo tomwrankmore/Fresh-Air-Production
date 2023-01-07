@@ -6,10 +6,11 @@ import Logo from "../assets/FA-nav-logo.inline.svg"
 import gsap from "gsap"
 
 const StyledCentralLogo = styled.div` 
-    width: 100vw;
+    /* width: 100vw; */
     position: fixed;
-    /* background-color: hotpink; */
-    z-index: 101;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
     display: flex;
     align-items: center;
     justify-content: center;

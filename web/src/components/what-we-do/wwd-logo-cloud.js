@@ -14,6 +14,8 @@ const WwdLogoCloudWrapper = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
     grid-auto-rows: auto;
     grid-auto-flow: row dense;
+    max-width: 840px;
+    margin: 0 auto;
         li {
             display: flex;
             align-items: center;

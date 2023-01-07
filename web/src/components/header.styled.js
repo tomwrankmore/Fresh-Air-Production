@@ -28,7 +28,7 @@ export const Nav = styled.nav`
   }
 
   ul li {
-    flex: 1;
+    /* flex: 1; */
   }
 
   ul li a {
@@ -41,7 +41,7 @@ export const Nav = styled.nav`
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 0.075rem;
-    text-align: center;
+    /* text-align: center; */
   }
 
   @media (hover: hover) {

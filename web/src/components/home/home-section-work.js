@@ -97,7 +97,7 @@ const Panel = styled.div`
       flex: auto;
       padding: 2rem 2rem 4rem 2rem;
       @media ${device.mediaMinMedium} {
-        flex: 2;
+        flex: 3;
         padding: 0;
       }
       text-align: center;
@@ -135,7 +135,7 @@ const Panel = styled.div`
     border-bottom: solid 1px white;
     @media ${device.mediaMinMedium} {
       border-bottom: none;
-      padding: 0 120px;
+      padding: 0 60px;
       margin-bottom: 0;
       display: block;
       .img {
@@ -154,6 +154,10 @@ const Panel = styled.div`
           transform: rotate(-10deg);
           transform-origin: center center;
         }
+    }
+
+    @media ${device.mediaMinXLarge} {
+      padding: 0 120px;
     }
 
     &.reverse-on-mob {
