@@ -1,9 +1,9 @@
 import { MdPerson } from "react-icons/md";
 
 export default {
-  name: 'person',
+  name: 'management',
   type: 'document',
-  title: 'Person',
+  title: 'Management Member',
   icon: MdPerson,
   fields: [
     {
@@ -25,6 +25,11 @@ export default {
       name: 'image',
       title: 'Image',
       type: 'figure'
+    },
+    {
+      name: 'title',
+      title: 'Title',
+      type: 'simplePortableText'
     },
     {
       name: 'bio',

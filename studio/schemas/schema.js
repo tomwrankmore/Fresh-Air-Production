@@ -6,7 +6,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // Document types
 import category from './documents/category'
-import person from './documents/person'
+import person from './documents/staff-member'
 import podcast from './documents/podcast'
 import editorial from './documents/editorial'
 import sampleProject from './documents/sampleProject'
