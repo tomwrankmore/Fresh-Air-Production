@@ -21,14 +21,14 @@ export default () =>
         .title('Sample projects')
         .schemaType('sampleProject')
         .child(S.documentTypeList('sampleProject').title('Sample projects')),
-      S.listItem()
-        .title('Podcasts')
-        .schemaType('podcast')
-        .child(S.documentTypeList('podcast').title('Podcasts')),
-      S.listItem()
-        .title('Editorials')
-        .schemaType('editorial')
-        .child(S.documentTypeList('editorial').title('Editorials')),
+      // S.listItem()
+      //   .title('Podcasts')
+      //   .schemaType('podcast')
+      //   .child(S.documentTypeList('podcast').title('Podcasts')),
+      // S.listItem()
+      //   .title('Editorials')
+      //   .schemaType('editorial')
+      //   .child(S.documentTypeList('editorial').title('Editorials')),
       S.listItem()
         .title('People')
         .schemaType('person')
