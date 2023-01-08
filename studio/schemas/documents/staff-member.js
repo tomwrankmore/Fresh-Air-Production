@@ -1,7 +1,7 @@
 import { MdPerson } from "react-icons/md";
 
 export default {
-  name: 'person',
+  name: 'staffMember',
   type: 'document',
   title: 'Person',
   icon: MdPerson,

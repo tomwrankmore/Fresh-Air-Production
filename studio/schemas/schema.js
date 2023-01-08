@@ -6,7 +6,8 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // Document types
 import category from './documents/category'
-import person from './documents/staff-member'
+import staffMember from './documents/staff-member'
+import managementMember from './documents/management-staff'
 import podcast from './documents/podcast'
 import editorial from './documents/editorial'
 import sampleProject from './documents/sampleProject'
@@ -22,7 +23,7 @@ import simplePortableText from './objects/simplePortableText'
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
-  name: 'portfolio',
+  name: 'fresh-air',
   // Then proceed to concatenate our our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
@@ -36,7 +37,8 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     category,
-    person,
+    staffMember,
+    managementMember,
     podcast,
     editorial,
     sampleProject,

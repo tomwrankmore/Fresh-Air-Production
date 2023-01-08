@@ -4,10 +4,10 @@ export default {
   title: 'Project Member',
   fields: [
     {
-      title: 'Person',
-      name: 'person',
+      title: 'Staff Member',
+      name: 'staffMember',
       type: 'reference',
-      to: {type: 'person'}
+      to: {type: 'staffMember'}
     },
     {
       title: 'Roles',
@@ -27,9 +27,9 @@ export default {
   ],
   preview: {
     select: {
-      personName: 'person.name',
+      personName: 'staffMember.name',
       roles: 'roles',
-      media: 'person.image'
+      media: 'staffMember.image'
     },
     prepare (data) {
       return {

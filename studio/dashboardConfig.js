@@ -25,7 +25,7 @@ export default {
                 },
                 {
                   buildHookId: '636a2397d0a90e1b7ebcc81f',
-                  title: 'Portfolio Website',
+                  title: 'Fresh Air Website',
                   name: 'fresh-air-production',
                   apiId: 'adfc1430-1339-4906-a105-4044baf3f9d5'
                 }

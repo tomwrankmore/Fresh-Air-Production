@@ -1,7 +1,7 @@
 import { MdPerson } from "react-icons/md";
 
 export default {
-  name: 'management',
+  name: 'managementMember',
   type: 'document',
   title: 'Management Member',
   icon: MdPerson,

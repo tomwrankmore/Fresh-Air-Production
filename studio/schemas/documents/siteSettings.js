@@ -18,24 +18,24 @@ export default {
       name: 'description',
       type: 'text',
       title: 'Description',
-      description: 'Describe your portfolio for search engines and social media.'
+      description: 'Describe your company for search engines and social media.'
     },
     {
       name: 'keywords',
       type: 'array',
       title: 'Keywords',
-      description: 'Add keywords that describes your portfolio.',
+      description: 'Add keywords that describes the company.',
       of: [{type: 'string'}],
       options: {
         layout: 'tags'
       }
     },
-    {
-      name: 'author',
-      type: 'reference',
-      description: 'Publish an author and set a reference to them here.',
-      title: 'Author',
-      to: [{type: 'person'}]
-    }
+    // {
+    //   name: 'author',
+    //   type: 'reference',
+    //   description: 'Publish an author and set a reference to them here.',
+    //   title: 'Author',
+    //   to: [{type: 'staffMember'}]
+    // }
   ]
 }
