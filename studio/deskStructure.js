@@ -27,8 +27,8 @@ export default () =>
         .child(S.documentTypeList('podcast').title('Podcasts')),
       S.listItem()
         .title('Editorials')
-        .schemaType('editorials')
-        .child(S.documentTypeList('editorials').title('Editorials')),
+        .schemaType('editorial')
+        .child(S.documentTypeList('editorial').title('Editorials')),
       S.listItem()
         .title('People')
         .schemaType('person')
