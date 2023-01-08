@@ -18,7 +18,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { red } from "@mui/material/colors";
 
 const RelatedPodcastsWrapper = styled.div` 
-    padding: 2rem;
+    padding: 0 2rem 2rem 2rem;
     position: relative;
     .read-more-link {
         flex: 1;

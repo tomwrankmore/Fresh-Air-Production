@@ -6,7 +6,7 @@ import { device } from "../../styles/mediaQueries";
 import { Link } from "gatsby";
 
 const RelatedEditorialsWrapper = styled.div`
-    padding: 120px 0 0;
+    padding: 1rem 1.5rem;
 `
 
 const RelatedEditorialsGrid = styled.div` 
