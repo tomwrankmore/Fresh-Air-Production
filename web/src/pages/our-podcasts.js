@@ -35,6 +35,9 @@ const OurPodcastsWrapper = styled.div`
         &:hover {
             text-decoration: underline;
         }
+         &:visited {
+          color: ${colors.FAGrey};
+        }
     }
     .css-6bxxch-MuiPaper-root-MuiAccordion-root.Mui-expanded {
         margin: 0  !important;

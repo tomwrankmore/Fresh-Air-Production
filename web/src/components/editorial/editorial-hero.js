@@ -8,7 +8,7 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { BgImage, convertToBgImage } from 'gbimage-bridge';
 import BackgroundImage from 'gatsby-background-image'
 
-const HeroWrapper = styled.div`
+const EditorialWrapper = styled.div`
   background-color: ${colors.FABlue};
   width: 100%;
   min-height: 100vh;
@@ -21,18 +21,36 @@ const HeroWrapper = styled.div`
 `;
 
 const Column = styled.div`
-  /* width: 100%; */
   display: flex;
-  align-items: left;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
   flex: 1;
+  height: 100vh;
+
+  div.heroText {
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    @media ${device.mediaMinMedium} {
+        padding: 4rem;
+    }
+    .heroTitleWrapper {
+      display: flex;
+      align-items: center;
+      flex: 1;
+    }
+  }
 
   .heroTitle {
     font-size: 1.875rem;
     margin-bottom: 1.875rem;
     color: white;
+    justify-self: center;
     @media ${device.mediaMinMedium} {
       font-size: 2rem;
     }
@@ -41,9 +59,10 @@ const Column = styled.div`
     }
   }
 
-  /* @media ${device.mediaMinMedium} {
-    width: 50%;
-  } */
+  .heroSubTitle {
+    text-transform: uppercase;
+    color: white;
+  }
 
   .background-image {
     width: 100%;
@@ -54,16 +73,6 @@ const Column = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  div.heroText {
-    padding: 2rem;
-    text-align: center;
-    @media ${device.mediaMinMedium} {
-        padding: 4rem;
-        text-align: left;
-    }
-    position: relative;
   }
 
   p.smallPrint {
@@ -79,12 +88,12 @@ const Column = styled.div`
   }
 `;
 
-const WwdHero = React.forwardRef(({tl}, ref) => {
+const EditorialHero = React.forwardRef(({tl}, ref) => {
 
     const { heroBackgroundImage } = useStaticQuery(
       graphql`
         query {
-          heroBackgroundImage: file(relativePath: { eq: "wwd-hero.png" }) {
+          heroBackgroundImage: file(relativePath: { eq: "podcast-hero.png" }) {
             childImageSharp {
               gatsbyImageData(
                 width: 2000
@@ -123,27 +132,23 @@ const WwdHero = React.forwardRef(({tl}, ref) => {
     }, [])
 
     return (
-      <HeroWrapper ref={ref}>
-          <Column className='clipped'>
-            <BgImage 
-              image={pluginImage}
-              className="background-image" 
-            />
-          </Column>
-          <Column>
-              <div className="heroText">
-                <h3 className="heroTitle">We're a team of passionate audio producers who have worked for some of the biggest brands.</h3>
-                <h3 className="heroTitle">We take the essence of a brand and bring it to life in audio.</h3>
-                <h3 className="heroTitle">Want to get in touch? Click here to email us.</h3>
-                {/* <div className="smaller-text-wrapper">
-                    <p className="smallPrint heroText">
-                        Your friendly neighbourhood bringer of vibes and flavour!!
-                    </p>
-                </div> */}
-              </div>
-          </Column>
-      </HeroWrapper>
+      <EditorialWrapper ref={ref}>
+        <Column className='clipped'>
+          <BgImage 
+            image={pluginImage}
+            className="background-image" 
+          />
+        </Column>
+        <Column className="left-column">
+          <div className="heroText">
+            <div className="heroTitleWrapper">
+              <h3 className="heroTitle">Six ways to grow a podcast</h3>
+            </div>
+            <h4 className="heroSubTitle">richard blake december 14th 2020</h4>
+          </div>
+        </Column>
+      </EditorialWrapper>
     )
 })
 
-export default WwdHero
+export default EditorialHero

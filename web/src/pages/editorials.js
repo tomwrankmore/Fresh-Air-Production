@@ -86,7 +86,7 @@ const EditorialsGrid = styled.div`
     }
 `
 
-const OurPodcasts = () => {
+const Editorials = () => {
     return (
         <Layout>
             <SEO title="Our Podcasts" />
@@ -279,4 +279,4 @@ const OurPodcasts = () => {
     )
 }
 
-export default OurPodcasts
+export default Editorials

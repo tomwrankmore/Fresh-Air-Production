@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { device } from "../../styles/mediaQueries";
 
-export const HeroWrapper = styled.div`
+export const SectionWrapper = styled.div`
   background-color: white;
   width: 100%;
   padding: 0;

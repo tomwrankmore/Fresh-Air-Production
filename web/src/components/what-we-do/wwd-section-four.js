@@ -64,7 +64,6 @@ const Column = styled.div`
         text-align: left;
     }
     position: relative;
-    z-index: 1000;
   }
 
   p.smallPrint {

@@ -1,0 +1,7 @@
+export { default as PodcastHero } from './podcast-hero'
+export { default as PodcastIconsSection } from './podcast-icons-section'
+export { default as PodcastDescriptionSection } from './podcast-description-section'
+export { default as PodcastQuoteSection } from './podcast-quote-section'
+export { default as PodcastImgSection } from './podcast-img-section'
+export { default as PodcastEpisodesSection } from './podcast-episodes-section'
+export { default as PodcastRelatedSection } from './podcast-related-section'
