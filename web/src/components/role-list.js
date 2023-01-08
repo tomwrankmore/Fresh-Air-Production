@@ -14,9 +14,9 @@ function RoleList({ items, title }) {
           <li key={item._key} className={styles.listItem}>
             <div>
               <div className={styles.avatar}>
-                {item.person && item.person.image && item.person.image.asset && (
+                {item.staffMember && item.staffMember.image && item.staffMember.image.asset && (
                   <img
-                    src={imageUrlFor(buildImageObj(item.person.image))
+                    src={imageUrlFor(buildImageObj(item.staffMember.image))
                       .width(100)
                       .height(100)
                       .fit("crop")
@@ -28,7 +28,7 @@ function RoleList({ items, title }) {
             </div>
             <div>
               <div>
-                <strong>{(item.person && item.person.name) || <em>Missing name</em>}</strong>
+                <strong>{(item.staffMember && item.staffMember.name) || <em>Missing name</em>}</strong>
               </div>
               {item.roles && (
                 <div>

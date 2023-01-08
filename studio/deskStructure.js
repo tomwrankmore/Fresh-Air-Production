@@ -23,8 +23,8 @@ export default () =>
         .child(S.documentTypeList('sampleProject').title('Sample projects')),
       S.listItem()
         .title('People')
-        .schemaType('person')
-        .child(S.documentTypeList('person').title('People')),
+        .schemaType('staffMember')
+        .child(S.documentTypeList('staffMember').title('Staff Member')),
       S.listItem()
         .title('Categories')
         .schemaType('category')
