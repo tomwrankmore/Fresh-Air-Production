@@ -13,6 +13,10 @@ export function filterOutDocsWithoutSlugs({ slug }) {
   return (slug || {}).current;
 }
 
+export function filterOutNonFeaturedDocs({ isFeaturedPodcast }) {
+  return (isFeaturedPodcast === true);
+}
+
 export function filterOutDocsPublishedInTheFuture({ publishedAt }) {
   return !isFuture(publishedAt);
 }

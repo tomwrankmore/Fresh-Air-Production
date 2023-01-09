@@ -45,11 +45,14 @@ const btnStyles =  {
    textTransform: 'uppercase'
 }
 
-const PodcastPreview = (props) => {
+const PodcastPreview = ({node}) => {
+
+  console.log('PodcastPreview node node', node)
+
   return (
-    <li>
+    <>
       <StaticImage
-          src="../assets/podcast-4.png"
+          src="../../assets/podcast-4.png"
           alt="Richard Blakem"
           placeholder="blurred"
           layout="fullWidth"
@@ -85,7 +88,7 @@ const PodcastPreview = (props) => {
           <Link to="/" className="read-more-link"><FaArrowRight/> Read more about this podcast</Link>
           </AccordionDetails>
       </Accordion>
-    </li>
+    </>
   )
 }
 

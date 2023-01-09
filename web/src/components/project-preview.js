@@ -8,7 +8,6 @@ import * as styles from "./project-preview.module.css";
 import { responsiveTitle3 } from "./typography.module.css";
 
 function ProjectPreview(props) {
-  console.log('props.mainImage: ', props.mainImage)
   return (
     <Link className={styles.root} to={`/project/${props.slug.current}`}>
       <div className={styles.leadMediaThumb}>

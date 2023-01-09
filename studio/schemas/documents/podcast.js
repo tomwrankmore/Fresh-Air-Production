@@ -31,6 +31,11 @@ export default {
       type: 'string'
     },
     {
+      name: 'previewImage',
+      title: 'Preview image',
+      type: 'figure'
+    },
+    {
       name: 'heroImage',
       title: 'Hero image',
       type: 'figure'
