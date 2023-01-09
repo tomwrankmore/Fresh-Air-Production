@@ -56,7 +56,6 @@ export const query = graphql`
       amazonLink
       iHeartRadioLink
       _rawBody
-      _rawQuote
     }
   }
 `;
