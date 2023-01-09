@@ -11,20 +11,23 @@ const WwdLogoCloudWrapper = styled.div`
    ul {
     display: grid;
     grid-gap: 30px;
-    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: auto;
     grid-auto-flow: row dense;
     max-width: 840px;
     margin: 0 auto;
-        li {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-            .imgWrapper {
-                max-width: 120px;
-            }
-        }
+    @media ${device.mediaMinMedium} {
+      grid-template-columns: repeat(8, 1fr);
+    }
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      .imgWrapper {
+        max-width: 120px;
+      }
+    }
    }
 `
 

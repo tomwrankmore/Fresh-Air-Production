@@ -25,6 +25,7 @@ export const Nav = styled.nav`
   ul {
     margin: 0;
     padding: 0;
+    text-align: center;
   }
 
   ul li {
@@ -53,9 +54,10 @@ export const Nav = styled.nav`
 
   @media ${device.mediaMaxMedium} {
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 6rem;
+    left: 1rem;
+    right: 1rem;
+    border-radius: 1rem;
+    top: 1rem;
     padding: 0 2rem;
     background-color: white;
 
@@ -109,6 +111,7 @@ export const ToggleNavButton = styled.button `
     padding: calc(14 / 17 / 2 * 1rem);
     outline: none;
     color: inherit;
+    z-index: 1001;
 
     & svg {
         display: block;

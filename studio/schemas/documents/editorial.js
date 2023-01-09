@@ -37,6 +37,16 @@ export default {
       type: 'datetime'
     },
     {
+      name: 'previewImage',
+      title: 'Preview image',
+      type: 'figure'
+    },
+    {
+      name: 'excerpt',
+      title: 'Preview Excerpt',
+      type: 'simplePortableText'
+    },
+    {
       name: 'body',
       title: 'Body',
       type: 'projectPortableText'

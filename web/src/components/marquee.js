@@ -13,8 +13,8 @@ const StyledMarquee = styled.section`
     padding: 32px 0;
     position: relative;
     overflow: hidden;
-    @media ${device.mediaMinMedium} {
-        font-size: 1.667vw;
+    @media ${device.mediaMinLarge} {
+        font-size: 1.875rem
     }
 `
 
