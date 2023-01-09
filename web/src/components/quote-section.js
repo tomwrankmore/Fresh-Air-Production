@@ -38,8 +38,7 @@ const QuoteWrapper = styled.div`
     }
 `
 
-const QuoteSection = React.forwardRef(({text, color}, ref) => {
-    console.log('colorcolorcolor', color === "blue")
+const QuoteSection = React.forwardRef(({text, color, podcast}, ref) => {
     return (
         <QuoteWrapper ref={ref}>
             {color === "blue" ? 

@@ -1,14 +1,12 @@
-import React, {useRef} from "react";
-import { graphql, Link } from "gatsby";
+import React from "react";
+import { Link } from "gatsby";
 import { colors } from "../styles/colors";
 import { device } from "../styles/mediaQueries";
 import styled from "styled-components";
 import CentralLogo from "../components/central-logo"
-import GraphQLErrorList from "../components/graphql-error-list";
 import { StaticImage } from "gatsby-plugin-image";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
-import Marquee from "../components/marquee"
 
 const EditorialsWrapper = styled.div`
     padding: 120px 0 0;

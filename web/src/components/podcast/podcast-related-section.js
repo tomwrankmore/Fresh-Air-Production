@@ -9,7 +9,6 @@ import { SiIheartradio } from "react-icons/si";
 import { BsFillPlayFill } from "react-icons/bs";
 
 // Material UI
-import Grid from "@mui/material/Grid";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";

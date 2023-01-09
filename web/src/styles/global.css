@@ -1,125 +1,131 @@
 @font-face {
-    font-family: 'Ambit-Regular';
-    font-weight: 100 900;
-    font-display: swap;
-    font-style: normal;
-    font-named-instance: 'Regular';
-    src: url(/fonts/Ambit-Regular.ttf) format("ttf");
+  font-family: 'Ambit-Regular';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url(/fonts/Ambit-Regular.ttf) format("ttf");
 }
 
 @font-face {
-    font-family: 'PolySansSlim';
-    font-weight: 100 900;
-    font-display: swap;
-    font-style: normal;
-    font-named-instance: 'Regular';
-    src: url(/fonts/PolySansSlim.ttf) format("ttf");
+  font-family: 'PolySansSlim';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url(/fonts/PolySansSlim.ttf) format("ttf");
 }
 
 * {
-    box-sizing: border-box;
-    font-family: Ambit-Regular;
+  box-sizing: border-box;
+  font-family: Ambit-Regular;
 }
 
 html,
 body {
-    margin: 0;
-    height: 100%;
-    -webkit-overflow-scrolling: touch;
-    overflow-scrolling: touch;
+  margin: 0;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
 }
 
 body {
-    overflow-x: hidden;
-    overflow-y: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+a:hover,
+a:active,
+a:visited {
+  color: #30323D;
 }
 
 .swiper {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .swiper h1 {
-    color: #fff;
-    max-width: 75%;
-    margin-bottom: 3rem;
+  color: #fff;
+  max-width: 75%;
+  margin-bottom: 3rem;
 }
 
 .swiper p {
-    color: #fff;
+  color: #fff;
 }
 
 .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: transparent;
+  text-align: center;
+  font-size: 18px;
+  background: transparent;
 
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    flex-direction: column;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .swiper .swiper-slide h1 {
-    text-transform: initial
+  text-transform: initial
 }
 
 .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .swiper .swiper-pagination-bullet {
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    line-height: 20px;
-    font-size: 12px;
-    color: rgb(255, 255, 255);
-    opacity: 1;
-    background: rgba(255, 255, 255, 0.2);
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .swiper .swiper-pagination-bullet-active {
-    color: rgb(255, 255, 255);
-    background: #ffffff;
+  color: rgb(255, 255, 255);
+  background: #ffffff;
 }
 
 .lineParent {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .split_outer {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .split_inner {
-    display: inline-block;
+  display: inline-block;
 }
 
 .css-1elwnq4-MuiPaper-root-MuiAccordion-root.Mui-expanded {
-    margin: 0;
+  margin: 0;
 }
 
 .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root {
-    background-color: #32373e;
-    color: white;
+  background-color: #32373e;
+  color: white;
 }
 
 .our-podcasts-wrapper .css-i4bv87-MuiSvgIcon-root {
-    color: white;
+  color: white;
 }
 
 /* .our-podcasts-wrapper .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root {

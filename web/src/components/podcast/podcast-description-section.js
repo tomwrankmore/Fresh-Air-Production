@@ -2,6 +2,7 @@ import React, {useLayoutEffect, useRef} from "react";
 import {colors} from "../../styles/colors"
 import {device} from "../../styles/mediaQueries"
 import styled from "styled-components";
+import BlockContent from "../block-content";
 
 const PodcastDescriptionWrapper = styled.div` 
   text-align: center;
@@ -22,12 +23,10 @@ const PodcastDescriptionWrapper = styled.div`
   }
 `
 
-const PodcastDescriptionSection = React.forwardRef(({tl}, ref) => {
+const PodcastDescriptionSection = React.forwardRef(({tl, podcast}, ref) => {
     return (
       <PodcastDescriptionWrapper>
-        <p>You know Peter Parker got bitten by a radioactive spider and that was how he became Spiderman, but what about the origin stories of real-life superheroes?</p>
-        <p>Amber Rose-Gill has got you covered with inspiring stories from ordinary people who do extraordinary things with a little help from The National Lottery. Like young activists working towards ending female genital mutilation, a songwriter determine to reframe grief, a woman on a mission to uncover hidden histories and more.</p> 
-        <p>Follow and subscribe to Amazing Starts Here for a break from your regular podcasts and follow us on instagram for a FOMO free experience @nationallotterygoodcauses.</p>
+        {podcast._rawBody && <BlockContent blocks={podcast._rawBody || []} />}
       </PodcastDescriptionWrapper>
     )
   }

@@ -1,17 +1,13 @@
-import React, {useRef} from "react";
-import { graphql } from "gatsby";
+import React from "react";
 import { colors } from "../styles/colors";
 import { device } from "../styles/mediaQueries";
 import styled from "styled-components";
 import CentralLogo from "../components/central-logo"
-import GraphQLErrorList from "../components/graphql-error-list";
 import { StaticImage } from "gatsby-plugin-image";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
-import Marquee from "../components/marquee"
 
 // Material UI
-import Grid from "@mui/material/Grid";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";

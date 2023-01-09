@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect, useLayoutEffect} from "react";
+import React, {useRef, useEffect} from "react";
 import { graphql } from "gatsby";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -7,21 +7,16 @@ import {
   filterOutDocsWithoutSlugs,
   filterOutDocsPublishedInTheFuture
 } from "../lib/helpers";
-import styled from "styled-components";
 import { colors } from "../styles/colors";
 import CentralLogo from "../components/central-logo"
-import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
-import ProjectPreviewGrid from "../components/project-preview-grid";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
-import Scroll from "../components/Scroll"
 import Hero from "../components/home/hero";
 import Podcasts from "../components/home/home-section-podcasts"
 import Marquee from "../components/marquee"
 import Work from "../components/home/home-section-work"
 import Testimonials from "../components/home/home-section-testimonials";
-import Blog from "../components/home/home-section-blog-grid";
 import Editorials from "../components/home/home-section-editorials";
 import TagCloud from "../components/home/home-section-cloud"
 

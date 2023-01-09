@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import { colors } from "../styles/colors";
 import styled from "styled-components";
 import CentralLogo from "../components/central-logo"
@@ -51,6 +51,10 @@ export const query = graphql`
           slug {
             current
           }
+          podcastLink
+          spotifyLink
+          amazonLink
+          iHeartRadioLink
         }
       }
     }

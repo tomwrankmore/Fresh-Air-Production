@@ -15,7 +15,6 @@ import { SiIheartradio } from "react-icons/si";
 import { BsFillPlayFill } from "react-icons/bs";
 
 // Material UI
-import Grid from "@mui/material/Grid";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -59,44 +58,46 @@ const PodcastPreview = ({node}) => {
 
   return (
     <>
-      <GatsbyImage
-        image={imageData}
-        alt={node.alt}
-        aspectRatio={1/1}
-        placeholder="blurred"
-        layout="fullWidth"
-        objectPosition="0 0"
-        className="podcastsSectionImg"
-      />
+      <Link to={`/podcast/${node.slug.current}`}>
+        <GatsbyImage
+          image={imageData}
+          alt={node.previewImage.alt}
+          aspectRatio={1/1}
+          placeholder="blurred"
+          layout="fullWidth"
+          objectPosition="0 0"
+          className="podcastsSectionImg"
+          />
+      </Link>
       <Accordion 
           disableGutters={true}
           sx={rootStyles}
       >
-          <AccordionSummary
-              expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-              sx={btnStyles}
-          >
-          <Typography>Find Our More</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-          {node._rawExcerpt && (
-            <Excerpt>
-              <BlockContent blocks={node._rawExcerpt} />
-            </Excerpt>
-          )}
-          <LinkContent>
-              <Link to="/" className="read-more-link"><BsFillPlayFill/>Play extract</Link>
-              <IconList>
-                  <li><FaPodcast/></li>
-                  <li><FaSpotify/></li>
-                  <li><FaAmazon/></li>
-                  <li><SiIheartradio/></li>
-              </IconList>
-          </LinkContent>
-          <Link to={`/podcast/${node.slug.current}`} className="read-more-link"><FaArrowRight/> Read more about this podcast</Link>
-          </AccordionDetails>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+          sx={btnStyles}
+        >
+        <Typography>Find Our More</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+        {node._rawExcerpt && (
+          <Excerpt>
+            <BlockContent blocks={node._rawExcerpt} />
+          </Excerpt>
+        )}
+        <LinkContent>
+            <Link to={`/podcast/${node.slug.current}`} className="read-more-link"><BsFillPlayFill/>Play extract</Link>
+            <IconList>
+              {node.podcastLink && (<li><a href={node.podcastLink} target="_blank" rel="noreferrer"><FaPodcast/></a></li>)}
+              {node.spotifyLink && (<li><a href={node.spotifyLink} target="_blank" rel="noreferrer"><FaSpotify/></a></li>)}
+              {node.amazonLink && (<li><a href={node.amazonLink} target="_blank" rel="noreferrer"><FaAmazon/></a></li>)}
+              {node.iHeartRadioLink && (<li><a href={node.iHeartRadioLink} target="_blank" rel="noreferrer"><SiIheartradio/></a></li>)}
+            </IconList>
+        </LinkContent>
+        <Link to={`/podcast/${node.slug.current}`} className="read-more-link"><FaArrowRight/> Read more about this podcast</Link>
+        </AccordionDetails>
       </Accordion>
     </>
   )

@@ -1,22 +1,19 @@
 import React from "react";
 import { Link } from "gatsby";
-import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { colors } from "../../styles/colors";
 import styled from "styled-components";
-import { device } from "../../styles/mediaQueries";
 import BlockContent from "../block-content";
 import { FaSpotify, FaPodcast, FaAmazon, FaArrowRight } from 'react-icons/fa';
 import { SiIheartradio } from "react-icons/si";
 import { BsFillPlayFill } from "react-icons/bs";
 
 // Material UI
-import Grid from "@mui/material/Grid";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { red } from "@mui/material/colors";
 
 const LinkContent = styled.div` 
     display: flex;
@@ -32,6 +29,18 @@ const IconList = styled.ul`
     gap: 6px;
     li {
         flex: 0;
+        a {
+          color: ${colors.FAGrey};
+          display: block;
+          &:hover {
+            color: ${colors.FAGrey};
+            transform: translateY(-2px) scale(1.2);
+            transition: transform 0.25s;
+          }
+          &:visited {
+            color: ${colors.FAGrey};
+          }
+        }
     }
 `
 
@@ -52,15 +61,17 @@ const btnStyles =  {
 const FeaturedPodcastPreview = ({node}) => {
   return (
     <div>
-      <GatsbyImage
-        image={node.previewImage.asset.gatsbyImageData}
-        alt={node.alt}
-        aspectRatio={1/1}
-        placeholder="blurred"
-        layout="fullWidth"
-        objectPosition="0 0"
-        className="podcastsSectionImg"
-      />
+      <Link to={`/podcast/${node.slug.current}`}>
+        <GatsbyImage
+          image={node.previewImage.asset.gatsbyImageData}
+          alt={node.previewImage.alt}
+          // aspectRatio={1/1}
+          placeholder="blurred"
+          layout="fullWidth"
+          objectPosition="0 0"
+          className="podcastsSectionImg"
+        />
+      </Link>
       <Accordion 
         disableGutters={true}
         sx={rootStyles}
@@ -80,15 +91,15 @@ const FeaturedPodcastPreview = ({node}) => {
             </Excerpt>
           )}
           <LinkContent>
-              <Link to="/" className="read-more-link"><BsFillPlayFill/>Play extract</Link>
+              <Link to={`/podcast/${node.slug.current}`} className="read-more-link"><BsFillPlayFill/>Play extract</Link>
               <IconList>
-                <li><FaPodcast/></li>
-                <li><FaSpotify/></li>
-                <li><FaAmazon/></li>
-                <li><SiIheartradio/></li>
+                {node.podcastLink && (<li><a href={node.podcastLink} target="_blank" rel="noreferrer"><FaPodcast/></a></li>)}
+                {node.spotifyLink && (<li><a href={node.spotifyLink} target="_blank" rel="noreferrer"><FaSpotify/></a></li>)}
+                {node.amazonLink && (<li><a href={node.amazonLink} target="_blank" rel="noreferrer"><FaAmazon/></a></li>)}
+                {node.iHeartRadioLink && (<li><a href={node.iHeartRadioLink} target="_blank" rel="noreferrer"><SiIheartradio/></a></li>)}
               </IconList>
           </LinkContent>
-          <Link  to={`/podcast/${node.slug.current}`} className="read-more-link"><FaArrowRight/> Read more about this podcast</Link>
+          <Link to={`/podcast/${node.slug.current}`} className="read-more-link"><FaArrowRight/> Read more about this podcast</Link>
         </AccordionDetails>
       </Accordion>
     </div>

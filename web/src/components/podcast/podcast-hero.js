@@ -81,30 +81,16 @@ const Column = styled.div`
   }
 
   &.clipped {
-    --clip: 0 100% 0 0;
+    --clip: 100% 0 0 0;
     clip-path: inset(var(--clip));
     justify-content: flex-start;
   }
 `;
 
-const PodcastHero = React.forwardRef(({tl}, ref) => {
+const PodcastHero = React.forwardRef(({tl, podcast}, ref) => {
 
-    const { heroBackgroundImage } = useStaticQuery(
-      graphql`
-        query {
-          heroBackgroundImage: file(relativePath: { eq: "podcast-hero.png" }) {
-            childImageSharp {
-              gatsbyImageData(
-                width: 2000
-                quality: 50
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
-            }
-          }
-        }
-      `
-    )
+    const heroBackgroundImage = podcast.heroImage.asset.gatsbyImageData;
+
     const pluginImage = getImage(heroBackgroundImage);
     const bgImage = convertToBgImage(pluginImage);
 
@@ -135,9 +121,9 @@ const PodcastHero = React.forwardRef(({tl}, ref) => {
         <Column className="left-column">
           <div className="heroText">
             <div className="heroTitleWrapper">
-              <h3 className="heroTitle">Amazing starts here</h3>
+              <h3 className="heroTitle">{podcast.title}</h3>
             </div>
-            <h4 className="heroSubTitle">With Amber Rose-Gill</h4>
+            <h4 className="heroSubTitle">{podcast.subTitle}</h4>
           </div>
         </Column>
         <Column className='clipped'>

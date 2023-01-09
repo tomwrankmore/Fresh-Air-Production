@@ -33,6 +33,7 @@
     "gatsby-plugin-styled-components": "^6.3.0",
     "gatsby-source-filesystem": "^5.3.0",
     "gatsby-source-sanity": "^7.3.2",
+    "gatsby-source-sanity-transform-images": "^0.0.7",
     "gatsby-transformer-sharp": "^5.3.1",
     "gbimage-bridge": "^0.2.2",
     "gsap": "file:gsap-bonus.tgz",
