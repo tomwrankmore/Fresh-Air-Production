@@ -36,6 +36,11 @@ export default {
       type: 'figure'
     },
     {
+      name: 'excerpt',
+      title: 'Preview Excerpt',
+      type: 'simplePortableText'
+    },
+    {
       name: 'heroImage',
       title: 'Hero image',
       type: 'figure'

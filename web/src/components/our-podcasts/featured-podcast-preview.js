@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
 import { colors } from "../../styles/colors";
 import styled from "styled-components";
 import { device } from "../../styles/mediaQueries";
@@ -46,18 +46,16 @@ const btnStyles =  {
 }
 
 const FeaturedPodcastPreview = ({node}) => {
-  console.log('FeaturedPodcastPreview node', node)
   return (
     <div>
-      <StaticImage
-        src="../../assets/podcast-1.png"
-        alt="Founder"
+      <GatsbyImage
+        image={node.previewImage.asset.gatsbyImageData}
+        alt={node.alt}
+        aspectRatio={1/1}
         placeholder="blurred"
         layout="fullWidth"
-        aspectRatio={1/1}
         objectPosition="0 0"
         className="podcastsSectionImg"
-        imgClassName=''
       />
       <Accordion 
         disableGutters={true}
@@ -83,7 +81,7 @@ const FeaturedPodcastPreview = ({node}) => {
                 <li><SiIheartradio/></li>
               </IconList>
           </LinkContent>
-          <Link to="/" className="read-more-link"><FaArrowRight/> Read more about this podcast</Link>
+          <Link  to={`/podcast/${node.slug.current}`} className="read-more-link"><FaArrowRight/> Read more about this podcast</Link>
         </AccordionDetails>
       </Accordion>
     </div>

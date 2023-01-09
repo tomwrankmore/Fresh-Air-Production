@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
+import { getGatsbyImageData } from "gatsby-source-sanity";
+import { cn, buildImageObj } from "../../lib/helpers";
+import { imageUrlFor } from "../../lib/image-url";
 import { colors } from "../../styles/colors";
 import styled from "styled-components";
 import { device } from "../../styles/mediaQueries";
+import clientConfig from "../../../client-config";
 
 import { FaSpotify, FaPodcast, FaAmazon, FaArrowRight } from 'react-icons/fa';
 import { SiIheartradio } from "react-icons/si";
@@ -47,18 +51,21 @@ const btnStyles =  {
 
 const PodcastPreview = ({node}) => {
 
-  console.log('PodcastPreview node node', node)
+  console.log('nodenode', node.previewImage.asset)
+
+  // const imageData = getGatsbyImageData(node.previewImage.asset, { maxWidth: 675 }, clientConfig.sanity);
+  // console.log('imageDataimageDataimageData', imageData)
 
   return (
     <>
-      <StaticImage
-          src="../../assets/podcast-4.png"
-          alt="Richard Blakem"
-          placeholder="blurred"
-          layout="fullWidth"
-          objectPosition="0 0"
-          className="wwaSectionImg"
-          imgClassName=''
+      <GatsbyImage
+        image={node.previewImage.asset.gatsbyImageData}
+        alt={node.alt}
+        aspectRatio={1/1}
+        placeholder="blurred"
+        layout="fullWidth"
+        objectPosition="0 0"
+        className="podcastsSectionImg"
       />
       <Accordion 
           disableGutters={true}
@@ -85,7 +92,7 @@ const PodcastPreview = ({node}) => {
                   <li><SiIheartradio/></li>
               </IconList>
           </LinkContent>
-          <Link to="/" className="read-more-link"><FaArrowRight/> Read more about this podcast</Link>
+          <Link to={`/podcast/${node.slug.current}`} className="read-more-link"><FaArrowRight/> Read more about this podcast</Link>
           </AccordionDetails>
       </Accordion>
     </>

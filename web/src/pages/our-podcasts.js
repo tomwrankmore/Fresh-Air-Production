@@ -36,6 +36,17 @@ export const query = graphql`
           }
           title
           isFeaturedPodcast
+          previewImage {
+            alt
+            asset {
+              _id
+              gatsbyImageData(
+                fit: FILLMAX
+                placeholder: BLURRED
+                formats: AUTO
+              )
+            }
+          }
           slug {
             current
           }
