@@ -26,6 +26,7 @@ const Podcast = ({podcast}) => {
   // Section refs
   const heroRef = useRef(null)
   const marqueeRef = useRef(null)
+  const marqueeRef2 = useRef(null)
 
   // Timeline refs
   const heroTl = useRef(null)
@@ -48,15 +49,19 @@ const Podcast = ({podcast}) => {
         <PodcastDescriptionSection
           podcast={podcast}
         />
-        <QuoteSection 
+        <PodcastQuoteSection 
           podcast={podcast}
-          text="“We make work that we're proud of, and we work with people we like.”" color="blue" 
         />
         <PodcastImgSection
           podcast={podcast}
         />
         <PodcastEpisodesSection 
           podcast={podcast}
+        />
+        <Marquee 
+          style={{color: colors.FABlue}}
+          textContent="Our Podcasts. Our Podcasts. Our Podcasts." 
+          ref={marqueeRef}
         />
         <PodcastRelatedSection 
           podcast={podcast}

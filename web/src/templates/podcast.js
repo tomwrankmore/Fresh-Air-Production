@@ -11,13 +11,6 @@ export const query = graphql`
     podcast: sanityPodcast(id: { eq: $id }) {
       id
       publishedAt
-      relatedProjects {
-        title
-        _id
-        slug {
-          current
-        }
-      }
       mainImage {
         crop {
           _key
@@ -37,6 +30,7 @@ export const query = graphql`
         }
         asset {
           _id
+          gatsbyImageData
         }
         alt
       }
@@ -56,6 +50,25 @@ export const query = graphql`
       amazonLink
       iHeartRadioLink
       _rawBody
+      quote
+      relatedProjects {
+        title
+        _id
+        slug {
+          current
+        }
+        _rawExcerpt
+        previewImage {
+          alt
+          asset {
+            gatsbyImageData
+          }
+        }
+        podcastLink
+        spotifyLink
+        amazonLink
+        iHeartRadioLink
+      }
     }
   }
 `;
@@ -63,7 +76,6 @@ export const query = graphql`
 const PodcastTemplate = props => {
   const { data, errors } = props;
   const podcast = data && data.podcast;
-  console.log('PodcastTemplate podcast', podcast)
   return (
     <Layout>
       {errors && <SEO title="GraphQL Error" />}
