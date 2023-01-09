@@ -4,7 +4,7 @@ import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
 import { colors } from "../../styles/colors";
 import styled from "styled-components";
 import { device } from "../../styles/mediaQueries";
-
+import BlockContent from "../block-content";
 import { FaSpotify, FaPodcast, FaAmazon, FaArrowRight } from 'react-icons/fa';
 import { SiIheartradio } from "react-icons/si";
 import { BsFillPlayFill } from "react-icons/bs";
@@ -33,6 +33,10 @@ const IconList = styled.ul`
     li {
         flex: 0;
     }
+`
+
+const Excerpt = styled.div` 
+  margin-bottom: 1rem;
 `
 
 const rootStyles =  {
@@ -70,8 +74,11 @@ const FeaturedPodcastPreview = ({node}) => {
           <Typography>Find out more</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>Our Living Planet Report 2022 finds that global wildlife population sizes have plummeted by 69% on average since 1970.</Typography>
-          <Typography>Join podcast host Cel Spellman on a whistle-stop tour around the world to find out about the health of our planet - and what nature desperately needs from us right now.</Typography>
+          {node._rawExcerpt && (
+            <Excerpt>
+              <BlockContent blocks={node._rawExcerpt} />
+            </Excerpt>
+          )}
           <LinkContent>
               <Link to="/" className="read-more-link"><BsFillPlayFill/>Play extract</Link>
               <IconList>

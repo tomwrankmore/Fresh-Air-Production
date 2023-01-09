@@ -8,6 +8,7 @@ import { colors } from "../../styles/colors";
 import styled from "styled-components";
 import { device } from "../../styles/mediaQueries";
 import clientConfig from "../../../client-config";
+import BlockContent from "../block-content";
 
 import { FaSpotify, FaPodcast, FaAmazon, FaArrowRight } from 'react-icons/fa';
 import { SiIheartradio } from "react-icons/si";
@@ -27,7 +28,6 @@ const LinkContent = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 1rem;
-    margin-top: 1rem;
     padding-top: 1rem;
 `
 
@@ -37,6 +37,10 @@ const IconList = styled.ul`
     li {
         flex: 0;
     }
+`
+
+const Excerpt = styled.div` 
+  margin-bottom: 1rem;
 `
 
 const rootStyles =  {
@@ -51,15 +55,12 @@ const btnStyles =  {
 
 const PodcastPreview = ({node}) => {
 
-  console.log('nodenode', node.previewImage.asset)
-
-  // const imageData = getGatsbyImageData(node.previewImage.asset, { maxWidth: 675 }, clientConfig.sanity);
-  // console.log('imageDataimageDataimageData', imageData)
+  const imageData = node.previewImage.asset.gatsbyImageData
 
   return (
     <>
       <GatsbyImage
-        image={node.previewImage.asset.gatsbyImageData}
+        image={imageData}
         alt={node.alt}
         aspectRatio={1/1}
         placeholder="blurred"
@@ -80,9 +81,11 @@ const PodcastPreview = ({node}) => {
           <Typography>Find Our More</Typography>
           </AccordionSummary>
           <AccordionDetails>
-          <Typography>
-              Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-          </Typography>
+          {node._rawExcerpt && (
+            <Excerpt>
+              <BlockContent blocks={node._rawExcerpt} />
+            </Excerpt>
+          )}
           <LinkContent>
               <Link to="/" className="read-more-link"><BsFillPlayFill/>Play extract</Link>
               <IconList>

@@ -36,6 +36,26 @@ export default {
       type: 'figure'
     },
     {
+      name: 'podcastLink',
+      title: 'Podcast Link',
+      type: 'string'
+    },
+    {
+      name: 'spotifyLink',
+      title: 'Spotify Link',
+      type: 'string'
+    },
+    {
+      name: 'amazonLink',
+      title: 'Amazon Link',
+      type: 'string'
+    },
+    {
+      name: 'iHeartRadioLink',
+      title: 'iHeartRadio Link',
+      type: 'string'
+    },
+    {
       name: 'excerpt',
       title: 'Preview Excerpt',
       type: 'simplePortableText'
