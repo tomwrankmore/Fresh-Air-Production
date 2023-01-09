@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React from "react";
 import { graphql, Link } from "gatsby";
 import { colors } from "../styles/colors";
 import { device } from "../styles/mediaQueries";
@@ -8,10 +8,12 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import { StaticImage } from "gatsby-plugin-image";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
-import Marquee from "../components/marquee"
+import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from "../lib/helpers";
 import { FaSpotify, FaPodcast, FaAmazon, FaArrowRight } from 'react-icons/fa';
 import { SiIheartradio } from "react-icons/si";
 import { BsFillPlayFill } from "react-icons/bs";
+
+import PodcastGrid from "../components/our-podcasts/podcast-preview-grid";
 
 // Material UI
 import Grid from "@mui/material/Grid";
@@ -21,6 +23,38 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { red } from "@mui/material/colors";
+
+export const query = graphql`
+  query OurPodcastsPageQuery {
+    projects: allSanityPodcast(
+      limit: 12
+      sort: {publishedAt: DESC}
+      filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}
+    ) {
+      edges {
+        node {
+          id
+          mainImage {
+            asset {
+              _id
+              gatsbyImageData(
+                layout: FULL_WIDTH, 
+                fit: FILLMAX,
+                placeholder: BLURRED,
+                formats: AUTO
+                )
+            }
+            alt
+          }
+          title
+          slug {
+            current
+          }
+        }
+      }
+    }
+  }
+`;
 
 const OurPodcastsWrapper = styled.div` 
     padding: 120px 2rem 2rem;
@@ -72,17 +106,6 @@ const FeaturedPodcasts = styled.ul`
     }
 `
 
-const PodcastGrid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
-    gap: 4px;
-    h3 {
-        background-color: ${colors.FABlue};
-        padding: 1rem;
-        color: white;
-    }
-`
-
 const LinkContent = styled.div` 
     display: flex;
     justify-content: space-between;
@@ -105,18 +128,31 @@ const rootStyles =  {
 }
 
 const btnStyles =  {
-        color: '#ffffff',
-        backgroundColor: colors.FABlue,
-        textTransform: 'uppercase'
-    }
+    color: '#ffffff',
+    backgroundColor: colors.FABlue,
+    textTransform: 'uppercase'
+}
 
-const OurPodcasts = () => {
+const OurPodcasts = (props) => {
+  const { data, errors } = props;
+  if (errors) {
+    return (
+      <Layout>
+        <GraphQLErrorList errors={errors} />
+      </Layout>
+    );
+  }
+  const podcastNodes =
+    data && data.projects && mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs);
+
+  console.log('podcastNodes podcastNodes podcastNodes:', podcastNodes)
+
     return (
         <Layout>
             <SEO title="What We Do" />
             <CentralLogo />
             <OurPodcastsWrapper className="our-podcasts-wrapper">
-                <FeaturedPodcasts>
+                {/* <FeaturedPodcasts>
                     <li>
                         <div>
                             <StaticImage
@@ -238,321 +274,8 @@ const OurPodcasts = () => {
                             </Accordion>
                         </div>
                     </li>
-                </FeaturedPodcasts>
-                <PodcastGrid>
-                    <div>
-                        <StaticImage
-                            src="../assets/podcast-4.png"
-                            alt="Richard Blakem"
-                            placeholder="blurred"
-                            layout="fullWidth"
-                            objectPosition="0 0"
-                            className="wwaSectionImg"
-                            imgClassName=''
-                        />
-                        <Accordion 
-                            disableGutters={true}
-                            sx={rootStyles}
-                        >
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                sx={btnStyles}
-                            >
-                            <Typography>Find Our More</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>
-                                Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                            </Typography>
-                            <LinkContent>
-                                        <Link to="/" className="read-more-link"><BsFillPlayFill/>Play extract</Link>
-                                        <IconList>
-                                            <li><FaPodcast/></li>
-                                            <li><FaSpotify/></li>
-                                            <li><FaAmazon/></li>
-                                            <li><SiIheartradio/></li>
-                                        </IconList>
-                                    </LinkContent>
-                                    <Link to="/" className="read-more-link"><FaArrowRight/> Read more about this podcast</Link>
-                            </AccordionDetails>
-                        </Accordion>
-                    </div>
-                    <div>
-                        <StaticImage
-                            src="../assets/podcast-5.png"
-                            alt="Richard Blakem"
-                            placeholder="blurred"
-                            layout="fullWidth"
-                            objectPosition="0 0"
-                            className="wwaSectionImg"
-                            imgClassName=''
-                        />
-                        <Accordion 
-                            disableGutters={true}
-                            sx={rootStyles}
-                        >
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                sx={btnStyles}
-                            >
-                            <Typography>Find Our More</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>
-                                Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                            </Typography>
-                            <LinkContent>
-                                        <Link to="/" className="read-more-link"><BsFillPlayFill/>Play extract</Link>
-                                        <IconList>
-                                            <li><FaPodcast/></li>
-                                            <li><FaSpotify/></li>
-                                            <li><FaAmazon/></li>
-                                            <li><SiIheartradio/></li>
-                                        </IconList>
-                                    </LinkContent>
-                                    <Link to="/" className="read-more-link"><FaArrowRight/> Read more about this podcast</Link>
-                            </AccordionDetails>
-                        </Accordion>
-                    </div>
-                    <div>
-                        <StaticImage
-                            src="../assets/podcast-6.png"
-                            alt="Richard Blakem"
-                            placeholder="blurred"
-                            layout="fullWidth"
-                            objectPosition="0 0"
-                            className="wwaSectionImg"
-                            imgClassName=''
-                        />
-                        <Accordion 
-                            disableGutters={true}
-                            sx={rootStyles}
-                        >
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                sx={btnStyles}
-                            >
-                            <Typography>Find Our More</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>
-                                Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                            </Typography>
-                            <LinkContent>
-                                        <Link to="/" className="read-more-link"><BsFillPlayFill/>Play extract</Link>
-                                        <IconList>
-                                            <li><FaPodcast/></li>
-                                            <li><FaSpotify/></li>
-                                            <li><FaAmazon/></li>
-                                            <li><SiIheartradio/></li>
-                                        </IconList>
-                                    </LinkContent>
-                                    <Link to="/" className="read-more-link"><FaArrowRight/> Read more about this podcast</Link>
-                            </AccordionDetails>
-                        </Accordion>
-                    </div>
-                    <div>
-                        <StaticImage
-                            src="../assets/podcast-7.png"
-                            alt="Richard Blakem"
-                            placeholder="blurred"
-                            layout="fullWidth"
-                            objectPosition="0 0"
-                            className="wwaSectionImg"
-                            imgClassName=''
-                        />
-                        <Accordion 
-                            disableGutters={true}
-                            sx={rootStyles}
-                        >
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                sx={btnStyles}
-                            >
-                            <Typography>Find Our More</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>
-                                Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                            </Typography>
-                            <LinkContent>
-                                        <Link to="/" className="read-more-link"><BsFillPlayFill/>Play extract</Link>
-                                        <IconList>
-                                            <li><FaPodcast/></li>
-                                            <li><FaSpotify/></li>
-                                            <li><FaAmazon/></li>
-                                            <li><SiIheartradio/></li>
-                                        </IconList>
-                                    </LinkContent>
-                                    <Link to="/" className="read-more-link"><FaArrowRight/> Read more about this podcast</Link>
-                            </AccordionDetails>
-                        </Accordion>
-                    </div>
-                    <div>
-                        <StaticImage
-                            src="../assets/podcast-4.png"
-                            alt="Richard Blakem"
-                            placeholder="blurred"
-                            layout="fullWidth"
-                            objectPosition="0 0"
-                            className="wwaSectionImg"
-                            imgClassName=''
-                        />
-                       <Accordion 
-                            disableGutters={true}
-                            sx={rootStyles}
-                        >
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                sx={btnStyles}
-                            >
-                            <Typography>Find Our More</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>
-                                Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                            </Typography>
-                            <LinkContent>
-                                        <Link to="/" className="read-more-link"><BsFillPlayFill/>Play extract</Link>
-                                        <IconList>
-                                            <li><FaPodcast/></li>
-                                            <li><FaSpotify/></li>
-                                            <li><FaAmazon/></li>
-                                            <li><SiIheartradio/></li>
-                                        </IconList>
-                                    </LinkContent>
-                                    <Link to="/" className="read-more-link"><FaArrowRight/> Read more about this podcast</Link>
-                            </AccordionDetails>
-                        </Accordion>
-                    </div>
-                    <div>
-                        <StaticImage
-                            src="../assets/podcast-5.png"
-                            alt="Richard Blakem"
-                            placeholder="blurred"
-                            layout="fullWidth"
-                            objectPosition="0 0"
-                            className="wwaSectionImg"
-                            imgClassName=''
-                        />
-                       <Accordion 
-                            disableGutters={true}
-                            sx={rootStyles}
-                        >
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                sx={btnStyles}
-                            >
-                            <Typography>Find Our More</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>
-                                Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                            </Typography>
-                            <LinkContent>
-                                        <Link to="/" className="read-more-link"><BsFillPlayFill/>Play extract</Link>
-                                        <IconList>
-                                            <li><FaPodcast/></li>
-                                            <li><FaSpotify/></li>
-                                            <li><FaAmazon/></li>
-                                            <li><SiIheartradio/></li>
-                                        </IconList>
-                                    </LinkContent>
-                                    <Link to="/" className="read-more-link"><FaArrowRight/> Read more about this podcast</Link>
-                            </AccordionDetails>
-                        </Accordion>
-                    </div>
-                    <div>
-                        <StaticImage
-                            src="../assets/podcast-6.png"
-                            alt="Richard Blakem"
-                            placeholder="blurred"
-                            layout="fullWidth"
-                            objectPosition="0 0"
-                            className="wwaSectionImg"
-                            imgClassName=''
-                        />
-                       <Accordion 
-                            disableGutters={true}
-                            sx={rootStyles}
-                        >
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                sx={btnStyles}
-                            >
-                            <Typography>Find Our More</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>
-                                Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                            </Typography>
-                            <LinkContent>
-                                        <Link to="/" className="read-more-link"><BsFillPlayFill/>Play extract</Link>
-                                        <IconList>
-                                            <li><FaPodcast/></li>
-                                            <li><FaSpotify/></li>
-                                            <li><FaAmazon/></li>
-                                            <li><SiIheartradio/></li>
-                                        </IconList>
-                                    </LinkContent>
-                                    <Link to="/" className="read-more-link"><FaArrowRight/> Read more about this podcast</Link>
-                            </AccordionDetails>
-                        </Accordion>
-                    </div>
-                    <div>
-                        <StaticImage
-                            src="../assets/podcast-7.png"
-                            alt="Richard Blakem"
-                            placeholder="blurred"
-                            layout="fullWidth"
-                            objectPosition="0 0"
-                            className="wwaSectionImg"
-                            imgClassName=''
-                        />
-                        <Accordion 
-                            disableGutters={true}
-                            sx={rootStyles}
-                        >
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                sx={btnStyles}
-                            >
-                            <Typography>Find Our More</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>
-                                Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                            </Typography>
-                            <LinkContent>
-                                        <Link to="/" className="read-more-link"><BsFillPlayFill/>Play extract</Link>
-                                        <IconList>
-                                            <li><FaPodcast/></li>
-                                            <li><FaSpotify/></li>
-                                            <li><FaAmazon/></li>
-                                            <li><SiIheartradio/></li>
-                                        </IconList>
-                                    </LinkContent>
-                                    <Link to="/" className="read-more-link"><FaArrowRight/> Read more about this podcast</Link>
-                            </AccordionDetails>
-                        </Accordion>
-                    </div>
-                </PodcastGrid>
+                </FeaturedPodcasts> */}
+                {podcastNodes && podcastNodes.length > 0 && <PodcastGrid nodes={podcastNodes} />}
             </OurPodcastsWrapper>
         </Layout>
 

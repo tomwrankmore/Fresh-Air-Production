@@ -11,16 +11,6 @@ export default {
       type: 'string'
     },
     {
-      name: 'subTitle',
-      title: 'Subtitle',
-      type: 'string'
-    },
-    {
-      name: 'heroImage',
-      title: 'Hero image',
-      type: 'figure'
-    },
-    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -29,6 +19,21 @@ export default {
         source: 'title',
         maxLength: 96
       }
+    },
+    {
+      name: 'isFeaturedPodcast',
+      title: 'Featured Podcast',
+      type: 'boolean'
+    },
+    {
+      name: 'subTitle',
+      title: 'Subtitle',
+      type: 'string'
+    },
+    {
+      name: 'heroImage',
+      title: 'Hero image',
+      type: 'figure'
     },
     {
       name: 'publishedAt',
@@ -58,6 +63,9 @@ export default {
       of: [{type: 'reference', to: {type: 'podcast'}}]
     }
   ],
+  initialValue: {
+    isFeaturedPodcast: false
+  },
   preview: {
     select: {
       title: 'title',
