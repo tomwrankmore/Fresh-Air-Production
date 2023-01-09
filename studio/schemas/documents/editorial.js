@@ -31,6 +31,11 @@ export default {
       }
     },
     {
+      name: 'isFeaturedPost',
+      title: 'Featured Post',
+      type: 'boolean'
+    },
+    {
       name: 'publishedAt',
       title: 'Published at',
       description: 'You can use this field to schedule projects where you show them',
