@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useLayoutEffect} from "react";
+import gsap from "gsap";
 import {colors} from "../styles/colors"
 import {device} from "../styles/mediaQueries"
 import styled from "styled-components";
@@ -37,14 +38,14 @@ const QuoteWrapper = styled.div`
     }
 `
 
-const QuoteSection = React.forwardRef(({text, color, podcast}, ref) => {
+const QuoteSection = React.forwardRef(({text, color}, ref) => {
     return (
         <QuoteWrapper ref={ref}>
             {color === "blue" ? 
                 <SoundwaveGraphic className='soundwaveGraphic' /> : 
                 <SoundwaveGraphicGreen className='soundwaveGraphic' />
             }
-            <h1>{podcast._rawQuote}</h1>
+            <h1>{text}</h1>
         </QuoteWrapper>
     )
 })
