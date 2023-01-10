@@ -88,25 +88,9 @@ const Column = styled.div`
   }
 `;
 
-const EditorialHero = React.forwardRef(({tl}, ref) => {
+const EditorialHero = React.forwardRef(({tl, heroImg, title, subTitle}, ref) => {
 
-    const { heroBackgroundImage } = useStaticQuery(
-      graphql`
-        query {
-          heroBackgroundImage: file(relativePath: { eq: "podcast-hero.png" }) {
-            childImageSharp {
-              gatsbyImageData(
-                width: 2000
-                quality: 50
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
-            }
-          }
-        }
-      `
-    )
-    const pluginImage = getImage(heroBackgroundImage);
+    const pluginImage = getImage(heroImg);
     const bgImage = convertToBgImage(pluginImage);
 
     useLayoutEffect(() => {
@@ -142,9 +126,9 @@ const EditorialHero = React.forwardRef(({tl}, ref) => {
         <Column className="left-column">
           <div className="heroText">
             <div className="heroTitleWrapper">
-              <h3 className="heroTitle">Six ways to grow a podcast</h3>
+              <h3 className="heroTitle">{title}</h3>
             </div>
-            <h4 className="heroSubTitle">richard blake december 14th 2020</h4>
+            <h4 className="heroSubTitle">{subTitle}</h4>
           </div>
         </Column>
       </EditorialWrapper>

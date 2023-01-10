@@ -53,6 +53,7 @@ const EditorialsGrid = styled.div`
     .editorials-link {
         text-decoration: none;
         color: black;
+        display: flex;
         @media ${device.mediaMinMedium} {
             &.featured-post {
                 grid-row: span 2;
@@ -99,7 +100,6 @@ const EditorialsGrid = styled.div`
     .titleWrapper {
         width: 100%;
         padding: 0 0.5rem;
-        flex: 1;
         h3 {
             font-family: 'Polysans';
             font-weight: normal;
@@ -140,6 +140,7 @@ const Editorials = ({data}) => {
                         placeholder="blurred"
                         objectFit="cover"
                         className="imgWrapper"
+                        aspectRatio= "1:1"
                       />
                       <div className="titleWrapper">
                         <h3>{node.title}</h3>

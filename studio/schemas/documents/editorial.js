@@ -59,7 +59,7 @@ export default {
     {
       name: 'quote',
       title: 'Quote',
-      type: 'simplePortableText'
+      type: 'string'
     },
     {
       name: 'sectionOneText',

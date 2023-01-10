@@ -14,6 +14,13 @@ export const query = graphql`
       publishedAt
       id
       _rawBody
+      title
+      subTitle
+      heroImage {
+          asset {
+            gatsbyImageData
+          }
+        }
       mainImage {
         alt
         asset {
@@ -60,7 +67,7 @@ export const query = graphql`
 
 const EditorialTemplate = props => {
   const { data, errors } = props;
-  const editorial = data && data.sanityEditorial;
+  const editorial = data && data.editorial;
   return (
     <Layout>
       {errors && <SEO title="GraphQL Error" />}
