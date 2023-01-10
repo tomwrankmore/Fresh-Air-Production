@@ -51,20 +51,19 @@ async function createProjectPages (graphql, actions) {
   const editorialEdges = (result.data.allSanityEditorial || {}).edges || []
   const podcastEdges = (result.data.allSanityPodcast || {}).edges || []
 
+  // projectEdges
+  //   .filter(edge => !isFuture(parseISO(edge.node.publishedAt)))
+  //   .forEach(edge => {
+  //     const id = edge.node.id
+  //     const slug = edge.node.slug.current
+  //     const path = `/project/${slug}/`
 
-  projectEdges
-    .filter(edge => !isFuture(parseISO(edge.node.publishedAt)))
-    .forEach(edge => {
-      const id = edge.node.id
-      const slug = edge.node.slug.current
-      const path = `/project/${slug}/`
-
-      createPage({
-        path,
-        component: require.resolve('./src/templates/project.js'),
-        context: {id}
-      })
-    })
+  //     createPage({
+  //       path,
+  //       component: require.resolve('./src/templates/project.js'),
+  //       context: {id}
+  //     })
+  //   })
   editorialEdges
     .filter(edge => !isFuture(parseISO(edge.node.publishedAt)))
     .forEach(edge => {
