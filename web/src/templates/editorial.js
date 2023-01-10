@@ -13,47 +13,47 @@ export const query = graphql`
       id
       publishedAt
       id
-    _rawBody
-    mainImage {
-      alt
-      asset {
-        gatsbyImageData
+      _rawBody
+      mainImage {
+        alt
+        asset {
+          gatsbyImageData
+        }
       }
-    }
-    slug {
-      current
-    }
-    relatedProjects {
-      _id
       slug {
         current
       }
-      previewImage {
+      relatedProjects {
+        _id
+        slug {
+          current
+        }
+        previewImage {
+          asset {
+            gatsbyImageData
+          }
+        }
+        sectionOneImage {
+          asset {
+            gatsbyImageData
+          }
+          alt
+        }
+        sectionTwoImage {
+          alt
+          asset {
+            gatsbyImageData
+          }
+        }
+      }
+      _rawSectionOneText
+      _rawSectionTwoText
+      isFeaturedPost
+      heroImage {
         asset {
           gatsbyImageData
         }
       }
-      sectionOneImage {
-        asset {
-          gatsbyImageData
-        }
-        alt
-      }
-      sectionTwoImage {
-        alt
-        asset {
-          gatsbyImageData
-        }
-      }
-    }
-    _rawSectionOneText
-    _rawSectionTwoText
-    isFeaturedPost
-    heroImage {
-      asset {
-        gatsbyImageData
-      }
-    }
     }
   }
 `;

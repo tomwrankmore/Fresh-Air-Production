@@ -15,7 +15,7 @@ const RelatedEditorialsGrid = styled.div`
     grid-template-rows: auto;
     @media ${device.mediaMinMedium} {
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 50vh;
+        /* grid-template-rows: 50vh; */
     }
 
     .editorials-link {

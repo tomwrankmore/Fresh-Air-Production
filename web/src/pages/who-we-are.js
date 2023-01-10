@@ -137,10 +137,6 @@ const WhoWeAre = (props) => {
   const managementNodes = data && data.management && mapEdgesToNodes(data.management);
   const staffNodes = data && data.staffMembers && mapEdgesToNodes(data.staffMembers);
 
-  console.log('managementNodes: ', managementNodes)
-  console.log('staffNodes: ', staffNodes)
-
-
     return (
         <Layout>
             <SEO title="What We Do" />

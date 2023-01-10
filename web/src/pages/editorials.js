@@ -1,32 +1,41 @@
 import React from "react";
+import { graphql } from "gatsby";
 import { Link } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { colors } from "../styles/colors";
 import { device } from "../styles/mediaQueries";
 import styled from "styled-components";
+import { mapEdgesToNodes } from "../lib/helpers";
 import CentralLogo from "../components/central-logo"
-import { StaticImage } from "gatsby-plugin-image";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 
-// export const query = graphql`
-//   query EditorialTemplateQuery($id: String!) {
-//     editoriala: sanityEditorial {
-//       allSanityEditorial {
-//         edges {
-//             node {
-//               id
-//               publishedAt
-//               slug {
-//                 current
-//               }
-//               isFeaturedPost
-//             }
-//           }
-//         }
-      
-//     }
-//   }
-// `;
+export const query = graphql`
+  query EditorialsQuery {
+    editorials: allSanityEditorial(
+      sort: {publishedAt: DESC}
+      filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}
+    ) {
+      edges {
+        node {
+          id
+          slug {
+            current
+          }
+          title
+          publishedAt
+          isFeaturedPost
+          previewImage {
+            alt
+            asset {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 const EditorialsWrapper = styled.div`
     padding: 120px 0 0;
@@ -38,7 +47,7 @@ const EditorialsGrid = styled.div`
     grid-template-rows: auto;
     @media ${device.mediaMinMedium} {
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 50vh;
+        /* grid-template-rows: 50vh; */
     }
 
     .editorials-link {
@@ -104,192 +113,42 @@ const EditorialsGrid = styled.div`
     }
 `
 
-const Editorials = () => {
+
+
+const Editorials = ({data}) => {
+
+  const editorialNodes = data && data.editorials && mapEdgesToNodes(data.editorials);
+
     return (
         <Layout>
           <SEO title="Our Podcasts" />
           <CentralLogo />
           <EditorialsWrapper>
             <EditorialsGrid>
-              <Link to="/" className="editorials-link">
-                <div className="post">
-                  <StaticImage
-                    src="../assets/blog2.png"
-                    alt="Smiling people"
-                    placeholder="blurred"
-                    objectFit="cover"
-                    className="imgWrapper"
-                  />
-                  <div className="titleWrapper">
-                      <h3>Six ways to grow a podcast</h3>
-                  </div>
-                </div>
-              </Link>
-                <Link to="/" className="editorials-link">
+              {editorialNodes && 
+                editorialNodes.map(node => (
+                  <Link 
+                    to={`/editorial/${node.slug.current}`} className={
+                    node.isFeaturedPost ? "editorials-link featured-post" : "editorials-link"
+                    }
+                    key={node.id}
+                  >
                     <div className="post">
-                        <StaticImage
-                            src="../assets/blog2.png"
-                            alt="Smiling people"
-                            placeholder="blurred"
-                            objectFit="cover"
-                            className="imgWrapper"
-                            // aspectRatio={6/9}
-                        />
-                        <div className="titleWrapper">
-                            <h3>Six ways to grow a podcast</h3>
-                        </div>
+                      <GatsbyImage
+                        image={node.previewImage.asset.gatsbyImageData}
+                        alt={node.previewImage.alt}
+                        placeholder="blurred"
+                        objectFit="cover"
+                        className="imgWrapper"
+                      />
+                      <div className="titleWrapper">
+                        <h3>{node.title}</h3>
+                      </div>
                     </div>
-                </Link>
-                <Link to="/" className="editorials-link">
-                    <div className="post">
-                        <StaticImage
-                            src="../assets/blog2.png"
-                            alt="Smiling people"
-                            placeholder="blurred"
-                            objectFit="cover"
-                            className="imgWrapper"
-                            // aspectRatio={6/9}
-                        />
-                        <div className="titleWrapper">
-                            <h3>Six ways to grow a podcast</h3>
-                        </div>
-                    </div>
-                </Link>
-                <Link to="/" className="editorials-link">
-                    <div className="post">
-                        <StaticImage
-                            src="../assets/blog2.png"
-                            alt="Smiling people"
-                            placeholder="blurred"
-                            objectFit="cover"
-                            className="imgWrapper"
-                            // aspectRatio={6/9}
-                        />
-                        <div className="titleWrapper">
-                            <h3>Six ways to grow a podcast</h3>
-                        </div>
-                    </div>
-                </Link>
-                <Link to="/" className="editorials-link">
-                    <div className="post">
-                        <StaticImage
-                            src="../assets/blog3.png"
-                            alt="Smiling people"
-                            placeholder="blurred"
-                            objectFit="cover"
-                            className="imgWrapper"
-                            // aspectRatio={6/9}
-                        />
-                        <div className="titleWrapper">
-                            <h3>We talk to the winner of our Stopping to Notice competition</h3>
-                        </div>
-                    </div>
-                </Link>
-                <Link to="/" className="editorials-link featured-post featured-post-left">
-                    <div className="post">
-                        <StaticImage
-                            src="../assets/blog1.png"
-                            alt="Smiling people"
-                            placeholder="blurred"
-                            objectFit="cover"
-                            className="imgWrapper"
-                            // aspectRatio={6/9}
-                        />
-                        <div className="titleWrapper">
-                            <h3>Fresh Air win Best Corporate Story Tellers 2022 award</h3>
-                        </div>
-                    </div>
-                </Link>
-                <Link to="/" className="editorials-link">
-                    <div className="post">
-                        <StaticImage
-                            src="../assets/blog2.png"
-                            alt="Smiling people"
-                            placeholder="blurred"
-                            objectFit="cover"
-                            className="imgWrapper"
-                            // aspectRatio={6/9}
-                        />
-                        <div className="titleWrapper">
-                            <h3>Six ways to grow a podcast</h3>
-                        </div>
-                    </div>
-                </Link>
-                <Link to="/" className="editorials-link">
-                    <div className="post">
-                        <StaticImage
-                            src="../assets/blog2.png"
-                            alt="Smiling people"
-                            placeholder="blurred"
-                            objectFit="cover"
-                            className="imgWrapper"
-                            // aspectRatio={6/9}
-                        />
-                        <div className="titleWrapper">
-                            <h3>Behind the scenes of making a podcast </h3>
-                        </div>
-                    </div>
-                </Link>
-                <Link to="/" className="editorials-link">
-                    <div className="post">
-                        <StaticImage
-                            src="../assets/blog3.png"
-                            alt="Smiling people"
-                            placeholder="blurred"
-                            objectFit="cover"
-                            className="imgWrapper"
-                            // aspectRatio={6/9}
-                        />
-                        <div className="titleWrapper">
-                            <h3>Post Title 5</h3>
-                        </div>
-                    </div>
-                </Link>
-                <Link to="/" className="editorials-link featured-post featured-post-right"> 
-                    <div className="post">
-                        <StaticImage
-                            src="../assets/blog1.png"
-                            alt="Smiling people"
-                            placeholder="blurred"
-                            objectFit="cover"
-                            className="imgWrapper"
-                            aspectRatio={6/9}
-                        />
-                        <div className="titleWrapper">
-                            <h3>Post Title 6</h3>
-                        </div>
-                    </div>
-                </Link>
-                <Link to="/" className="editorials-link">
-                    <div className="post">
-                        <StaticImage
-                            src="../assets/blog2.png"
-                            alt="Smiling people"
-                            placeholder="blurred"
-                            objectFit="cover"
-                            className="imgWrapper"
-                            aspectRatio={6/9}
-                        />
-                        <div className="titleWrapper">
-                            <h3>Six ways to grow a podcast</h3>
-                        </div>
-                    </div>
-                </Link>
-                <Link to="/" className="editorials-link">
-                    <div className="post">
-                        <StaticImage
-                            src="../assets/blog3.png"
-                            alt="Smiling people"
-                            placeholder="blurred"
-                            objectFit="cover"
-                            className="imgWrapper"
-                            aspectRatio={6/9}
-                        />
-                        <div className="titleWrapper">
-                            <h3>We talk to the winner of our Stopping to Notice competition</h3>
-                        </div>
-                    </div>
-                </Link>
+                  </Link>
+                ))
+              }
+              {/*  */}
             </EditorialsGrid>
           </EditorialsWrapper>
         </Layout>
