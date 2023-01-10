@@ -28,6 +28,8 @@ const Editorial = ({editorial}) => {
   // Timeline refs
   const heroTl = useRef(null)
 
+  console.log('editorial.sectionOneImage', editorial.sectionOneImage)
+
     return (
       <EditorialWrapper>
         <EditorialHero 
@@ -41,21 +43,23 @@ const Editorial = ({editorial}) => {
           bodyText={editorial._rawBody}
         />
         <QuoteSection 
-          text="“We make work that we're proud of, and we work with people we like.”" 
           color='green' 
-          editorial={editorial}
+          quote={editorial.quote}
         />
         <EditorialSectionOne 
-          editorial={editorial}
+          image={editorial.sectionOneImage}
+          text={editorial._rawSectionOneText}
+
         />
         <EditorialImgSection
-          editorial={editorial} 
+          image={editorial.mainImage} 
         />
         <EditorialSectionTwo 
-          editorial={editorial} 
+          image={editorial.sectionTwoImage}
+          text={editorial._rawSectionTwoText}
         />
         <EditorialsRelated 
-          editorial={editorial} 
+          realatedPosts={editorial.relatedProjects} 
         />
       </EditorialWrapper>
     )

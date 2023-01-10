@@ -38,14 +38,14 @@ const QuoteWrapper = styled.div`
     }
 `
 
-const QuoteSection = React.forwardRef(({text, color}, ref) => {
+const QuoteSection = React.forwardRef(({quote, color}, ref) => {
     return (
         <QuoteWrapper ref={ref}>
             {color === "blue" ? 
                 <SoundwaveGraphic className='soundwaveGraphic' /> : 
                 <SoundwaveGraphicGreen className='soundwaveGraphic' />
             }
-            <h1>{text}</h1>
+            <h1>{quote}</h1>
         </QuoteWrapper>
     )
 })

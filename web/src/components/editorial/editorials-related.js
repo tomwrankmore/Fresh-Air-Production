@@ -1,5 +1,5 @@
-import React, {useLayoutEffect} from "react";
-import { StaticImage } from "gatsby-plugin-image";
+import React from "react";
+import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
 import { device } from "../../styles/mediaQueries";
@@ -15,7 +15,6 @@ const RelatedEditorialsGrid = styled.div`
     grid-template-rows: auto;
     @media ${device.mediaMinMedium} {
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        /* grid-template-rows: 50vh; */
     }
 
     .editorials-link {
@@ -37,10 +36,8 @@ const RelatedEditorialsGrid = styled.div`
             max-height: 50vh;
             .imgWrapper {
                 flex: 1;
-                /* max-height: 400px; */
             }
             @media ${device.mediaMinMedium} {
-                /* height: 450px; */
                 flex-direction: column;
                 align-items: center;
             }
@@ -64,70 +61,28 @@ const RelatedEditorialsGrid = styled.div`
     }
 `
 
-const EditorialsRelated = (props) => { 
+const EditorialsRelated = ({relatedPosts}) => { 
   return (
       <RelatedEditorialsWrapper>
         <RelatedEditorialsGrid>
-          <Link to="/" className="editorials-link">
-            <div className="post">
-              <StaticImage
-                  src="../../assets/blog2.png"
-                  alt="Smiling people"
-                  placeholder="blurred"
-                  objectFit="cover"
-                  className="imgWrapper"
-                  // aspectRatio={6/9}
-              />
-              <div className="titleWrapper">
-                  <h3>Six ways to grow a podcast</h3>
+        {relatedPosts && 
+          relatedPosts.map(node => (
+            <Link to="/" className="editorials-link" key={node._id}>
+              <div className="post">
+                <GatsbyImage
+                    image={node.previewImage.asset.gatsbyImageData}
+                    alt="Smiling people"
+                    placeholder="blurred"
+                    objectFit="cover"
+                    className="imgWrapper"
+                />
+                <div className="titleWrapper">
+                    <h3>{node.title}</h3>
+                </div>
               </div>
-            </div>
-          </Link>
-          <Link to="/" className="editorials-link">
-            <div className="post">
-              <StaticImage
-                  src="../../assets/blog2.png"
-                  alt="Smiling people"
-                  placeholder="blurred"
-                  objectFit="cover"
-                  className="imgWrapper"
-                  // aspectRatio={6/9}
-              />
-              <div className="titleWrapper">
-                  <h3>Six ways to grow a podcast</h3>
-              </div>
-            </div>
-          </Link>
-          <Link to="/" className="editorials-link">
-            <div className="post">
-              <StaticImage
-                  src="../../assets/blog3.png"
-                  alt="Smiling people"
-                  placeholder="blurred"
-                  objectFit="cover"
-                  className="imgWrapper"
-                  // aspectRatio={6/9}
-              />
-              <div className="titleWrapper">
-                  <h3>We talk to the winner of our Stopping to Notice competition</h3>
-              </div>
-            </div>
-          </Link>
-          <Link to="/" className="editorials-link featured-post featured-post-left">
-            <div className="post">
-              <StaticImage
-                  src="../../assets/blog1.png"
-                  alt="Smiling people"
-                  placeholder="blurred"
-                  objectFit="cover"
-                  className="imgWrapper"
-                  // aspectRatio={6/9}
-              />
-              <div className="titleWrapper">
-                  <h3>Fresh Air win Best Corporate Story Tellers 2022 award</h3>
-              </div>
-            </div>
-          </Link>
+            </Link>
+          ))
+        }
         </RelatedEditorialsGrid>
       </RelatedEditorialsWrapper>
   )

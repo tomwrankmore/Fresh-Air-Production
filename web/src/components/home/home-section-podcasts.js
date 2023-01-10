@@ -24,10 +24,10 @@ const PodcastsWrapper = styled.div`
 
         &.leftCol {
             div {
-                height: 35vh;
+                /* height: 50vh;
                 @media ${device.mediaMinMedium} {
-                    height: 100vh;
-                }
+                    height: 50vh;
+                } */
             }
             h3 {
                 text-align: center;
@@ -71,7 +71,6 @@ const Podcast = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-    /* height: 50px; */
     h3 {
         text-transform: uppercase;
     }

@@ -29,6 +29,11 @@ flex-direction: column;
 overflow: hidden;
 /* padding: 0 2rem; */
 &.text {
+  p {
+    line-height: 1.4rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
   padding: 0 2rem;
   @media ${device.mediaMinMedium} {
     padding: 0;

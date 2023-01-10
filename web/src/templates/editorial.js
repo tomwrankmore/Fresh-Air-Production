@@ -14,6 +14,7 @@ export const query = graphql`
       publishedAt
       id
       _rawBody
+      quote
       title
       subTitle
       heroImage {
@@ -30,24 +31,25 @@ export const query = graphql`
       slug {
         current
       }
+      sectionOneImage {
+          asset {
+            gatsbyImageData
+          }
+          alt
+        }
+      sectionTwoImage {
+        asset {
+          gatsbyImageData
+        }
+        alt
+      }
       relatedProjects {
         _id
+        title
         slug {
           current
         }
         previewImage {
-          asset {
-            gatsbyImageData
-          }
-        }
-        sectionOneImage {
-          asset {
-            gatsbyImageData
-          }
-          alt
-        }
-        sectionTwoImage {
-          alt
           asset {
             gatsbyImageData
           }
