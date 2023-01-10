@@ -3,7 +3,7 @@ import { MdPerson } from "react-icons/md";
 export default {
   name: 'staffMember',
   type: 'document',
-  title: 'Person',
+  title: 'Staff Member',
   icon: MdPerson,
   fields: [
     {
@@ -29,7 +29,7 @@ export default {
     {
       name: 'title',
       title: 'Title',
-      type: 'simplePortableText'
+      type: 'string'
     },
     {
       name: 'bio',

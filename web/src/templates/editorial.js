@@ -2,101 +2,76 @@ import React from "react";
 import { graphql } from "gatsby";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
-import Project from "../components/project";
+import Editorial from "../components/editorial/editorial";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 
 
-// export const query = graphql`
-//   query ProjectTemplateQuery($id: String!) {
-//     sampleProject: sanitySampleProject(id: { eq: $id }) {
-//       id
-//       publishedAt
-//       categories {
-//         _id
-//         title
-//       }
-//       relatedProjects {
-//         title
-//         _id
-//         slug {
-//           current
-//         }
-//       }
-//       mainImage {
-//         crop {
-//           _key
-//           _type
-//           top
-//           bottom
-//           left
-//           right
-//         }
-//         hotspot {
-//           _key
-//           _type
-//           x
-//           y
-//           height
-//           width
-//         }
-//         asset {
-//           _id
-//         }
-//         alt
-//       }
-//       title
-//       slug {
-//         current
-//       }
-//       _rawBody
-//       members {
-//         _key
-//         staffMember {
-//           image {
-//             crop {
-//               _key
-//               _type
-//               top
-//               bottom
-//               left
-//               right
-//             }
-//             hotspot {
-//               _key
-//               _type
-//               x
-//               y
-//               height
-//               width
-//             }
-//             asset {
-//               _id
-//             }
-//           }
-//           name
-//         }
-//         roles
-//       }
-//     }
-//   }
-// `;
+export const query = graphql`
+  query EditorialTemplateQuery($id: String!) {
+    editorial: sanityEditorial(id: { eq: $id }) {
+      id
+      publishedAt
+      id
+    _rawBody
+    mainImage {
+      alt
+      asset {
+        gatsbyImageData
+      }
+    }
+    slug {
+      current
+    }
+    relatedProjects {
+      _id
+      slug {
+        current
+      }
+      previewImage {
+        asset {
+          gatsbyImageData
+        }
+      }
+      sectionOneImage {
+        asset {
+          gatsbyImageData
+        }
+        alt
+      }
+      sectionTwoImage {
+        alt
+        asset {
+          gatsbyImageData
+        }
+      }
+    }
+    _rawSectionOneText
+    _rawSectionTwoText
+    isFeaturedPost
+    heroImage {
+      asset {
+        gatsbyImageData
+      }
+    }
+    }
+  }
+`;
 
 const EditorialTemplate = props => {
-  // const { data, errors } = props;
-  // const project = data && data.sampleProject;
+  const { data, errors } = props;
+  const editorial = data && data.sanityEditorial;
   return (
     <Layout>
-      {/* {errors && <SEO title="GraphQL Error" />}
-      {project && <SEO title={project.title || "Untitled"} />}
+      {errors && <SEO title="GraphQL Error" />}
+      {editorial && <SEO title={editorial.title || "Untitled"} />}
 
       {errors && (
         <Container>
           <GraphQLErrorList errors={errors} />
         </Container>
       )}
-      {project && <Project {...project} />} */}
-      <h1>Editorial</h1>
+      {editorial && <Editorial editorial={editorial} />}
     </Layout>
   );
 };

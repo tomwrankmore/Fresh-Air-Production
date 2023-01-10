@@ -1,21 +1,19 @@
 import React from "react";
+import _ from 'lodash';
 import { graphql } from "gatsby";
+import GraphQLErrorList from "../components/graphql-error-list";
 import { colors } from "../styles/colors";
 import styled from "styled-components";
 import CentralLogo from "../components/central-logo"
-import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
-import _ from 'lodash';
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, filterOutNonFeaturedDocs } from "../lib/helpers";
-
 import PodcastGrid from "../components/our-podcasts/podcast-preview-grid";
 import FeaturedPodcastGrid from "../components/our-podcasts/featured-podcast-preview-grid";
 
 export const query = graphql`
   query OurPodcastsPageQuery {
     podcasts: allSanityPodcast(
-      # limit: 12
       sort: {publishedAt: DESC}
       filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}
     ) {

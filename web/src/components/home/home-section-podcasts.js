@@ -132,7 +132,7 @@ const Podcasts = React.forwardRef(({tl}, ref) => {
             <div className="leftCol">
                 <Podcast>
                     <StaticImage
-                        src="../../assets/unnamed-1.jpg"
+                        src="../../assets/we-produce/we-produce-1.jpeg"
                         alt="Smiling people"
                         placeholder="blurred"
                         layout="fullWidth"
@@ -143,7 +143,7 @@ const Podcasts = React.forwardRef(({tl}, ref) => {
                 </Podcast>
                 <Podcast>
                     <StaticImage
-                        src="../../assets/unnamed-2.jpg"
+                        src="../../assets/we-produce/we-produce-2.jpeg"
                         alt="Smiling people"
                         placeholder="blurred"
                         layout="fullWidth"
@@ -154,7 +154,18 @@ const Podcasts = React.forwardRef(({tl}, ref) => {
                 </Podcast>
                 <Podcast>
                     <StaticImage
-                        src="../../assets/unnamed.jpg"
+                        src="../../assets/we-produce/we-produce-3.jpeg"
+                        alt="Smiling people"
+                        placeholder="blurred"
+                        layout="fullWidth"
+                        className="podcastImgWrapper"
+                        imgClassName="podcastImg"
+                    />
+                    <h3>Call of The Wild - WWF</h3>
+                </Podcast>
+                <Podcast>
+                    <StaticImage
+                        src="../../assets/we-produce/we-produce-4.jpg"
                         alt="Smiling people"
                         placeholder="blurred"
                         layout="fullWidth"

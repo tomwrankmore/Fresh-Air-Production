@@ -164,6 +164,11 @@ const Panel = styled.div`
       flex-direction: column-reverse;
     }
 
+    .we-work-text-wrapper {
+      position: relative;
+      z-index: 100;
+    }
+
     .gatsby-image-wrapper {
       width: 100%;
       height: auto;
@@ -277,8 +282,8 @@ const Work = React.forwardRef((props, ref) => {
                 <div className="panel1-left-content">
                   <h1>We Work</h1>
                   <StaticImage 
-                    src="../../assets/we-work.png"
-                    alt="Joel Muniz"
+                    src="../../assets/we-work/joel-muniz-bJ2Dm9ZyeIY-unsplash-copy.png"
+                    alt="Man with microphone"
                     placeholder="blurred"
                     layout="fullWidth"
                     className='panel-1-img'
@@ -294,13 +299,13 @@ const Work = React.forwardRef((props, ref) => {
               <Panel className="panel panel2">
                 <SvgBg className="svg-bg" />
                 <div className="panel-equal-column">
-                  <div>
+                  <div className="we-work-text-wrapper">
                     <h2>Creative Development</h2>
                     <p className="panel-paragraph">Whatever stage of the process you're at, we can take your podcast from an idea straight to your the ears of your customers. Whatever stage of the process you're at, we can take your podcast from an idea straight to your the ears of your customers.</p>
                   </div>
                   <StaticImage
-                    src="../../assets/unnamed.jpg"
-                    alt="Smiling people"
+                    src="../../assets/we-work/pexels-elina-araja.png"
+                    alt="Microphone"
                     placeholder="blurred"
                     layout="fullWidth"
                     objectPosition="0 0"
@@ -309,16 +314,15 @@ const Work = React.forwardRef((props, ref) => {
                 </div>
                 <div className="panel-equal-column reverse-on-mob">
                   <StaticImage
-                    src="../../assets/unnamed-2.jpg"
+                    src="../../assets/we-work/pexels-los-muertos-crew.png"
                     alt="Smiling people"
                     placeholder="blurred"
                     layout="fullWidth"
-                    aspectRatio={16/9}
-                    // style={{maxWidth: '320px', margin: '0 auto 2rem auto'}}
                     objectPosition="0 0"
                     className="img-r"
+                    style={{maxWidth: '290px', margin: '0 auto'}}
                     />
-                    <div>
+                    <div className="we-work-text-wrapper">
                       <h2>Record and Produce</h2>
                       <p className="panel-paragraph">Whatever stage of the process you're at, we can take your podcast from an idea straight to your the ears of your customers. Whatever stage of the process you're at, we can take your podcast from an idea straight to your the ears of your customers.</p>
                     </div>
@@ -326,33 +330,31 @@ const Work = React.forwardRef((props, ref) => {
               </Panel>
               <Panel className="panel panel3">
                 <div className="panel-equal-column">
-                  <div>
+                  <div className="we-work-text-wrapper">
                     <h2>Advertise and Promote</h2>
                     <p className="panel-paragraph">Whatever stage of the process you're at, we can take your podcast from an idea straight to your the ears of your customers. Whatever stage of the process you're at, we can take your podcast from an idea straight to your the ears of your customers.</p>
                   </div>
                   <StaticImage
-                    src="../../assets/unnamed-1.jpg"
+                    src="../../assets/we-work/pexels-jonathan-pham-12375133.jpg"
                     alt="Smiling people"
                     placeholder="blurred"
                     layout="fullWidth"
                     aspectRatio={16/9}
-                    // style={{marginBottom: '2rem'}}
                     objectPosition="0 0"
                     className="img-l"
                     />
                 </div>
                 <div className="panel-equal-column reverse-on-mob">
                   <StaticImage
-                    src="../../assets/unnamed-3.png"
-                    alt="Smiling people"
+                    src="../../assets/we-work/pexels-cottonbro-studio-6491797.png"
+                    alt="Woman with magnifying glass"
                     placeholder="blurred"
                     layout="fullWidth"
-                    aspectRatio={16/9}
-                    // style={{maxWidth: '320px', margin: '0 auto 2rem auto'}}
                     objectPosition="0 0"
                     className="img-r"
+                    style={{maxWidth: '290px', margin: '0 auto'}}
                     />
-                    <div>
+                    <div className="we-work-text-wrapper">
                       <h2>Analyse Your Data</h2>
                       <p className="panel-paragraph">Whatever stage of the process you're at, we can take your podcast from an idea straight to your the ears of your customers. Whatever stage of the process you're at, we can take your podcast from an idea straight to your the ears of your customers.</p>
                     </div>
