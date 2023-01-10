@@ -4,10 +4,10 @@ import { graphql } from "gatsby";
 import GraphQLErrorList from "../components/graphql-error-list";
 import { colors } from "../styles/colors";
 import styled from "styled-components";
+import { mapEdgesToNodes, filterOutDocsWithoutSlugs, filterOutNonFeaturedDocs } from "../lib/helpers";
 import CentralLogo from "../components/central-logo"
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs, filterOutNonFeaturedDocs } from "../lib/helpers";
 import PodcastGrid from "../components/our-podcasts/podcast-preview-grid";
 import FeaturedPodcastGrid from "../components/our-podcasts/featured-podcast-preview-grid";
 

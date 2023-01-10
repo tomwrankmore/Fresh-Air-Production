@@ -1,11 +1,16 @@
 import React from "react";
+import { graphql } from "gatsby";
 import { colors } from "../styles/colors";
 import { device } from "../styles/mediaQueries";
 import styled from "styled-components";
+import { mapEdgesToNodes } from "../lib/helpers";
 import CentralLogo from "../components/central-logo"
 import { StaticImage } from "gatsby-plugin-image";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
+
+import ManagementItem from '../components/who-we-are/management-item'
+import StaffItem from '../components/who-we-are/staff-member-item'
 
 // Material UI
 import Accordion from "@mui/material/Accordion";
@@ -13,6 +18,43 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
+export const query = graphql`
+  query WhoWeArePageQuery {
+    management: allSanityManagementMember {
+      edges {
+        node {
+          name
+          title
+          id
+          _rawBio
+          image {
+            asset {
+              gatsbyImageData
+              title
+            }
+          }
+        }
+      }
+    }
+    staffMembers: allSanityStaffMember {
+      edges {
+        node {
+          name
+          title
+          id
+          _rawBio
+          image {
+            asset {
+              gatsbyImageData
+            }
+          }
+          
+        }
+      }
+    }
+  }
+`;
 
 const WhoWeAreWrapper = styled.div` 
     padding: 120px 2rem 2rem;
@@ -54,7 +96,7 @@ const Directors = styled.ul`
     }
 `
 
-const StaffGrid = styled.div`
+const StaffGrid = styled.ul`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
     gap: 4px;
@@ -81,7 +123,23 @@ const textContentStyles = {
 }
 
 
-const WhoWeAre = () => {
+const WhoWeAre = (props) => {
+
+  const { data, errors } = props;
+  if (errors) {
+    return (
+      <Layout>
+        <GraphQLErrorList errors={errors} />
+      </Layout>
+    );
+  }
+
+  const managementNodes = data && data.management && mapEdgesToNodes(data.management);
+  const staffNodes = data && data.staffMembers && mapEdgesToNodes(data.staffMembers);
+
+  console.log('managementNodes: ', managementNodes)
+  console.log('staffNodes: ', staffNodes)
+
 
     return (
         <Layout>
@@ -89,466 +147,18 @@ const WhoWeAre = () => {
             <CentralLogo />
             <WhoWeAreWrapper>
                 <Directors>
-                    <li>
-                        <div>
-                            <StaticImage
-                                src="../assets/founder.png"
-                                alt="Founder"
-                                placeholder="blurred"
-                                layout="fullWidth"
-                                objectPosition="0 0"
-                                className="wwaSectionImg"
-                                imgClassName=''
-                            />
-                            <h3>Neil Cowling</h3>
-                            <Accordion 
-                                disableGutters={true}
-                                sx={rootStyles}>
-                                <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
-                                    aria-controls="panel1a-content"
-                                    id="panel1a-header"
-                                    sx={btnStyles}
-                                >
-                                <Typography>Founder</Typography>
-                                </AccordionSummary>
-                                <AccordionDetails sx={textContentStyles}>
-                                    <Typography>Neil founded Fresh Air Production in 2003, after spending his early career as a producer with BBC Radio 5Live.</Typography>
-                                    <Typography>He's gone on to be of the most experienced, well-connected and highly regarded producers in independent radio production. He's directed David Attenborough, managed the promotional campaigns for five Olympic Games, and written the lyrics for a ridiculous World Cup song that no-one bought.</Typography>
-                                    <Typography>Neil has also been Creative Development Director at RadioWorks, and is a regular event speaker.  In 2017 he decided that Fresh Air should focus on branded podcasts, and the rest is history.</Typography>
-                                </AccordionDetails>
-                            </Accordion>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <StaticImage
-                                src="../assets/director-1.png"
-                                alt="Michaela Hallam"
-                                placeholder="blurred"
-                                layout="fullWidth"
-                                objectPosition="0 0"
-                                className="wwaSectionImg"
-                                imgClassName=''
-                            />
-                            <h3>Michaela Hallam</h3>
-                            <Accordion 
-                                disableGutters={true}
-                                sx={rootStyles}
-                            >
-                                <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
-                                    aria-controls="panel1a-content"
-                                    id="panel1a-header"
-                                    sx={btnStyles}
-                                >
-                                    <Typography>Director of Content</Typography>
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                    <Typography>
-                                        Michaela joined Fresh Air after 20 years with the BBC, where she was Head of Audio at BBC Creative. There she was responsible for leading an award winning team to create the audio marketing campaigns for the BBC's highest priority shows from Strictly to Killing Eve, the Olympics to Eastenders, Dr Who and Planet Earth. We could go on.
-                                    </Typography>
-                                    <Typography>
-                                        She's also worked for every BBC network radio station, developed strategy and creative for the BBC's Voice and Connected Speaker offering, and commissioned sonic brand identities for BBC Music and BBC Sounds.
-                                    </Typography>
-                                </AccordionDetails>
-                            </Accordion>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <StaticImage
-                                src="../assets/director-2.png"
-                                alt="Richard Blakem"
-                                placeholder="blurred"
-                                layout="fullWidth"
-                                objectPosition="0 0"
-                                className="wwaSectionImg"
-                                imgClassName=''
-                            />
-                            <h3>Richard Blake</h3>
-                            <Accordion 
-                                disableGutters={true}
-                                sx={rootStyles}
-                            >
-                                <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
-                                    aria-controls="panel1a-content"
-                                    id="panel1a-header"
-                                    sx={btnStyles}
-                                >
-                                <Typography>Director of Markerting & Growth</Typography>
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                <Typography>
-                                    Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                                </Typography>
-                                <Typography>
-                                    From launching websites at The Guardian & Observer, to launching some of the UK's biggest shows at the BBC and Sky, Richard then went on to lead global marketing for Yahoo and HuffPost. He loves making our podcasts wildly successful, building them to be a core part of any marketing and content strategy.
-                                </Typography>
-                                </AccordionDetails>
-                            </Accordion>
-                        </div>
-                    </li>
+                  {managementNodes && 
+                    managementNodes.map(node => (
+                      <ManagementItem manager={node} key={node.id}/>
+                    ))
+                  }
                 </Directors>
                 <StaffGrid>
-                    <div>
-                        <StaticImage
-                            src="../assets/director-2.png"
-                            alt="Richard Blakem"
-                            placeholder="blurred"
-                            layout="fullWidth"
-                            objectPosition="0 0"
-                            className="wwaSectionImg"
-                            imgClassName=''
-                        />
-                        <h3>Staff Member</h3>
-                        <Accordion 
-                            disableGutters={true}
-                            sx={rootStyles}
-                        >
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                sx={btnStyles}
-                            >
-                            <Typography>Senior Producer</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>
-                                Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                            </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                    </div>
-                    <div>
-                        <StaticImage
-                            src="../assets/director-2.png"
-                            alt="Staff Memberm"
-                            placeholder="blurred"
-                            layout="fullWidth"
-                            objectPosition="0 0"
-                            className="wwaSectionImg"
-                            imgClassName=''
-                        />
-                        <h3>Staff Member</h3>
-                        <Accordion 
-                                disableGutters={true}
-                                sx={rootStyles}>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                sx={btnStyles}
-                            >
-                            <Typography>Senior Producer</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>
-                                Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                            </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                    </div>
-                    <div>
-                        <StaticImage
-                            src="../assets/director-2.png"
-                            alt="Staff Memberm"
-                            placeholder="blurred"
-                            layout="fullWidth"
-                            objectPosition="0 0"
-                            className="wwaSectionImg"
-                            imgClassName=''
-                        />
-                        <h3>Staff Member</h3>
-                        <Accordion 
-                                disableGutters={true}
-                                sx={rootStyles}>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                sx={btnStyles}
-                            >
-                            <Typography>Senior Producer</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>
-                                Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                            </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                    </div>
-                    <div>
-                        <StaticImage
-                            src="../assets/director-2.png"
-                            alt="Staff Memberm"
-                            placeholder="blurred"
-                            layout="fullWidth"
-                            objectPosition="0 0"
-                            className="wwaSectionImg"
-                            imgClassName=''
-                        />
-                        <h3>Staff Member</h3>
-                        <Accordion 
-                                disableGutters={true}
-                                sx={rootStyles}>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                sx={btnStyles}
-                            >
-                            <Typography>Senior Producer</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>
-                                Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                            </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                    </div>
-                    <div>
-                        <StaticImage
-                            src="../assets/director-2.png"
-                            alt="Staff Memberm"
-                            placeholder="blurred"
-                            layout="fullWidth"
-                            objectPosition="0 0"
-                            className="wwaSectionImg"
-                            imgClassName=''
-                        />
-                        <h3>Staff Member</h3>
-                        <Accordion 
-                            disableGutters={true}
-                            sx={rootStyles}
-                        >
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                sx={btnStyles}
-                            >
-                            <Typography>Senior Producer</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>
-                                Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                            </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                    </div>
-                    <div>
-                        <StaticImage
-                            src="../assets/director-2.png"
-                            alt="Staff Memberm"
-                            placeholder="blurred"
-                            layout="fullWidth"
-                            objectPosition="0 0"
-                            className="wwaSectionImg"
-                            imgClassName=''
-                        />
-                        <h3>Staff Member</h3>
-                        <Accordion 
-                            disableGutters={true}
-                            sx={rootStyles}
-                        >
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                sx={btnStyles}
-                            >
-                            <Typography>Senior Producer</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>
-                                Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                            </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                    </div>
-                    <div>
-                        <StaticImage
-                            src="../assets/director-2.png"
-                            alt="Staff Memberm"
-                            placeholder="blurred"
-                            layout="fullWidth"
-                            objectPosition="0 0"
-                            className="wwaSectionImg"
-                            imgClassName=''
-                        />
-                        <h3>Staff Member</h3>
-                        <Accordion 
-                            disableGutters={true}
-                            sx={rootStyles}
-                        >
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                sx={btnStyles}
-                            >
-                            <Typography>Senior Producer</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>
-                                Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                            </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                    </div>
-                    <div>
-                        <StaticImage
-                            src="../assets/director-2.png"
-                            alt="Staff Memberm"
-                            placeholder="blurred"
-                            layout="fullWidth"
-                            objectPosition="0 0"
-                            className="wwaSectionImg"
-                            imgClassName=''
-                        />
-                        <h3>Staff Member</h3>
-                        <Accordion 
-                            disableGutters={true}
-                            sx={rootStyles}
-                        >
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                sx={btnStyles}
-                            >
-                            <Typography>Senior Producer</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>
-                                Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                            </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                    </div>
-                    <div>
-                        <StaticImage
-                            src="../assets/director-2.png"
-                            alt="Staff Memberm"
-                            placeholder="blurred"
-                            layout="fullWidth"
-                            objectPosition="0 0"
-                            className="wwaSectionImg"
-                            imgClassName=''
-                        />
-                        <h3>Staff Member</h3>
-                        <Accordion 
-                            disableGutters={true}
-                            sx={rootStyles}
-                        >
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                sx={btnStyles}
-                            >
-                            <Typography>Senior Producer</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>
-                                Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                            </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                    </div>
-                    <div>
-                        <StaticImage
-                            src="../assets/director-2.png"
-                            alt="Staff Memberm"
-                            placeholder="blurred"
-                            layout="fullWidth"
-                            objectPosition="0 0"
-                            className="wwaSectionImg"
-                            imgClassName=''
-                        />
-                        <h3>Staff Member</h3>
-                        <Accordion 
-                            disableGutters={true}
-                            sx={rootStyles}
-                        >
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                sx={btnStyles}
-                            >
-                            <Typography>Senior Producer</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>
-                                Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                            </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                    </div>
-                    <div>
-                        <StaticImage
-                            src="../assets/director-2.png"
-                            alt="Staff Memberm"
-                            placeholder="blurred"
-                            layout="fullWidth"
-                            objectPosition="0 0"
-                            className="wwaSectionImg"
-                            imgClassName=''
-                        />
-                        <h3>Staff Member</h3>
-                        <Accordion 
-                            disableGutters={true}
-                            sx={rootStyles}
-                        >
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                sx={btnStyles}
-                            >
-                            <Typography>Senior Producer</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>
-                                Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                            </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                    </div>
-                    <div>
-                        <StaticImage
-                            src="../assets/director-2.png"
-                            alt="Staff Memberm"
-                            placeholder="blurred"
-                            layout="fullWidth"
-                            objectPosition="0 0"
-                            className="wwaSectionImg"
-                            imgClassName=''
-                        />
-                        <h3>Staff Member</h3>
-                        <Accordion 
-                            disableGutters={true}
-                            sx={rootStyles}
-                        >
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon style={{color: '#fff'}} />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                sx={btnStyles}
-                            >
-                            <Typography>Senior Producer</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>
-                                Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                            </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                    </div>
+                  {staffNodes && 
+                    staffNodes.map(node => (
+                      <StaffItem staffMember={node} key={node.id}/>
+                    ))
+                  }
                 </StaffGrid>
             </WhoWeAreWrapper>
         </Layout>

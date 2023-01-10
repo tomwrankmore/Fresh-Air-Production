@@ -1,13 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
-import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
-import { getGatsbyImageData } from "gatsby-source-sanity";
-import { cn, buildImageObj } from "../../lib/helpers";
-import { imageUrlFor } from "../../lib/image-url";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { colors } from "../../styles/colors";
 import styled from "styled-components";
-import { device } from "../../styles/mediaQueries";
-import clientConfig from "../../../client-config";
 import BlockContent from "../block-content";
 
 import { FaSpotify, FaPodcast, FaAmazon, FaArrowRight } from 'react-icons/fa';
@@ -20,7 +15,6 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { red } from "@mui/material/colors";
 
 const LinkContent = styled.div` 
     display: flex;

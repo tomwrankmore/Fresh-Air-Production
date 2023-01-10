@@ -1,7 +1,5 @@
-import React, {useLayoutEffect, useRef} from "react";
-import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
-import {colors} from "../../styles/colors"
-import {device} from "../../styles/mediaQueries"
+import React from "react";
+import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 
 const PodcastImgSectionWrapper = styled.div` 
