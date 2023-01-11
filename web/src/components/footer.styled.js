@@ -70,7 +70,7 @@ export const LinkList = styled.ul`
         border-bottom: none;
     }
     li {
-      line-height: 1.45rem;
+      /* line-height: 1.45rem; */
       font-size: 1.1rem;
     }
 `

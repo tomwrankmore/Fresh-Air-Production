@@ -51,7 +51,7 @@ const ArchivePage = props => {
       <SEO title="Archive" />
       <Container>
         <h1 className={responsiveTitle1}>Projects</h1>
-        {projectNodes && projectNodes.length > 0 && <ProjectPreviewGrid nodes={projectNodes} />}
+        {/* {projectNodes && projectNodes.length > 0 && <ProjectPreviewGrid nodes={projectNodes} />} */}
       </Container>
     </Layout>
   );

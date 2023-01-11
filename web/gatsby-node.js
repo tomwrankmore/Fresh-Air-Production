@@ -9,17 +9,17 @@ async function createProjectPages (graphql, actions) {
   const {createPage} = actions
   const result = await graphql(`
     {
-      allSanitySampleProject(filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}) {
-        edges {
-          node {
-            id
-            publishedAt
-            slug {
-              current
-            }
-          }
-        }
-      }
+      # allSanitySampleProject(filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}) {
+      #   edges {
+      #     node {
+      #       id
+      #       publishedAt
+      #       slug {
+      #         current
+      #       }
+      #     }
+      #   }
+      # }
       allSanityEditorial(filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}) {
         edges {
           node {
@@ -47,7 +47,7 @@ async function createProjectPages (graphql, actions) {
 
   if (result.errors) throw result.errors
 
-  const projectEdges = (result.data.allSanitySampleProject || {}).edges || []
+  // const projectEdges = (result.data.allSanitySampleProject || {}).edges || []
   const editorialEdges = (result.data.allSanityEditorial || {}).edges || []
   const podcastEdges = (result.data.allSanityPodcast || {}).edges || []
 
