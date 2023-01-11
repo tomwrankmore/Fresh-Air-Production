@@ -98,7 +98,14 @@ const Directors = styled.ul`
 
 const StaffGrid = styled.ul`
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
+    grid-template-columns: 1fr;
+    @media ${device.mediaMinSmall} {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media ${device.mediaMinMedium} {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
     gap: 4px;
     h3 {
         background-color: ${colors.FABlue};

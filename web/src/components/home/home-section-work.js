@@ -111,6 +111,9 @@ const Panel = styled.div`
         text-transform: initial;
         font-weight: normal;
       }
+      h4 {
+        font-size: 1.875rem;
+      }
       h4, h5 {
         margin-bottom: 2rem;
       }
@@ -320,7 +323,7 @@ const Work = React.forwardRef((props, ref) => {
                     layout="fullWidth"
                     objectPosition="0 0"
                     className="img-r"
-                    style={{maxWidth: '290px', margin: '0 auto'}}
+                    style={{maxWidth: '290px', margin: '0 auto 2rem auto'}}
                     />
                     <div className="we-work-text-wrapper">
                       <h2>Record and Produce</h2>
@@ -352,7 +355,7 @@ const Work = React.forwardRef((props, ref) => {
                     layout="fullWidth"
                     objectPosition="0 0"
                     className="img-r"
-                    style={{maxWidth: '290px', margin: '0 auto'}}
+                    style={{maxWidth: '290px', margin: '0 auto 2rem auto'}}
                     />
                     <div className="we-work-text-wrapper">
                       <h2>Analyse Your Data</h2>

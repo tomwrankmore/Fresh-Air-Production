@@ -1,5 +1,6 @@
 import React, {useLayoutEffect, useRef} from "react";
 import { StaticImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
 import gsap from "gsap";
@@ -55,12 +56,15 @@ const PodcastsWrapper = styled.div`
                 max-width: 100%;
                 text-align: center;
                 line-height: inherit;
-                font-size: 1.5;
+                font-size: 2.25rem;
                 @media ${device.mediaMinMedium} {
-                    max-width: 65%;
+                    max-width: 85%;
                     line-height: 3.5rem;
-                    /* font-size: 2.875rem; */
-                    font-size: clamp(1.875rem, 2rem, 3rem);
+                    font-size: 2.875rem;
+                    /* font-size: clamp(1.875rem, 3rem, 4rem); */
+                }
+                @media ${device.mediaMinLarge} {
+                    font-size: 3rem;
                 }
             }
         }
@@ -130,28 +134,31 @@ const Podcasts = React.forwardRef(({tl}, ref) => {
         <PodcastsWrapper ref={root}>
             <div className="leftCol">
                 <Podcast>
+                  <Link to="/podcast/call-of-the-wild-wwf/">
                     <StaticImage
                         src="../../assets/we-produce/we-produce-1.jpeg"
-                        alt="Smiling people"
+                        alt="call-of-the-wild-wwf"
                         placeholder="blurred"
                         layout="fullWidth"
                         className="podcastImgWrapper"
                         imgClassName="podcastImg"
                     />
-                    <h3>What makes us stronger</h3>
+                  </Link>
                 </Podcast>
                 <Podcast>
-                    <StaticImage
-                        src="../../assets/we-produce/we-produce-2.jpeg"
-                        alt="Smiling people"
-                        placeholder="blurred"
-                        layout="fullWidth"
-                        className="podcastImgWrapper"
-                        imgClassName="podcastImg"
-                    />
-                    <h3>The beauty podcast with sali hughes for avon</h3>
+                  <Link to="/podcast/podcast-test-5/">
+                      <StaticImage
+                          src="../../assets/we-produce/we-produce-2.jpeg"
+                          alt="Smiling people"
+                          placeholder="blurred"
+                          layout="fullWidth"
+                          className="podcastImgWrapper"
+                          imgClassName="podcastImg"
+                      />
+                  </Link>
                 </Podcast>
                 <Podcast>
+                  <Link to="/podcast/podcast-test-5/">
                     <StaticImage
                         src="../../assets/we-produce/we-produce-3.jpeg"
                         alt="Smiling people"
@@ -160,7 +167,7 @@ const Podcasts = React.forwardRef(({tl}, ref) => {
                         className="podcastImgWrapper"
                         imgClassName="podcastImg"
                     />
-                    <h3>Call of The Wild - WWF</h3>
+                  </Link>
                 </Podcast>
                 <Podcast>
                     <StaticImage
@@ -171,7 +178,7 @@ const Podcasts = React.forwardRef(({tl}, ref) => {
                         className="podcastImgWrapper"
                         imgClassName="podcastImg"
                     />
-                    <h3>Call of The Wild - WWF</h3>
+                    {/* <h3>Call of The Wild - WWF</h3> */}
                 </Podcast>
             </div>
             <div className="rightCol">

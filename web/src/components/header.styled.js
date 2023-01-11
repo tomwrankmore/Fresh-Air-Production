@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: flex-end;
 
-  @media ${device.mediaMinMedium} {
+  @media ${device.mediaMinLarge} {
     padding: 1.5em 1.5em;
   }
 `
@@ -42,6 +42,7 @@ export const Nav = styled.nav`
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 0.075rem;
+    font-size: 1.2rem;
     /* text-align: center; */
   }
 
@@ -52,12 +53,12 @@ export const Nav = styled.nav`
     }
   }
 
-  @media ${device.mediaMaxMedium} {
+  @media ${device.mediaMaxLarge} {
     position: absolute;
     left: 1rem;
     right: 1rem;
     border-radius: 1rem;
-    top: 1rem;
+    top: 5rem;
     padding: 0 2rem;
     background-color: white;
 
@@ -70,7 +71,7 @@ export const Nav = styled.nav`
     }
   }
 
-  @media ${device.mediaMinMedium} {
+  @media ${device.mediaMinLarge} {
     display: flex;
     align-items: center;
     width: 100%;
@@ -118,7 +119,7 @@ export const ToggleNavButton = styled.button `
         fill: inherit;
     }
 
-    @media ${device.mediaMinMedium} {
+    @media ${device.mediaMinLarge} {
         display: none;
     }
 `

@@ -45,6 +45,13 @@ a:visited {
   height: 100%;
 }
 
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 120px !important;
+}
+
 .swiper h1 {
   color: #fff;
   max-width: 75%;
@@ -88,8 +95,8 @@ a:visited {
 }
 
 .swiper .swiper-pagination-bullet {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   text-align: center;
   line-height: 20px;
   font-size: 12px;

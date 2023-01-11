@@ -5,12 +5,10 @@ import { colors } from "../styles/colors";
 import { device } from "../styles/mediaQueries";
 
 const StyledMarquee = styled.section` 
-    /* background: #fff; */
-    /* color: ${colors.FABlue}; */
     text-transform: uppercase;
     font-weight: bold;
     font-size: 1.25rem;
-    padding: 32px 0;
+    padding: 3rem 0;
     position: relative;
     overflow: hidden;
     @media ${device.mediaMinLarge} {
