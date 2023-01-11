@@ -20,7 +20,7 @@ export default () =>
       // S.listItem()
       //   .title('Sample projects')
       //   .schemaType('sampleProject')
-      //   .child(S.documentTypeList('sampleProject').title('Sample projects')),
+      //   .child(S.documentTypeList('sampleProject').title('Sample projects')),y
       // S.listItem()
       //   .title('People')
       //   .schemaType('staffMember')
