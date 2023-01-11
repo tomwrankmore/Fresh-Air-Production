@@ -20,8 +20,6 @@ import Testimonials from "../components/home/home-section-testimonials";
 import Editorials from "../components/home/home-section-editorials";
 import TagCloud from "../components/home/home-section-cloud"
 
-gsap.registerPlugin(ScrollTrigger);
-
 export const query = graphql`
   query IndexPageQuery {
     site: sanitySiteSettings(_id: {regex: "/(drafts.|)siteSettings/"}) {
@@ -29,40 +27,25 @@ export const query = graphql`
       description
       keywords
     }
-    projects: allSanitySampleProject(
-      limit: 6
+    editorials: allSanityEditorial(
       sort: {publishedAt: DESC}
       filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}
+      limit: 8
     ) {
       edges {
         node {
           id
-          mainImage {
-            crop {
-              _key
-              _type
-              top
-              bottom
-              left
-              right
-            }
-            hotspot {
-              _key
-              _type
-              x
-              y
-              height
-              width
-            }
-            asset {
-              _id
-            }
-            alt
-          }
-          title
-          _rawExcerpt
           slug {
             current
+          }
+          title
+          publishedAt
+          isFeaturedPost
+          previewImage {
+            alt
+            asset {
+              gatsbyImageData
+            }
           }
         }
       }
@@ -71,7 +54,11 @@ export const query = graphql`
 `;
 
 const IndexPage = props => {
+  gsap.registerPlugin(ScrollTrigger);
+
   const { data, errors } = props;
+
+  const editorialNodes = data && data.editorials && mapEdgesToNodes(data.editorials);
 
 // GSAP Timeline Refs
 const heroTl = useRef(null)
@@ -133,16 +120,8 @@ const tagCloudRef = useRef(null)
           ref={marqueeRef}/>
           <Work ref={horizontalPanelsRef} />
         <Testimonials />
-        <Editorials/>
-        {/* <Blog/> */}
+        <Editorials editorialNodes={editorialNodes} />
         <TagCloud ref={tagCloudRef} />
-        {/* {projectNodes && (
-          <ProjectPreviewGrid
-            title="Latest projects"
-            nodes={projectNodes}
-            browseMoreHref="/archive/"
-          />
-        )} */}
       </Layout>
   );
 };

@@ -18,6 +18,7 @@ const TestimonialsWrapper = styled.div`
     position: relative;
     height: 100%;
     overflow: hidden;
+    margin-bottom: 3rem;
 
     .soundwaveGraphic {
         position: absolute;

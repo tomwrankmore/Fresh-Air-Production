@@ -149,7 +149,6 @@ const Editorials = ({data}) => {
                   </Link>
                 ))
               }
-              {/*  */}
             </EditorialsGrid>
           </EditorialsWrapper>
         </Layout>
