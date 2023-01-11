@@ -5,12 +5,12 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // Document types
-import category from './documents/category'
+// import category from './documents/category'
 import staffMember from './documents/staff-member'
 import managementMember from './documents/management-staff'
 import podcast from './documents/podcast'
 import editorial from './documents/editorial'
-import sampleProject from './documents/sampleProject'
+// import sampleProject from './documents/sampleProject'
 import siteSettings from './documents/siteSettings'
 
 // Object types
@@ -36,12 +36,12 @@ export default createSchema({
     simplePortableText,
     // The following are document types which will appear
     // in the studio.
-    category,
+    // category,
     staffMember,
     managementMember,
     podcast,
     editorial,
-    sampleProject,
+    // sampleProject,
     siteSettings
   ])
 })
