@@ -14,6 +14,13 @@ const EditorialsTitleWrapper = styled.div`
     h1 {
         font-weight: normal;
     }
+    .view-all-editorials {
+      text-decoration: none;
+      font-size: 1.25rem;
+      &:hover {
+        text-decoration: underline;
+      }
+    } 
 `
 
 const EditorialsWrapper = styled.div` 
@@ -43,7 +50,6 @@ const EditorialsWrapper = styled.div`
         h3 {
             font-family: 'Polysans';
             font-weight: normal;
-            text-transform: uppercase;
             text-align: left;
             padding: 0 0rem 0.875rem 0rem;
             @media ${device.mediaMinMedium} {
@@ -110,46 +116,46 @@ const Editorials = ({editorialNodes}) => {
     return (
         <>
             <EditorialsTitleWrapper>
-                <h1>Editorials</h1>
-                <p>View all Editorials</p>
-                
+              <h1>Editorials</h1>
+              <Link to="/editorials/" className="view-all-editorials">
+                View all Editorials
+              </Link>
             </EditorialsTitleWrapper>
             <EditorialsWrapper className="editorials-wrapper">
-                <div className="editorials-left-col">
-                  <StaticImage
-                    src="../../assets/blog1.png"
-                    alt="Smiling people"
-                    placeholder="blurred"
-                    objectFit="cover"
-                    className="imgWrapper"
-                  />
-                  <div className="titleWrapper">
-                    <h3>Unearthed with Kew Gardens launches, exploring the relationship with food production and how it's made</h3>
-                  </div>
-                  
+              <div className="editorials-left-col">
+                <StaticImage
+                  src="../../assets/sweet-love.jpg"
+                  alt="Smiling people"
+                  placeholder="blurred"
+                  objectFit="cover"
+                  className="imgWrapper"
+                />
+                <div className="titleWrapper">
+                  <h3>Unearthed with Kew Gardens launches, exploring the relationship with food production and how it's made</h3>
                 </div>
-                <div className="editorials-right-col">
-                    <div className="editorials-right-grid">
-                    {editorialNodes && 
-                      editorialNodes.map(node => (
-                        <Link to={`/editorial/${node.slug.current}`} className="editorials-link" key={node.id}>
-                          <div className="post">
-                            <GatsbyImage
-                              image={node.previewImage.asset.gatsbyImageData}
-                              alt={node.previewImage.alt}
-                              placeholder="blurred"
-                              objectFit="cover"
-                              className="imgWrapper"
-                            />
-                            <div className="titleWrapper">
-                              <h3>{node.title}</h3>
-                            </div>
+              </div>
+              <div className="editorials-right-col">
+                <div className="editorials-right-grid">
+                  {editorialNodes && 
+                    editorialNodes.map(node => (
+                      <Link to={`/editorial/${node.slug.current}`} className="editorials-link" key={node.id}>
+                        <div className="post">
+                          <GatsbyImage
+                            image={node.previewImage.asset.gatsbyImageData}
+                            alt={node.previewImage.alt}
+                            placeholder="blurred"
+                            objectFit="cover"
+                            className="imgWrapper"
+                          />
+                          <div className="titleWrapper">
+                            <h3>{node.title}</h3>
                           </div>
-                        </Link>
-                      ))
-                    }
-                    </div>
+                        </div>
+                      </Link>
+                    ))
+                  }
                 </div>
+              </div>
             </EditorialsWrapper>
         </>
     )

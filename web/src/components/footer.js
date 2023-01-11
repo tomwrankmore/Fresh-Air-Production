@@ -36,7 +36,7 @@ const Footer = ({ children }) => {
             </NavigationWrapper>
             <SiteInfo>
                 <Logo className="footerLogo" />
-              © {new Date().getFullYear()}, Fresh Air Productions
+                <p>© {new Date().getFullYear()}, Fresh Air Productions</p>
             </SiteInfo>
           </FooterWrapper>
         </StyledFooter>

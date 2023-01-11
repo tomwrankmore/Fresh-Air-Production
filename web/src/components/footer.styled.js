@@ -26,7 +26,7 @@ export const NavigationWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     @media ${device.mediaMinMedium} {
         flex-direction: row;
         align-items: flex-start;
@@ -52,6 +52,11 @@ export const SiteInfo = styled.div`
     text-align: left;
     font-size: 0.875rem;
     line-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    justify-content: center;
 `
 
 export const LinkList = styled.ul` 
@@ -65,7 +70,8 @@ export const LinkList = styled.ul`
         border-bottom: none;
     }
     li {
-        line-height: 1.875rem;
+      line-height: 1.45rem;
+      font-size: 1.1rem;
     }
 `
 
