@@ -73,7 +73,7 @@ const PodcastPreview = ({node}) => {
           id="panel1a-header"
           sx={btnStyles}
         >
-        <Typography>Find Our More</Typography>
+        <Typography>Tell me more</Typography>
         </AccordionSummary>
         <AccordionDetails>
         {node._rawExcerpt && (
@@ -82,7 +82,8 @@ const PodcastPreview = ({node}) => {
           </Excerpt>
         )}
         <LinkContent>
-            <Link to={`/podcast/${node.slug.current}`} className="read-more-link"><BsFillPlayFill/>Play extract</Link>
+            {/* <Link to={`/podcast/${node.slug.current}`} className="read-more-link"><BsFillPlayFill/>Play</Link> */}
+            <a href="https://omny.fm/shows/fresh-ears/telling-complex-stories-with-gml" target="_blank" rel="noreferrer" className="read-more-link">Play</a>
             <IconList>
               {node.podcastLink && (<li><a href={node.podcastLink} target="_blank" rel="noreferrer"><FaPodcast/></a></li>)}
               {node.spotifyLink && (<li><a href={node.spotifyLink} target="_blank" rel="noreferrer"><FaSpotify/></a></li>)}

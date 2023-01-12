@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "gatsby";
 import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
 import { colors } from "../../styles/colors";
@@ -28,11 +28,15 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
   const Bio = styled.div` 
     padding-top: 1rem;
     p {
-
+      line-height: initial;
+      color: pink;
     }
   `
 
   const StaffItem = ({staffMember}) => {
+    useEffect(() => {
+      
+    }, [])
     return (
       <li>
         <GatsbyImage

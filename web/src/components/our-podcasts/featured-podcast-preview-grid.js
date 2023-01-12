@@ -23,6 +23,7 @@ const FeaturedPodcasts = styled.ul`
         }
         .MuiAccordionDetails-root p {
             margin-bottom: 1rem;
+            line-height: initial;
         }
 
         .wwaSectionImg {
