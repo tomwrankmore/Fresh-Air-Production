@@ -42,6 +42,10 @@ const Column = styled.div`
     }
   }
 
+  &.column-awards-list {
+    padding: 1rem;
+  }
+
   @media ${device.mediaMinLarge} {
     /* width: 50%; */
   }
@@ -133,7 +137,6 @@ const WwdAwardsSection = React.forwardRef(({tl, nodes}, ref) => {
     console.log('pluginImage: ', pluginImage)
     console.log('nodes[0]: ', nodes[0].awardLogo.asset.localFile.childImageSharp.gatsbyImageData)
 
-
     useLayoutEffect(() => {
       let ctx = gsap.context(() => {
         tl.current = gsap.timeline()
@@ -164,7 +167,7 @@ const WwdAwardsSection = React.forwardRef(({tl, nodes}, ref) => {
               className="background-image" 
             />
           </Column>
-          <Column>
+          <Column className="column-awards-list">
             <AwardsList>
               {nodes && nodes.map((node, idx) => {
                 return (

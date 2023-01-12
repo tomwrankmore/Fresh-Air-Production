@@ -21,6 +21,11 @@ export default {
       type: 'figure'
     },
     {
+      name: 'awardLeftImage',
+      title: 'Award Ceremony Image',
+      type: 'figure'
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
