@@ -1,14 +1,15 @@
-import React, {useLayoutEffect, useRef} from "react";
+import React, {useLayoutEffect, useRef, useState} from "react";
 import gsap from "gsap";
 import {colors} from "../../styles/colors"
 import {device} from "../../styles/mediaQueries"
 import { graphql, useStaticQuery } from 'gatsby'
+import BlockContent from "../block-content";
 import styled from "styled-components";
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { BgImage, convertToBgImage } from 'gbimage-bridge';
 import BackgroundImage from 'gatsby-background-image'
 
-const HeroWrapper = styled.div`
+const AwardsSectionWrapper = styled.div`
   background-color: white;
   width: 100%;
   min-height: 100vh;
@@ -28,6 +29,18 @@ const Column = styled.div`
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
+
+  &.awards-sticky {
+    position: relative;
+    display: none;
+    @media ${device.mediaMinLarge} {
+      position: sticky;
+      display: block;
+      top: 0;
+      min-height: 100vh;
+      height: 100%;
+    }
+  }
 
   @media ${device.mediaMinLarge} {
     /* width: 50%; */
@@ -55,16 +68,18 @@ const Column = styled.div`
     align-items: center;
     justify-content: center;
   }
-
-  div.heroText {
+  ul {
+    li.heroText {
     padding: 2rem;
     text-align: center;
-    @media ${device.mediaMinMedium} {
-        padding: 4rem;
-        text-align: left;
+      @media ${device.mediaMinMedium} {
+          padding: 4rem;
+          text-align: left;
+      }
+      position: relative;
     }
-    position: relative;
   }
+  
 
   p.smallPrint {
     font-size: 0.875rem;
@@ -78,14 +93,23 @@ const Column = styled.div`
   }
 `;
 
-const AwardsList = styled.ul` 
+  const AwardsList = styled.ul` 
     margin-bottom: 2rem;
+    li {
+      p {
+        margin-bottom: 1rem;
+      }
+    }
     li:not(:last-child) {
         margin-bottom: 1rem;
     }
 `
 
-const WwdSectionFour = React.forwardRef(({tl}, ref) => {
+const WwdAwardsSection = React.forwardRef(({tl, nodes}, ref) => {
+
+  const [bgImageIndex, setBgImageIndex] = useState(0)
+
+  console.log('bgImageIndex: ', bgImageIndex)
 
     const { heroBackgroundImage } = useStaticQuery(
       graphql`
@@ -105,6 +129,10 @@ const WwdSectionFour = React.forwardRef(({tl}, ref) => {
     )
     const pluginImage = getImage(heroBackgroundImage);
     const bgImage = convertToBgImage(pluginImage);
+
+    console.log('pluginImage: ', pluginImage)
+    console.log('nodes[0]: ', nodes[0].awardLogo.asset.localFile.childImageSharp.gatsbyImageData)
+
 
     useLayoutEffect(() => {
       let ctx = gsap.context(() => {
@@ -129,37 +157,36 @@ const WwdSectionFour = React.forwardRef(({tl}, ref) => {
     }, [])
 
     return (
-      <HeroWrapper ref={ref}>
-          <Column className='clipped'>
+      <AwardsSectionWrapper ref={ref}>
+          <Column className='awards-sticky clipped'>
             <BgImage 
-              image={pluginImage}
+              image={nodes[bgImageIndex].awardLogo.asset.localFile.childImageSharp.gatsbyImageData}
               className="background-image" 
             />
           </Column>
           <Column>
-              <div className="heroText">
-                <h3 className="title tweenText">CORPORATE CONTENT AWARDS EUROPE</h3>
-                <AwardsList className="tweenText">
-                    <li>Winner - Best Corporate Storytellers: “Ahead of the Field” with NFU Mutual, 2020</li>
-                    <li>“The Case Files, with Slater + Gordon, 2021</li>
-                    <li>“Rewirement”, with Legal & General, 2022</li>
-                    <li>Best Use of Audio: </li>
-                    <li>Gold - “Ahead of the Field”, with NFU Mutual, 2020</li>
-                    <li>Gold - “The Energy Podcast”, with Shell, 2020</li>
-                    <li>Gold - “The Case Files” with Slater + Gordon, & Markettiers4DC, 2021</li>
-                    <li>Gold - “Rewirement” with Legal & General, 2022</li>
-                    <li>Silver - “Call of the Wild” with WWF, 2022</li>
-                    <li>Bronze - “What Were You Thinking?” with Vestiaire Collective, 2022</li>
-                    <li>Highly Commended - “The Robot Podcast” with ABB, 2022</li>
-                    <li>Best Use of a Celebrity or Influencer:  Gold - “Call of the Wild”, WWF, 2020</li>
-                    <li>Best Campaign to Assist with Corporate Positioning: Highly Commended - “Rewirement”, with Legal & General, 2022</li>
-                </AwardsList>
-                <h2 className="title tweenText">Money Age Awards</h2>
-                <p className="tweenText">Marketing Campaign of the Year - Highly Commended - Mortgage Insider, Barclays, 2021</p>
-              </div>
+            <AwardsList>
+              {nodes && nodes.map((node, idx) => {
+                return (
+                  <li key={node.id} onMouseEnter={() => setBgImageIndex(idx)} >
+                      {/* <GatsbyImage
+                        image={node.awardLogo.asset.gatsbyImageData}
+                        alt={node.awardLogo.alt}
+                        aspectRatio={1/1}
+                        placeholder="blurred"
+                        layout="fullWidth"
+                        objectPosition="0 0"
+                        className="podcastsSectionImg"
+                      /> */}
+                     <h3 className="title tweenText">{node.title}</h3>
+                     <BlockContent blocks={node._rawBody} />
+                  </li>
+                )
+              })}
+            </AwardsList>
           </Column>
-      </HeroWrapper>
+      </AwardsSectionWrapper>
     )
 })
 
-export default WwdSectionFour
+export default WwdAwardsSection

@@ -1,5 +1,7 @@
 import React, {useRef} from "react";
 import { colors } from "../styles/colors";
+import { graphql } from "gatsby";
+import { mapEdgesToNodes } from "../lib/helpers";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import CentralLogo from "../components/central-logo"
@@ -10,12 +12,57 @@ import {
     WwdSectionOne, 
     WwdSectionTwo, 
     WwdSectionThree, 
-    WwdSectionFour, 
+    WwdAwardsSection, 
     WwdLogoCloud, 
     WwdQuoteSection 
 } from "../components/what-we-do/"
 
+export const query = graphql`
+  query WhatWedoPageQuery {
+    awards: allSanityAward(
+      sort: {publishedAt: DESC}
+      filter: {publishedAt: {ne: null}}
+    ) {
+      edges {
+        node {
+          id
+          title
+          _rawBody
+          awardLogo {
+            alt
+            asset {
+              gatsbyImageData
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    width: 2000, 
+                    quality: 50, 
+                    placeholder: BLURRED, 
+                    formats: AUTO
+                  )
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 const WhatWeDo = props => {
+  const { data, errors } = props;
+  if (errors) {
+    return (
+      <Layout>
+        <GraphQLErrorList errors={errors} />
+      </Layout>
+    );
+  }
+
+  const allAwardNodes = data && data.awards && mapEdgesToNodes(data.awards);
+
+  console.log('allAwardNodes: ', allAwardNodes)
 
     // Section refs
     const heroRef = useRef(null)
@@ -58,7 +105,7 @@ const WhatWeDo = props => {
           textContent="Our Awards. Our Awards. Our Awards" 
           ref={marqueeRef}
         />
-        <WwdSectionFour ref={sectionFourRef} tl={section4Tl} />
+        <WwdAwardsSection ref={sectionFourRef} tl={section4Tl} nodes={allAwardNodes} />
         <WwdLogoCloud ref={sectionLogoCloudRef} />
       </Layout>
     );

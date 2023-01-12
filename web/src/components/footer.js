@@ -20,27 +20,27 @@ const Footer = ({ children }) => {
                 </LinkList>
                 <LinkList>
                     <li>
-                      <Link to='https://open.spotify.com/show/0HF5T1BVjaUR6dMlAamdB5' target='_blank' rel='noreferrer'>Spotify</Link>
+                      <a href='https://open.spotify.com/show/0HF5T1BVjaUR6dMlAamdB5' target='_blank' rel='noreferrer'>Spotify</a>
                     </li>
                     
                     <li>
-                      <Link to='https://podcasts.apple.com/gb/podcast/fresh-air/id214089682' target='_blank' rel='noreferrer'>Apple Podcasts</Link>
+                      <a href='https://podcasts.apple.com/gb/podcast/fresh-air/id214089682' target='_blank' rel='noreferrer'>Apple Podcasts</a>
                     </li>
                     
                     <li>
-                      <Link to='https://podcasts.google.com/search/Fresh%20Air' target='_blank' rel='noreferrer'>Google Podcasts</Link>
+                      <a href='https://podcasts.google.com/search/Fresh%20Air' target='_blank' rel='noreferrer'>Google Podcasts</a>
                     </li>
                     
                 </LinkList>
                 <LinkList>
                     <li>
-                      <Link to='https://www.instagram.com/freshairproductionuk/' target='_blank' rel='noreferrer'>Instagram</Link>
+                      <a href='https://www.instagram.com/freshairproductionuk/' target='_blank' rel='noreferrer'>Instagram</a>
                     </li>
                     <li>
-                      <Link to='https://www.facebook.com/freshairprod/' target='_blank' rel='noreferrer'>Facebook</Link>
+                      <a href='https://www.facebook.com/freshairprod/' target='_blank' rel='noreferrer'>Facebook</a>
                     </li>
                     <li>
-                      <Link to='https://www.youtube.com/@freshairproduction9627' target='_blank' rel='noreferrer'>YouTube</Link>
+                      <a href='https://www.youtube.com/@freshairproduction9627' target='_blank' rel='noreferrer'>YouTube</a>
                     </li>
                 </LinkList>
                 <Subscribe>
