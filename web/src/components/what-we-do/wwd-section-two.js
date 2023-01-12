@@ -4,7 +4,6 @@ import SplitText from "gsap/SplitText";
 import { StaticImage } from "gatsby-plugin-image";
 import {SectionParagraph} from "../../styles/typography"
 import {HeroWrapper, Column} from "./wwd.styled"
-import styled from "styled-components";
 
 const WwdSectionTwo = React.forwardRef(({tl}, ref) => {
 
@@ -73,7 +72,6 @@ const WwdSectionTwo = React.forwardRef(({tl}, ref) => {
                     objectPosition="0 0"
                     className="wwdSectionImg"
                     imgClassName='wwdImg'
-                    // style={{height: '100%'}}
                 />
             </Column>
             <Column className="text">

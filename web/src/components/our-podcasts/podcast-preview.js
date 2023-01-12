@@ -29,11 +29,29 @@ const IconList = styled.ul`
     gap: 6px;
     li {
         flex: 0;
+        a {
+          color: ${colors.FAGrey};
+          display: block;
+          &:hover {
+            color: ${colors.FAGrey};
+            transform: translateY(-2px) scale(1.2);
+            transition: transform 0.25s;
+          }
+          &:visited {
+            color: ${colors.FAGrey};
+          }
+          svg {
+            font-size: 1.5rem;
+          }
+        }
     }
 `
 
 const Excerpt = styled.div` 
   margin-bottom: 1rem;
+  p {
+    line-height: 1.35rem;
+  }
 `
 
 const rootStyles =  {
@@ -83,7 +101,7 @@ const PodcastPreview = ({node}) => {
         )}
         <LinkContent>
             {/* <Link to={`/podcast/${node.slug.current}`} className="read-more-link"><BsFillPlayFill/>Play</Link> */}
-            <a href="https://omny.fm/shows/fresh-ears/telling-complex-stories-with-gml" target="_blank" rel="noreferrer" className="read-more-link">Play</a>
+            <a href="https://omny.fm/shows/fresh-ears" target="_blank" rel="noreferrer" className="read-more-link"><BsFillPlayFill/> Play</a>
             <IconList>
               {node.podcastLink && (<li><a href={node.podcastLink} target="_blank" rel="noreferrer"><FaPodcast/></a></li>)}
               {node.spotifyLink && (<li><a href={node.spotifyLink} target="_blank" rel="noreferrer"><FaSpotify/></a></li>)}

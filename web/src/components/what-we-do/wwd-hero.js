@@ -61,7 +61,7 @@ const Column = styled.div`
     text-align: center;
     @media ${device.mediaMinMedium} {
         padding: 4rem;
-        text-align: left;
+        /* text-align: left; */
     }
     position: relative;
   }

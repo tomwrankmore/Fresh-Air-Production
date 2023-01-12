@@ -80,7 +80,7 @@ const Directors = styled.ul`
         }
         .MuiAccordionDetails-root p {
             margin-bottom: 1rem;
-            line-height: initial;
+            line-height: 1.35rem;
         }
 
         .wwaSectionImg {
@@ -91,12 +91,11 @@ const Directors = styled.ul`
 
 const StaffGrid = styled.ul`
     display: grid;
-    /* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
     grid-template-columns: 1fr;
     @media ${device.mediaMinSmall} {
       grid-template-columns: 1fr 1fr;
     }
-    @media ${device.mediaMinMedium} {
+    @media ${device.mediaMinLarge} {
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     gap: 4px;
@@ -106,22 +105,6 @@ const StaffGrid = styled.ul`
         color: white;
     }
 `
-
-const rootStyles =  {
-    boxShadow: 'none'
- }
- 
-const btnStyles =  {
-    color: '#ffffff',
-    backgroundColor: colors.FAGrey
-}
-
-const textContentStyles = {
-    // position: 'absolute',
-    // backgroundColor: 'white',
-    // zIndex: '101'
-}
-
 
 const WhoWeAre = (props) => {
 

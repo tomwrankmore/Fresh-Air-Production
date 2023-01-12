@@ -28,8 +28,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
   const Bio = styled.div` 
     padding-top: 1rem;
     p {
-      line-height: initial;
-      color: pink;
+      line-height: 1.3rem;
     }
   `
 

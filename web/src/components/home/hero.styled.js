@@ -73,7 +73,6 @@ export const Air = styled.h2`
 `
 
 export const Marquee = styled.div` 
-    background-color: pink;
     width: 300%;
     height: 2rem;
     position: absolute;

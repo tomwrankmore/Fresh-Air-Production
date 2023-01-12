@@ -41,6 +41,16 @@ module.exports = {
           include: /\.inline\.svg$/
         }
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `FreshAirProduction`,
+        short_name: `FreshAir`,
+        start_url: `/`,
+        display: `standalone`,
+        icon: `src/assets/icon.png`,
+      },
+    },
   ]
 }

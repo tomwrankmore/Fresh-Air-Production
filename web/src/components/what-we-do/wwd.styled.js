@@ -27,7 +27,6 @@ align-items: left;
 justify-content: center;
 flex-direction: column;
 overflow: hidden;
-/* padding: 0 2rem; */
 &.text {
   padding: 0 2rem;
   @media ${device.mediaMinMedium} {

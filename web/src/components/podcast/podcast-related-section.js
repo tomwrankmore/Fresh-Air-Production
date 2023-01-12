@@ -1,7 +1,8 @@
 import React from "react";
 import {colors} from "../../styles/colors"
 import styled from "styled-components";
-import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { device } from "../../styles/mediaQueries";
 import { Link } from "gatsby";
 import { FaSpotify, FaPodcast, FaAmazon, FaArrowRight } from 'react-icons/fa';
 import { SiIheartradio } from "react-icons/si";
@@ -34,7 +35,10 @@ const RelatedPodcastsWrapper = styled.div`
 
 const PodcastGrid = styled.ul`
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+    grid-template-columns: 1fr;
+    @media ${device.mediaMinMedium} {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
     gap: 4px;
     h3 {
         background-color: ${colors.FABlue};
