@@ -96,11 +96,11 @@ const tagCloudRef = useRef(null)
   }
 
   const site = (data || {}).site;
-  const projectNodes = (data || {}).projects
-    ? mapEdgesToNodes(data.projects)
-        .filter(filterOutDocsWithoutSlugs)
-        .filter(filterOutDocsPublishedInTheFuture)
-    : [];
+
+  // remember this:
+  // mapEdgesToNodes(data.projects)
+  //  .filter(filterOutDocsWithoutSlugs)
+  //  .filter(filterOutDocsPublishedInTheFuture)
 
   if (!site) {
     throw new Error(

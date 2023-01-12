@@ -27,6 +27,7 @@ export const NavigationWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
     margin-bottom: 4rem;
+    gap: 1rem;
     @media ${device.mediaMinMedium} {
         flex-direction: row;
         align-items: flex-start;
@@ -64,7 +65,7 @@ export const LinkList = styled.ul`
     text-align: center;
     width: 100%;
     border-bottom: dotted 1px white;
-    padding: 0.5rem 0;
+    padding: 0;
     @media ${device.mediaMinMedium} {
         text-align: left;
         border-bottom: none;
@@ -80,14 +81,20 @@ export const Subscribe = styled.div`
     padding-top: 1rem;
     @media ${device.mediaMinMedium} {
         text-align: left;
-        flex: 2;
+        flex: 3;
         padding-top: 0;
+    }
+    input {
+      background-color: ${colors.FABlue};
     }
     p {
         margin-bottom: 1rem;
         max-width: 100%;
         @media ${device.mediaMinMedium} {
-            max-width: 75%;
+          max-width: 75%;
+        }
+        @media ${device.mediaMinLarge} {
+            max-width: 50%;
         }
     }
 `

@@ -4,20 +4,12 @@ import { colors } from "../styles/colors";
 import { device } from "../styles/mediaQueries";
 import styled from "styled-components";
 import { mapEdgesToNodes } from "../lib/helpers";
-import CentralLogo from "../components/central-logo"
-import { StaticImage } from "gatsby-plugin-image";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
+import CentralLogo from "../components/central-logo"
 
 import ManagementItem from '../components/who-we-are/management-item'
 import StaffItem from '../components/who-we-are/staff-member-item'
-
-// Material UI
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export const query = graphql`
   query WhoWeArePageQuery {

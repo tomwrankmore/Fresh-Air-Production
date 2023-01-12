@@ -5,6 +5,8 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import Podcast from "../components/podcast/podcast";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
+import CentralLogo from "../components/central-logo"
+
 
 export const query = graphql`
   query PodcastTemplateQuery($id: String!) {
@@ -64,7 +66,7 @@ const PodcastTemplate = props => {
     <Layout>
       {errors && <SEO title="GraphQL Error" />}
       {podcast && <SEO title={podcast.title || "Untitled"} />}
-
+      <CentralLogo />
       {errors && (
         <Container>
           <GraphQLErrorList errors={errors} />

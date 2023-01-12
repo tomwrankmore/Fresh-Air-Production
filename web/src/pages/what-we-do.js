@@ -1,8 +1,8 @@
 import React, {useRef} from "react";
 import { colors } from "../styles/colors";
-import CentralLogo from "../components/central-logo"
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
+import CentralLogo from "../components/central-logo"
 import Marquee from "../components/marquee"
 
 import {
