@@ -52,7 +52,7 @@ const Column = styled.div`
 
   .title {
     font-size: 1.25rem;
-    margin-bottom: 1.875rem;
+    margin-bottom: 0.5rem;
     color: ${colors.FAGrey};
     @media ${device.mediaMinMedium} {
       font-size: 1.875rem;
@@ -98,8 +98,8 @@ const Column = styled.div`
 `;
 
   const AwardsList = styled.ul` 
-    margin-bottom: 2rem;
     li {
+      margin-bottom: 1rem;
       p {
         margin-bottom: 1rem;
         &:hover {
@@ -108,7 +108,7 @@ const Column = styled.div`
       }
     }
     li:not(:last-child) {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
 `
 
@@ -181,7 +181,7 @@ const WwdAwardsSection = React.forwardRef(({tl, nodes}, ref) => {
                         objectPosition="0 0"
                         className="podcastsSectionImg"
                       /> */}
-                     <h3 className="title tweenText">{node.title}</h3>
+                     <h3 className="title">{node.title}</h3>
                      <BlockContent blocks={node._rawBody} />
                   </li>
                 )
