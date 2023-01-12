@@ -28,20 +28,25 @@ export const query = graphql`
           id
           title
           _rawBody
-          awardLogo {
+          awardLeftImage {
             alt
             asset {
-              gatsbyImageData
               localFile {
                 childImageSharp {
                   gatsbyImageData(
-                    width: 2000, 
-                    quality: 50, 
+                    width: 1024, 
+                    quality: 75, 
                     placeholder: BLURRED, 
                     formats: AUTO
                   )
                 }
               }
+            }
+          }
+          awardLogo {
+            alt
+            asset {
+              gatsbyImageData
             }
           }
         }

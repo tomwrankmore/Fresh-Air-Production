@@ -102,6 +102,9 @@ const Column = styled.div`
     li {
       p {
         margin-bottom: 1rem;
+        &:hover {
+          color: ${colors.FABlue}
+        }
       }
     }
     li:not(:last-child) {
@@ -112,30 +115,27 @@ const Column = styled.div`
 const WwdAwardsSection = React.forwardRef(({tl, nodes}, ref) => {
 
   const [bgImageIndex, setBgImageIndex] = useState(0)
+  const [nodeBg, setNodeBg] = useState('white')
 
-  console.log('bgImageIndex: ', bgImageIndex)
 
-    const { heroBackgroundImage } = useStaticQuery(
-      graphql`
-        query {
-          heroBackgroundImage: file(relativePath: { eq: "wwd-section-4.png" }) {
-            childImageSharp {
-              gatsbyImageData(
-                width: 2000
-                quality: 50
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
-            }
-          }
-        }
-      `
-    )
-    const pluginImage = getImage(heroBackgroundImage);
-    const bgImage = convertToBgImage(pluginImage);
-
-    console.log('pluginImage: ', pluginImage)
-    console.log('nodes[0]: ', nodes[0].awardLogo.asset.localFile.childImageSharp.gatsbyImageData)
+    // const { heroBackgroundImage } = useStaticQuery(
+    //   graphql`
+    //     query {
+    //       heroBackgroundImage: file(relativePath: { eq: "wwd-section-4.png" }) {
+    //         childImageSharp {
+    //           gatsbyImageData(
+    //             width: 2000
+    //             quality: 50
+    //             placeholder: BLURRED
+    //             formats: [AUTO, WEBP, AVIF]
+    //           )
+    //         }
+    //       }
+    //     }
+    //   `
+    // )
+    // const pluginImage = getImage(heroBackgroundImage);
+    // const bgImage = convertToBgImage(pluginImage);
 
     useLayoutEffect(() => {
       let ctx = gsap.context(() => {
@@ -163,7 +163,7 @@ const WwdAwardsSection = React.forwardRef(({tl, nodes}, ref) => {
       <AwardsSectionWrapper ref={ref}>
           <Column className='awards-sticky clipped'>
             <BgImage 
-              image={nodes[bgImageIndex].awardLogo.asset.localFile.childImageSharp.gatsbyImageData}
+              image={nodes[bgImageIndex].awardLeftImage.asset.localFile.childImageSharp.gatsbyImageData}
               className="background-image" 
             />
           </Column>
