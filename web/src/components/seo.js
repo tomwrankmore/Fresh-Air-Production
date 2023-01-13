@@ -9,6 +9,7 @@ function SEO({ description, lang, meta, keywords, title }) {
       site: sanitySiteSettings(_id: { eq: "siteSettings" }) {
         title
         description
+        url
         keywords
         Logo {
           asset {
@@ -24,6 +25,7 @@ function SEO({ description, lang, meta, keywords, title }) {
 
   const metaDescription = description || (data.site && data.site.description) || "";
   const siteTitle = (data.site && data.site.title) || "";
+  const siteUrl = (data.site && data.site.url) || "";
   const siteAuthor = (data.site && data.site.author && data.site.author.name) || "";
   const logo = (data.site.Logo && data.site.Logo.asset && data.site.Logo.asset.gatsbyImageData.images.fallback.src) || "";
 
@@ -64,7 +66,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           property: "og:url",
-          content: 'https://www.freshairproduction.co.uk/'
+          content: siteUrl
         },
         {
           property: "og:type",
@@ -88,7 +90,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           name: "twitter:url",
-          content: "https://www.freshairproduction.co.uk/"
+          content: siteUrl
         },
         {
           name: "twitter:description",
@@ -123,16 +125,3 @@ SEO.propTypes = {
 };
 
 export default SEO;
-
-// const detailsQuery = graphql`
-//   query DefaultSEOQuery {
-//     site: sanitySiteSettings(_id: { eq: "siteSettings" }) {
-//       title
-//       description
-//       keywords
-//       # author {
-//       #   name
-//       # }
-//     }
-//   }
-// `;

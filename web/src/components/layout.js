@@ -14,6 +14,7 @@ import Footer from "./footer";
 
 const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
 
+  const scopeRef = useRef(null)
   const svgRef = useRef(null)
   const ctaRef = useRef(null)
   const ctaTween = useRef(null)
@@ -36,82 +37,78 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
     ctaTween.current.reverse();
   };
 
-  // useEffect(()=>{
-  //   showNavAnim(navigationRef.current)
-  // }, [navigationRef])
+  useEffect(()=>{
 
-//   useEffect(()=>{
+    let svgns = "http://www.w3.org/2000/svg";
+    let root = svgRef.current;
+    let ease = 0.75;
 
-//     let svgns = "http://www.w3.org/2000/svg";
-//     let root = svgRef.current;
-//     let ease = 0.75;
+    let pointer = { 
+      x: window.innerWidth  / 2, 
+      y: window.innerHeight / 2 
+    };
 
-//     let pointer = { 
-//       x: window.innerWidth  / 2, 
-//       y: window.innerHeight / 2 
-//     };
+    window.addEventListener("pointermove", (event) => {
+      pointer.x = event.clientX;
+      pointer.y = event.clientY;
+    });
 
-//     window.addEventListener("pointermove", (event) => {
-//       pointer.x = event.clientX;
-//       pointer.y = event.clientY;
-//     });
+    let leader = (prop) => {
+      return prop === "x" ? pointer.x : pointer.y;
+    }
 
-//     let leader = (prop) => {
-//       return prop === "x" ? pointer.x : pointer.y;
-//     }
+    let total = 50;
+    for (let i = 0; i < total; i++) {
+      leader = createLine(leader, i);
+    }
 
-//     let total = 50;
-//     for (let i = 0; i < total; i++) {
-//       leader = createLine(leader, i);
-//     }
-
-//     function createLine(leader, i) {
+    function createLine(leader, i) {
       
-//       let line = document.createElementNS(svgns, "line");
-//       root.appendChild(line);
+      let line = document.createElementNS(svgns, "line");
+      root.appendChild(line);
       
-//       gsap.set(line, { x: -1500, y: -750 });
+      gsap.set(line, { x: -1500, y: -750 });
       
-//       let pos = gsap.getProperty(line);
+      let pos = gsap.getProperty(line);
         
-//       gsap.to(line, {
-//         duration: 10000,
-//         x: "+=150",
-//         y: "+=10",
-//         repeat: -1,
-//         ease: "expo.inOut",
-//         modifiers: {
-//           x: () => {        
-//             let posX = pos("x");
-//             let leaderX = leader("x");
-//             let x = posX + (leaderX - posX) * ease;
-//             line.setAttribute("x2", leaderX - x);
-//             return x;
-//           },
-//           y: () => {        
-//             let posY = pos("y");
-//             let leaderY = leader("y");
-//             let y = posY + (leaderY - posY) * ease;
-//             line.setAttribute("y2", leaderY - y);
-//             return y;
-//           }
-//         }
-//       });  
+      gsap.to(line, {
+        duration: 10000,
+        x: "+=150",
+        y: "+=10",
+        repeat: -1,
+        ease: "expo.inOut",
+        modifiers: {
+          x: () => {        
+            let posX = pos("x");
+            let leaderX = leader("x");
+            let x = posX + (leaderX - posX) * ease;
+            line.setAttribute("x2", leaderX - x);
+            return x;
+          },
+          y: () => {        
+            let posY = pos("y");
+            let leaderY = leader("y");
+            let y = posY + (leaderY - posY) * ease;
+            line.setAttribute("y2", leaderY - y);
+            return y;
+          }
+        }
+      });  
   
-//       return pos;
-//     }
+      return pos;
+    }
 
-// },[])
+},[])
 
   return (
-    <div style={{position: 'relative'}}>
-      {/* <svg ref={svgRef} className="svgLine"></svg> */}
-      {/* <Link 
+    <div style={{position: 'relative'}} ref={scopeRef}>
+      <svg ref={svgRef} className="svgLine"></svg>
+      <Link 
         to="/"
         onMouseEnter={onMouseEnterHandler}
         onMouseLeave={onMouseLeaveHandler}>
         <HeroCta ref={ctaRef} />
-      </Link> */}
+      </Link>
       <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} ref={navigationRef}/>
       <Content>{children}</Content>
       <Footer/>
