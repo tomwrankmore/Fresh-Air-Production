@@ -198,7 +198,7 @@ const Work = React.forwardRef((props, ref) => {
     useLayoutEffect(() => {
       let mm = gsap.matchMedia(ref);
     
-      mm.add("(min-width: 600px)", () => {
+      mm.add("(min-width: 674px)", () => {
         // gsap logic here
         let sections = gsap.utils.toArray('.panel');
         let imagesL = gsap.utils.toArray('.img-l');
