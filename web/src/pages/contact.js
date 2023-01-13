@@ -6,14 +6,14 @@ import { colors } from "../styles/colors";
 import { Link } from "gatsby";
 import CentralLogo from "../components/central-logo"
 
-const FourZeroFour = styled.div` 
+const ContactWrapper = styled.div` 
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 1rem;
-  flex-direction: column;
+  flex-direction: row;
   background-color: ${colors.FABlue};
   h1 {
     margin-bottom: 1rem;
@@ -28,14 +28,29 @@ const FourZeroFour = styled.div`
   }
 `
 
+const Column = styled.div` 
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
+`
+
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found" />
+    <SEO title="Contact" />
     <CentralLogo />
-    <FourZeroFour>
-      <h1>Sorry, that page doesn't appear to exist!</h1>
-      <Link to="/">Take me home...</Link>
-    </FourZeroFour>
+    <ContactWrapper>
+      <Column>
+        <h1>Contact</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa, nemo reiciendis, odio soluta numquam possimus a quis cupiditate corrupti nulla nam quas porro placeat tenetur similique atque voluptate ad voluptatibus!</p>
+      </Column>
+      <Column>
+        Form
+      </Column>
+    </ContactWrapper>
   </Layout>
 );
 

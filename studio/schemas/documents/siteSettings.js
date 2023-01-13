@@ -30,6 +30,11 @@ export default {
         layout: 'tags'
       }
     },
+    {
+      name: 'Logo',
+      title: 'Fresh Air Company Logo',
+      type: 'figure'
+    },
     // {
     //   name: 'author',
     //   type: 'reference',
