@@ -11,7 +11,7 @@ export const StyledFooter = styled.div`
         color: inherit;
         text-decoration: none;
         &:hover {
-            color: red;
+          text-decoration: underline;
         }
     }
 

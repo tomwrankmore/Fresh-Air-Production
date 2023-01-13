@@ -104,7 +104,7 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
     <div style={{position: 'relative'}} ref={scopeRef}>
       <svg ref={svgRef} className="svgLine"></svg>
       <Link 
-        to="/"
+        to="/contact"
         onMouseEnter={onMouseEnterHandler}
         onMouseLeave={onMouseLeaveHandler}>
         <HeroCta ref={ctaRef} />
