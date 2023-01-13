@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
-import { useStaticQuery, StaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 
 function SEO({ description, lang, meta, keywords, title }) {
   const data = useStaticQuery(graphql`
@@ -10,6 +10,11 @@ function SEO({ description, lang, meta, keywords, title }) {
         title
         description
         keywords
+        Logo {
+          asset {
+            gatsbyImageData
+          }
+        }
         # author {
         #   name
         # }
@@ -20,6 +25,7 @@ function SEO({ description, lang, meta, keywords, title }) {
   const metaDescription = description || (data.site && data.site.description) || "";
   const siteTitle = (data.site && data.site.title) || "";
   const siteAuthor = (data.site && data.site.author && data.site.author.name) || "";
+  const logo = (data.site.Logo && data.site.Logo.asset && data.site.Logo.asset.gatsbyImageData.images.fallback.src) || "";
 
   return (
     
@@ -32,6 +38,22 @@ function SEO({ description, lang, meta, keywords, title }) {
           name: "description",
           content: metaDescription
         },
+        { 
+          name: "og:image",
+          content: logo
+        },
+        { 
+          name: "og:image:height",
+          content: '1200'
+        },
+        { 
+          name: "og:image:width",
+          content: '1200'
+        },
+        {
+          name: "og:site_name",
+          content: title
+        },
         {
           property: "og:title",
           content: title
@@ -39,6 +61,10 @@ function SEO({ description, lang, meta, keywords, title }) {
         {
           property: "og:description",
           content: metaDescription
+        },
+        {
+          property: "og:url",
+          content: 'https://www.freshairproduction.co.uk/'
         },
         {
           property: "og:type",
@@ -55,6 +81,14 @@ function SEO({ description, lang, meta, keywords, title }) {
         {
           name: "twitter:title",
           content: title
+        },
+        {
+          name: "twitter:image",
+          content: logo
+        },
+        {
+          name: "twitter:url",
+          content: "https://www.freshairproduction.co.uk/"
         },
         {
           name: "twitter:description",
