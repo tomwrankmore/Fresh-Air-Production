@@ -88,25 +88,41 @@ const NotFoundPage = () => {
           data-netlify-honeypot="bot-field"
           onSubmit={handleSubmit}>
           <input type="hidden" name="form-name" value="contact" />
-          <label htmlFor="name">Name</label>
-          <input 
-            id="name"
-            type="text" 
-            name="name"
-            onChange={handleChange}
-            value={formState.name}
-            placeholder="Enter your name"
-          />
-          <label htmlFor="email">Email</label>
-          <input 
-            id="email"
-            type="email" 
-            name="email"
-            onChange={handleChange}
-            value={formState.email}
-            placeholder="Enter your email"
-          />
-          <button type="submit">Submit</button>
+          <div>
+            <label htmlFor="name">Name</label>
+            <input 
+              id="name"
+              type="text" 
+              name="name"
+              onChange={handleChange}
+              value={formState.name}
+              placeholder="Enter your name"
+            />
+          </div>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input 
+              id="email"
+              type="email" 
+              name="email"
+              onChange={handleChange}
+              value={formState.email}
+              placeholder="Enter your email"
+            />
+          </div>
+          <div>
+            <label>Message: 
+              <textarea 
+                name="message" 
+                id="message"
+                onChange={handleChange}
+                value={formState.message}
+              ></textarea>
+            </label>
+          </div>
+          <div>
+            <button type="submit">Submit</button>
+          </div>
         </form>
         {/* <form 
           name="contact" 
