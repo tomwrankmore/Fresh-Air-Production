@@ -82,7 +82,7 @@ const NotFoundPage = () => {
         </Column>
         <Column>
         <form 
-          name="contact-form"
+          name="fresh-air-contact-form"
           method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
@@ -106,6 +106,7 @@ const NotFoundPage = () => {
             value={formState.email}
             placeholder="Enter your email"
           />
+          <button type="submit">Submit</button>
         </form>
         {/* <form 
           name="contact" 
