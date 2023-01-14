@@ -48,26 +48,7 @@ const NotFoundPage = () => (
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa, nemo reiciendis, odio soluta numquam possimus a quis cupiditate corrupti nulla nam quas porro placeat tenetur similique atque voluptate ad voluptatibus!</p>
       </Column>
       <Column>
-      <form 
-        name="contact" 
-        action="/success"
-        method="POST" 
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
-        <p>
-          <label>Your Name: <input type="text" name="name" /></label>
-        </p>
-        <p>
-          <label>Your Email: <input type="email" name="email" /></label>
-        </p>
-        <p>
-          <label>Message: <textarea name="message"></textarea></label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
-      </form>
+        <h1>Thanks for your message, we'll get back to you as soon as possible!</h1>
       </Column>
     </ContactWrapper>
   </Layout>
