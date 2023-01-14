@@ -59,6 +59,7 @@ const NotFoundPage = () => {
       body: encode({ "form-name": "contact", ...formState })
     })
       .then(() => alert("Success!"))
+      .then(() => setFormState({name: "",email: "",message: ""}))
       .catch(error => alert(error));
 
     e.preventDefault();
