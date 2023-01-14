@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import styled from "styled-components";
@@ -38,39 +38,100 @@ const Column = styled.div`
   padding: 1rem;
 `
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="Contact" />
-    <CentralLogo />
-    <ContactWrapper>
-      <Column>
-        <h1>Contact</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa, nemo reiciendis, odio soluta numquam possimus a quis cupiditate corrupti nulla nam quas porro placeat tenetur similique atque voluptate ad voluptatibus!</p>
-      </Column>
-      <Column>
-      <form 
-        name="contact" 
-        action="/success"
-        method="POST" 
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
-        <p>
-          <label>Your Name: <input type="text" name="name" /></label>
-        </p>
-        <p>
-          <label>Your Email: <input type="email" name="email" /></label>
-        </p>
-        <p>
-          <label>Message: <textarea name="message"></textarea></label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
-      </form>
-      </Column>
-    </ContactWrapper>
-  </Layout>
-);
+const NotFoundPage = () => {
+
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    message: ""
+  })
+ 
+  const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
+
+  const handleSubmit = e => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...formState })
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  }
+
+  const handleChange = e => {
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value, 
+    })
+  }
+  
+  return (
+    <Layout>
+      <SEO title="Contact" />
+      <CentralLogo />
+      <ContactWrapper>
+        <Column>
+          <h1>Contact</h1>
+          <p>Don't hesitate to get in touch if there's anything you'd like to discuss</p>
+        </Column>
+        <Column>
+        <form 
+          name="contact-form"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}>
+          <input type="hidden" name="form-name" value="contact" />
+          <label htmlFor="name">Name</label>
+          <input 
+            id="name"
+            type="text" 
+            name="name"
+            onChange={handleChange}
+            value={formState.name}
+            placeholder="Enter your name"
+          />
+          <label htmlFor="email">Email</label>
+          <input 
+            id="email"
+            type="email" 
+            name="email"
+            onChange={handleChange}
+            value={formState.email}
+            placeholder="Enter your email"
+          />
+        </form>
+        {/* <form 
+          name="contact" 
+          action="/form-success"
+          method="POST" 
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p>
+            <label>Your Name: <input type="text" name="name" /></label>
+          </p>
+          <p>
+            <label>Your Email: <input type="email" name="email" /></label>
+          </p>
+          <p>
+            <label>Message: <textarea name="message"></textarea></label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form> */}
+        </Column>
+      </ContactWrapper>
+    </Layout>
+  )
+};
 
 export default NotFoundPage;
