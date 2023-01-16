@@ -103,12 +103,12 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
   return (
     <div style={{position: 'relative'}} ref={scopeRef}>
       {/* <svg ref={svgRef} className="svgLine"></svg> */}
-      <Link 
+      {/* <Link 
         to="/contact"
         onMouseEnter={onMouseEnterHandler}
         onMouseLeave={onMouseLeaveHandler}>
         <HeroCta ref={ctaRef} />
-      </Link>
+      </Link> */}
       <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} ref={navigationRef}/>
       <Content>{children}</Content>
       <Footer/>

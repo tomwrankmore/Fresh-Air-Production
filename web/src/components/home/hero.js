@@ -10,21 +10,22 @@ import AirSvg from '../../assets/Air.inline.svg'
 import { device } from "../../styles/mediaQueries";
 import MobileLogo from "../../assets/FA-logo.png"
 
-const SvgLogoWrapper = styled.div` 
-    height: 100%;
-    display: flex;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-    width: auto;
-    align-items: flex-end;
-    padding: 1.5rem 0;
+const SvgLogoWrapper = styled.div`
+    display: none;
 
     @media ${device.mediaMinMedium} {
       width: 720px;
+      display: flex;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      width: auto;
+      align-items: flex-end;
+      padding: 1.5rem 0;
     }
 
     .LogoContainer {
@@ -94,20 +95,21 @@ const Hero = React.forwardRef(({heroMarqueeRef, tl}, ref) => {
 
   return (
     <HeroWrapper ref={ref}>
-      <SvgLogoWrapper>
+      {/* <SvgLogoWrapper>
         <div className="LogoContainer">
           <FreshSvg className="fresh-svg" />
           <AirSvg className="air-svg" />
         </div>
-      </SvgLogoWrapper>
-      <HeroInner className="hero-inner">
+      </SvgLogoWrapper> */}
+      {/* <HeroInner className="hero-inner">
         <img src={heroPeople} alt="alt" className="hero-img" />
-      </HeroInner>
-      <Marquee 
+      </HeroInner> */}
+      {/* <Marquee 
         style={{color: 'white', position: 'absolute'}}
         textContent="WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE. WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE. WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE." 
         ref={heroMarqueeRef}
-      />
+      /> */}
+      <h1>Hero</h1>
     </HeroWrapper>
   )
 }
