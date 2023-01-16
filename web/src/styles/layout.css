@@ -15,6 +15,11 @@ body {
   overflow-y: scroll;
 }
 
+body.body-hide-overflow {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 html,
 body,
 body>div,

@@ -10,13 +10,21 @@ import Layout from "../components/layout";
 //   }
 // `;
 
+const isBrowser = typeof document !== "undefined"
+
 function LayoutContainer(props) {
   const [showNav, setShowNav] = useState(false);
   function handleShowNav() {
     setShowNav(true);
+    if(isBrowser) {
+      document.body.classList.add("body-hide-overflow");
+    }
   }
   function handleHideNav() {
     setShowNav(false);
+    if(isBrowser) {
+      document.body.classList.remove("body-hide-overflow");
+    }
   }
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -39,7 +47,6 @@ function LayoutContainer(props) {
       siteTitle={data.site.title}
       onHideNav={handleHideNav}
       onShowNav={handleShowNav}
-      layoutClassName={showNav ? 'hide-overflow' : ''}
     />
   )
 }
