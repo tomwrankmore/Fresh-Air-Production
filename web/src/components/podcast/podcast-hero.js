@@ -95,7 +95,9 @@ const PodcastHero = React.forwardRef(({tl, podcast}, ref) => {
     const bgImage = convertToBgImage(pluginImage);
 
     useLayoutEffect(() => {
-      let ctx = gsap.context(() => {
+      let mm = gsap.matchMedia(ref);
+
+      mm.add("(min-width: 675px)", () => {
         tl.current = gsap.timeline()
         .to('.clipped', {
           duration: 2,
@@ -112,8 +114,13 @@ const PodcastHero = React.forwardRef(({tl, podcast}, ref) => {
           yPercent: 0,
           stagger: 0.25
         }, '<+=0.5')
-      }, ref);
-      return () => ctx.revert()
+
+        return () => {
+          // revert any animations like split
+        };
+      })
+
+      return () => mm.revert()
     }, [])
 
     return (

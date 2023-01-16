@@ -27,9 +27,9 @@ const SvgLogoWrapper = styled.div`
 
     @media ${device.mediaMinSmall} {
       padding: 1.5rem 0;
-      width: 720px;
+      /* width: 720px; 
       left: 50%;
-      transform: translateX(-50%);
+      transform: translateX(-50%);*/
     }
 
     .LogoContainer {
