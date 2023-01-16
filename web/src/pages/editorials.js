@@ -46,8 +46,11 @@ const EditorialsGrid = styled.div`
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     @media ${device.mediaMinMedium} {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        /* grid-template-rows: 50vh; */
+        grid-template-columns: 1fr 1fr
+    }
+
+    @media ${device.mediaMinLarge} {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
     .editorials-link {
@@ -83,7 +86,7 @@ const EditorialsGrid = styled.div`
             flex-direction: column;
             height: auto;
             padding: 0.5rem 0.5rem 0 0.5rem;
-            flex-direction: row;
+            flex-direction: column;
             max-height: 50vh;
             .imgWrapper {
                 flex: 1;
