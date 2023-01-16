@@ -79,28 +79,28 @@ export const onRenderBody = ({ setHeadComponents }) => {
     href="/fonts/PolySans-Slim.woff2" 
     as="font" 
     type="font/woff2" 
-    crossorigin
+    crossOrigin="anonymous"
   />,
   <link 
     rel="preload" 
     href="/fonts/Ambit-SemiBold.woff2" 
     as="font" 
     type="font/woff2" 
-    crossorigin 
+    crossOrigin="anonymous" 
   />,
   <link 
     rel="preload" 
     href="/fonts/Ambit-Regular.woff2" 
     as="font" 
     type="font/woff2" 
-    crossorigin 
+    crossOrigin="anonymous" 
   />,
   <link 
     rel="preload" 
     href="/fonts/Ambit-Bold.woff2" 
     as="font" 
     type="font/woff2" 
-    crossorigin
+    crossOrigin="anonymous"
   />
   ])
 }
