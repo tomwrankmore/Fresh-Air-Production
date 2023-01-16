@@ -28,9 +28,12 @@ const TagCloudInnerWrapper = styled.div`
         max-width: 100%;
         margin: 0 auto;
         line-height: 1.4;
+        max-width: 35%;
+        font-size: 1.25rem;
         @media ${device.mediaMinSmall} {
-            padding: 4rem 0;
-            max-width: 20%;
+          padding: 4rem 0;
+          max-width: 20%;
+          font-size: 2em;
         }
     }
 `
@@ -87,7 +90,7 @@ const TagCloud = React.forwardRef((props, ref) => {
         let ctx = gsap.context(() => {
             gsap.set('.cloudMarqueeLine', {xPercent: 20});
             gsap.to('.marqueeContent1', {xPercent: -100, repeat: -1, duration: 140, ease: 'linear'}).totalProgress(0.6);
-            gsap.to('.marqueeContent2', {xPercent: -10, repeat: -1, duration: 160, ease: 'linear'}).totalProgress(0.4);
+            gsap.to('.marqueeContent2', {xPercent: 25, repeat: -1, duration: 160, ease: 'linear'}).totalProgress(0.4);
         }, ref);
         return () => ctx.revert()
       }, [])
