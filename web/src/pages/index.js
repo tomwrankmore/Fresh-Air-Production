@@ -112,7 +112,7 @@ const tagCloudRef = useRef(null)
       <Layout>
         <SEO title={site.title} description={site.description} keywords={site.keywords} />
         <CentralLogo ref={centralLogoRef}/>
-        {/* <Hero ref={heroRef} heroMarqueeRef={heroMarqueeRef} tl={heroTl.current}/> */}
+        <Hero ref={heroRef} heroMarqueeRef={heroMarqueeRef} tl={heroTl.current}/>
         <Podcasts ref={podcastsRef} />
         <Marquee 
           style={{color: colors.FABlue}}
@@ -121,7 +121,7 @@ const tagCloudRef = useRef(null)
           <Work ref={horizontalPanelsRef} />
         <Testimonials />
         <Editorials editorialNodes={editorialNodes} />
-        {/* <TagCloud ref={tagCloudRef} /> */}
+        <TagCloud ref={tagCloudRef} />
       </Layout>
   );
 };
