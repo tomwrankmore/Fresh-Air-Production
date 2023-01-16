@@ -13,7 +13,7 @@ import MobileLogo from "../../assets/FA-logo.png"
 const SvgLogoWrapper = styled.div`
     width: 100%;
     display: flex;
-    height: 100%;
+    /* height: 100%; */
     position: absolute;
     top: 0;
     bottom: 0;
@@ -23,27 +23,38 @@ const SvgLogoWrapper = styled.div`
     z-index: 100;
     width: auto;
     align-items: flex-end;
-    padding: 1.5rem 0;
+    padding: 1.5rem 1rem;
 
-    @media ${device.mediaMinMedium} {
-      /* width: 720px;
+    @media ${device.mediaMinSmall} {
+      padding: 1.5rem 0;
+      width: 720px;
       left: 50%;
-      transform: translateX(-50%); */
+      transform: translateX(-50%);
     }
 
     .LogoContainer {
+      display: none;
+      @media ${device.mediaMinSmall} {
+        display: inline-block;
         margin: 0 auto;
+      }
     }
 
     .fresh-svg {
-        width: 300px;
-        height: auto;
+      width: 300px;
+      height: auto;
+      transform: translateY(-140px);
+      visibility: hidden;
+      @media ${device.mediaMinSmall} {
+        transform: translateY(0);
+      }
     }
 
     .air-svg {
         width: 100px;
         height: auto;
         float: right;
+        visibility: hidden;
         @media ${device.mediaMinMedium} {
           width: 110px;
           padding-bottom: 100px;
@@ -83,9 +94,9 @@ const Hero = React.forwardRef(({heroMarqueeRef, tl}, ref) => {
         ease: "power4.out",
         "--clip": '0% 0% 0% 0%',
       }, '<+=0.35')
-        .from(heroMarqueeRef.current, {
-          autoAlpha: 0,
-          yPercent: 50
+      .from(heroMarqueeRef.current, {
+        autoAlpha: 0,
+        yPercent: 50
       }, '<+=0.15')
       }, ref);
 
