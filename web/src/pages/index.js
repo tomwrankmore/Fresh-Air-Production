@@ -121,7 +121,7 @@ const tagCloudRef = useRef(null)
           <Work ref={horizontalPanelsRef} />
         <Testimonials />
         <Editorials editorialNodes={editorialNodes} />
-        <TagCloud ref={tagCloudRef} />
+        {/* <TagCloud ref={tagCloudRef} /> */}
       </Layout>
   );
 };
