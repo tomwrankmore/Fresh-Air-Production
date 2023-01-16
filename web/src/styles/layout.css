@@ -6,8 +6,8 @@ html {
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
 
-  @media screen and var(--media-max-medium) {
-    overflow-x: hidden;
+  @media only screen and (max-width: 675px) {
+    overflow-x: hidden !important;
   }
 }
 
