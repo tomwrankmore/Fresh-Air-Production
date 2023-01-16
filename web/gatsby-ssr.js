@@ -80,6 +80,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     as="font" 
     type="font/woff2" 
     crossOrigin="anonymous"
+    key="interFont"
   />,
   <link 
     rel="preload" 
@@ -87,6 +88,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     as="font" 
     type="font/woff2" 
     crossOrigin="anonymous" 
+    key="interFont"
   />,
   <link 
     rel="preload" 
@@ -94,6 +96,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     as="font" 
     type="font/woff2" 
     crossOrigin="anonymous" 
+    key="interFont"
   />,
   <link 
     rel="preload" 
@@ -101,6 +104,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     as="font" 
     type="font/woff2" 
     crossOrigin="anonymous"
+    key="interFont"
   />
   ])
 }

@@ -11,7 +11,6 @@ import { device } from "../../styles/mediaQueries";
 import MobileLogo from "../../assets/FA-logo.png"
 
 const SvgLogoWrapper = styled.div`
-
     width: 100%;
     display: flex;
     height: 100%;
@@ -19,6 +18,7 @@ const SvgLogoWrapper = styled.div`
     top: 0;
     bottom: 0;
     left: 0;
+    right: 0;
     transform: translateX(0);
     z-index: 100;
     width: auto;
@@ -26,9 +26,9 @@ const SvgLogoWrapper = styled.div`
     padding: 1.5rem 0;
 
     @media ${device.mediaMinMedium} {
-      width: 720px;
+      /* width: 720px;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translateX(-50%); */
     }
 
     .LogoContainer {
@@ -41,10 +41,14 @@ const SvgLogoWrapper = styled.div`
     }
 
     .air-svg {
-        width: 110px;
+        width: 100px;
         height: auto;
-        padding-bottom: 100px;
-        margin-left: 6px;
+        float: right;
+        @media ${device.mediaMinMedium} {
+          width: 110px;
+          padding-bottom: 100px;
+          margin-left: 6px;
+        }
     }
 `
 
@@ -52,6 +56,7 @@ const Hero = React.forwardRef(({heroMarqueeRef, tl}, ref) => {
     
   useLayoutEffect(() => {
     const mover = ref.current.clientHeight - 270
+
     let ctx = gsap.context(() => {
       gsap.set('.air-svg', {
         y: - mover
@@ -82,7 +87,11 @@ const Hero = React.forwardRef(({heroMarqueeRef, tl}, ref) => {
           autoAlpha: 0,
           yPercent: 50
       }, '<+=0.15')
+      }, ref);
 
+      let mm = gsap.matchMedia(ref);
+
+      mm.add("(min-width: 675px)", () => {
         gsap.to('.air-svg', {
           y:0,
           scrollTrigger: {
@@ -92,9 +101,12 @@ const Hero = React.forwardRef(({heroMarqueeRef, tl}, ref) => {
             scrub: 2
           }
         })
-      }, ref);
-      return () => ctx.revert()
+      });
+
+      return () => (ctx.revert(), mm.revert())
+
     }, [])
+    
 
   return (
     <HeroWrapper ref={ref}>

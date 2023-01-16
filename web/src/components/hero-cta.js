@@ -11,8 +11,8 @@ const StyledCTA = styled.div`
   align-items: center;
   justify-content: center;
   position: fixed;
-  right: 5rem;
-  bottom: 5rem;
+  right: 1rem;
+  bottom: 1rem;
   z-index: 200;
   width: 120px;
   height: 120px;
@@ -26,7 +26,8 @@ const StyledCTA = styled.div`
   }
 
   @media ${device.mediaMinSmall} {
-    /* padding: 2em; */
+    right: 5rem;
+    bottom: 5rem;
   }
 `
 
