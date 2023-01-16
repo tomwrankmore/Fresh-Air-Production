@@ -11,14 +11,10 @@ const Header = React.forwardRef(({ onHideNav, onShowNav, showNav, siteTitle }, r
 gsap.registerPlugin(ScrollTrigger)
 
 useLayoutEffect(() => {
-  // let mm = gsap.matchMedia(ref);
+  let mm = gsap.matchMedia(ref);
 
-  // mm.add("(min-width: 675px)", () => {
+  mm.add("(min-width: 675px)", () => {
 
-    
-  // });
-
-  let ctx = gsap.context(() => {
     gsap.set('.navigationLogo', {
       visibility: 'hidden'
     })
@@ -42,8 +38,8 @@ useLayoutEffect(() => {
         gsap.from(ref.current, { 
           yPercent: 55
         })
-      }        
-  }, ref);
+      }
+  });
 
   return () => mm.revert();
 },[])

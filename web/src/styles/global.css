@@ -67,15 +67,11 @@ body {
   overflow-scrolling: touch;
 }
 
+/* 
 body {
-  /* overflow-x: hidden;
-  overflow-y: scroll; */
-}
-
-.hide-overflow {
-  overflow: hidden !important;
-  max-height: 100vh;
-}
+  overflow-x: hidden;
+  overflow-y: scroll;
+} */
 
 a:hover,
 a:active,
