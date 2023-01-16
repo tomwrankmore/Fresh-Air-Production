@@ -10,8 +10,6 @@ import {Content} from './layout.styled';
 import {showNavAnim} from "../animations";
 import Footer from "./footer";
 
-  
-
 const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
 
   const scopeRef = useRef(null)
