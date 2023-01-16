@@ -95,21 +95,20 @@ const Hero = React.forwardRef(({heroMarqueeRef, tl}, ref) => {
 
   return (
     <HeroWrapper ref={ref}>
-      {/* <SvgLogoWrapper>
+      <SvgLogoWrapper>
         <div className="LogoContainer">
           <FreshSvg className="fresh-svg" />
           <AirSvg className="air-svg" />
         </div>
-      </SvgLogoWrapper> */}
-      {/* <HeroInner className="hero-inner">
+      </SvgLogoWrapper>
+      <HeroInner className="hero-inner">
         <img src={heroPeople} alt="alt" className="hero-img" />
-      </HeroInner> */}
-      {/* <Marquee 
+      </HeroInner>
+      <Marquee 
         style={{color: 'white', position: 'absolute'}}
         textContent="WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE. WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE. WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE." 
         ref={heroMarqueeRef}
-      /> */}
-      <h1>Hero</h1>
+      />
     </HeroWrapper>
   )
 }
