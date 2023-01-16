@@ -12,7 +12,7 @@ import Footer from "./footer";
 
   
 
-const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
+const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle, layoutClassName }) => {
 
   const scopeRef = useRef(null)
   const svgRef = useRef(null)
@@ -101,7 +101,7 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
 // },[])
 
   return (
-    <div style={{position: 'relative'}} ref={scopeRef}>
+    <div style={{position: 'relative'}} ref={scopeRef} className={layoutClassName}>
       {/* <svg ref={svgRef} className="svgLine"></svg> */}
       <Link 
         to="/contact"

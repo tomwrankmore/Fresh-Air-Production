@@ -39,6 +39,7 @@ function LayoutContainer(props) {
       siteTitle={data.site.title}
       onHideNav={handleHideNav}
       onShowNav={handleShowNav}
+      layoutClassName={showNav ? 'hide-overflow' : ''}
     />
   )
 }

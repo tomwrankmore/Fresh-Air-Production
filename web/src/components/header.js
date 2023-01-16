@@ -3,10 +3,6 @@ import React, { useLayoutEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger"
 import Icon from "./icon";
-import { cn } from "../lib/helpers";
-import styled from "styled-components";
-import { device } from "../styles/mediaQueries";
-import * as styles from "./header.module.css";
 import Logo from "../assets/FA-nav-logo.inline.svg"
 import { Wrapper, StyledHeader, Nav, ToggleNavButton } from "./header.styled";
 
@@ -15,10 +11,14 @@ const Header = React.forwardRef(({ onHideNav, onShowNav, showNav, siteTitle }, r
 gsap.registerPlugin(ScrollTrigger)
 
 useLayoutEffect(() => {
-  let mm = gsap.matchMedia(ref);
+  // let mm = gsap.matchMedia(ref);
 
-  mm.add("(min-width: 675px)", () => {
+  // mm.add("(min-width: 675px)", () => {
 
+    
+  // });
+
+  let ctx = gsap.context(() => {
     gsap.set('.navigationLogo', {
       visibility: 'hidden'
     })
@@ -42,8 +42,8 @@ useLayoutEffect(() => {
         gsap.from(ref.current, { 
           yPercent: 55
         })
-      }
-  });
+      }        
+  }, ref);
 
   return () => mm.revert();
 },[])

@@ -19,9 +19,13 @@ const SvgLogoWrapper = styled.div`
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
-    width: 720px;
+    width: auto;
     align-items: flex-end;
     padding: 1.5rem 0;
+
+    @media ${device.mediaMinMedium} {
+      width: 720px;
+    }
 
     .LogoContainer {
         margin: 0 auto;

@@ -56,7 +56,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: Ambit;
+  font-family: Ambit, Arial, Helvetica, sans-serif;
 }
 
 html,
@@ -68,8 +68,13 @@ body {
 }
 
 body {
-  overflow-x: hidden;
-  overflow-y: scroll;
+  /* overflow-x: hidden;
+  overflow-y: scroll; */
+}
+
+.hide-overflow {
+  overflow: hidden !important;
+  max-height: 100vh;
 }
 
 a:hover,

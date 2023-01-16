@@ -4,7 +4,6 @@ import { colors } from "../styles/colors";
 
 export const Wrapper = styled.div` 
   margin: 0 auto;
-  /* max-width: 960px; */
   padding: 1em;
   display: flex;
   justify-content: flex-end;
@@ -19,7 +18,10 @@ export const Nav = styled.nav`
   display: none;
 
   &.showNav {
-      display: block;
+      /* display: block; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
   }
 
   ul {
@@ -29,7 +31,6 @@ export const Nav = styled.nav`
   }
 
   ul li {
-    /* flex: 1; */
   }
 
   ul li a {
@@ -43,24 +44,22 @@ export const Nav = styled.nav`
     font-weight: bold;
     letter-spacing: 0.075rem;
     font-size: 1.2rem;
-    /* text-align: center; */
   }
 
   @media (hover: hover) {
     ul li a:hover {
-        /* color: grey */
-        text-decoration: underline;
+      text-decoration: underline;
     }
   }
 
   @media ${device.mediaMaxLarge} {
     position: absolute;
-    left: 1rem;
-    right: 1rem;
-    border-radius: 1rem;
-    top: 5rem;
+    left: 0;
+    right: 0;
+    top: 0;
     padding: 0 2rem;
-    background-color: white;
+    background-color: ${colors.FABlue};
+    height: 100vh;
 
     ul {
       padding: 1rem 0;
@@ -96,7 +95,6 @@ export const StyledHeader = styled.div`
   z-index: 200;
   width: 100vw;
   position: fixed;
-
 
   .navigationLogo {
     display: none;
