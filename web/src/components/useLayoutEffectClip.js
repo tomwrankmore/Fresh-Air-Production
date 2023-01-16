@@ -9,6 +9,23 @@ useLayoutEffect(() => {
   let mm = gsap.matchMedia(ref);
 
   mm.add("(min-width: 675px)", () => {
+    
+    
+
+    // when the matchMedia doesn't match anymore, make sure we revert the text
+    return () => {
+      split.revert();
+      smoother.kill();
+    };
+  });
+
+  return () => mm.revert();
+}, []);
+
+useLayoutEffect(() => {
+  let mm = gsap.matchMedia(ref);
+
+  mm.add("(min-width: 675px)", () => {
     let split = SplitText.create(".box", { type: "chars" });
     let smoother = ScrollSmoother.create({
       wrapper: ref.current.parentNode,

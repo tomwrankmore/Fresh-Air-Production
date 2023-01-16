@@ -6,12 +6,29 @@
 
 // You can delete this file if you're not using it
 
-import './src/styles/global.css'
 
-export const onClientEntry = () => {
-    // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
-    if (!(`IntersectionObserver` in window)) {
-      import(`intersection-observer`)
-      console.log(`# IntersectionObserver is polyfilled!`)
+exports.onClientEntry = () => {
+  // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
+  if (!(`IntersectionObserver` in window)) {
+    import(`intersection-observer`)
+    console.log(`# IntersectionObserver is polyfilled!`)
+  }
+}
+
+exports.onRouteUpdate = ({ location, prevLocation }) => {
+  console.log("new pathname", location.pathname)
+  console.log("old pathname", prevLocation ? prevLocation.pathname : null)
+  const isBrowser = typeof document !== "undefined"
+  if(isBrowser) {
+    if(document.body.classList.contains("body-hide-overflow")) {
+      document.body.classList.remove("body-hide-overflow");
     }
   }
+}
+
+exports.shouldUpdateScroll = () => {
+
+  window.scrollTo([0, 0])
+
+  return false
+}
