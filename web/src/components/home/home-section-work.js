@@ -103,7 +103,7 @@ const Panel = styled.div`
       text-align: center;
       padding-right: 2rem;
       h3, h4, h5 {
-        font-family: 'Polysans';
+        /* font-family: 'Polysans'; */
       }
       h3 {
         line-height: 2.25rem;
