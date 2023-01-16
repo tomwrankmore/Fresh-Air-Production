@@ -6,7 +6,13 @@ import styled from "styled-components";
 import { colors } from "../../styles/colors";
 import { device } from "../../styles/mediaQueries";
 
-const TagCloudWrapper = styled.div` 
+const TagCloudOuterWrapper = styled.div` 
+  max-width: 100vw;
+  width: 100%;
+  overflow-x: hidden;
+`
+
+const TagCloudInnerWrapper = styled.div` 
     width: 200%;
     margin: 0 -50%;
     text-align: center;
@@ -88,8 +94,8 @@ const TagCloud = React.forwardRef((props, ref) => {
     
 
     return (
-        <>
-            <TagCloudWrapper style={bgColor} ref={ref}>
+        <TagCloudOuterWrapper>
+            <TagCloudInnerWrapper style={bgColor} ref={ref}>
                 <ExtendedContainer>
                     <MarqueeLine 
                         className="cloudMarqueeLine"
@@ -214,8 +220,8 @@ const TagCloud = React.forwardRef((props, ref) => {
 
                 <h1>TELL YOUR STORY AND CONNECT WITH NEW AUDIENCES</h1>
 
-            </TagCloudWrapper>
-        </>
+            </TagCloudInnerWrapper>
+        </TagCloudOuterWrapper>
     )
 }
 )

@@ -109,7 +109,7 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
         onMouseLeave={onMouseLeaveHandler}>
         <HeroCta ref={ctaRef} />
       </Link> */}
-      <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} ref={navigationRef}/>
+      {/* <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} ref={navigationRef}/> */}
       <Content>{children}</Content>
       <Footer/>
     </div>
