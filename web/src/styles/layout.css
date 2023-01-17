@@ -6,9 +6,9 @@ html {
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
 
-  @media screen and (max-width: 675px) {
+  /* @media screen and (max-width: 675px) {
     overflow-x: hidden;
-  }
+  } */
 }
 
 body {
