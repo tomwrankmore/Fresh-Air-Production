@@ -1,9 +1,9 @@
 import React, {useLayoutEffect} from "react";
 import gsap from "gsap";
 import styled from "styled-components";
-import { useMediaQuery } from 'react-responsive'
+import { StaticImage } from "gatsby-plugin-image";
 import Marquee from "../marquee"
-import {HeroWrapper, Fresh, Air, HeroInner, HeroGrid} from "./hero.styled";
+import { HeroWrapper, Fresh, Air, HeroInner, HeroGrid } from "./hero.styled";
 import heroPeople from '../../assets/HPHeaderImage.png';
 import FreshSvg from '../../assets/Fresh.inline.svg'
 import AirSvg from '../../assets/Air.inline.svg'
@@ -13,9 +13,7 @@ import MobileLogo from "../../assets/FA-logo.png"
 const SvgLogoWrapper = styled.div`
     width: 100%;
     display: flex;
-    /* height: 100%; */
     position: absolute;
-    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
@@ -24,27 +22,32 @@ const SvgLogoWrapper = styled.div`
     width: auto;
     align-items: flex-end;
     padding: 1.5rem 1rem;
+    display: none;
 
-    @media ${device.mediaMinSmall} {
+    @media ${device.mediaMinMedium} {
       padding: 1.5rem 0;
-      /* width: 720px; 
+      display: inline-block;
+      width: 720px; 
       left: 50%;
-      transform: translateX(-50%);*/
+      transform: translateX(-50%);
     }
 
     .LogoContainer {
-      display: none;
       @media ${device.mediaMinSmall} {
-        display: inline-block;
         margin: 0 auto;
+        width: 420px;
+        height: 160px;
+        display: flex;
+        justify-content: space-between;
       }
     }
 
     .fresh-svg {
       width: 300px;
       height: auto;
-      transform: translateY(-140px);
+      /* transform: translateY(-140px); */
       visibility: hidden;
+      align-self: flex-end;
       @media ${device.mediaMinSmall} {
         transform: translateY(0);
       }
@@ -53,12 +56,11 @@ const SvgLogoWrapper = styled.div`
     .air-svg {
         width: 100px;
         height: auto;
-        float: right;
+        /* float: right; */
         visibility: hidden;
+        align-self: flex-start;
         @media ${device.mediaMinMedium} {
           width: 110px;
-          padding-bottom: 100px;
-          margin-left: 6px;
         }
     }
 `
@@ -66,9 +68,9 @@ const SvgLogoWrapper = styled.div`
 const Hero = React.forwardRef(({heroMarqueeRef, tl}, ref) => {
     
   useLayoutEffect(() => {
-    const mover = ref.current.clientHeight - 270
 
     let ctx = gsap.context(() => {
+      const mover = ref.current.clientHeight - 270
       gsap.set('.air-svg', {
         y: - mover
       })
@@ -127,14 +129,21 @@ const Hero = React.forwardRef(({heroMarqueeRef, tl}, ref) => {
           <AirSvg className="air-svg" />
         </div>
       </SvgLogoWrapper>
+      <StaticImage
+        src="../../assets/FA-logo-mob.png"
+        alt="Fresh Air Logo"
+        placeholder="blurred"
+        objectFit="contain"
+        className="mobile-logo"
+      />
       <HeroInner className="hero-inner">
         <img src={heroPeople} alt="alt" className="hero-img" />
       </HeroInner>
       <Marquee 
-        style={{color: 'white', position: 'absolute'}}
-        textContent="WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE. WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE. WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE." 
-        ref={heroMarqueeRef}
-      />
+          style={{color: 'white', position: 'absolute', padding: '150px 0 0 0'}}
+          textContent="WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE. WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE. WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE." 
+          ref={heroMarqueeRef}
+        />
     </HeroWrapper>
   )
 }

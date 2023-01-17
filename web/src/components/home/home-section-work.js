@@ -88,7 +88,10 @@ const Panel = styled.div`
         padding: 0;
       }
       h1 {
-        font-size: 4rem;
+        font-size: 3rem;
+        @media ${device.mediaMinMedium} {
+          font-size: 4rem;
+        }
         text-transform: uppercase;
       }
     }

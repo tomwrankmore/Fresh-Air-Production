@@ -12,11 +12,11 @@ const EditorialImgSection = React.forwardRef((props, ref) => {
   return (
     <EditorialImgSectionWrapper>
       <StaticImage
-          src="../../assets/podcast-img-holder.png"
-          alt="Podcast image"
-          placeholder="blurred"
-          objectFit="cover"
-          className="imgWrapper"
+        src="../../assets/podcast-img-holder.png"
+        alt="Podcast image"
+        placeholder="blurred"
+        objectFit="cover"
+        className="imgWrapper"
       />
     </EditorialImgSectionWrapper>
   )

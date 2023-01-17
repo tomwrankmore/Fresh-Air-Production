@@ -9,12 +9,15 @@ export const HeroWrapper = styled.div`
     align-items: center;
     justify-content: center;
     position: relative;
+    flex-direction: column;
+    gap: 3rem;
 
     .mobile-logo {
-        position: absolute;
-        bottom: 3rem;
-        left: 50%;
-        transform: translateX(-50%)
+      max-width: 320px;
+      justify-self: flex-start;
+      @media ${device.mediaMinMedium} {
+        display: none;
+      }
     }
 `
 
@@ -29,9 +32,6 @@ export const HeroInner = styled.div`
         width: clamp(20rem, 50vw, 70rem);
     }
 
-    /* --clip: 100% 0 0 0;
-    clip-path: inset(var(--clip)); */
-
     img {
         position: absolute;
         width: 100%;
@@ -40,18 +40,6 @@ export const HeroInner = styled.div`
         --clip: 100% 0 0 0;
         clip-path: inset(var(--clip));
     }
-
-    /* .heroPeopleImgWrapper {
-        position: absolute;
-        bottom: 0;
-        left: 0px;
-        right: -30px;
-        top: -30px;
-        width: 100%;
-    }
-    .heroPeopleImg {
-
-    } */
 `
 
 export const Fresh = styled.h1` 
@@ -90,9 +78,6 @@ export const HeroGrid = styled.div`
     position: relative;
     grid-template-columns: repeat(4, 1fr);
     .heroPeopleImgWrapper { 
-        /* grid-column: 2/4;
-        grid-row: 1;
-        overflow: visible; */
     }
     .heroPeopleImg {
         
