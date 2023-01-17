@@ -106,7 +106,7 @@ const Panel = styled.div`
       text-align: center;
       padding-right: 2rem;
       h3, h4, h5 {
-        /* font-family: 'Polysans'; */
+        /* font-family: 'PolySansSlim'; */
       }
       h3 {
         line-height: 2.25rem;
@@ -138,7 +138,7 @@ const Panel = styled.div`
     text-align: center;
     z-index: 101;
     margin-bottom: 3rem;
-    border-bottom: solid 1px white;
+    /* border-bottom: solid 1px white; */
     @media ${device.mediaMinMedium} {
       border-bottom: none;
       padding: 0 60px;

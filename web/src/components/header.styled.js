@@ -85,7 +85,7 @@ export const Nav = styled.nav`
     }
 
     & ul li a {
-      font-family: "Polysans";
+      font-family: "PolySansSlim";
     }
   }
 `

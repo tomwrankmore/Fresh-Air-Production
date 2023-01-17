@@ -104,7 +104,7 @@ const EditorialsGrid = styled.div`
         width: 100%;
         padding: 0 0.5rem;
         h3 {
-            font-family: 'Polysans';
+            font-family: 'PolySansSlim';
             font-weight: normal;
             text-transform: uppercase;
             text-align: left;

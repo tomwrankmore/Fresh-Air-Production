@@ -51,13 +51,13 @@ const EditorialsWrapper = styled.div`
           flex: 0;
         }
         h3 {
-            font-family: 'Polysans';
-            font-weight: normal;
-            text-align: left;
-            padding: 0 0rem 0.875rem 0rem;
-            @media ${device.mediaMinMedium} {
-                padding: 0.875rem 0rem;
-            }
+          font-family: 'PolySansSlim';
+          font-weight: normal;
+          text-align: left;
+          padding: 0 0rem 0.875rem 0rem;
+          @media ${device.mediaMinMedium} {
+              padding: 0.875rem 0rem;
+          }
         }
     }
 
