@@ -25,7 +25,7 @@ const StyledCTA = styled.div`
     font-size: 1.25rem;
   }
 
-  @media ${device.mediaMinSmall} {
+  @media ${device.mediaMinMedium} {
     right: 5rem;
     bottom: 5rem;
   }
