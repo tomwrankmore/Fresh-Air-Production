@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import _ from 'lodash';
 import { graphql } from "gatsby";
 import GraphQLErrorList from "../components/graphql-error-list";
@@ -90,6 +90,10 @@ const OurPodcasts = (props) => {
       </Layout>
     );
   }
+
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [data])
 
   const allPodcastNodes = data && data.podcasts && mapEdgesToNodes(data.podcasts).filter(filterOutDocsWithoutSlugs);
   const featuredPodcastNodes = allPodcastNodes.filter(filterOutNonFeaturedDocs)

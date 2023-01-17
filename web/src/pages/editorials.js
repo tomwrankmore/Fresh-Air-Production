@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { graphql } from "gatsby";
 import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -119,6 +119,10 @@ const EditorialsGrid = styled.div`
 
 
 const Editorials = ({data}) => {
+
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [data])
 
   const editorialNodes = data && data.editorials && mapEdgesToNodes(data.editorials);
 

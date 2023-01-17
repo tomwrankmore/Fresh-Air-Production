@@ -38,7 +38,7 @@ const Column = styled.div`
   padding: 1rem;
 `
 
-const NotFoundPage = () => {
+const ContactPage = () => {
 
   const [formState, setFormState] = useState({
     name: "",
@@ -152,4 +152,4 @@ const NotFoundPage = () => {
   )
 };
 
-export default NotFoundPage;
+export default ContactPage;

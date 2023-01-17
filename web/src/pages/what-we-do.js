@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useRef, useEffect} from "react";
 import { colors } from "../styles/colors";
 import { graphql } from "gatsby";
 import { mapEdgesToNodes } from "../lib/helpers";
@@ -65,9 +65,11 @@ const WhatWeDo = props => {
     );
   }
 
-  const allAwardNodes = data && data.awards && mapEdgesToNodes(data.awards);
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [data])
 
-  console.log('allAwardNodes: ', allAwardNodes)
+  const allAwardNodes = data && data.awards && mapEdgesToNodes(data.awards);
 
     // Section refs
     const heroRef = useRef(null)

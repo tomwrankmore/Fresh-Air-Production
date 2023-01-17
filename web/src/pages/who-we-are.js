@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { graphql } from "gatsby";
 import { colors } from "../styles/colors";
 import { device } from "../styles/mediaQueries";
@@ -107,6 +107,10 @@ const StaffGrid = styled.ul`
 `
 
 const WhoWeAre = (props) => {
+
+  useEffect(() => {
+      window.scrollTo(0,0)
+  }, [props.data])
 
   const { data, errors } = props;
   if (errors) {
