@@ -289,7 +289,7 @@ const Work = React.forwardRef((props, ref) => {
                 <div className="panel1-left-content">
                   <h1>We Work</h1>
                   <StaticImage 
-                    src="../../assets/we-work/joel-muniz-bJ2Dm9ZyeIY-unsplash-copy.png"
+                    src="../../assets/we-work/joel-muniz-bJ2Dm9ZyeIY-unsplash-cropped.png"
                     alt="Man with microphone"
                     placeholder="blurred"
                     layout="fullWidth"
