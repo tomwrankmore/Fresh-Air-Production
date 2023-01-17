@@ -78,7 +78,7 @@ export const Subscribe = styled.div`
     }
     p {
         margin-bottom: 1rem;
-        max-width: 65%;
+        max-width: 75%;
         @media ${device.mediaMinMedium} {
           max-width: 75%;
         }

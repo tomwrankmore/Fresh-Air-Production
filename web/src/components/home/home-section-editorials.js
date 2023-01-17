@@ -56,7 +56,6 @@ const EditorialsWrapper = styled.div`
 
     .titleWrapper {
         width: 100%;
-        padding: 0 0.5rem;
         flex: 1;
         @media ${device.mediaMinMedium} {
           flex: 0;
@@ -66,6 +65,13 @@ const EditorialsWrapper = styled.div`
           font-weight: normal;
           text-align: left;
         }
+    }
+
+    .titleWrapperRight {
+      padding: 0 0.5rem;
+      @media ${device.mediaMinMedium} {
+        padding: 0.5rem 0;
+      }
     }
 
     .editorials-left-col, 
@@ -83,7 +89,10 @@ const EditorialsWrapper = styled.div`
         flex-direction: column;
         padding: 0.5rem;
         .titleWrapper h3 {
-          padding: 1rem 0.5rem 0 0.5rem;
+          padding: 1rem 0;
+          @media ${device.mediaMinMedium} {
+            padding: 1rem 0.5rem 0 0.5rem;
+          }
         }
         @media ${device.mediaMinMedium} {
             height: 100vh;
@@ -160,7 +169,7 @@ const Editorials = ({editorialNodes}) => {
                             objectFit="cover"
                             className="imgWrapper"
                           />
-                          <div className="titleWrapper">
+                          <div className="titleWrapper titleWrapperRight">
                             <h3>{node.title}</h3>
                           </div>
                         </div>

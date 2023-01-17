@@ -30,7 +30,7 @@ const Column = styled.div`
   flex: 1;
 
   .heroTitle {
-    font-size: 1.875rem;
+    font-size: 1.25rem;
     margin-bottom: 1.875rem;
     color: white;
     @media ${device.mediaMinMedium} {

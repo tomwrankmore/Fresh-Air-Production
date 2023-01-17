@@ -18,15 +18,46 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
   const ctaTween = useRef(null)
   const navigationRef = useRef(null)
 
-  useEffect(() => {
-    ctaTween.current = gsap.to(ctaRef.current, {
-      duration: 0.15,
-      scale: 1.2,
-      rotation: 5,
-      ease: "back",
-      paused: true
+  useLayoutEffect(() => {
+    let mm = gsap.matchMedia(scopeRef);
+  
+    mm.add("(min-width: 675px)", () => {
+      
+      ctaTween.current = gsap.to(ctaRef.current, {
+        duration: 0.15,
+        scale: 1.2,
+        rotation: 5,
+        ease: "back",
+        paused: true
+      });
+  
+      // when the matchMedia doesn't match anymore, make sure we revert the text
+      return () => {};
     });
-  }, [])
+
+    mm.add("(max-width: 675px)", () => {
+      
+      ctaTween.current = gsap.to(ctaRef.current, {
+        duration: 0.15,
+        scale: 1,
+        paused: true
+      });
+
+      return () => {};
+    });
+  
+    return () => mm.revert();
+  }, []);
+
+  // useEffect(() => {
+  //   ctaTween.current = gsap.to(ctaRef.current, {
+  //     duration: 0.15,
+  //     scale: 1.2,
+  //     rotation: 5,
+  //     ease: "back",
+  //     paused: true
+  //   });
+  // }, [])
 
   const onMouseEnterHandler = () => {
     ctaTween.current.play();

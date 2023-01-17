@@ -14,7 +14,7 @@ const StyledPodcastGrid = styled.ul`
   @media ${device.mediaMinMedium} {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-  gap: 4px;
+  gap: 2rem;
   h3 {
     background-color: ${colors.FABlue};
     padding: 1rem;

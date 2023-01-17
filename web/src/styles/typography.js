@@ -6,4 +6,7 @@ export const SectionParagraph = styled.p`
     line-height: 1.6rem;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
 `
