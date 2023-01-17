@@ -49,7 +49,10 @@ const RelatedEditorialsGrid = styled.div`
     .titleWrapper {
         width: 100%;
         padding: 0 0.5rem;
-        flex: 0;
+        flex: 1;
+        @media ${device.mediaMinSmall} {
+          flex: 0;
+        }
         h3 {
             font-family: 'PolySansSlim';
             font-weight: normal;
