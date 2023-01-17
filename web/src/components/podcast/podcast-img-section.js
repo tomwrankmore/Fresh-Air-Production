@@ -3,7 +3,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 
 const PodcastImgSectionWrapper = styled.div` 
-  padding: 2rem 0 0 0;
+  padding: 0;
 `
 
 const PodcastImgSection = React.forwardRef(({podcast}, ref) => {

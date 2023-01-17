@@ -5,7 +5,6 @@ import styled from "styled-components";
 import BlockContent from "../block-content";
 
 const PodcastDescriptionWrapper = styled.div` 
-  text-align: center;
   padding: 0 1rem 1rem 1rem;
   @media ${device.mediaMinMedium} {
     padding: 0 2rem 2rem 2rem;

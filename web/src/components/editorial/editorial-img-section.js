@@ -5,7 +5,7 @@ import {device} from "../../styles/mediaQueries"
 import styled from "styled-components";
 
 const EditorialImgSectionWrapper = styled.div` 
-  padding: 2rem 0 0 0;
+  padding: 0;
 `
 
 const EditorialImgSection = React.forwardRef((props, ref) => {

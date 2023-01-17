@@ -52,12 +52,14 @@ const Column = styled.div`
   }
 
   .heroTitle {
-    font-size: 1.875rem;
-    margin-bottom: 1.875rem;
+    font-size: 2rem;
+    margin: 0 auto 1.875rem auto;
+    max-width: 75%;
     color: white;
     justify-self: center;
     @media ${device.mediaMinMedium} {
       font-size: 2rem;
+      max-width: 100%;
     }
     @media ${device.mediaMinLarge} {
       font-size: 2.4rem;
