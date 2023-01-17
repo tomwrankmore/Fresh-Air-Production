@@ -125,6 +125,9 @@ const Editorials = ({data}) => {
   }, [data])
 
   const editorialNodes = data && data.editorials && mapEdgesToNodes(data.editorials);
+  const every_nth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);
+  const newboy = every_nth(editorialNodes, 9)
+  console.log('editorialNodes: ', editorialNodes)
 
     return (
         <Layout>
@@ -136,7 +139,7 @@ const Editorials = ({data}) => {
                 editorialNodes.map((node, index) => (
                   <Link 
                     to={`/editorial/${node.slug.current}`} className={
-                    node.isFeaturedPost ? "editorials-link featured-post" : "editorials-link"
+                    index === 0 || index === 7|| index === 12 ? "editorials-link featured-post" : "editorials-link"
                     }
                     key={node.id}
                   >
