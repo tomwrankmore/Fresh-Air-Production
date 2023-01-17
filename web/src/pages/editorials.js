@@ -90,7 +90,7 @@ const EditorialsGrid = styled.div`
             max-height: 50vh;
             .imgWrapper {
                 flex: 1;
-                /* max-height: 400px; */
+                aspect-ratio: 1/1
             }
             @media ${device.mediaMinMedium} {
                 /* height: 450px; */
@@ -133,7 +133,7 @@ const Editorials = ({data}) => {
           <EditorialsWrapper>
             <EditorialsGrid>
               {editorialNodes && 
-                editorialNodes.map(node => (
+                editorialNodes.map((node, index) => (
                   <Link 
                     to={`/editorial/${node.slug.current}`} className={
                     node.isFeaturedPost ? "editorials-link featured-post" : "editorials-link"
