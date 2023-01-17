@@ -53,7 +53,6 @@ const LinkContent = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 1rem;
-    margin-top: 1rem;
     padding-top: 1rem;
 `
 

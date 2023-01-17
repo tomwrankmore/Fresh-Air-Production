@@ -14,23 +14,25 @@ const HeroWrapper = styled.div`
   min-height: 100vh;
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   @media ${device.mediaMinMedium} {
     flex-direction: row;
   }
 `;
 
 const Column = styled.div`
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
   flex: 1;
-  height: 100vh;
+  @media ${device.mediaMinMedium} {
+    display: flex;
+  }
 
   div.heroText {
-    padding: 2rem;
+    padding: 0 1rem;
     text-align: center;
     position: relative;
     display: flex;
@@ -81,9 +83,12 @@ const Column = styled.div`
   }
 
   &.clipped {
-    --clip: 100% 0 0 0;
+    --clip: 0 0 0 0;
     clip-path: inset(var(--clip));
     justify-content: flex-start;
+    @media ${device.mediaMinMedium} {
+      --clip: 100% 0 0 0;
+    }
   }
 `;
 

@@ -15,7 +15,7 @@ import QuoteSection from "../quote-section";
 import Marquee from "../marquee"
 
 const PodcastWrapper = styled.div`
-    padding: 120px 0 0;
+    /* padding: 120px 0 0; */
     @media ${device.mediaMinLarge} {
       padding: 0;
     }
