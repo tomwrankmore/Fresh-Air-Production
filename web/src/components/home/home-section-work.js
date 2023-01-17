@@ -112,11 +112,12 @@ const Panel = styled.div`
         font-weight: normal;
         @media ${device.mediaMinMedium} {
           line-height: 2.25rem;
-          font-size: 1.75rem;
+          font-size: 1.5rem;
         }
       }
       h4 {
-        font-size: 1.875rem;
+        font-size: 1.5rem;
+        font-weight: normal; 
       }
       h4, h5 {
         margin-bottom: 2rem;

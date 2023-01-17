@@ -1,14 +1,11 @@
 import React, {useLayoutEffect, useEffect, useRef, useState} from "react";
 import { Link } from "gatsby";
 import Header from "./header";
-import styled from "styled-components";
 import gsap from "gsap";
-import "../styles/layout.css";
-import Scroll from "./Scroll";
 import HeroCta from "../components/hero-cta";
 import {Content} from './layout.styled';
-import {showNavAnim} from "../animations";
 import Footer from "./footer";
+import "../styles/layout.css";
 
 const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
 

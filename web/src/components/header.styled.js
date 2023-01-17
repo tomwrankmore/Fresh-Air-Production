@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   @media ${device.mediaMinMedium} {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.75) 100%);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
   }
 
   @media ${device.mediaMinLarge} {
