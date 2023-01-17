@@ -139,7 +139,7 @@ const Editorials = ({data}) => {
                 editorialNodes.map((node, index) => (
                   <Link 
                     to={`/editorial/${node.slug.current}`} className={
-                    index === 0 || index === 7|| index === 12 ? "editorials-link featured-post" : "editorials-link"
+                    index === 0 || index === 7 || index === 10 ? "editorials-link featured-post" : "editorials-link"
                     }
                     key={node.id}
                   >
