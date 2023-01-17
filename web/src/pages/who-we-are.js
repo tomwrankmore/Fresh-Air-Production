@@ -69,6 +69,7 @@ const Directors = styled.ul`
     margin-bottom: 2rem;
     @media ${device.mediaMinMedium} {
         flex-direction: row;
+        gap: 4px;
     }
     /* padding: 120px 2rem 0 2rem */
     li {
@@ -92,13 +93,15 @@ const Directors = styled.ul`
 const StaffGrid = styled.ul`
     display: grid;
     grid-template-columns: 1fr;
+    gap: 2rem;
     @media ${device.mediaMinSmall} {
       grid-template-columns: 1fr 1fr;
+      gap: 4px;
     }
     @media ${device.mediaMinLarge} {
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-    gap: 2rem;
+    
     h3 {
         background-color: ${colors.FABlue};
         padding: 1rem;

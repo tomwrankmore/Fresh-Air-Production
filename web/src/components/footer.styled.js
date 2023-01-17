@@ -64,7 +64,6 @@ export const Subscribe = styled.div`
     grid-column: 1/-1;
     padding-top: 4rem;
     @media ${device.mediaMinMedium} {
-      
       grid-column: auto;
     }
     @media ${device.mediaMinLarge} {
@@ -73,8 +72,9 @@ export const Subscribe = styled.div`
     input {
       background-color: ${colors.FABlue};
       width: 100%;
-      padding: 0.5rem 0.25rem;
+      padding: 1rem 0.5rem;
       border: none;
+      color: white;
     }
     p {
         margin-bottom: 1rem;
@@ -82,9 +82,9 @@ export const Subscribe = styled.div`
         @media ${device.mediaMinMedium} {
           max-width: 75%;
         }
-        @media ${device.mediaMinLarge} {
+        /* @media ${device.mediaMinLarge} {
             max-width: 50%;
-        }
+        } */
     }
 `
 

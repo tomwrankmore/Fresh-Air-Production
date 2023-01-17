@@ -101,7 +101,7 @@ const WhatWeDo = props => {
         <WwdSectionOne ref={sectionOneRef} tl={section2Tl} />
         <Marquee 
           style={{color: colors.FABlue}}
-          textContent="podcasting is a booming medium. podcasting is a booming medium. podcasting is a booming medium." 
+          textContent="our ethos. our ethos. our ethos. our ethos. our ethos. our ethos." 
           ref={marqueeRef}
         />
         <WwdSectionTwo ref={sectionTwoRef} tl={section2Tl}/>

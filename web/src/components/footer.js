@@ -45,7 +45,7 @@ const Footer = ({ children }) => {
               <Subscribe>
                 <p>Subscribe to our newsletter for news on the best new podcasts</p>
                 <form>
-                  <input type="text" id="subscribe" name="sub" />
+                  <input type="text" id="subscribe" name="sub" placeholder="Subscribe"/>
                 </form>
               </Subscribe>
               <SiteInfo>

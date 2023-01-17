@@ -20,6 +20,7 @@ const RelatedEditorialsGrid = styled.div`
     .editorials-link {
         text-decoration: none;
         color: black;
+        display: flex;
         &:hover {
             background-color: ${colors.FABlue};
             color: white;
@@ -35,19 +36,20 @@ const RelatedEditorialsGrid = styled.div`
             flex-direction: row;
             max-height: 50vh;
             .imgWrapper {
-                flex: 1;
+              flex: 1;
+              max-height: 200px;
             }
             @media ${device.mediaMinMedium} {
-                flex-direction: column;
-                align-items: center;
-            }
+              flex-direction: column;
+              align-items: center;
+          }
         }
     }
 
     .titleWrapper {
         width: 100%;
         padding: 0 0.5rem;
-        flex: 1;
+        flex: 0;
         h3 {
             font-family: 'PolySansSlim';
             font-weight: normal;

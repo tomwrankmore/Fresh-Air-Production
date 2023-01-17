@@ -31,14 +31,16 @@ const Column = styled.div`
 
   .heroTitle {
     font-size: 1.25rem;
+    line-height: 1.5rem;
     margin-bottom: 1.875rem;
     color: white;
     @media ${device.mediaMinMedium} {
       font-size: 2rem;
+      line-height: 2.4rem;
     }
-    @media ${device.mediaMinLarge} {
+    /* @media ${device.mediaMinLarge} {
       font-size: 2.4rem;
-    }
+    } */
   }
 
   /* @media ${device.mediaMinMedium} {

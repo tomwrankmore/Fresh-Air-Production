@@ -21,14 +21,14 @@ const EditorialWrapper = styled.div`
 
 const Editorial = ({editorial}) => {
 
+  console.log('relatedProjects: ', editorial.relatedProjects)
+
   // Section refs
   const heroRef = useRef(null)
   const marqueeRef = useRef(null)
 
   // Timeline refs
   const heroTl = useRef(null)
-
-  console.log('editorial.relatedProjects: ', )
 
     return (
       <EditorialWrapper>
@@ -58,11 +58,11 @@ const Editorial = ({editorial}) => {
           image={editorial.sectionTwoImage}
           text={editorial._rawSectionTwoText}
         />
-        {
-        editorial.relatedProjects.length > 0 ?
-        <EditorialsRelated  realatedPosts={editorial.relatedProjects} /> 
-        : <></>
-        }
+        {/* {
+        editorial.relatedProjects.length > 0 ? */}
+        <EditorialsRelated relatedPosts={editorial.relatedProjects} /> 
+        {/* : <></>
+        } */}
         
       </EditorialWrapper>
     )

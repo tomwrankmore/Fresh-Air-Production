@@ -8,13 +8,14 @@ const StyledPodcastGrid = styled.ul`
   display: grid;
   /* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
   grid-template-columns: 1fr;
+  gap: 2rem;
   @media ${device.mediaMinSmall} {
     grid-template-columns: 1fr 1fr;
+    gap: 4px;
   }
   @media ${device.mediaMinMedium} {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-  gap: 2rem;
   h3 {
     background-color: ${colors.FABlue};
     padding: 1rem;
