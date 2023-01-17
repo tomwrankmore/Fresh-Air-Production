@@ -105,14 +105,15 @@ const Panel = styled.div`
       }
       text-align: center;
       padding-right: 2rem;
-      h3, h4, h5 {
-        /* font-family: 'PolySansSlim'; */
-      }
       h3 {
-        line-height: 2.25rem;
-        font-size: 1.75rem;
+        line-height: auto;
+        font-size: 1.25rem;
         text-transform: initial;
         font-weight: normal;
+        @media ${device.mediaMinMedium} {
+          line-height: 2.25rem;
+          font-size: 1.75rem;
+        }
       }
       h4 {
         font-size: 1.875rem;
