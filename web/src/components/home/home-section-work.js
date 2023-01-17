@@ -138,7 +138,7 @@ const Panel = styled.div`
     padding: 0 2rem 2rem 2rem;
     text-align: center;
     z-index: 101;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     /* border-bottom: solid 1px white; */
     @media ${device.mediaMinMedium} {
       border-bottom: none;

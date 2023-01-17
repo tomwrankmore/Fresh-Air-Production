@@ -9,10 +9,21 @@ const EditorialsTitleWrapper = styled.div`
     width: 100%;
     padding: 1rem 1rem 0 1rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+    flex-direction: column;
+    
+    @media ${device.mediaMinMedium} {
+      flex-direction: row;
+      align-items: center;
+    }
+
     h1 {
-        font-weight: normal;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+      @media ${device.mediaMinMedium} {
+        margin: 0;
+      }
     }
     .view-all-editorials {
       text-decoration: none;
@@ -54,10 +65,6 @@ const EditorialsWrapper = styled.div`
           font-family: 'PolySansSlim';
           font-weight: normal;
           text-align: left;
-          padding: 0 0rem 0.875rem 0rem;
-          @media ${device.mediaMinMedium} {
-              padding: 0.875rem 0rem;
-          }
         }
     }
 
@@ -69,12 +76,15 @@ const EditorialsWrapper = styled.div`
     }
 
     .editorials-left-col {
-        height: 50vh;
+        height: 75vh;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         padding: 0.5rem;
+        .titleWrapper h3 {
+          padding: 1rem 0.5rem 0 0.5rem;
+        }
         @media ${device.mediaMinMedium} {
             height: 100vh;
             position: sticky;
@@ -119,7 +129,7 @@ const Editorials = ({editorialNodes}) => {
     return (
         <>
             <EditorialsTitleWrapper>
-              <h1>Editorials</h1>
+              <h1>Our Editorials</h1>
               <Link to="/editorials/" className="view-all-editorials">
                 View all Editorials
               </Link>
