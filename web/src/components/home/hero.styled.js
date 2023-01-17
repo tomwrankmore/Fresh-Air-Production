@@ -7,10 +7,15 @@ export const HeroWrapper = styled.div`
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 5rem;
     position: relative;
     flex-direction: column;
-    gap: 3rem;
+    gap: 4rem;
+    @media ${device.mediaMinMedium} {
+      justify-content: center;
+      padding-top: 0;
+    }
 
     .mobile-logo {
       max-width: 320px;
