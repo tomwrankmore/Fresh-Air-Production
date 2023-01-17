@@ -140,9 +140,10 @@ const Hero = React.forwardRef(({heroMarqueeRef, tl}, ref) => {
         <img src={heroPeople} alt="alt" className="hero-img" />
       </HeroInner>
       <Marquee 
-          style={{color: 'white', position: 'absolute', padding: '175px 0 0 0'}}
+          style={{color: 'white'}}
           textContent="WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE. WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE. WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE." 
           ref={heroMarqueeRef}
+          cn="home-marquee"
         />
     </HeroWrapper>
   )

@@ -3,6 +3,7 @@ import gsap from "gsap"
 import styled from "styled-components";
 import { colors } from "../styles/colors";
 import { device } from "../styles/mediaQueries";
+import classNames from "classnames";
 
 const StyledMarquee = styled.section` 
     text-transform: uppercase;
@@ -13,6 +14,14 @@ const StyledMarquee = styled.section`
     overflow: hidden;
     @media ${device.mediaMinLarge} {
         font-size: 1.875rem
+    }
+
+    &.home-marquee {
+      position: relative;
+      padding: 0;
+      @media ${device.mediaMinMedium} {
+        position: absolute; 
+      }
     }
 `
 
@@ -29,7 +38,7 @@ const MarqueePart = styled.div`
     padding: 0 4px;
     font-smooth: always;
 `
-const Marquee = React.forwardRef(({textContent, style}, ref) => {
+const Marquee = React.forwardRef(({textContent, style, cn}, ref) => {
 
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
@@ -40,7 +49,7 @@ const Marquee = React.forwardRef(({textContent, style}, ref) => {
       }, [])
 
     return (
-        <StyledMarquee className="marquee" ref={ref} style={style}>
+        <StyledMarquee className={classNames(cn, "marquee")} ref={ref} style={style}>
             <MarqueeInner aria-hidden="true" className="marquee__inner">
                 <MarqueePart className="marquee__part">{textContent}</MarqueePart>
                 <MarqueePart className="marquee__part">{textContent}</MarqueePart>
