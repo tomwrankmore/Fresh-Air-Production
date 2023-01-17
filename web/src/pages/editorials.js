@@ -89,8 +89,8 @@ const EditorialsGrid = styled.div`
             flex-direction: column;
             max-height: 50vh;
             .imgWrapper {
-                flex: 1;
-                aspect-ratio: 1/1
+              flex: 1;
+              /* aspect-ratio: 1/1; */
             }
             @media ${device.mediaMinMedium} {
                 /* height: 450px; */
@@ -128,7 +128,7 @@ const Editorials = ({data}) => {
 
     return (
         <Layout>
-          <SEO title="Our Podcasts" />
+          <SEO title="Editorials" />
           <CentralLogo />
           <EditorialsWrapper>
             <EditorialsGrid>
@@ -147,7 +147,7 @@ const Editorials = ({data}) => {
                         placeholder="blurred"
                         objectFit="cover"
                         className="imgWrapper"
-                        aspectRatio= "1:1"
+                        // aspectRatio= "1:1"
                       />
                       <div className="titleWrapper">
                         <h3>{node.title}</h3>
