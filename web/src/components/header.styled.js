@@ -7,7 +7,9 @@ export const Wrapper = styled.div`
   padding: 1em;
   display: flex;
   justify-content: flex-end;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.75) 100%);
+  @media ${device.mediaMinMedium} {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.75) 100%);
+  }
 
   @media ${device.mediaMinLarge} {
     padding: 1.5em 1.5em;
