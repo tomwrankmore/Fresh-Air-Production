@@ -13,10 +13,10 @@ import {
 } from "."
 
 const EditorialWrapper = styled.div`
-    padding: 120px 0 0;
+    /* padding: 120px 0 0;
     @media ${device.mediaMinLarge} {
       padding: 0;
-    }
+    } */
 `
 
 const Editorial = ({editorial}) => {
@@ -28,7 +28,7 @@ const Editorial = ({editorial}) => {
   // Timeline refs
   const heroTl = useRef(null)
 
-  console.log('editorial.sectionOneImage', editorial.sectionOneImage)
+  console.log('editorial.relatedProjects: ', )
 
     return (
       <EditorialWrapper>
@@ -58,9 +58,12 @@ const Editorial = ({editorial}) => {
           image={editorial.sectionTwoImage}
           text={editorial._rawSectionTwoText}
         />
-        <EditorialsRelated 
-          realatedPosts={editorial.relatedProjects} 
-        />
+        {
+        editorial.relatedProjects.length > 0 ?
+        <EditorialsRelated  realatedPosts={editorial.relatedProjects} /> 
+        : <></>
+        }
+        
       </EditorialWrapper>
     )
 }

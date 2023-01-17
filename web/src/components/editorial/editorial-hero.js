@@ -21,28 +21,34 @@ const EditorialWrapper = styled.div`
 `;
 
 const Column = styled.div`
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
   flex: 1;
-  height: 100vh;
+  @media ${device.mediaMinMedium} {
+    display: flex;
+  }
 
   div.heroText {
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
     position: relative;
-    display: flex;
+    display: block;
     flex-direction: column;
     height: 100%;
     @media ${device.mediaMinMedium} {
-        padding: 4rem;
+      padding: 4rem;
+      display: flex;
     }
     .heroTitleWrapper {
-      display: flex;
+      display: block;
       align-items: center;
       flex: 1;
+      @media ${device.mediaMinMedium} {
+        display: flex;
+    }
     }
   }
 

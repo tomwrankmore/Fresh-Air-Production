@@ -7,7 +7,7 @@ export const SectionWrapper = styled.div`
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   &.flex-reverse-on-mobile {
     flex-direction: column-reverse;
   }
@@ -27,14 +27,12 @@ align-items: left;
 justify-content: center;
 flex-direction: column;
 overflow: hidden;
-/* padding: 0 2rem; */
 &.text {
   p {
     line-height: 1.4rem;
     font-size: 1.2rem;
-    margin-bottom: 1.5rem;
   }
-  padding: 0 2rem;
+  padding: 2rem 1rem;
   @media ${device.mediaMinMedium} {
     padding: 0;
   }

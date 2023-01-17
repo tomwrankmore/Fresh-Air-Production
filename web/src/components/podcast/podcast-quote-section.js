@@ -37,7 +37,6 @@ const QuoteWrapper = styled.div`
 `
 
 const PodcastQuoteSection = React.forwardRef(({podcast}, ref) => {
-  console.log('podcast: ', podcast)
     return (
         <QuoteWrapper ref={ref}>
               <SoundwaveGraphic className='soundwaveGraphic' /> 

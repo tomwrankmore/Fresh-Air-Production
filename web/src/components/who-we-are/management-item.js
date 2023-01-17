@@ -39,7 +39,6 @@ const textContentStyles = {
 }
 
 const ManagementItem = ({manager}) => {
-  console.log('manager manager manager: ', manager)
   return (
     <li>
       <div>

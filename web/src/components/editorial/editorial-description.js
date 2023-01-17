@@ -5,8 +5,7 @@ import styled from "styled-components";
 import BlockContent from "../block-content";
 
 const EditorialDescriptionWrapper = styled.div` 
-  text-align: center;
-  padding: 0 1rem 1rem 1rem;
+  padding: 2rem 1rem;
   @media ${device.mediaMinMedium} {
     padding: 4rem 2rem;
   }

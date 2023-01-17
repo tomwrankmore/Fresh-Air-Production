@@ -42,9 +42,12 @@ const Column = styled.div`
         padding: 4rem;
     }
     .heroTitleWrapper {
-      display: flex;
+      display: block;
       align-items: center;
       flex: 1;
+      @media ${device.mediaMinMedium} {
+        display: flex;
+      }
     }
   }
 
