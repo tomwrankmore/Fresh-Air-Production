@@ -58,9 +58,9 @@ const IndexPage = props => {
 
   const { data, errors } = props;
 
-  useEffect(() => {
-    window.scrollTo(0,0)
-  }, [data])
+  // useEffect(() => {
+  //   window.scrollTo(0,0)
+  // }, [data])
 
   const editorialNodes = data && data.editorials && mapEdgesToNodes(data.editorials);
 

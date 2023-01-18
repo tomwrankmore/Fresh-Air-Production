@@ -111,9 +111,9 @@ const StaffGrid = styled.ul`
 
 const WhoWeAre = (props) => {
 
-  useEffect(() => {
-      window.scrollTo(0,0)
-  }, [props.data])
+  // useEffect(() => {
+  //     window.scrollTo(0,0)
+  // }, [props.data])
 
   const { data, errors } = props;
   if (errors) {
@@ -129,7 +129,7 @@ const WhoWeAre = (props) => {
 
     return (
         <Layout>
-            <SEO title="What We Do" />
+            <SEO title="Who We Are" />
             <CentralLogo />
             <WhoWeAreWrapper>
                 <Directors>

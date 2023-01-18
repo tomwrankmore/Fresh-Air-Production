@@ -91,9 +91,9 @@ const OurPodcasts = (props) => {
     );
   }
 
-  useEffect(() => {
-    window.scrollTo(0,0)
-  }, [data])
+  // useEffect(() => {
+  //   window.scrollTo(0,0)
+  // }, [data])
 
   const allPodcastNodes = data && data.podcasts && mapEdgesToNodes(data.podcasts).filter(filterOutDocsWithoutSlugs);
   const featuredPodcastNodes = allPodcastNodes.filter(filterOutNonFeaturedDocs)
