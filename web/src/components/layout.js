@@ -42,6 +42,11 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
 
       return () => {};
     });
+
+    mm.add("(max-width: 449px)", () => {
+      gsap.to(window, {duration: 0.1, scrollTo: 0});
+      return () => {};
+    })
   
     return () => mm.revert();
   }, []);

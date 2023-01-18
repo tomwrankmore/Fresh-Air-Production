@@ -1,6 +1,7 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useRef} from "react";
 import { graphql } from "gatsby";
 import { Link } from "gatsby";
+import gsap from "gsap";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { colors } from "../styles/colors";
 import { device } from "../styles/mediaQueries";
@@ -120,9 +121,23 @@ const EditorialsGrid = styled.div`
 
 const Editorials = ({data}) => {
 
-  useEffect(() => {
-    window.scrollTo(0,0)
-  }, [data])
+  const scopeRef = useRef(null)
+
+  // useEffect(() => {
+
+  //   const isBrowser = typeof window !== "undefined"
+
+  //   let mm = gsap.matchMedia(scopeRef);
+  //     mm.add("(min-width: 449px)", () => {
+  //       if(isBrowser) {
+  //         gsap.to(window, {duration: 0.1, scrollTo: 500});
+  //       }
+  //       return () => {};
+  //     })
+
+  //   return () => mm.revert();
+
+  // }, [data])
 
   const editorialNodes = data && data.editorials && mapEdgesToNodes(data.editorials);
   const every_nth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);
