@@ -96,7 +96,7 @@ export const Nav = styled.nav`
 export const StyledHeader = styled.div` 
   position: relative;
   z-index: 200;
-  width: 100vw;
+  width: 100%;
   position: fixed;
 
   .navigationLogo {

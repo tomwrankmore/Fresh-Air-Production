@@ -33,7 +33,7 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
     });
 
     mm.add("(max-width: 675px)", () => {
-      
+      // a none animation so the mouse even doesn't fail
       ctaTween.current = gsap.to(ctaRef.current, {
         duration: 0.15,
         scale: 1,
