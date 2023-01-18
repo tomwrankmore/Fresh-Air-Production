@@ -11,7 +11,7 @@ const StyledPodcastGrid = styled.ul`
   gap: 2rem;
   @media ${device.mediaMinSmall} {
     grid-template-columns: 1fr 1fr;
-    gap: 4px;
+    gap: 0.75rem 4px;
   }
   @media ${device.mediaMinMedium} {
     grid-template-columns: 1fr 1fr 1fr 1fr;

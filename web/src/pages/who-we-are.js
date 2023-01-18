@@ -66,7 +66,7 @@ const Directors = styled.ul`
     justify-content: center;
     flex-direction: column;
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.75rem;
     @media ${device.mediaMinMedium} {
         flex-direction: row;
         gap: 4px;
@@ -96,7 +96,7 @@ const StaffGrid = styled.ul`
     gap: 2rem;
     @media ${device.mediaMinSmall} {
       grid-template-columns: 1fr 1fr;
-      gap: 4px;
+      gap: 0.75rem 4px;
     }
     @media ${device.mediaMinLarge} {
       grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -110,10 +110,6 @@ const StaffGrid = styled.ul`
 `
 
 const WhoWeAre = (props) => {
-
-  // useEffect(() => {
-  //     window.scrollTo(0,0)
-  // }, [props.data])
 
   const { data, errors } = props;
   if (errors) {

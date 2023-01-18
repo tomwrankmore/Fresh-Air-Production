@@ -65,10 +65,6 @@ const WhatWeDo = props => {
     );
   }
 
-  // useEffect(() => {
-  //   window.scrollTo(0,0)
-  // }, [data])
-
   const allAwardNodes = data && data.awards && mapEdgesToNodes(data.awards);
 
     // Section refs

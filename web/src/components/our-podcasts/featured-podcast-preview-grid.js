@@ -10,9 +10,9 @@ const FeaturedPodcasts = styled.ul`
     justify-content: center;
     flex-direction: column;
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.75rem;
     @media ${device.mediaMinSmall} {
-      gap: 4px;
+      gap: 0.75rem 4px;
     }
     @media ${device.mediaMinMedium} {
         flex-direction: row;
