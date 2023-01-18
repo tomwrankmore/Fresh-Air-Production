@@ -12,6 +12,7 @@ export const HeroWrapper = styled.div`
     position: relative;
     flex-direction: column;
     gap: 4rem;
+    overflow-x: hidden;
     @media ${device.mediaMinMedium} {
       justify-content: center;
       padding-top: 0;

@@ -117,8 +117,9 @@ const tagCloudRef = useRef(null)
         <Marquee 
           style={{color: colors.FABlue}}
           textContent="whatever you're looking to create, our skilled and experienced production team will build the perfect podcast. whatever" 
-          ref={marqueeRef}/>
-          <Work ref={horizontalPanelsRef} />
+          ref={marqueeRef}
+        />
+        <Work ref={horizontalPanelsRef} />
         <Testimonials />
         <Editorials editorialNodes={editorialNodes} />
         <TagCloud ref={tagCloudRef} />

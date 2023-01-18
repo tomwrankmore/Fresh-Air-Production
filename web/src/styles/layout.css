@@ -5,10 +5,6 @@ html {
   font-family: var(--font-family-sans);
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
-
-  /* @media screen and (max-width: 675px) {
-    overflow-x: hidden;
-  } */
 }
 
 body {

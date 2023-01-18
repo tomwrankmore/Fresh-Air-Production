@@ -67,9 +67,9 @@ body {
   overflow-scrolling: touch;
 }
 
-* {
+/* * {
   outline: 1px dotted #f00 !important;
-}
+} */
 
 body {
   overflow-x: hidden;
