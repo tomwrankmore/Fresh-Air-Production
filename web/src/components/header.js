@@ -20,25 +20,25 @@ useLayoutEffect(() => {
     })
   
     const showAnim = gsap.from(ref.current, { 
-        yPercent: -100,
-        paused: true,
-        duration: 0.2
-      }).progress(1);
+      yPercent: -100,
+      paused: true,
+      duration: 0.2
+    }).progress(1);
       
-      ScrollTrigger.create({
-        start: "top top",
-        end: 99999,
-        onUpdate: (self) => {
-          self.direction === -1 ? showAnim.play() : showAnim.reverse()
-        }
-      });
-
-      // when the matchMedia doesn't match anymore
-      return () => {
-        gsap.from(ref.current, { 
-          yPercent: 55
-        })
+    ScrollTrigger.create({
+      start: "top top",
+      end: 99999,
+      onUpdate: (self) => {
+        self.direction === -1 ? showAnim.play() : showAnim.reverse()
       }
+    });
+
+    // when the matchMedia doesn't match anymore
+    return () => {
+      gsap.from(ref.current, { 
+        yPercent: 55
+      })
+    }
   });
 
   return () => mm.revert();
@@ -46,7 +46,7 @@ useLayoutEffect(() => {
 
   return (
   <StyledHeader ref={ref}>
-    <Wrapper>
+    <Wrapper className="headerWrapper">
 
       <ToggleNavButton onClick={showNav ? onHideNav : onShowNav}>
         {showNav ? <Icon symbol="close" /> : <Icon symbol="hamburger" />}
