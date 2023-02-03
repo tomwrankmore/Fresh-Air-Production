@@ -47,7 +47,7 @@ export default {
     },
     {
       name: 'amazonLink',
-      title: 'Amazon Link',
+      title: 'Google Link',
       type: 'string'
     },
     {
