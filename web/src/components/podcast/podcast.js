@@ -33,39 +33,49 @@ const Podcast = ({podcast}) => {
 
     return (
       <PodcastWrapper>
+
         <PodcastHero 
           ref={heroRef} 
           tl={heroTl} 
           podcast={podcast}
           />
+
         <Marquee 
           style={{color: colors.FABlue}}
           textContent="Available to listen to now. Available to listen to now. Available to listen to now." 
           ref={marqueeRef}
         />
-        <PodcastIconsSection
-          podcast={podcast}
-        />
-        <PodcastDescriptionSection
-          podcast={podcast}
-        />
-        <PodcastQuoteSection 
-          podcast={podcast}
-        />
-        <PodcastImgSection
-          podcast={podcast}
-        />
+        
+        <PodcastIconsSection podcast={podcast} />
+
+        {!!podcast?._rawBody &&
+          <PodcastDescriptionSection podcast={podcast} />
+        }
+
+        {!!podcast?.quote &&
+          <PodcastQuoteSection podcast={podcast} />
+        }
+
+        {!!podcast?.mainImage?.asset?.gatsbyImageData && (
+            <PodcastImgSection podcast={podcast}/> 
+          )
+        }
+
         <PodcastEpisodesSection 
           podcast={podcast}
         />
+
         <Marquee 
           style={{color: colors.FABlue}}
           textContent="Our Podcasts. Our Podcasts. Our Podcasts." 
           ref={marqueeRef}
         />
-        <PodcastRelatedSection 
-          podcast={podcast}
-        />
+
+        {!!podcast?.mainImage?.asset?.gatsbyImageData && (
+            <PodcastRelatedSection podcast={podcast} />
+          )
+        }
+
       </PodcastWrapper>
     )
 }

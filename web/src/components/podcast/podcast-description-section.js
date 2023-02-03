@@ -25,7 +25,7 @@ const PodcastDescriptionWrapper = styled.div`
 const PodcastDescriptionSection = React.forwardRef(({tl, podcast}, ref) => {
     return (
       <PodcastDescriptionWrapper>
-        {podcast._rawBody && <BlockContent blocks={podcast._rawBody || []} />}
+        <BlockContent blocks={podcast._rawBody || []} />
       </PodcastDescriptionWrapper>
     )
   }

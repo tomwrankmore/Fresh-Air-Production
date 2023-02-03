@@ -99,7 +99,7 @@ const Column = styled.div`
 
 const PodcastHero = React.forwardRef(({tl, podcast}, ref) => {
 
-    const heroBackgroundImage = podcast.heroImage.asset.gatsbyImageData;
+    const heroBackgroundImage = podcast?.heroImage?.asset?.gatsbyImageData;
 
     const pluginImage = getImage(heroBackgroundImage);
     const bgImage = convertToBgImage(pluginImage);
