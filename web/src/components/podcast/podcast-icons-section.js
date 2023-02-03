@@ -4,6 +4,7 @@ import {device} from "../../styles/mediaQueries"
 import styled from "styled-components";
 import { FaSpotify, FaPodcast, FaAmazon } from 'react-icons/fa';
 import { SiIheartradio } from "react-icons/si";
+import { BsGoogle } from "react-icons/bs"
 
 const IconContainer = styled.div` 
   padding: 0 2rem 2rem 2rem;
@@ -34,7 +35,7 @@ const PodcastIconsSection = React.forwardRef(({tl, podcast}, ref) => {
       <ul>
         {podcast.podcastLink && (<li><a href={podcast.podcastLink} target="_blank" rel="noreferrer"><FaPodcast/></a></li>)}
         {podcast.spotifyLink && (<li><a href={podcast.spotifyLink} target="_blank" rel="noreferrer"><FaSpotify/></a></li>)}
-        {podcast.amazonLink && (<li><a href={podcast.amazonLink} target="_blank" rel="noreferrer"><FaAmazon/></a></li>)}
+        {podcast.amazonLink && (<li><a href={podcast.amazonLink} target="_blank" rel="noreferrer"><BsGoogle/></a></li>)}
         {podcast.iHeartRadioLink && (<li><a href={podcast.iHeartRadioLink} target="_blank" rel="noreferrer"><SiIheartradio/></a></li>)}
       </ul>
     </IconContainer>
