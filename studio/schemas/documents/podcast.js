@@ -27,7 +27,7 @@ export default {
     },
     {
       name: 'subTitle',
-      title: 'Subtitle',
+      title: 'Client',
       type: 'string'
     },
     {
