@@ -35,6 +35,7 @@ export const query = graphql`
       spotifyLink
       amazonLink
       iHeartRadioLink
+      omnyWidget
       _rawBody
       quote
       relatedProjects {

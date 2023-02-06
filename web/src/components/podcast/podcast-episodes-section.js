@@ -35,10 +35,14 @@ const EpisodeList = styled.ul`
   }
 `
 
-const PodcastEpisodesSection = React.forwardRef(({tl}, ref) => {
+const PodcastEpisodesSection = React.forwardRef(({podcast}, ref) => {
   return (
     <PodcastEpisodesSectionWrapper>
-      <iframe src="https://omny.fm/shows/call-of-the-wild/playlists/podcast/embed?style=artwork" allow="autoplay; clipboard-write" width="100%" height="500" frameborder="0" title="Call Of The Wild"></iframe>
+      
+      
+
+      <iframe src={`https://omny.fm/shows/${podcast.omnyWidget}/playlists/podcast/embed?style=artwork`} allow="autoplay; clipboard-write" width="100%" height="500" frameborder="0" title={podcast.title}></iframe>
+
       {/* <EpisodeList>
         <li>
           <span className="episode-title">NATIONAL MEMORIAL ARBORETUM: A NEW HOPE</span>

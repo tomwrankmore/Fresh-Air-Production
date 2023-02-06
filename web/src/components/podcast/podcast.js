@@ -60,10 +60,12 @@ const Podcast = ({podcast}) => {
             <PodcastImgSection podcast={podcast}/> 
           )
         }
-
-        <PodcastEpisodesSection 
-          podcast={podcast}
-        />
+        {!!podcast?.omnyWidget && (
+          <PodcastEpisodesSection 
+            podcast={podcast}
+          />
+          )
+        }
 
         <Marquee 
           style={{color: colors.FABlue}}
@@ -71,7 +73,7 @@ const Podcast = ({podcast}) => {
           ref={marqueeRef}
         />
 
-        {!!podcast?.mainImage?.asset?.gatsbyImageData && (
+        {!!podcast?.relatedProjects && (
             <PodcastRelatedSection podcast={podcast} />
           )
         }
