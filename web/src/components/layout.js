@@ -27,45 +27,10 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
         ease: "back",
         paused: true
       });
-  
-      // when the matchMedia doesn't match anymore, make sure we revert the text
-      return () => {};
-    });
 
-    mm.add("(max-width: 675px)", () => {
-      // a none animation so the mouse even doesn't fail
-      ctaTween.current = gsap.to(ctaRef.current, {
-        duration: 0.15,
-        scale: 1,
-        paused: true
-      });
+      // Mouse follow animation 
 
-      return () => {};
-    });
-  
-    return () => mm.revert();
-  }, []);
-
-  // useEffect(() => {
-  //   ctaTween.current = gsap.to(ctaRef.current, {
-  //     duration: 0.15,
-  //     scale: 1.2,
-  //     rotation: 5,
-  //     ease: "back",
-  //     paused: true
-  //   });
-  // }, [])
-
-  const onMouseEnterHandler = () => {
-    ctaTween.current.play();
-  };
-  const onMouseLeaveHandler = () => {
-    ctaTween.current.reverse();
-  };
-
-  useEffect(()=>{
-
-    let svgns = "http://www.w3.org/2000/svg";
+      let svgns = "http://www.w3.org/2000/svg";
     let root = svgRef.current;
     let ease = 0.75;
 
@@ -123,6 +88,35 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
   
       return pos;
     }
+  
+      // when the matchMedia doesn't match anymore, make sure we revert the text
+      return () => {};
+    });
+
+    mm.add("(max-width: 675px)", () => {
+      // a none animation so the mouse even doesn't fail
+      ctaTween.current = gsap.to(ctaRef.current, {
+        duration: 0.15,
+        scale: 1,
+        paused: true
+      });
+
+      return () => {};
+    });
+  
+    return () => mm.revert();
+  }, []);
+
+  const onMouseEnterHandler = () => {
+    ctaTween.current.play();
+  };
+  const onMouseLeaveHandler = () => {
+    ctaTween.current.reverse();
+  };
+
+  useEffect(()=>{
+
+    
 
 },[])
 

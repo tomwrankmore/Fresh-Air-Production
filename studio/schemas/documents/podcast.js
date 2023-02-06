@@ -31,6 +31,11 @@ export default {
       type: 'string'
     },
     {
+      name: 'hasPage',
+      title: 'Does this podcast have it\'s own page?',
+      type: 'boolean'
+    },
+    {
       name: 'previewImage',
       title: 'Preview image',
       type: 'figure'

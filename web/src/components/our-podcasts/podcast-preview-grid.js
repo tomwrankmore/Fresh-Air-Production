@@ -6,7 +6,6 @@ import PodcastPreview from "./podcast-preview";
 
 const StyledPodcastGrid = styled.ul`
   display: grid;
-  /* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
   grid-template-columns: 1fr;
   gap: 2rem;
   @media ${device.mediaMinSmall} {
