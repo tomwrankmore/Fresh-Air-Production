@@ -308,8 +308,8 @@ const Work = React.forwardRef((props, ref) => {
                 <SvgBg className="svg-bg" />
                 <div className="panel-equal-column">
                   <div className="we-work-text-wrapper">
-                    <h2>Creative Development</h2>
-                    <p className="panel-paragraph">Whatever stage of the process you're at, we can take your podcast from an idea straight to your the ears of your customers. Whatever stage of the process you're at, we can take your podcast from an idea straight to your the ears of your customers.</p>
+                    <h2>Strategy &amp; Creative</h2>
+                    <p className="panel-paragraph">What is the podcast that only you can make? We turn your brand into a podcast that audiences will love. We take broadcast quality producers and turn your talent into podcast stars, your brand purpose into a killer format, and your expertise into a brilliant conversation..</p>
                   </div>
                   <StaticImage
                     src="../../assets/we-work/pexels-elina-araja.png"
@@ -332,7 +332,7 @@ const Work = React.forwardRef((props, ref) => {
                     />
                     <div className="we-work-text-wrapper">
                       <h2>Record and Produce</h2>
-                      <p className="panel-paragraph">Whatever stage of the process you're at, we can take your podcast from an idea straight to your the ears of your customers. Whatever stage of the process you're at, we can take your podcast from an idea straight to your the ears of your customers.</p>
+                      <p className="panel-paragraph">We're a collective of best in the business audio producers, and we've worked for some of the world's biggest brands. We're also storytellers, journalists, finance specialists, science experts, comedy producers, fashion lovers, and much more.</p>
                     </div>
                 </div>
               </Panel>
@@ -340,7 +340,7 @@ const Work = React.forwardRef((props, ref) => {
                 <div className="panel-equal-column">
                   <div className="we-work-text-wrapper">
                     <h2>Advertise and Promote</h2>
-                    <p className="panel-paragraph">Whatever stage of the process you're at, we can take your podcast from an idea straight to your the ears of your customers. Whatever stage of the process you're at, we can take your podcast from an idea straight to your the ears of your customers.</p>
+                    <p className="panel-paragraph">We're a team of podcast growth specialists running strategy, media, design and PR to make a podcast into a hit. Our plans bring an audience to the content we produce and strategically distribute it to where the audience already are.</p>
                   </div>
                   <StaticImage
                     src="../../assets/we-work/pexels-jonathan-pham-12375133.jpg"
@@ -364,7 +364,9 @@ const Work = React.forwardRef((props, ref) => {
                     />
                     <div className="we-work-text-wrapper">
                       <h2>Analyse Your Data</h2>
-                      <p className="panel-paragraph">Whatever stage of the process you're at, we can take your podcast from an idea straight to your the ears of your customers. Whatever stage of the process you're at, we can take your podcast from an idea straight to your the ears of your customers.</p>
+                      <p className="panel-paragraph">We set clear goals to drive the best return for your business. We ruthlessly iterate to make your podcast as successful as it can be. And we show the value so Series 2 is no-brainer
+                      <br/>
+                      Let's get making a podcast</p>
                     </div>
                 </div>
               </Panel>

@@ -38,14 +38,7 @@ const Column = styled.div`
       font-size: 2rem;
       line-height: 2.4rem;
     }
-    /* @media ${device.mediaMinLarge} {
-      font-size: 2.4rem;
-    } */
   }
-
-  /* @media ${device.mediaMinMedium} {
-    width: 50%;
-  } */
 
   .background-image {
     width: 100%;
