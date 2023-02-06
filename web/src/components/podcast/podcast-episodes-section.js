@@ -38,14 +38,14 @@ const EpisodeList = styled.ul`
 const PodcastEpisodesSection = React.forwardRef(({tl}, ref) => {
   return (
     <PodcastEpisodesSectionWrapper>
-      <EpisodeList>
+      <iframe src="https://omny.fm/shows/call-of-the-wild/playlists/podcast/embed?style=artwork" allow="autoplay; clipboard-write" width="100%" height="500" frameborder="0" title="Call Of The Wild"></iframe>
+      {/* <EpisodeList>
         <li>
           <span className="episode-title">NATIONAL MEMORIAL ARBORETUM: A NEW HOPE</span>
           <span className="release-date">RELEASE DATE</span>
           <ul className="icon-list">
               <li><FaPodcast/></li>
               <li><FaSpotify/></li>
-              {/* <li><FaAmazon/></li> */}
               <li><SiIheartradio/></li>
           </ul>
         </li>
@@ -55,7 +55,6 @@ const PodcastEpisodesSection = React.forwardRef(({tl}, ref) => {
           <ul className="icon-list">
               <li><FaPodcast/></li>
               <li><FaSpotify/></li>
-              {/* <li><FaAmazon/></li> */}
               <li><SiIheartradio/></li>
           </ul>
         </li>
@@ -65,7 +64,6 @@ const PodcastEpisodesSection = React.forwardRef(({tl}, ref) => {
           <ul className="icon-list">
               <li><FaPodcast/></li>
               <li><FaSpotify/></li>
-              {/* <li><FaAmazon/></li> */}
               <li><SiIheartradio/></li>
           </ul>
         </li>
@@ -75,7 +73,6 @@ const PodcastEpisodesSection = React.forwardRef(({tl}, ref) => {
           <ul className="icon-list">
               <li><FaPodcast/></li>
               <li><FaSpotify/></li>
-              {/* <li><FaAmazon/></li> */}
               <li><SiIheartradio/></li>
           </ul>
         </li>
@@ -85,7 +82,6 @@ const PodcastEpisodesSection = React.forwardRef(({tl}, ref) => {
           <ul className="icon-list">
               <li><FaPodcast/></li>
               <li><FaSpotify/></li>
-              {/* <li><FaAmazon/></li> */}
               <li><SiIheartradio/></li>
           </ul>
         </li>
@@ -95,11 +91,10 @@ const PodcastEpisodesSection = React.forwardRef(({tl}, ref) => {
           <ul className="icon-list">
               <li><FaPodcast/></li>
               <li><FaSpotify/></li>
-              {/* <li><FaAmazon/></li> */}
               <li><SiIheartradio/></li>
           </ul>
         </li>
-      </EpisodeList>
+      </EpisodeList> */}
     </PodcastEpisodesSectionWrapper>
   )
 }

@@ -61,6 +61,11 @@ export default {
       type: 'string'
     },
     {
+      name: 'omnyWidget',
+      title: 'Omny iFrame',
+      type: 'string'
+    },
+    {
       name: 'excerpt',
       title: 'Preview Excerpt',
       type: 'simplePortableText'
