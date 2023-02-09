@@ -93,7 +93,7 @@ const EditorialsGrid = styled.div`
             .imgWrapper {
               flex: 1;
               width: 100%;
-              /* aspect-ratio: 1/1; */
+              aspect-ratio: 1/1;
             }
             @media ${device.mediaMinMedium} {
                 /* height: 450px; */
