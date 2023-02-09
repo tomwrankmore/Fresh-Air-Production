@@ -8,16 +8,12 @@ export const SectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 75%;
+  margin: 0 auto;
   p {
-    max-width: 75%;
-    margin: 0 auto;
     padding-bottom: 1rem;
-    max-width: 100%;
     line-height: 1.6rem;
     font-size: 1.2rem;
-    @media ${device.mediaMinMedium} {
-      max-width: 75%;
-    }
   }
   &.flex-reverse-on-mobile {
     flex-direction: column-reverse;
