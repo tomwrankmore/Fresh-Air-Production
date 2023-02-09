@@ -6,9 +6,6 @@ import BlockContent from "../block-content";
 const EditorialSectionTwo = ({image, text}) => {
   return (
     <SectionWrapper>
-      <Column className="text">
-        <BlockContent blocks={text} />
-      </Column>
       {!!image?.asset?.gatsbyImageData &&
         <Column className="clipped">
           <GatsbyImage
@@ -22,6 +19,9 @@ const EditorialSectionTwo = ({image, text}) => {
           />
         </Column>
       }
+      <Column className="text">
+        <BlockContent blocks={text} />
+      </Column>
     </SectionWrapper>
   )
 }
