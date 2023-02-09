@@ -8,17 +8,13 @@ const EditorialDescriptionWrapper = styled.div`
   padding: 2rem 1rem;
   @media ${device.mediaMinMedium} {
     padding: 4rem 2rem;
-  }
-  p {
     max-width: 75%;
     margin: 0 auto;
+  }
+  p {
     padding-bottom: 1rem;
-    max-width: 100%;
     line-height: 1.6rem;
     font-size: 1.2rem;
-    @media ${device.mediaMinMedium} {
-      max-width: 75%;
-    }
   }
 `
 

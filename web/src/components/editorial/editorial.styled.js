@@ -4,11 +4,14 @@ import { device } from "../../styles/mediaQueries";
 export const SectionWrapper = styled.div`
   background-color: white;
   width: 100%;
-  padding: 0;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 75%;
+  @media ${device.mediaMinMedium} {
+    max-width: 75%;
+    padding: 4rem 2rem;
+  }
   margin: 0 auto;
   p {
     padding-bottom: 1rem;
