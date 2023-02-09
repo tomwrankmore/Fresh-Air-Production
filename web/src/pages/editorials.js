@@ -66,6 +66,7 @@ const EditorialsGrid = styled.div`
                 height: 100%;
                 .post {
                     max-height: 100%;
+                    width: 100%;
                 }
             }
         }
@@ -91,6 +92,7 @@ const EditorialsGrid = styled.div`
             max-height: 50vh;
             .imgWrapper {
               flex: 1;
+              width: 100%;
               /* aspect-ratio: 1/1; */
             }
             @media ${device.mediaMinMedium} {
