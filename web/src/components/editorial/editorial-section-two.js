@@ -9,17 +9,19 @@ const EditorialSectionTwo = ({image, text}) => {
       <Column className="text">
         <BlockContent blocks={text} />
       </Column>
-      <Column className="clipped">
-        <GatsbyImage
-            image={image.asset.gatsbyImageData}
-            alt={image.alt}
-            placeholder="blurred"
-            layout="fullWidth"
-            objectPosition="0 0"
-            className="wwdSectionImg"
-            imgClassName=''
-        />
-      </Column>
+      {!!image?.asset?.gatsbyImageData &&
+        <Column className="clipped">
+          <GatsbyImage
+              image={image.asset.gatsbyImageData}
+              alt={image.alt}
+              placeholder="blurred"
+              layout="fullWidth"
+              objectPosition="0 0"
+              className="wwdSectionImg"
+              imgClassName=''
+          />
+        </Column>
+      }
     </SectionWrapper>
   )
 }
