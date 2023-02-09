@@ -124,7 +124,6 @@ const Editorials = ({data}) => {
   const editorialNodes = data && data.editorials && mapEdgesToNodes(data.editorials);
   const every_nth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);
   const newboy = every_nth(editorialNodes, 9)
-  console.log('editorialNodes: ', editorialNodes)
 
     return (
         <Layout>
@@ -147,7 +146,6 @@ const Editorials = ({data}) => {
                         placeholder="blurred"
                         objectFit="cover"
                         className="imgWrapper"
-                        // aspectRatio= "1:1"
                       />
                       <div className="titleWrapper">
                         <h3>{node.title}</h3>

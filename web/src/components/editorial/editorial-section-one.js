@@ -6,11 +6,15 @@ import BlockContent from "../block-content";
 const EditorialSectionOne = React.forwardRef(({image, text}, ref) => {
     return (
       <SectionWrapper>
-        <Column className="text">
-          <BlockContent blocks={text} />
-        </Column>
-        <Column className="clipped">
-          <GatsbyImage
+        {!!text &&
+          <Column className="text">
+            <BlockContent blocks={text} />
+          </Column>
+        }
+        
+        {!!image?.asset?.gatsbyImageData &&
+          <Column className="clipped">
+            <GatsbyImage
               image={image.asset.gatsbyImageData}
               alt={image.alt}
               placeholder="blurred"
@@ -18,8 +22,9 @@ const EditorialSectionOne = React.forwardRef(({image, text}, ref) => {
               objectPosition="0 0"
               className="wwdSectionImg"
               imgClassName=''
-          />
-        </Column>
+            />
+          </Column>
+        }
       </SectionWrapper>
     )
 })

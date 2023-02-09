@@ -19,7 +19,6 @@ const ContactWrapper = styled.div`
   align-items: flex-start;
   padding: 0;
   flex-direction: row;
-  background-color: ${colors.FADarkerBlue};
   h1 {
     margin: 83.5px 0 1rem 0;
     text-align: center;
@@ -111,7 +110,7 @@ const ContactPage = () => {
     <Layout>
       <SEO title="Contact" />
       <CentralLogo />
-      <ContactWrapper>
+      <ContactWrapper style={{backgroundColor:'#067BC2'}}>
         <Column>
           <h1>Don't be shy...<br/>Get in touch with us</h1>
         </Column>
@@ -122,7 +121,7 @@ const ContactPage = () => {
           />
         </Column>
       </ContactWrapper>
-      <ContactWrapper>
+      <ContactWrapper style={{backgroundColor:'#fff'}}>
         <Column>
           <p>Don't be shy. You can email us. Fill in the form on the right or give us a call to start making podcasts, radio adverts and amazing audio.</p>
 

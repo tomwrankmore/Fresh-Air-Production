@@ -10,7 +10,7 @@ import {
   EditorialSectionTwo,
   EditorialImgSection,
   EditorialsRelated
-} from "."
+} from "./"
 
 const EditorialWrapper = styled.div`
     /* padding: 120px 0 0;
@@ -21,8 +21,6 @@ const EditorialWrapper = styled.div`
 
 const Editorial = ({editorial}) => {
 
-  console.log('relatedProjects: ', editorial.relatedProjects)
-
   // Section refs
   const heroRef = useRef(null)
   const marqueeRef = useRef(null)
@@ -32,6 +30,7 @@ const Editorial = ({editorial}) => {
 
     return (
       <EditorialWrapper>
+
         <EditorialHero 
           ref={heroRef} 
           tl={heroTl}
@@ -39,30 +38,42 @@ const Editorial = ({editorial}) => {
           title={editorial.title}
           subTitle={editorial.subTitle}
         />
-        <EditorialDescriptionSection
-          bodyText={editorial._rawBody}
-        />
-        <QuoteSection 
-          color='green' 
-          quote={editorial.quote}
-        />
-        <EditorialSectionOne 
-          image={editorial.sectionOneImage}
-          text={editorial._rawSectionOneText}
+        {!!editorial?._rawBody &&
+          <EditorialDescriptionSection
+            bodyText={editorial._rawBody}
+          />
+        }
 
-        />
-        <EditorialImgSection
-          image={editorial.mainImage} 
-        />
-        <EditorialSectionTwo 
-          image={editorial.sectionTwoImage}
-          text={editorial._rawSectionTwoText}
-        />
-        {/* {
-        editorial.relatedProjects.length > 0 ? */}
-        <EditorialsRelated relatedPosts={editorial.relatedProjects} /> 
-        {/* : <></>
-        } */}
+        {!!editorial?.quote &&
+          <QuoteSection 
+            color='green' 
+            quote={editorial.quote}
+          />
+        }
+        
+        {!!editorial?._rawSectionOneText &&
+          <EditorialSectionOne 
+            image={editorial.sectionOneImage}
+            text={editorial._rawSectionOneText}
+          />
+        }
+
+        {!!editorial?.mainImage?.asset?.gatsbyImageData &&
+          <EditorialImgSection
+            image={editorial.mainImage.asset.gatsbyImageData} 
+          />
+        }
+
+        {!!editorial?._rawSectionTwoText &&
+          <EditorialSectionTwo 
+            image={editorial.sectionTwoImage}
+            text={editorial._rawSectionTwoText}
+          />
+        }
+
+        {!!editorial?.relatedProjects &&
+          <EditorialsRelated relatedPosts={editorial.relatedProjects} /> 
+        }
         
       </EditorialWrapper>
     )

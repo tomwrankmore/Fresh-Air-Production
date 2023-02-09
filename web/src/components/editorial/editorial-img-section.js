@@ -1,5 +1,5 @@
 import React, {useLayoutEffect, useRef} from "react";
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import {colors} from "../../styles/colors"
 import {device} from "../../styles/mediaQueries"
 import styled from "styled-components";
@@ -8,19 +8,20 @@ const EditorialImgSectionWrapper = styled.div`
   padding: 0;
 `
 
-const EditorialImgSection = React.forwardRef((props, ref) => {
+const EditorialImgSection = ({image}) => {
   return (
     <EditorialImgSectionWrapper>
-      <StaticImage
-        src="../../assets/podcast-img-holder.png"
-        alt="Podcast image"
+      <GatsbyImage
+        image={image}
+        alt={image.alt}
         placeholder="blurred"
-        objectFit="cover"
-        className="imgWrapper"
+        layout="fullWidth"
+        objectPosition="0 0"
+        className="wwdSectionImg"
+        imgClassName=''
       />
     </EditorialImgSectionWrapper>
   )
 }
-)
 
 export default EditorialImgSection
