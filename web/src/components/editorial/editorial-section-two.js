@@ -1,6 +1,7 @@
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import {SectionWrapper, Column} from "./editorial.styled"
+import BlockContent from "../block-content";
 
 const EditorialSectionTwo = ({image, text}) => {
   return (
