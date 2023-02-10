@@ -213,6 +213,7 @@ const ContactPage = () => {
           <ContactForm 
             name="fresh-air-contact-form"
             method="POST"
+            data-netlify-recaptcha="true"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             onSubmit={handleSubmit}
@@ -281,6 +282,7 @@ const ContactPage = () => {
                 required
               ></textarea>
             </div>
+            <div data-netlify-recaptcha="true"></div>
             <div className="form-section">
               <button type="submit" className="submit-btn">Submit form</button>
             </div>
