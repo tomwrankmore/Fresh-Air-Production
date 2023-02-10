@@ -47,7 +47,7 @@ const EditorialsGrid = styled.div`
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     @media ${device.mediaMinMedium} {
-        grid-template-columns: 1fr 1fr
+      grid-template-columns: 1fr 1fr
     }
 
     @media ${device.mediaMinLarge} {
@@ -59,16 +59,16 @@ const EditorialsGrid = styled.div`
         color: black;
         display: flex;
         @media ${device.mediaMinMedium} {
-            &.featured-post {
-                grid-row: span 2;
-                grid-column: span 2;
-                max-height: 100vh;
-                height: 100%;
-                .post {
-                    max-height: 100%;
-                    width: 100%;
-                }
+          &.featured-post {
+            grid-row: span 2;
+            grid-column: span 2;
+            max-height: 100vh;
+            height: 100%;
+            .post {
+              max-height: 100%;
+              width: 100%;
             }
+          }
         }
         /* &.featured-post-left {
             grid-column: 1/3;
@@ -77,8 +77,8 @@ const EditorialsGrid = styled.div`
             grid-column: 3/5;
         } */
         &:hover {
-            background-color: ${colors.FABlue};
-            color: white;
+          background-color: ${colors.FABlue};
+          color: white;
         }
 
         .post {
@@ -87,9 +87,12 @@ const EditorialsGrid = styled.div`
             justify-content: flex-start;
             flex-direction: column;
             height: auto;
-            padding: 0.5rem 0.5rem 0 0.5rem;
+            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
             flex-direction: column;
             max-height: 50vh;
+            @media ${device.mediaMaxMedium} {
+              width: 100%;
+            }
             .imgWrapper {
               flex: 1;
               width: 100%;
@@ -99,6 +102,7 @@ const EditorialsGrid = styled.div`
                 /* height: 450px; */
                 flex-direction: column;
                 align-items: center;
+                padding: 0.5rem 0.5rem 0 0.5rem;
             }
         }
     }
@@ -118,8 +122,6 @@ const EditorialsGrid = styled.div`
         }
     }
 `
-
-
 
 const Editorials = ({data}) => {
 

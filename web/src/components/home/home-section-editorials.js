@@ -119,7 +119,7 @@ const EditorialsWrapper = styled.div`
             justify-content: flex-start;
             flex-direction: column;
             height: auto;
-            padding: 0.5rem 0.5rem 0 0.5rem;
+            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
             flex-direction: row;
             height: 100%;
             .imgWrapper {
@@ -129,6 +129,7 @@ const EditorialsWrapper = styled.div`
                 /* height: 450px; */
                 flex-direction: column;
                 align-items: center;
+                padding: 0.5rem 0.5rem 0 0.5rem;
             }
         }
     }

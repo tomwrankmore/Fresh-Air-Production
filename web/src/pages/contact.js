@@ -18,16 +18,20 @@ const ContactWrapper = styled.div`
   justify-content: center;
   align-items: flex-start;
   padding: 0;
-  flex-direction: row;
+  flex-direction: column;
+  @media ${device.mediaMinMedium} {
+    flex-direction: row;
+  }
   h1 {
     margin: 83.5px 0 1rem 0;
     text-align: center;
+    &.header-title {
+      margin: 0 auto;
+    }
   }
   h1, p {
-    color: white;
   }
   a {
-    color: white;
     text-decoration: none;
     &:hover {text-decoration: underline}
   }
@@ -37,9 +41,22 @@ const Column = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   height: 100%;
+  width: 100%;
+
+  &.form-columns {
+    padding: 2rem;
+    span {
+      display: block;
+    }
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
 
   .background-image {
     width: 100%;
@@ -50,6 +67,59 @@ const Column = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.4rem;
+  }
+`
+
+const ContactForm = styled.form` 
+
+  max-width: 500px;
+  width: 100%;
+
+  div.form-section {
+    margin-bottom: 1rem;
+    fieldset.name-fieldset {
+      display: flex;
+      gap: 1rem;
+      div {
+        flex: 1;
+        input {
+          width: 100%;
+        }
+      }
+    }
+    label {
+      margin-right: 0.5rem;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+    input,
+    textarea#message {
+      border: solid 1px ${colors.FABlue};
+      padding: 1rem 0.75rem;
+    }
+    input.email, 
+    input.subject {
+      width: 100%;
+    }
+    textarea#message {
+      width: 100%;
+    }
+    button.submit-btn {
+      background-color: transparent;
+      border: none;
+      text-decoration: underline;
+      font-size: 1rem;
+      padding: 0;
+      &:hover {
+        cursor: pointer;
+        color: ${colors.FABlue}
+      }
+    }
   }
 `
 
@@ -75,15 +145,17 @@ const ContactPage = () => {
   const bgImage = convertToBgImage(pluginImage);
 
   const [formState, setFormState] = useState({
-    name: "",
+    fname: "",
+    lname: "",
+    subject: "",
     email: "",
     message: ""
   })
  
   const encode = (data) => {
     return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
   }
 
   const handleSubmit = e => {
@@ -93,7 +165,7 @@ const ContactPage = () => {
       body: encode({ "form-name": "contact", ...formState })
     })
       .then(() => alert("Success!"))
-      .then(() => setFormState({name: "",email: "",message: ""}))
+      .then(() => setFormState({fname: "", lname: "", email: "", subject: "", message: ""}))
       .catch(error => alert(error));
 
     e.preventDefault();
@@ -112,7 +184,7 @@ const ContactPage = () => {
       <CentralLogo />
       <ContactWrapper style={{backgroundColor:'#067BC2'}}>
         <Column>
-          <h1>Don't be shy...<br/>Get in touch with us</h1>
+          <h1 className="header-title">Don't be shy...<br/>Get in touch with us</h1>
         </Column>
         <Column>
           <BgImage 
@@ -121,63 +193,98 @@ const ContactPage = () => {
           />
         </Column>
       </ContactWrapper>
-      <ContactWrapper style={{backgroundColor:'#fff'}}>
-        <Column>
-          <p>Don't be shy. You can email us. Fill in the form on the right or give us a call to start making podcasts, radio adverts and amazing audio.</p>
+      <ContactWrapper>
+        <Column className="form-columns">
+          <p>
+            <span>Don't be shy. You can <a href="mailto:hello@freshairproduction.co.uk" rel="noreferrer">email us</a>.</span> 
+            <span>Fill in the form on the right or <a href="tel:+442034885195" rel="noreferrer">give us a call</a> to start making podcasts, radio adverts and amazing audio.</span>
+          </p>
 
           <p>
-            <span>Email: hello@freshairproduction.co.uk</span>
-            <span>Phone: +44 (0)203 4885195</span>
+            <span>Email: <a href="mailto:hello@freshairproduction.co.uk" rel="noreferrer">hello@freshairproduction.co.uk</a></span>
+            <span>Phone: <a href="tel:+442034885195">+44 (0)203 4885195</a></span>
           </p>
           <p>
-            To enquire about working for us at Fresh Air, please email work@freshairproduction.co.uk
+            To enquire about working for us at Fresh Air, please email <a href="mailto:work@freshairproduction.co.uk" rel="noreferrer">work@freshairproduction.co.uk</a>
           </p>
 
         </Column>
-        <Column>
-          <form 
+        <Column className="form-columns">
+          <ContactForm 
             name="fresh-air-contact-form"
             method="POST"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
-            onSubmit={handleSubmit}>
+            onSubmit={handleSubmit}
+          >
             <input type="hidden" name="form-name" value="contact" />
-            <div>
-              <label htmlFor="name">Name</label>
-              <input 
-                id="name"
-                type="text" 
-                name="name"
-                onChange={handleChange}
-                value={formState.name}
-                placeholder="Enter your name"
-              />
+            <div className="form-section">
+              <fieldset className="name-fieldset">
+                <div>
+                  <label for="fname">First name:</label>
+                  <input 
+                    id="fname"
+                    type="text" 
+                    name="fname"
+                    onChange={handleChange}
+                    value={formState.fname}
+                    required
+                    // placeholder="Enter your first name" 
+                  />
+                </div>
+                <div>
+                  <label for="lname">Last name:</label>
+                  <input 
+                    id="lname"
+                    type="text" 
+                    name="lname"
+                    onChange={handleChange}
+                    value={formState.lname}
+                    required
+                    // placeholder="Enter your last name" 
+                  />
+                </div>
+              </fieldset>
             </div>
-            <div>
-              <label htmlFor="email">Email</label>
+            <div className="form-section">
+              <label htmlFor="email">Email:</label>
               <input 
                 id="email"
                 type="email" 
                 name="email"
                 onChange={handleChange}
                 value={formState.email}
-                placeholder="Enter your email"
+                required
+                className="email"
+                // placeholder="Enter your email"
               />
             </div>
-            <div>
-              <label>Message: 
-                <textarea 
-                  name="message" 
-                  id="message"
+            <div className="form-section">
+              <label for="subject">Subject:</label>
+                <input 
+                  name="subject" 
+                  type="text" 
+                  id="subject"
                   onChange={handleChange}
-                  value={formState.message}
-                ></textarea>
-              </label>
+                  value={formState.subject}
+                  required
+                  className="subject"
+                ></input>
             </div>
-            <div>
-              <button type="submit">Submit</button>
+            <div className="form-section">
+              <label>Message:</label>
+              <textarea 
+                name="message" 
+                id="message"
+                onChange={handleChange}
+                value={formState.message}
+                required
+              ></textarea>
             </div>
-          </form>
+            <div className="form-section">
+              <button type="submit" className="submit-btn">Submit form</button>
+            </div>
+          </ContactForm>
         </Column>
       </ContactWrapper>
     </Layout>

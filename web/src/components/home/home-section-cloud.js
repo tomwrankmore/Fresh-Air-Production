@@ -99,127 +99,107 @@ const TagCloud = React.forwardRef((props, ref) => {
     return (
         <TagCloudOuterWrapper>
             <TagCloudInnerWrapper style={bgColor} ref={ref}>
-                <ExtendedContainer>
-                    <MarqueeLine 
-                        className="cloudMarqueeLine"
-                        onMouseEnter={() => setBgColor(grey)} 
-                        onMouseLeave={() => setBgColor(blue)}
-                    >
-                        <div 
-                            className="marqueeContent marqueeContent1 hoverGrey" 
-                        >
-                            <Link to="/">NEWS</Link>
-                            <Link to="/">SCIENCE</Link>
-                            <Link to="/">SPORT</Link>
-                            <Link to="/">HEALTH</Link>
-                            <Link to="/">WELLBEING</Link>
-                        </div>
-                        <div 
-                            className="marqueeContent marqueeContent1 hoverGrey"
-                        >
-                            <Link to="/">NEWS</Link>
-                            <Link to="/">SCIENCE</Link>
-                            <Link to="/">SPORT</Link>
-                            <Link to="/">HEALTH</Link>
-                            <Link to="/">WELLBEING</Link>
-                        </div>
-                    </MarqueeLine>
-                    <MarqueeLine 
-                        className="cloudMarqueeLine" 
-                        onMouseEnter={() => setBgColor(darkBlue)} 
-                        onMouseLeave={() => setBgColor(blue)}>
-                        <div 
-                            className="marqueeContent marqueeContent2 hoverBlue"
-                        >
-                            <Link to="/">SCIENCE</Link>
-                            <Link to="/">SPORT</Link>
-                            <Link to="/">HEALTH</Link>
-                            <Link to="/">WELLBEING</Link>
-                            <Link to="/">NEWS</Link>
-                        </div>
-                        <div 
-                            className="marqueeContent marqueeContent2 hoverBlue"
-                        >
-                            <Link to="/">SCIENCE</Link>
-                            <Link to="/">SPORT</Link>
-                            <Link to="/">HEALTH</Link>
-                            <Link to="/">WELLBEING</Link>
-                            <Link to="/">NEWS</Link>
-                        </div>
-                    </MarqueeLine>
-                    <MarqueeLine 
-                        className="cloudMarqueeLine" 
-                        onMouseEnter={() => setBgColor(lightGreen)} 
-                        onMouseLeave={() => setBgColor(blue)}
-                        >
-                        <div 
-                            className="marqueeContent marqueeContent1 hoverGreen"
-                        >
-                            <Link to="/">SPORT</Link>
-                            <Link to="/">HEALTH</Link>
-                            <Link to="/">WELLBEING</Link>
-                            <Link to="/">NEWS</Link>
-                            <Link to="/">SCIENCE</Link>
-                        </div>
-                        <div 
-                            className="marqueeContent marqueeContent1 hoverGreen"
-                        >
-                            <Link to="/">SPORT</Link>
-                            <Link to="/">HEALTH</Link>
-                            <Link to="/">WELLBEING</Link>
-                            <Link to="/">NEWS</Link>
-                            <Link to="/">SCIENCE</Link>
-                        </div>
-                    </MarqueeLine>
-                    <MarqueeLine 
-                        className="cloudMarqueeLine"
-                        onMouseEnter={() => setBgColor(orange)} 
-                        onMouseLeave={() => setBgColor(blue)}
-                    >
-                        <div 
-                            className="marqueeContent marqueeContent2 hoverOrange"
-                        >
-                            <Link to="/">HEALTH</Link>
-                            <Link to="/">WELLBEING</Link>
-                            <Link to="/">NEWS</Link>
-                            <Link to="/">SCIENCE</Link>
-                            <Link to="/">SPORT</Link>
-                        </div>
-                        <div 
-                            className="marqueeContent marqueeContent2 hoverOrange" 
-                        >
-                            <Link to="/">HEALTH</Link>
-                            <Link to="/">WELLBEING</Link>
-                            <Link to="/">NEWS</Link>
-                            <Link to="/">SCIENCE</Link>
-                            <Link to="/">SPORT</Link>
-                        </div>
-                    </MarqueeLine>
-                    <MarqueeLine 
-                        className="cloudMarqueeLine"
-                        onMouseEnter={() => setBgColor(turq)} 
-                        onMouseLeave={() => setBgColor(blue)}
-                    >
-                        <div 
-                            className="marqueeContent marqueeContent1 hoverTurq"
-                        >
-                            <Link to="/">WELLBEING</Link>
-                            <Link to="/">NEWS</Link>
-                            <Link to="/">SCIENCE</Link>
-                            <Link to="/">SPORT</Link>
-                            <Link to="/">HEALTH</Link>
-                        </div>
-                        <div 
-                            className="marqueeContent marqueeContent1 hoverTurq" 
-                        >
-                            <Link to="/">WELLBEING</Link>
-                            <Link to="/">NEWS</Link>
-                            <Link to="/">SCIENCE</Link>
-                            <Link to="/">SPORT</Link>
-                            <Link to="/">HEALTH</Link>
-                        </div>
-                    </MarqueeLine>
-                </ExtendedContainer>
+              <ExtendedContainer>
+                <MarqueeLine 
+                  className="cloudMarqueeLine"
+                  onMouseEnter={() => setBgColor(grey)} 
+                  onMouseLeave={() => setBgColor(blue)}
+                >
+                  <div className="marqueeContent marqueeContent1 hoverGrey">
+                    <Link to="/">NEWS</Link>
+                    <Link to="/">SCIENCE</Link>
+                    <Link to="/">SPORT</Link>
+                    <Link to="/">HEALTH</Link>
+                    <Link to="/">WELLBEING</Link>
+                  </div>
+                  <div className="marqueeContent marqueeContent1 hoverGrey">
+                    <Link to="/">NEWS</Link>
+                    <Link to="/">SCIENCE</Link>
+                    <Link to="/">SPORT</Link>
+                    <Link to="/">HEALTH</Link>
+                    <Link to="/">WELLBEING</Link>
+                  </div>
+                </MarqueeLine>
+                <MarqueeLine 
+                  className="cloudMarqueeLine" 
+                  onMouseEnter={() => setBgColor(darkBlue)} 
+                  onMouseLeave={() => setBgColor(blue)}>
+                  <div className="marqueeContent marqueeContent2 hoverBlue">
+                    <Link to="/">SCIENCE</Link>
+                    <Link to="/">SPORT</Link>
+                    <Link to="/">HEALTH</Link>
+                    <Link to="/">WELLBEING</Link>
+                    <Link to="/">NEWS</Link>
+                  </div>
+                  <div className="marqueeContent marqueeContent2 hoverBlue">
+                    <Link to="/">SCIENCE</Link>
+                    <Link to="/">SPORT</Link>
+                    <Link to="/">HEALTH</Link>
+                    <Link to="/">WELLBEING</Link>
+                    <Link to="/">NEWS</Link>
+                  </div>
+                </MarqueeLine>
+                <MarqueeLine 
+                  className="cloudMarqueeLine" 
+                  onMouseEnter={() => setBgColor(lightGreen)} 
+                  onMouseLeave={() => setBgColor(blue)}
+                  >
+                  <div className="marqueeContent marqueeContent1 hoverGreen">
+                    <Link to="/">SPORT</Link>
+                    <Link to="/">HEALTH</Link>
+                    <Link to="/">WELLBEING</Link>
+                    <Link to="/">NEWS</Link>
+                    <Link to="/">SCIENCE</Link>
+                  </div>
+                  <div className="marqueeContent marqueeContent1 hoverGreen">
+                    <Link to="/">SPORT</Link>
+                    <Link to="/">HEALTH</Link>
+                    <Link to="/">WELLBEING</Link>
+                    <Link to="/">NEWS</Link>
+                    <Link to="/">SCIENCE</Link>
+                  </div>
+                </MarqueeLine>
+                <MarqueeLine 
+                    className="cloudMarqueeLine"
+                    onMouseEnter={() => setBgColor(orange)} 
+                    onMouseLeave={() => setBgColor(blue)}
+                >
+                    <div className="marqueeContent marqueeContent2 hoverOrange">
+                        <Link to="/">HEALTH</Link>
+                        <Link to="/">WELLBEING</Link>
+                        <Link to="/">NEWS</Link>
+                        <Link to="/">SCIENCE</Link>
+                        <Link to="/">SPORT</Link>
+                    </div>
+                    <div className="marqueeContent marqueeContent2 hoverOrange">
+                        <Link to="/">HEALTH</Link>
+                        <Link to="/">WELLBEING</Link>
+                        <Link to="/">NEWS</Link>
+                        <Link to="/">SCIENCE</Link>
+                        <Link to="/">SPORT</Link>
+                    </div>
+                </MarqueeLine>
+                <MarqueeLine 
+                    className="cloudMarqueeLine"
+                    onMouseEnter={() => setBgColor(turq)} 
+                    onMouseLeave={() => setBgColor(blue)}
+                >
+                    <div className="marqueeContent marqueeContent1 hoverTurq">
+                        <Link to="/">WELLBEING</Link>
+                        <Link to="/">NEWS</Link>
+                        <Link to="/">SCIENCE</Link>
+                        <Link to="/">SPORT</Link>
+                        <Link to="/">HEALTH</Link>
+                    </div>
+                    <div className="marqueeContent marqueeContent1 hoverTurq">
+                        <Link to="/">WELLBEING</Link>
+                        <Link to="/">NEWS</Link>
+                        <Link to="/">SCIENCE</Link>
+                        <Link to="/">SPORT</Link>
+                        <Link to="/">HEALTH</Link>
+                    </div>
+                </MarqueeLine>
+              </ExtendedContainer>
 
                 <h1>TELL YOUR STORY AND CONNECT WITH NEW AUDIENCES</h1>
 
