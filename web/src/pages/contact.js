@@ -211,13 +211,13 @@ const ContactPage = () => {
         </Column>
         <Column className="form-columns">
           <ContactForm 
-            name="fresh-air-contact-form-2"
+            name="contact-form"
             method="POST"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             onSubmit={handleSubmit}
           >
-            <input type="hidden" name="form-name" value="fresh-air-contact-form-2" />
+            <input type="hidden" name="form-name" value="contact-form" />
             <div className="form-section">
               <fieldset className="name-fieldset">
                 <div>
