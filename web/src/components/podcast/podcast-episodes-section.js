@@ -39,66 +39,8 @@ const PodcastEpisodesSection = React.forwardRef(({podcast}, ref) => {
   return (
     <PodcastEpisodesSectionWrapper>
       
-      
-
       <iframe src={`https://omny.fm/shows/${podcast.omnyWidget}/playlists/podcast/embed?style=artwork`} allow="autoplay; clipboard-write" width="100%" height="500" frameborder="0" title={podcast.title}></iframe>
-
-      {/* <EpisodeList>
-        <li>
-          <span className="episode-title">NATIONAL MEMORIAL ARBORETUM: A NEW HOPE</span>
-          <span className="release-date">RELEASE DATE</span>
-          <ul className="icon-list">
-              <li><FaPodcast/></li>
-              <li><FaSpotify/></li>
-              <li><SiIheartradio/></li>
-          </ul>
-        </li>
-        <li>
-          <span className="episode-title">NATIONAL MEMORIAL ARBORETUM: A NEW HOPE</span>
-          <span className="release-date">RELEASE DATE</span>
-          <ul className="icon-list">
-              <li><FaPodcast/></li>
-              <li><FaSpotify/></li>
-              <li><SiIheartradio/></li>
-          </ul>
-        </li>
-        <li>
-          <span className="episode-title">NATIONAL MEMORIAL ARBORETUM: A NEW HOPE</span>
-          <span className="release-date">RELEASE DATE</span>
-          <ul className="icon-list">
-              <li><FaPodcast/></li>
-              <li><FaSpotify/></li>
-              <li><SiIheartradio/></li>
-          </ul>
-        </li>
-        <li>
-          <span className="episode-title">NATIONAL MEMORIAL ARBORETUM: A NEW HOPE</span>
-          <span className="release-date">RELEASE DATE</span>
-          <ul className="icon-list">
-              <li><FaPodcast/></li>
-              <li><FaSpotify/></li>
-              <li><SiIheartradio/></li>
-          </ul>
-        </li>
-        <li>
-          <span className="episode-title">NATIONAL MEMORIAL ARBORETUM: A NEW HOPE</span>
-          <span className="release-date">RELEASE DATE</span>
-          <ul className="icon-list">
-              <li><FaPodcast/></li>
-              <li><FaSpotify/></li>
-              <li><SiIheartradio/></li>
-          </ul>
-        </li>
-        <li>
-          <span className="episode-title">NATIONAL MEMORIAL ARBORETUM: A NEW HOPE</span>
-          <span className="release-date">RELEASE DATE</span>
-          <ul className="icon-list">
-              <li><FaPodcast/></li>
-              <li><FaSpotify/></li>
-              <li><SiIheartradio/></li>
-          </ul>
-        </li>
-      </EpisodeList> */}
+      
     </PodcastEpisodesSectionWrapper>
   )
 }

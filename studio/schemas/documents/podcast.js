@@ -104,7 +104,8 @@ export default {
     }
   ],
   initialValue: {
-    isFeaturedPodcast: false
+    isFeaturedPodcast: false,
+    hasPage: false
   },
   preview: {
     select: {
