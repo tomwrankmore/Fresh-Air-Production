@@ -217,7 +217,7 @@ const ContactPage = () => {
             data-netlify-honeypot="bot-field"
             onSubmit={handleSubmit}
           >
-            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="form-name" value="fresh-air-contact-form-2" />
             <div className="form-section">
               <fieldset className="name-fieldset">
                 <div>
