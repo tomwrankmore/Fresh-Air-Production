@@ -15,6 +15,7 @@ import {
 export const query = graphql`
   query EditorialsQuery {
     terms: sanityTerms {
+      title
       _rawBody
     }
   }
@@ -56,13 +57,12 @@ const TermsWrapper = styled.div`
 `
 
 const TermsPage = ({data}) => {
-  // const termsNodes = data && data.terms && mapEdgesToNodes(data.terms);
-  console.log('terms data: ', data.terms)
   return (
     <Layout>
       <SEO title="404: Not found" />
       <CentralLogo />
       <TermsWrapper>
+        <h1>{data.terms.title}</h1>
         <BlockContent blocks={data.terms._rawBody} />
       </TermsWrapper>
     </Layout>
