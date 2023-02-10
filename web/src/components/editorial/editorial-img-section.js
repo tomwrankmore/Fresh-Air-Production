@@ -6,6 +6,12 @@ import styled from "styled-components";
 
 const EditorialImgSectionWrapper = styled.div` 
   padding: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  .editorial-img {
+    width: 100%;
+  }
 `
 
 const EditorialImgSection = ({image}) => {
@@ -18,7 +24,7 @@ const EditorialImgSection = ({image}) => {
         layout="fullWidth"
         objectPosition="0 0"
         className="wwdSectionImg"
-        imgClassName=''
+        imgClassName='editorial-img'
       />
     </EditorialImgSectionWrapper>
   )

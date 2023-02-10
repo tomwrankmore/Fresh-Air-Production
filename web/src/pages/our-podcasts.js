@@ -34,6 +34,7 @@ export const query = graphql`
           }
           title
           isFeaturedPodcast
+          hasPage
           previewImage {
             alt
             asset {

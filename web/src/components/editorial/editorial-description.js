@@ -7,7 +7,7 @@ import BlockContent from "../block-content";
 const EditorialDescriptionWrapper = styled.div` 
   padding: 2rem 1rem;
   @media ${device.mediaMinMedium} {
-    padding: 4rem 2rem;
+    padding: 4rem 2rem 0 2rem;
     max-width: 75%;
     margin: 0 auto;
   }

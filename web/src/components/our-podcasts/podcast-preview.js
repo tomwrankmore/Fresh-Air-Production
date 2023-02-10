@@ -70,6 +70,7 @@ const PodcastPreview = ({node}) => {
 
   return (
     <>
+    {node.hasPage === true ? 
       <Link to={`/podcast/${node.slug.current}`}>
         <GatsbyImage
           image={imageData}
@@ -79,8 +80,19 @@ const PodcastPreview = ({node}) => {
           layout="fullWidth"
           objectPosition="0 0"
           className="podcastsSectionImg"
-          />
-      </Link>
+        />
+      </Link> : 
+      <GatsbyImage
+        image={imageData}
+        alt={node.previewImage.alt}
+        aspectRatio={1/1}
+        placeholder="blurred"
+        layout="fullWidth"
+        objectPosition="0 0"
+        className="podcastsSectionImg"
+      />
+    }
+      
       <Accordion 
           disableGutters={true}
           sx={rootStyles}
@@ -109,7 +121,10 @@ const PodcastPreview = ({node}) => {
               {node.iHeartRadioLink && (<li><a href={node.iHeartRadioLink} target="_blank" rel="noreferrer"><SiIheartradio/></a></li>)}
             </IconList>
         </LinkContent>
-        <Link to={`/podcast/${node.slug.current}`} className="read-more-link"><FaArrowRight/> Read more about this podcast</Link>
+        {node.hasPage === true ? 
+          <Link to={`/podcast/${node.slug.current}`} className="read-more-link"><FaArrowRight/> Read more about this podcast</Link> :
+          <></>
+        }
         </AccordionDetails>
       </Accordion>
     </>
