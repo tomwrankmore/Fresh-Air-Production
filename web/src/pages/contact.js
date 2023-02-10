@@ -211,9 +211,8 @@ const ContactPage = () => {
         </Column>
         <Column className="form-columns">
           <ContactForm 
-            name="fresh-air-contact-form"
+            name="fresh-air-contact-form-2"
             method="POST"
-            data-netlify-recaptcha="true"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             onSubmit={handleSubmit}
@@ -282,7 +281,6 @@ const ContactPage = () => {
                 required
               ></textarea>
             </div>
-            <div data-netlify-recaptcha="true"></div>
             <div className="form-section">
               <button type="submit" className="submit-btn">Submit form</button>
             </div>
