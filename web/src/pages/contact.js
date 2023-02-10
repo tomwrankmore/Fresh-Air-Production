@@ -147,8 +147,8 @@ const ContactPage = () => {
   const [formState, setFormState] = useState({
     fname: "",
     lname: "",
-    subject: "",
     email: "",
+    subject: "",
     message: ""
   })
  
