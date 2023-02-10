@@ -13,5 +13,10 @@ export default {
       title: 'Body',
       type: 'projectPortableText'
     }
-  ]
+  ],
+  preview: {
+    select: {
+      title: 'title',
+    }
+  }
 }
