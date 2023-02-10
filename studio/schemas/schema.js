@@ -11,6 +11,7 @@ import podcast from './documents/podcast'
 import editorial from './documents/editorial'
 import award from './documents/awards'
 import siteSettings from './documents/siteSettings'
+import terms from './documents/terms'
 
 // Object types
 import bioPortableText from './objects/bioPortableText'
@@ -40,6 +41,7 @@ export default createSchema({
     podcast,
     editorial,
     award,
-    siteSettings
+    siteSettings,
+    terms
   ])
 })
