@@ -181,6 +181,7 @@ const WwdAwardsSection = React.forwardRef(({tl, nodes}, ref) => {
                         objectPosition="0 0"
                         className="podcastsSectionImg"
                       /> */}
+                      
                      <h3 className="title">{node.title}</h3>
                      <BlockContent blocks={node._rawBody} />
                   </li>
