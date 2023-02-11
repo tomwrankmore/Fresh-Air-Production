@@ -8,15 +8,15 @@ export default () =>
   S.list()
     .title('Content')
     .items([
-      S.listItem()
-        .title('Settings')
-        .child(
-          S.editor()
-            .id('siteSettings')
-            .schemaType('siteSettings')
-            .documentId('siteSettings')
-        )
-        .icon(MdSettings),
+      // S.listItem()
+      //   .title('Settings')
+      //   .child(
+      //     S.editor()
+      //       .id('siteSettings')
+      //       .schemaType('siteSettings')
+      //       .documentId('siteSettings')
+      //   )
+      //   .icon(MdSettings),
       // S.listItem()
       //   .title('Sample projects')
       //   .schemaType('sampleProject')

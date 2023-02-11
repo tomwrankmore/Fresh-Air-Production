@@ -113,7 +113,6 @@ const EditorialsGrid = styled.div`
         h3 {
           font-family: 'PolySansSlim';
           font-weight: normal;
-          text-transform: uppercase;
           text-align: left;
           padding: 0.875rem 0rem;
           /* @media ${device.mediaMinMedium} {

@@ -40,12 +40,5 @@ export default {
       title: 'Fresh Air Company Logo',
       type: 'figure'
     },
-    // {
-    //   name: 'author',
-    //   type: 'reference',
-    //   description: 'Publish an author and set a reference to them here.',
-    //   title: 'Author',
-    //   to: [{type: 'staffMember'}]
-    // }
   ]
 }
