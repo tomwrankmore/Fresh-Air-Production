@@ -90,7 +90,7 @@ const TagCloud = React.forwardRef((props, ref) => {
         let ctx = gsap.context(() => {
             gsap.set('.cloudMarqueeLine', {xPercent: 20});
             gsap.to('.marqueeContent1', {xPercent: -100, repeat: -1, duration: 140, ease: 'linear'}).totalProgress(0.6);
-            gsap.to('.marqueeContent2', {xPercent: 25, repeat: -1, duration: 160, ease: 'linear'}).totalProgress(0.4);
+            gsap.to('.marqueeContent2', {xPercent: -100, repeat: -1, duration: 160, ease: 'linear'}).totalProgress(0.4);
         }, ref);
         return () => ctx.revert()
       }, [])

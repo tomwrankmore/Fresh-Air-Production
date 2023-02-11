@@ -137,50 +137,50 @@ const EditorialsWrapper = styled.div`
 
 const Editorials = ({editorialNodes}) => {
     return (
-        <>
-            <EditorialsTitleWrapper>
-              <h1>Our Editorials</h1>
-              <Link to="/editorials/" className="view-all-editorials">
-                View all Editorials
-              </Link>
-            </EditorialsTitleWrapper>
-            <EditorialsWrapper className="editorials-wrapper">
-              <div className="editorials-left-col">
-                <StaticImage
-                  src="../../assets/sweet-love.jpg"
-                  alt="Smiling people"
-                  placeholder="blurred"
-                  objectFit="cover"
-                  className="imgWrapper"
-                />
-                <div className="titleWrapper">
-                  <h3>Unearthed with Kew Gardens launches, exploring the relationship with food production and how it's made</h3>
-                </div>
-              </div>
-              <div className="editorials-right-col">
-                <div className="editorials-right-grid">
-                  {editorialNodes && 
-                    editorialNodes.map(node => (
-                      <Link to={`/editorial/${node.slug.current}`} className="editorials-link" key={node.id}>
-                        <div className="post">
-                          <GatsbyImage
-                            image={node.previewImage.asset.gatsbyImageData}
-                            alt={node.previewImage.alt}
-                            placeholder="blurred"
-                            objectFit="cover"
-                            className="imgWrapper"
-                          />
-                          <div className="titleWrapper titleWrapperRight">
-                            <h3>{node.title}</h3>
-                          </div>
-                        </div>
-                      </Link>
-                    ))
-                  }
-                </div>
-              </div>
-            </EditorialsWrapper>
-        </>
+      <>
+        <EditorialsTitleWrapper>
+          <h1>Our Editorials</h1>
+          <Link to="/editorials/" className="view-all-editorials">
+            View all Editorials
+          </Link>
+        </EditorialsTitleWrapper>
+        <EditorialsWrapper className="editorials-wrapper">
+          <div className="editorials-left-col">
+            <StaticImage
+              src="../../assets/sweet-love.jpg"
+              alt="Smiling people"
+              placeholder="blurred"
+              objectFit="cover"
+              className="imgWrapper"
+            />
+            <div className="titleWrapper">
+              <h3>Unearthed with Kew Gardens launches, exploring the relationship with food production and how it's made</h3>
+            </div>
+          </div>
+          <div className="editorials-right-col">
+            <div className="editorials-right-grid">
+              {editorialNodes && 
+                editorialNodes.map(node => (
+                  <Link to={`/editorial/${node.slug.current}`} className="editorials-link" key={node.id}>
+                    <div className="post">
+                      <GatsbyImage
+                        image={node.previewImage.asset.gatsbyImageData}
+                        alt={node.previewImage.alt}
+                        placeholder="blurred"
+                        objectFit="cover"
+                        className="imgWrapper"
+                      />
+                      <div className="titleWrapper titleWrapperRight">
+                        <h3>{node.title}</h3>
+                      </div>
+                    </div>
+                  </Link>
+                ))
+              }
+            </div>
+          </div>
+        </EditorialsWrapper>
+      </>
     )
 }
 

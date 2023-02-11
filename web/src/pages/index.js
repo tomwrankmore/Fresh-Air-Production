@@ -60,20 +60,20 @@ const IndexPage = props => {
 
   const editorialNodes = data && data.editorials && mapEdgesToNodes(data.editorials);
 
-// GSAP Timeline Refs
-const heroTl = useRef(null)
-const horizontalTl = useRef(null)
-const podcastTl = useRef(null)
+  // GSAP Timeline Refs
+  const heroTl = useRef(null)
+  const horizontalTl = useRef(null)
+  const podcastTl = useRef(null)
 
-// Section Refs
-const containerRef = useRef(null)
-const heroRef = useRef(null)
-const centralLogoRef = useRef(null)
-const podcastsRef = useRef(null)
-const horizontalPanelsRef = useRef(null)
-const heroMarqueeRef = useRef(null)
-const marqueeRef = useRef(null)
-const tagCloudRef = useRef(null)
+  // Section Refs
+  const containerRef = useRef(null)
+  const heroRef = useRef(null)
+  const centralLogoRef = useRef(null)
+  const podcastsRef = useRef(null)
+  const horizontalPanelsRef = useRef(null)
+  const heroMarqueeRef = useRef(null)
+  const marqueeRef = useRef(null)
+  const tagCloudRef = useRef(null)
 
   useEffect(() => {
     gsap.set(centralLogoRef.current, {visibility: 'hidden'})
@@ -116,7 +116,7 @@ const tagCloudRef = useRef(null)
         <Podcasts ref={podcastsRef} />
         <Marquee 
           style={{color: colors.FABlue}}
-          textContent="whatever you're looking to create, our skilled and experienced production team will build the perfect podcast. whatever" 
+          textContent="whatever you're looking to create, our skilled and experienced production team will build the perfect podcast." 
           ref={marqueeRef}
         />
         <Work ref={horizontalPanelsRef} />
