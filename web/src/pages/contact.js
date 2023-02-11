@@ -162,7 +162,7 @@ const ContactPage = () => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...formState })
+      body: encode({ "form-name": "contact-form", ...formState })
     })
       .then(() => alert("Success!"))
       .then(() => setFormState({fname: "", lname: "", email: "", subject: "", message: ""}))
