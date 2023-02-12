@@ -1,7 +1,10 @@
+import { GrDocumentText } from "react-icons/gr"
+
 export default {
   name: 'terms',
   title: 'Terms',
   type: 'document',
+  icon: GrDocumentText,
   fields: [
     {
       name: 'title',

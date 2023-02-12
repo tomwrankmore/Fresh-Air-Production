@@ -3,7 +3,7 @@ export default {
   type: 'document',
   title: 'Homepage Content',
   __experimental_actions: [
-    // 'create',
+    'create',
     'update',
     // 'delete',
     'publish'
@@ -16,7 +16,7 @@ export default {
     },
     {
       name: 'homePodcastHeading',
-      type: 'text',
+      type: 'simplePortableText',
       title: 'Podcast section heading',
       description: 'Paragraph to sit with podcast vertical carousel.'
     },
@@ -38,7 +38,7 @@ export default {
     },
     {
       name: 'homeWorkPanelOneText',
-      type: 'string',
+      type: 'simplePortableText',
       title: 'Work panel one text',
     },
     {
@@ -48,7 +48,7 @@ export default {
     },
     {
       name: 'homeWorkPanelTwoText',
-      type: 'string',
+      type: 'simplePortableText',
       title: 'Work panel two text',
     },
     {
@@ -58,7 +58,7 @@ export default {
     },
     {
       name: 'homeWorkPanelThreeText',
-      type: 'string',
+      type: 'simplePortableText',
       title: 'Work panel four text',
     },
     {
@@ -68,7 +68,7 @@ export default {
     },
     {
       name: 'homeWorkPanelFourText',
-      type: 'string',
+      type: 'simplePortableText',
       title: 'Work panel four text',
     },
     {

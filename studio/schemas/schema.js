@@ -13,8 +13,8 @@ import award from './documents/awards'
 import siteSettings from './documents/siteSettings'
 import terms from './documents/terms'
 import homePageContent from './documents/homePageContent'
-import contactContent from './documents/contactPageContent'
-import podcastContent from './documents/podcastPageContent'
+import whatWeDoContent from './documents/whatWeDoPageContent'
+import contactPageContent from './documents/contactPageContent'
 
 // Object types
 import bioPortableText from './objects/bioPortableText'
@@ -47,7 +47,7 @@ export default createSchema({
     siteSettings,
     terms,
     homePageContent,
-    contactContent,
-    podcastContent
+    whatWeDoContent,
+    contactPageContent,
   ])
 })

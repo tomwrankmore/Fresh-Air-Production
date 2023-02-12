@@ -1,9 +1,11 @@
 import {format,parseISO} from 'date-fns'
+import { FaBook } from "react-icons/fa"
 
 export default {
   name: 'editorial',
   title: 'Editorial Post',
   type: 'document',
+  icon: FaBook,
   fields: [
     {
       name: 'title',

@@ -2,16 +2,16 @@ export default {
   name: 'whatWeDoContent',
   type: 'document',
   title: 'What We Do page Content',
-  __experimental_actions: [
-    // 'create',
-    'update',
-    // 'delete',
-    'publish'
-  ],
+  // __experimental_actions: [
+  //   // 'create',
+  //   'update',
+  //   // 'delete',
+  //   'publish'
+  // ],
   fields: [
     {
       name: 'wwdHeroText',
-      type: 'text',
+      type: 'projectPortableText',
       title: 'What We Do hero text',
       description: 'Heading for hero'
     },
@@ -27,7 +27,7 @@ export default {
     },
     {
       name: 'wwdSectionOneImage',
-      title: 'Section One  Image',
+      title: 'Section One Image',
       type: 'figure'
     },
     {
@@ -47,7 +47,7 @@ export default {
     },
     {
       name: 'wwdSectionThreeImage',
-      title: 'Section One  Image',
+      title: 'Section Three Image',
       type: 'figure'
     },
     {

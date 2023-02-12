@@ -1,9 +1,11 @@
 import {format,parseISO} from 'date-fns'
+import { FaPodcast,  } from "react-icons/fa"
 
 export default {
   name: 'podcast',
-  title: 'Podcast',
+  title: 'Podcast post',
   type: 'document',
+  icon: FaPodcast,
   fields: [
     {
       name: 'title',

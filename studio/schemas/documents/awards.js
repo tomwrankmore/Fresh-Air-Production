@@ -1,9 +1,11 @@
 import {format,parseISO} from 'date-fns'
+import { FaAward } from "react-icons/fa"
 
 export default {
   name: 'award',
-  title: 'Award Ceremony',
+  title: 'Awards',
   type: 'document',
+  icon: FaAward,
   fields: [
     {
       name: 'title',
