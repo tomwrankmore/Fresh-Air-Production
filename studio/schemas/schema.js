@@ -12,6 +12,9 @@ import editorial from './documents/editorial'
 import award from './documents/awards'
 import siteSettings from './documents/siteSettings'
 import terms from './documents/terms'
+import homePageContent from './documents/homePageContent'
+import contactContent from './documents/contactPageContent'
+import podcastContent from './documents/podcastPageContent'
 
 // Object types
 import bioPortableText from './objects/bioPortableText'
@@ -42,6 +45,9 @@ export default createSchema({
     editorial,
     award,
     siteSettings,
-    terms
+    terms,
+    homePageContent,
+    contactContent,
+    podcastContent
   ])
 })
