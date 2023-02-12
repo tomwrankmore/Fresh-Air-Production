@@ -1,7 +1,7 @@
 export default {
   name: 'homePageContent',
   type: 'document',
-  title: 'Homepage Content',
+  title: 'home Page Content',
   __experimental_actions: [
     // 'create',
     'update',
@@ -10,71 +10,35 @@ export default {
   ],
   fields: [
     {
-      name: 'homeHeroTickerTape',
+      name: 'title',
       type: 'string',
-      title: 'Hero ticker tape text'
+      title: 'Title'
     },
     {
-      name: 'homePodcastHeading',
+      name: 'url',
+      type: 'string',
+      title: 'URL'
+    },
+    {
+      name: 'description',
       type: 'text',
-      title: 'Podcast section heading',
-      description: 'Paragraph to sit with podcast vertical carousel.'
+      title: 'Description',
+      description: 'Describe your company for search engines and social media.'
     },
     {
-      name: 'homeSecondTickerTape',
-      type: 'string',
-      title: 'Ticker tape text to sit underneath podcasts section'
+      name: 'keywords',
+      type: 'array',
+      title: 'Keywords',
+      description: 'Add keywords that describes the company.',
+      of: [{type: 'string'}],
+      options: {
+        layout: 'tags'
+      }
     },
     {
-      name: 'homeWorkSectionHeading',
-      type: 'string',
-      title: 'Work Section Heading',
-      description: 'Heading in the We Work section.'
-    },
-    {
-      name: 'homeWorkPanelOneTitle',
-      type: 'string',
-      title: 'Work panel one title',
-    },
-    {
-      name: 'homeWorkPanelOneText',
-      type: 'string',
-      title: 'Work panel one text',
-    },
-    {
-      name: 'homeWorkPanelTwoTitle',
-      type: 'string',
-      title: 'Work panel two title',
-    },
-    {
-      name: 'homeWorkPanelTwoText',
-      type: 'string',
-      title: 'Work panel two text',
-    },
-    {
-      name: 'homeWorkPanelThreeTitle',
-      type: 'string',
-      title: 'Work panel three title',
-    },
-    {
-      name: 'homeWorkPanelThreeText',
-      type: 'string',
-      title: 'Work panel four text',
-    },
-    {
-      name: 'homeWorkPanelFourTitle',
-      type: 'string',
-      title: 'Work panel four title',
-    },
-    {
-      name: 'homeWorkPanelFourText',
-      type: 'string',
-      title: 'Work panel four text',
-    },
-    {
-      name: 'homePageQuote',
-      type: 'string',
-      title: 'Quote section',
+      name: 'Logo',
+      title: 'Fresh Air Company Logo',
+      type: 'figure'
     },
   ]
 }
