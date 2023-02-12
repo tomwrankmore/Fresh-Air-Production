@@ -5,7 +5,7 @@ import { HiOutlineDocumentText } from "react-icons/hi"
 import { GrDocumentText } from "react-icons/gr"
 
 const hiddenDocTypes = listItem =>
-  !['siteSettings'].includes(listItem.getId())
+  !['siteSettings, homePageContent'].includes(listItem.getId())
 
 export default () =>
   S.list()
