@@ -1,11 +1,60 @@
 import React from "react";
 import { Link } from "gatsby";
+import { colors } from "../styles/colors";
+import styled from "styled-components";
+
+// Material UI
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
 import Logo from "../assets/FA-logo.inline.svg"
 import { StyledFooter, FooterWrapper, NavigationWrapper, SiteInfo, LinkList, Subscribe} from './footer.styled';
+
+const rootStyles =  {
+  boxShadow: 'none'
+}
+
+const btnStyles =  {
+  color: '#ffffff',
+  backgroundColor: colors.FADarkerBlue,
+  textTransform: 'uppercase'
+}
+
+const Excerpt = styled.div` 
+  margin-bottom: 1rem;
+  p {
+    line-height: 1.35rem;
+  }
+`
 
 const Footer = ({ children }) => {
     return (
         <StyledFooter>
+          <Accordion 
+            disableGutters={true}
+            sx={rootStyles}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon style={{color: '#ffffff'}} />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+              sx={btnStyles}
+            >
+            <Typography className="mailing-list-title">SIGN UP TO OUR MAILING LIST</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Subscribe>
+                <p>Subscribe to our newsletter for news on the best new podcasts</p>
+                <form>
+                  <input type="text" id="subscribe" name="sub" placeholder="Subscribe"/>
+                  <button type="submit" className="submit-btn">Submit form</button>
+                </form>
+              </Subscribe> 
+            </AccordionDetails>
+          </Accordion>
           <FooterWrapper>
             <NavigationWrapper>
               <LinkList>
@@ -42,12 +91,12 @@ const Footer = ({ children }) => {
                   <a href='https://www.youtube.com/@freshairproduction9627' target='_blank' rel='noreferrer'>YouTube</a>
                 </li>
               </LinkList>
-              <Subscribe>
+              {/* <Subscribe>
                 <p>Subscribe to our newsletter for news on the best new podcasts</p>
                 <form>
                   <input type="text" id="subscribe" name="sub" placeholder="Subscribe"/>
                 </form>
-              </Subscribe>
+              </Subscribe> */}
               <SiteInfo>
                 <Logo className="footerLogo" />
                 <p>© {new Date().getFullYear()}, Fresh Air Productions</p>

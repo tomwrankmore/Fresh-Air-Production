@@ -7,6 +7,10 @@ export const StyledFooter = styled.div`
     background-color:  ${colors.FAGrey};
     color: white;
 
+    p.mailing-list-title {
+      margin: 0 auto;
+    }
+
     a {
         color: inherit;
         text-decoration: none;
@@ -61,21 +65,17 @@ export const LinkList = styled.ul`
 `
 
 export const Subscribe = styled.div`
-    grid-column: 1/-1;
+    /* grid-column: 1/-1;
     padding-top: 4rem;
     @media ${device.mediaMinMedium} {
       grid-column: auto;
     }
     @media ${device.mediaMinLarge} {
       padding-top: 0;
-    }
-    input {
-      background-color: ${colors.FABlue};
-      width: 100%;
-      padding: 1rem 0.5rem;
-      border: none;
-      color: white;
-    }
+    } */
+    max-width: 450px;
+    margin: 0 auto;
+    width: 100%;
     p {
         margin-bottom: 1rem;
         max-width: 75%;
@@ -85,6 +85,25 @@ export const Subscribe = styled.div`
         /* @media ${device.mediaMinLarge} {
             max-width: 50%;
         } */
+    }
+    form {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input {
+      background-color: ${colors.FABlue};
+      width: 100%;
+      padding: 1rem 0.5rem;
+      border: none;
+      color: white;
+    }
+    button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
     }
 `
 
