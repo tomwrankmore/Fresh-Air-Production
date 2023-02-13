@@ -117,8 +117,6 @@ const WwdAwardsSection = React.forwardRef(({tl, nodes}, ref) => {
   const [bgImageIndex, setBgImageIndex] = useState(0)
   const [nodeBg, setNodeBg] = useState('white')
 
-  console.log('nodes: ', nodes)
-
     // const { heroBackgroundImage } = useStaticQuery(
     //   graphql`
     //     query {

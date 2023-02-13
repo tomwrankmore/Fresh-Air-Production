@@ -14,9 +14,6 @@ const StyledCentralLogo = styled.div`
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    @media ${device.mediaMinMedium} {
-        
-    }
 `
 
 const CentralLogo = React.forwardRef((props, ref) => {

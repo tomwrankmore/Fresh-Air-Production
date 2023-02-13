@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from "styled-components";
+import { InlineWidget } from "react-calendly";
 import GraphQLErrorList from "../components/graphql-error-list";
 import {device} from "../styles/mediaQueries"
 import { colors } from "../styles/colors";
@@ -37,21 +38,26 @@ export const query = graphql`
 
 const ContactWrapper = styled.div` 
   width: 100%;
-  height: 100vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 0;
+  padding: 2rem 0;
   flex-direction: column;
+  &.contact-page-hero {
+    height: 100vh;
+  }
   @media ${device.mediaMinMedium} {
     flex-direction: row;
   }
   h1 {
-    margin: 83.5px 0 1rem 0;
-    text-align: center;
-    &.header-title {
-      margin: 0 auto;
+    &:first-child {
+      margin: 83.5px auto 1rem auto;
     }
+    margin: 0 0 1rem 0;
+    text-align: center;
+    max-width: 50%;
+    line-height: 1.25;
   }
   h1, p {
   }
@@ -193,15 +199,13 @@ const ContactPage = (props) => {
     })
   }
 
-  console.log('_rawContactHeroText_rawContactHeroText_rawContactHeroText', data.contactPageContent._rawContactHeroText)
-  
   return (
     <Layout>
       <SEO title="Contact" />
       <CentralLogo />
-      <ContactWrapper style={{backgroundColor:'#067BC2'}}>
+      <ContactWrapper style={{backgroundColor:'#067BC2'}} className='contact-page-hero'>
         <Column>
-          <h1 className="header-title">Don't be shy...<br/>Get in touch with us</h1>
+          {/* <h1 className="header-title">Don't be shy...<br/>Get in touch with us</h1> */}
           <BlockContent blocks={data.contactPageContent._rawContactHeroText} />
         </Column>
         <Column>
@@ -305,6 +309,7 @@ const ContactPage = (props) => {
           </ContactForm>
         </Column>
       </ContactWrapper>
+      <InlineWidget url="https://calendly.com/freshairproduction/workshop?month=2023-02" />
     </Layout>
   )
 };

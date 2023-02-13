@@ -4,7 +4,6 @@ import {SectionWrapper, Column} from "./editorial.styled"
 import BlockContent from "../block-content";
 
 const EditorialSectionOne = React.forwardRef(({image, text}, ref) => {
-  console.log('texttexttext', text)
     return (
       <SectionWrapper>
         <Column className="text">

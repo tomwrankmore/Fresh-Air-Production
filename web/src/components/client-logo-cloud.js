@@ -19,6 +19,18 @@ const LogoCloudInnerWrapper = styled.div`
     position: relative;
     text-align: center;
     transition: background-color 0.25s ease-in 0s;
+
+    .clientLogoSVG {
+      width: 200vw;
+      display: inline-block;
+      height: auto;
+      @media ${device.mediaMinSmall} {
+        width: 175vw;
+      }
+      @media ${device.mediaMinMedium} {
+        width: 100vw;
+      }
+    }
 `
 
 const ExtendedContainer = styled.div` 
@@ -43,8 +55,8 @@ const ClientLogoCloud = React.forwardRef((props, ref) => {
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
         gsap.set('.cloudMarqueeLine', {xPercent: 20});
-        gsap.to('.marqueeContent1', {xPercent: -100, repeat: -1, duration: 140, ease: 'linear'}).totalProgress(0.6);
-        gsap.to('.marqueeContent2', {xPercent: -100, repeat: -1, duration: 160, ease: 'linear'}).totalProgress(0.4);
+        gsap.to('.marqueeContent1', {xPercent: -100, repeat: -1, duration: 100, ease: 'linear'}).totalProgress(0.5);
+        gsap.to('.marqueeContent2', {xPercent: -100, repeat: -1, duration: 90, ease: 'linear'}).totalProgress(0.5);
     }, ref);
     return () => ctx.revert()
   }, [])
@@ -55,26 +67,26 @@ const ClientLogoCloud = React.forwardRef((props, ref) => {
       <ExtendedContainer>
         <MarqueeLine className="cloudMarqueeLine">
           <div className="marqueeContent marqueeContent1">
-            <ClientLogoRowOne  className="clientLogoSVG" style={{width: '100vw', height: 'auto'}}/>
+            <ClientLogoRowOne  className="clientLogoSVG" />
           </div>
           <div className="marqueeContent marqueeContent1">
-            <ClientLogoRowOne  className="clientLogoSVG" style={{width: '100vw', height: 'auto'}}/>
+            <ClientLogoRowOne  className="clientLogoSVG" />
           </div>
         </MarqueeLine>
         <MarqueeLine className="cloudMarqueeLine">
           <div className="marqueeContent marqueeContent2">
-            <ClientLogoRowTwo className="clientLogoSVG" style={{width: '100vw', height: 'auto'}}/>
+            <ClientLogoRowTwo className="clientLogoSVG" />
           </div>
           <div className="marqueeContent marqueeContent2">
-            <ClientLogoRowTwo className="clientLogoSVG" style={{width: '100vw', height: 'auto'}}/>
+            <ClientLogoRowTwo className="clientLogoSVG" />
           </div>
         </MarqueeLine>
         <MarqueeLine className="cloudMarqueeLine">
           <div className="marqueeContent marqueeContent2">
-            <ClientLogoRowThree className="clientLogoSVG" style={{width: '100vw', height: 'auto'}}/>
+            <ClientLogoRowThree className="clientLogoSVG" />
           </div>
           <div className="marqueeContent marqueeContent2">
-            <ClientLogoRowThree className="clientLogoSVG" style={{width: '100vw', height: 'auto'}}/>
+            <ClientLogoRowThree className="clientLogoSVG" />
           </div>
         </MarqueeLine>
       </ExtendedContainer>
