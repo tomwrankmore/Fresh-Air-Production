@@ -13,6 +13,10 @@ export const query = graphql`
     podcast: sanityPodcast(id: { eq: $id }) {
       id
       publishedAt
+      heroBGColor {
+        title
+        color
+      }
       mainImage {
         asset {
           _id

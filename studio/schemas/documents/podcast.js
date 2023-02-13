@@ -30,8 +30,15 @@ export default {
       to: {type: 'brandColours'}
     },
     {
+      name: 'isLeftAlignedHeroImg',
+      title: 'Align image to the left in hero',
+      description: 'Any item with this checked will the hero image aligned to the left.',
+      type: 'boolean'
+    },
+    {
       name: 'isFeaturedPodcast',
       title: 'Featured Podcast',
+      description: 'Any item with this checked will appear larger the top of the page.',
       type: 'boolean'
     },
     {

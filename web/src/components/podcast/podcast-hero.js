@@ -100,6 +100,9 @@ const Column = styled.div`
 const PodcastHero = React.forwardRef(({tl, podcast}, ref) => {
 
     const heroBackgroundImage = podcast?.heroImage?.asset?.gatsbyImageData;
+    const heroBackgroundColour = podcast?.heroBGColor?.title;
+
+    let heroFlexDirection;
 
     const pluginImage = getImage(heroBackgroundImage);
     const bgImage = convertToBgImage(pluginImage);
@@ -134,7 +137,12 @@ const PodcastHero = React.forwardRef(({tl, podcast}, ref) => {
     }, [])
 
     return (
-      <HeroWrapper ref={ref}>
+      <HeroWrapper 
+        ref={ref} 
+        style={{
+          backgroundColor: podcast.heroBGColor?.title != null ? podcast.heroBGColor.color : colors.FABlue
+        }}
+        >
         <Column className="left-column">
           <div className="heroText">
             <div className="heroTitleWrapper">
