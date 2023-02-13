@@ -22,7 +22,7 @@ export default {
     },
     {
       name: 'homePodcasts',
-      title: 'Homepage projects',
+      title: 'Homepage podcasts',
       type: 'array',
       of: [{type: 'reference', to: {type: 'podcast'}}],
       validation: Rule => Rule.error('Please add 4 podcasts to be displayed on the homepage.').required().min(4).max(4),
@@ -79,9 +79,11 @@ export default {
       title: 'Work panel four text',
     },
     {
-      name: 'homePageQuote',
-      type: 'string',
-      title: 'Quote section',
+      name: 'homeTestimonials',
+      title: 'Homepage testimonials',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'homePageTestimonial'}}],
+      // validation: Rule => Rule.error('Please add 4 podcasts to be displayed on the homepage.').required().min(4).max(4),
     },
     {
       name: 'homeFeaturedEditorial',

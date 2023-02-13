@@ -8,12 +8,13 @@ const hiddenDocTypes = listItem =>
   ![
     'siteSettings', 
     'homePageContent', 
+    'homePageTestimonial',
     'whatWeDoContent', 
-    // 'award',
-    // 'staffMember',
-    // 'managementMember',
-    // 'podcast',
-    // 'editorial',
+    'award',
+    'staffMember',
+    'managementMember',
+    'podcast',
+    'editorial',
     'contactPageContent',
     // 'terms'
   ].includes(listItem.getId())
@@ -42,6 +43,11 @@ export default () =>
           )
           .icon(FaHome),
         S.listItem()
+          .title('Homepage testimonials')
+          .schemaType('homePageTestimonial')
+          .child(S.documentTypeList('homePageTestimonial').title('Homepage testimonials'))
+          .icon(FaHome),
+        S.listItem()
           .title('What we do page content')
           .child(
             S.editor()
@@ -50,51 +56,31 @@ export default () =>
               .documentId('whatWeDoContent')
           )
           .icon(FaWrench),
-        // S.listItem()
-        //   .title('Awards')
-        //   .child(
-        //     S.editor()
-        //       .id('award')
-        //       .schemaType('award')
-        //       .documentId('award')
-        //   )
-        //   .icon(FaAward),
-        // S.listItem()
-        //   .title('Staff Members')
-        //   .child(
-        //     S.editor()
-        //       .id('staffMember')
-        //       .schemaType('staffMember')
-        //       .documentId('staffMember')
-        //   )
-        //   .icon(MdPersonPin),
-        // S.listItem()
-        //   .title('Management Members')
-        //   .child(
-        //     S.editor()
-        //       .id('managementMember')
-        //       .schemaType('managementMember')
-        //       .documentId('managementMember')
-        //   )
-        //   .icon(MdPersonPin),
-        // S.listItem()
-        //   .title('Podcast post')
-        //   .child(
-        //     S.editor()
-        //       .id('podcast')
-        //       .schemaType('podcast')
-        //       .documentId('podcast')
-        //   )
-        //   .icon(FaPodcast),
-        // S.listItem()
-        //   .title('Editorial post')
-        //   .child(
-        //     S.editor()
-        //       .id('editorial')
-        //       .schemaType('editorial')
-        //       .documentId('editorial')
-        //   )
-        //   .icon(FaBook),
+        S.listItem()
+          .title('Awards')
+          .schemaType('award')
+          .child(S.documentTypeList('award').title('Awards'))
+          .icon(FaAward),
+        S.listItem()
+          .title('Staff Members')
+          .schemaType('staffMember')
+          .child(S.documentTypeList('staffMember').title('Staff Members'))
+          .icon(MdPersonPin),
+        S.listItem()
+          .title('Management Members')
+          .schemaType('managementMember')
+          .child(S.documentTypeList('managementMember').title('Management Members'))
+          .icon(MdPersonPin),
+        S.listItem()
+          .title('Podcast post')
+          .schemaType('podcast')
+          .child(S.documentTypeList('podcast').title('Podcasts'))
+          .icon(FaPodcast),
+        S.listItem()
+          .title('Editorial post')
+          .schemaType('editorial')
+          .child(S.documentTypeList('editorial').title('Editorials'))
+          .icon(FaBook),
         S.listItem()
           .title('Contact page content')
           .child(

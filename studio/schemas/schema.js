@@ -13,6 +13,7 @@ import award from './documents/awards'
 import siteSettings from './documents/siteSettings'
 import terms from './documents/terms'
 import homePageContent from './documents/homePageContent'
+import homePageTestimonials from './documents/homePageTestimonials'
 import whatWeDoContent from './documents/whatWeDoPageContent'
 import contactPageContent from './documents/contactPageContent'
 
@@ -47,6 +48,7 @@ export default createSchema({
     siteSettings,
     terms,
     homePageContent,
+    homePageTestimonials,
     whatWeDoContent,
     contactPageContent,
   ])

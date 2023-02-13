@@ -1,7 +1,7 @@
 export default {
   name: 'contactPageContent',
   type: 'document',
-  title: 'Contact page Content',
+  title: 'Contact page content',
   // __experimental_actions: [
   //   // 'create',
   //   'update',
@@ -9,6 +9,11 @@ export default {
   //   'publish'
   // ],
   fields: [
+    {
+      name: 'title',
+      title: 'Title',
+      type: 'string'
+    },
     {
       name: 'contactHeroText',
       type: 'simplePortableText',

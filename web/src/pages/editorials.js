@@ -70,12 +70,6 @@ const EditorialsGrid = styled.div`
             }
           }
         }
-        /* &.featured-post-left {
-            grid-column: 1/3;
-        }
-        &.featured-post-right {
-            grid-column: 3/5;
-        } */
         &:hover {
           background-color: ${colors.FABlue};
           color: white;

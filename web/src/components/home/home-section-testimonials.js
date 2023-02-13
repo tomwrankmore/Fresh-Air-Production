@@ -47,17 +47,12 @@ const Testimonials = (props) => {
                 >
                   <SwiperSlide>
                     <h1>"Fresh Air makes bloomin' brilliant podcasts! Seriously, that's all we wanted and the team has delivered"</h1>
-                    <p>Kate Atkinson, IRESS. </p>
+                    <p>Kate Atkinson, IRESS.</p>
                   </SwiperSlide>
                   <SwiperSlide>
                     <h1>“Fresh Air really helped us understand best to connect with our customers through storytelling”</h1>
                     <p>The Energy Podcast - Shell</p>
                   </SwiperSlide>
-                    
-                    {/* <SwiperSlide>
-                      <h1>"Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga."</h1>
-                      <p>The Outrageous Podcast - Shell</p>
-                    </SwiperSlide> */}
                 </Swiper>
             </div>
         </TestimonialsWrapper>
