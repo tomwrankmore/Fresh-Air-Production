@@ -9,6 +9,6 @@ const components = {
   }
 };
 
-const BlockContent = ({ blocks }) => <PortableText value={blocks} components={components} />;
+const BlockContent = ({ blocks }) => <PortableText value={blocks} components={components} className="donkeyClass" />;
 
 export default BlockContent;

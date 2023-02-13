@@ -23,6 +23,7 @@ export default {
     {
       name: 'homePodcasts',
       title: 'Homepage podcasts',
+      description: 'Please choose 4 podcasts to be displayed on the homepage.',
       type: 'array',
       of: [{type: 'reference', to: {type: 'podcast'}}],
       validation: Rule => Rule.error('Please add 4 podcasts to be displayed on the homepage.').required().min(4).max(4),
@@ -30,7 +31,8 @@ export default {
     {
       name: 'homeSecondTickerTape',
       type: 'string',
-      title: 'Ticker tape text to sit underneath podcasts section'
+      title: 'Ticker tape.',
+      title: 'Please enter some copy for the scrolling text underneath the podcast section.'
     },
     {
       name: 'homeWorkSectionHeading',

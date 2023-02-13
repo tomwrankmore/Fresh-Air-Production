@@ -27,7 +27,7 @@ const TestimonialsWrapper = styled.div`
     }
 `
 
-const Testimonials = (props) => {
+const Testimonials = ({testimonials}) => {
 
     const pagination = {
         clickable: true,
@@ -45,14 +45,14 @@ const Testimonials = (props) => {
                     modules={[Pagination]}
                     className="mySwiper"
                 >
-                  <SwiperSlide>
-                    <h1>"Fresh Air makes bloomin' brilliant podcasts! Seriously, that's all we wanted and the team has delivered"</h1>
-                    <p>Kate Atkinson, IRESS.</p>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <h1>“Fresh Air really helped us understand best to connect with our customers through storytelling”</h1>
-                    <p>The Energy Podcast - Shell</p>
-                  </SwiperSlide>
+                  {testimonials && testimonials.map(testimonial => {
+                    return (
+                      <SwiperSlide>
+                        <h1>{testimonial.testimonial}</h1>
+                        <p>{testimonial.client}</p>
+                      </SwiperSlide>
+                    )
+                  })}
                 </Swiper>
             </div>
         </TestimonialsWrapper>

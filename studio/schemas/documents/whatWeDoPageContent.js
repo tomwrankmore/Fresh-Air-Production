@@ -31,6 +31,11 @@ export default {
       type: 'figure'
     },
     {
+      name: 'wwdTickerTapeText',
+      type: 'string',
+      title: 'Scrolling ticker tape',
+    },
+    {
       name: 'wwdSectionTwoText',
       title: 'Section Two Text',
       type: 'projectPortableText'
@@ -51,7 +56,7 @@ export default {
       type: 'figure'
     },
     {
-      name: 'homePageQuote',
+      name: 'wwdPageQuote',
       type: 'string',
       title: 'Quote section',
     },

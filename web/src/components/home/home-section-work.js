@@ -1,6 +1,7 @@
 import React, {useLayoutEffect} from "react";
 import gsap from 'gsap'
 import { StaticImage } from "gatsby-plugin-image";
+import BlockContent from "../block-content";
 import styled from "styled-components";
 import { device } from "../../styles/mediaQueries";
 import { colors } from "../../styles/colors";
@@ -13,7 +14,7 @@ const HorizontalContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     background-color: ${colors.FABlue};
-    @media ${device.mediaMinMedium} {
+    @media ${device.mediaMinLarge} {
       width: 300%;
       flex-wrap: nowrap;
       height: 100vh;
@@ -28,7 +29,7 @@ const HorizontalContainer = styled.div`
       width: 200vw;
       transform: translateY(-50%);
       display: none;
-      @media ${device.mediaMinMedium} {
+      @media ${device.mediaMinLarge} {
         display: inline-block;
       }
     }
@@ -47,7 +48,7 @@ const Panel = styled.div`
   box-sizing: border-box;
   padding: 0;
   overflow: visible;
-  @media ${device.mediaMinMedium} {
+  @media ${device.mediaMinLarge} {
     flex-direction: row;
   }
 
@@ -57,7 +58,7 @@ const Panel = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column;
-    @media ${device.mediaMinMedium} {
+    @media ${device.mediaMinLarge} {
       flex-direction: row;
       padding-top: 0;
     }
@@ -65,7 +66,7 @@ const Panel = styled.div`
     .panel-1-img {
       width: 100%; 
       margin: 2rem auto;
-      @media ${device.mediaMinMedium} {
+      @media ${device.mediaMinLarge} {
         width: 60%; 
         margin: 30px auto;
       }
@@ -83,13 +84,13 @@ const Panel = styled.div`
       flex: auto;
       width: 100%;
       padding: 0 2rem;
-      @media ${device.mediaMinMedium} {
+      @media ${device.mediaMinLarge} {
         flex: 5;
         padding: 0;
       }
       h1 {
         font-size: 3rem;
-        @media ${device.mediaMinMedium} {
+        @media ${device.mediaMinLarge} {
           font-size: 4rem;
         }
         text-transform: uppercase;
@@ -99,7 +100,7 @@ const Panel = styled.div`
     .panel1-right-content {
       flex: auto;
       padding: 2rem 2rem 4rem 2rem;
-      @media ${device.mediaMinMedium} {
+      @media ${device.mediaMinLarge} {
         flex: 3;
         padding: 0;
       }
@@ -110,7 +111,7 @@ const Panel = styled.div`
         font-size: 1.25rem;
         text-transform: initial;
         font-weight: normal;
-        @media ${device.mediaMinMedium} {
+        @media ${device.mediaMinLarge} {
           line-height: 2.25rem;
           font-size: 1.5rem;
         }
@@ -125,7 +126,7 @@ const Panel = styled.div`
 
       .hide-on-mob {
         display: none;
-        @media ${device.mediaMinMedium} {
+        @media ${device.mediaMinLarge} {
           display: inline-block;
         }
       }
@@ -141,7 +142,7 @@ const Panel = styled.div`
     z-index: 101;
     margin-bottom: 1rem;
     /* border-bottom: solid 1px white; */
-    @media ${device.mediaMinMedium} {
+    @media ${device.mediaMinLarge} {
       border-bottom: none;
       padding: 0 60px;
       margin-bottom: 0;
@@ -153,7 +154,7 @@ const Panel = styled.div`
       .img-r {
         transform: rotate(10deg);
         transform-origin: center center;
-        @media ${device.mediaMinMedium} {
+        @media ${device.mediaMinLarge} {
           margin-bottom: 2rem;
         }
       }
@@ -191,19 +192,29 @@ const Panel = styled.div`
       font-weight: normal;
       line-height: 1.5rem;
       font-size: 1.275rem;
-      @media ${device.mediaMinMedium} {
+      @media ${device.mediaMinLarge} {
         margin-bottom: 4rem;
       }
     }
   }
 `
 
-const Work = React.forwardRef((props, ref) => {
+const Work = React.forwardRef(({
+  workSectionHeading,
+  panelOneTitle,
+  panelTwoTitle,
+  panelThreeTitle,
+  panelFourTitle,
+  panelOneText,
+  panelTwoText,
+  panelThreeText,
+  panelFourText
+}, ref) => {
 
     useLayoutEffect(() => {
       let mm = gsap.matchMedia(ref);
     
-      mm.add("(min-width: 674px)", () => {
+      mm.add("(min-width: 900px)", () => {
         // gsap logic here
         let sections = gsap.utils.toArray('.panel');
         let imagesL = gsap.utils.toArray('.img-l');
@@ -301,15 +312,15 @@ const Work = React.forwardRef((props, ref) => {
                 <div className="panel1-right-content">
                   <BsArrowRight style={{fontSize: '3rem', marginBottom: '1rem'}}  className='hide-on-mob'/>
                   <h4 className='hide-on-mob'>Take a scroll with us</h4>
-                  <h3>Whatever stage of the process you're at, we can take your podcast from an idea straight to your the ears of your customers.</h3>
+                  <h3>{workSectionHeading}</h3>
                 </div>
               </Panel>
               <Panel className="panel panel2">
                 <SvgBg className="svg-bg" />
                 <div className="panel-equal-column">
                   <div className="we-work-text-wrapper">
-                    <h2>Strategy &amp; Creative</h2>
-                    <p className="panel-paragraph">What is the podcast that only you can make? We turn your brand into a podcast that audiences will love. We take broadcast quality producers and turn your talent into podcast stars, your brand purpose into a killer format, and your expertise into a brilliant conversation..</p>
+                    <h2>{panelOneTitle}</h2>
+                    <BlockContent blocks={panelOneText} />
                   </div>
                   <StaticImage
                     src="../../assets/we-work/pexels-elina-araja.png"
@@ -331,16 +342,16 @@ const Work = React.forwardRef((props, ref) => {
                     style={{maxWidth: '290px', margin: '0 auto 2rem auto'}}
                     />
                     <div className="we-work-text-wrapper">
-                      <h2>Record and Produce</h2>
-                      <p className="panel-paragraph">We're a collective of best in the business audio producers, and we've worked for some of the world's biggest brands. We're also storytellers, journalists, finance specialists, science experts, comedy producers, fashion lovers, and much more.</p>
+                      <h2>{panelTwoTitle}</h2>
+                      <BlockContent blocks={panelTwoText} />
                     </div>
                 </div>
               </Panel>
               <Panel className="panel panel3">
                 <div className="panel-equal-column">
                   <div className="we-work-text-wrapper">
-                    <h2>Advertise and Promote</h2>
-                    <p className="panel-paragraph">We're a team of podcast growth specialists running strategy, media, design and PR to make a podcast into a hit. Our plans bring an audience to the content we produce and strategically distribute it to where the audience already are.</p>
+                    <h2>{panelThreeTitle}</h2>
+                    <BlockContent blocks={panelThreeText} />
                   </div>
                   <StaticImage
                     src="../../assets/we-work/pexels-jonathan-pham-12375133.jpg"
@@ -363,10 +374,8 @@ const Work = React.forwardRef((props, ref) => {
                     style={{maxWidth: '290px', margin: '0 auto 2rem auto'}}
                     />
                     <div className="we-work-text-wrapper">
-                      <h2>Analyse Your Data</h2>
-                      <p className="panel-paragraph">We set clear goals to drive the best return for your business. We ruthlessly iterate to make your podcast as successful as it can be. And we show the value so Series 2 is no-brainer
-                      <br/>
-                      Let's get making a podcast</p>
+                      <h2>{panelFourTitle}</h2>
+                      <BlockContent blocks={panelFourText} />
                     </div>
                 </div>
               </Panel>

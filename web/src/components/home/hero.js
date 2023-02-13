@@ -65,7 +65,7 @@ const SvgLogoWrapper = styled.div`
     }
 `
 
-const Hero = React.forwardRef(({heroMarqueeRef, tl}, ref) => {
+const Hero = React.forwardRef(({heroMarqueeRef, tl, heroMarqueeText}, ref) => {
     
   useLayoutEffect(() => {
 
@@ -141,7 +141,7 @@ const Hero = React.forwardRef(({heroMarqueeRef, tl}, ref) => {
       </HeroInner>
       <Marquee 
           style={{color: 'white'}}
-          textContent="WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE. WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE. WE MAKE PODCASTS FOR BRANDS, THAT AUDIENCES LOVE." 
+          textContent={heroMarqueeText}
           ref={heroMarqueeRef}
           cn="home-marquee"
         />

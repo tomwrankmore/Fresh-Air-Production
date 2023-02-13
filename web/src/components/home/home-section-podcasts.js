@@ -1,9 +1,10 @@
 import React, {useLayoutEffect, useRef} from "react";
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
 import gsap from "gsap";
+import BlockContent from "../block-content";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitText from "gsap/SplitText";
 import { device } from "../../styles/mediaQueries"
@@ -80,7 +81,7 @@ const Podcast = styled.div`
     }
 `
 
-const Podcasts = React.forwardRef(({tl}, ref) => {
+const Podcasts = React.forwardRef(({tl, podcastHeading, homePodcasts}, ref) => {
 
     const root = useRef();
 
@@ -133,56 +134,25 @@ const Podcasts = React.forwardRef(({tl}, ref) => {
     return (
         <PodcastsWrapper ref={root}>
             <div className="leftCol">
-                <Podcast>
-                  <Link to="/podcast/call-of-the-wild-wwf/">
-                    <StaticImage
-                        src="../../assets/we-produce/we-produce-1.jpeg"
-                        alt="call-of-the-wild-wwf"
-                        placeholder="blurred"
-                        layout="fullWidth"
-                        className="podcastImgWrapper"
-                        imgClassName="podcastImg"
-                    />
-                  </Link>
-                </Podcast>
-                <Podcast>
-                  <Link to="/podcast/podcast-test-5/">
-                      <StaticImage
-                          src="../../assets/we-produce/we-produce-2.jpeg"
-                          alt="Smiling people"
+              {homePodcasts && homePodcasts.map(podcast => {
+                return (
+                  <Podcast>
+                    <Link to={`/podcast/${podcast.slug.current}`}>
+                      <GatsbyImage
+                          image={podcast.heroImage.asset.gatsbyImageData}
+                          alt={podcast.heroImage.alt}
                           placeholder="blurred"
                           layout="fullWidth"
                           className="podcastImgWrapper"
                           imgClassName="podcastImg"
                       />
-                  </Link>
-                </Podcast>
-                <Podcast>
-                  <Link to="/podcast/podcast-test-5/">
-                    <StaticImage
-                        src="../../assets/we-produce/we-produce-3.jpeg"
-                        alt="Smiling people"
-                        placeholder="blurred"
-                        layout="fullWidth"
-                        className="podcastImgWrapper"
-                        imgClassName="podcastImg"
-                    />
-                  </Link>
-                </Podcast>
-                <Podcast>
-                    <StaticImage
-                        src="../../assets/we-produce/we-produce-4.jpg"
-                        alt="Smiling people"
-                        placeholder="blurred"
-                        layout="fullWidth"
-                        className="podcastImgWrapper"
-                        imgClassName="podcastImg"
-                    />
-                    {/* <h3>Call of The Wild - WWF</h3> */}
-                </Podcast>
+                    </Link>
+                  </Podcast>
+                )
+              })}
             </div>
             <div className="rightCol">
-                <h2 className="podcastHeading">We produce 100 podcasts listened to over 2 million times every month</h2>
+                <h2 className="podcastHeading">{podcastHeading}</h2>
             </div>
         </PodcastsWrapper>
     )

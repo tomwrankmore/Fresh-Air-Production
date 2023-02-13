@@ -40,7 +40,7 @@ const EditorialsWrapper = styled.div`
     padding: 0.5rem;
     flex-direction: column;
 
-    @media ${device.mediaMinMedium} {
+    @media ${device.mediaMinLarge} {
         flex-direction: row;
     }
 
@@ -81,13 +81,22 @@ const EditorialsWrapper = styled.div`
         }
     }
 
+    .featured-editorial-link{
+      flex: 1;
+    }
+
     .editorials-left-col {
-        height: 75vh;
+        height: auto;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         padding: 0.5rem;
+        .imgWrapper {
+            flex: 1;
+            width: 100%;
+        }
+
         .titleWrapper h3 {
           padding: 1rem 0;
           @media ${device.mediaMinMedium} {
@@ -135,7 +144,7 @@ const EditorialsWrapper = styled.div`
     }
 `
 
-const Editorials = ({editorialNodes}) => {
+const Editorials = ({editorialNodes, featuredEditorial, homeEditorials}) => {
     return (
       <>
         <EditorialsTitleWrapper>
@@ -145,18 +154,22 @@ const Editorials = ({editorialNodes}) => {
           </Link>
         </EditorialsTitleWrapper>
         <EditorialsWrapper className="editorials-wrapper">
-          <div className="editorials-left-col">
-            <StaticImage
-              src="../../assets/sweet-love.jpg"
-              alt="Smiling people"
-              placeholder="blurred"
-              objectFit="cover"
-              className="imgWrapper"
-            />
-            <div className="titleWrapper">
-              <h3>Unearthed with Kew Gardens launches, exploring the relationship with food production and how it's made</h3>
-            </div>
-          </div>
+          <Link to={`/editorial/${featuredEditorial.slug.current}`} className="featured-editorial-link">
+            <div className="editorials-left-col">
+                {featuredEditorial?.heroImage?.asset?.gatsbyImageData && 
+                  <GatsbyImage
+                    image={featuredEditorial?.heroImage?.asset?.gatsbyImageData}
+                    alt="Smiling people"
+                    placeholder="blurred"
+                    objectFit="cover"
+                    className="imgWrapper"
+                  />
+                }
+                <div className="titleWrapper">
+                  <h3>Unearthed with Kew Gardens launches, exploring the relationship with food production and how it's made</h3>
+                </div>
+              </div>
+          </Link>
           <div className="editorials-right-col">
             <div className="editorials-right-grid">
               {editorialNodes && 

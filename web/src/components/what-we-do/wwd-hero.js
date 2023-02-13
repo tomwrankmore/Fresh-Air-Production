@@ -4,6 +4,7 @@ import {colors} from "../../styles/colors"
 import {device} from "../../styles/mediaQueries"
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from "styled-components";
+import BlockContent from "../block-content";
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { BgImage, convertToBgImage } from 'gbimage-bridge';
 import BackgroundImage from 'gatsby-background-image'
@@ -29,7 +30,7 @@ const Column = styled.div`
   overflow: hidden;
   flex: 1;
 
-  .heroTitle {
+  h3 {
     font-size: 1.25rem;
     line-height: 1.5rem;
     margin-bottom: 1.875rem;
@@ -74,26 +75,28 @@ const Column = styled.div`
   }
 `;
 
-const WwdHero = React.forwardRef(({tl}, ref) => {
+const WwdHero = React.forwardRef(({tl, heroImg, heroCopy}, ref) => {
 
-    const { heroBackgroundImage } = useStaticQuery(
-      graphql`
-        query {
-          heroBackgroundImage: file(relativePath: { eq: "wwd-hero.png" }) {
-            childImageSharp {
-              gatsbyImageData(
-                width: 2000
-                quality: 50
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
-            }
-          }
-        }
-      `
-    )
-    const pluginImage = getImage(heroBackgroundImage);
-    const bgImage = convertToBgImage(pluginImage);
+    // const { heroBackgroundImage } = useStaticQuery(
+    //   graphql`
+    //     query {
+    //       heroBackgroundImage: file(relativePath: { eq: "wwd-hero.png" }) {
+    //         childImageSharp {
+    //           gatsbyImageData(
+    //             width: 2000
+    //             quality: 50
+    //             placeholder: BLURRED
+    //             formats: [AUTO, WEBP, AVIF]
+    //           )
+    //         }
+    //       }
+    //     }
+    //   `
+    // )
+    // const pluginImage = getImage(heroBackgroundImage);
+    // const bgImage = convertToBgImage(pluginImage);
+
+    const heroBgImage = heroImg.asset.localFile.childImageSharp.gatsbyImageData
 
     useLayoutEffect(() => {
       let ctx = gsap.context(() => {
@@ -104,7 +107,7 @@ const WwdHero = React.forwardRef(({tl}, ref) => {
           "--clip": '0% 0% 0% 0%',
           delay: 0.5
         })
-        .fromTo('.heroTitle', {
+        .fromTo('.heroText', {
           yPercent: 20,
           stagger: 0.75,
           autoAlpha: 0
@@ -121,15 +124,16 @@ const WwdHero = React.forwardRef(({tl}, ref) => {
       <HeroWrapper ref={ref}>
           <Column className='clipped'>
             <BgImage 
-              image={pluginImage}
+              image={heroBgImage}
               className="background-image" 
             />
           </Column>
           <Column>
               <div className="heroText">
-                <h3 className="heroTitle">We're a team of passionate audio producers who have worked for some of the biggest brands.</h3>
+                <BlockContent blocks={heroCopy} />
+                {/* <h3 className="heroTitle">We're a team of passionate audio producers who have worked for some of the biggest brands.</h3>
                 <h3 className="heroTitle">We take the essence of a brand and bring it to life in audio.</h3>
-                <h3 className="heroTitle">Want to get in touch? Click here to email us.</h3>
+                <h3 className="heroTitle">Want to get in touch? Click here to email us.</h3> */}
                 {/* <div className="smaller-text-wrapper">
                     <p className="smallPrint heroText">
                         Your friendly neighbourhood bringer of vibes and flavour!!

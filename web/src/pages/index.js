@@ -27,6 +27,65 @@ export const query = graphql`
       description
       keywords
     }
+    homePageContent:
+      allSanityHomePageContent {
+        edges {
+          node {
+            homeHeroTickerTape
+            _rawHomePodcastHeading
+            homePodcasts {
+              id
+              heroImage {
+                asset {
+                  gatsbyImageData
+                }
+              }
+              slug {
+                current
+              }
+              title
+            }
+            homeSecondTickerTape
+            homeWorkSectionHeading
+            homeWorkPanelOneTitle
+            homeWorkPanelTwoTitle
+            homeWorkPanelThreeTitle
+            homeWorkPanelFourTitle
+            _rawHomeWorkPanelOneText
+            _rawHomeWorkPanelTwoText
+            _rawHomeWorkPanelThreeText
+            _rawHomeWorkPanelFourText
+            homeTestimonials {
+              testimonial
+              client
+            }
+            homeFeaturedEditorial {
+              id
+              heroImage {
+                asset {
+                  gatsbyImageData
+                }
+              }
+              slug {
+                current
+              }
+              title
+            }
+            homeEditorials {
+              id
+              heroImage {
+                asset {
+                  gatsbyImageData
+                }
+              }
+              slug {
+                current
+              }
+              title
+            }
+          }
+        }
+      }
     editorials: allSanityEditorial(
       sort: {publishedAt: DESC}
       filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}
@@ -108,20 +167,48 @@ const IndexPage = props => {
     );
   }
 
+  const homePageContent = data.homePageContent.edges[0].node
+
   return (
       <Layout>
         <SEO title={site.title} description={site.description} keywords={site.keywords} />
         <CentralLogo ref={centralLogoRef}/>
-        <Hero ref={heroRef} heroMarqueeRef={heroMarqueeRef} tl={heroTl.current}/>
-        <Podcasts ref={podcastsRef} />
+        <Hero 
+          ref={heroRef} 
+          heroMarqueeRef={heroMarqueeRef} 
+          tl={heroTl.current} 
+          heroMarqueeText={homePageContent.homeHeroTickerTape}
+        />
+        <Podcasts 
+          ref={podcastsRef} 
+          podcastHeading={homePageContent._rawHomePodcastHeading[0].children[0].text} 
+          homePodcasts={homePageContent.homePodcasts}  
+        />
         <Marquee 
           style={{color: colors.FABlue}}
-          textContent="whatever you're looking to create, our skilled and experienced production team will build the perfect podcast." 
+          textContent={homePageContent.homeSecondTickerTape}
           ref={marqueeRef}
         />
-        <Work ref={horizontalPanelsRef} />
-        <Testimonials />
-        <Editorials editorialNodes={editorialNodes} />
+        <Work 
+          ref={horizontalPanelsRef} 
+          workSectionHeading={homePageContent.homeWorkSectionHeading}
+          panelOneTitle={homePageContent.homeWorkPanelOneTitle}
+          panelTwoTitle={homePageContent.homeWorkPanelTwoTitle}
+          panelThreeTitle={homePageContent.homeWorkPanelThreeTitle}
+          panelFourTitle={homePageContent.homeWorkPanelFourTitle}
+          panelOneText={homePageContent._rawHomeWorkPanelOneText}
+          panelTwoText={homePageContent._rawHomeWorkPanelTwoText}
+          panelThreeText={homePageContent._rawHomeWorkPanelThreeText}
+          panelFourText={homePageContent._rawHomeWorkPanelFourText}
+        />
+        <Testimonials
+          testimonials={homePageContent.homeTestimonials}
+        />
+        <Editorials 
+          editorialNodes={editorialNodes} 
+          featuredEditorial={homePageContent.homeFeaturedEditorial}
+          homeEditorials={homePageContent.homeEditorials}
+        />
         <TagCloud ref={tagCloudRef} />
       </Layout>
   );
