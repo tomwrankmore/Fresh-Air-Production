@@ -1,12 +1,13 @@
 import React, {useLayoutEffect} from "react";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
-import { StaticImage } from "gatsby-plugin-image";
+import BlockContent from "../block-content";
+import { GatsbyImage } from "gatsby-plugin-image";
 import {SectionParagraph} from "../../styles/typography"
 import {HeroWrapper, Column} from "./wwd.styled"
 import styled from "styled-components";
 
-const WwdSectionOne = React.forwardRef(({tl}, ref) => {
+const WwdSectionOne = React.forwardRef(({tl, text, image}, ref) => {
     
     gsap.registerPlugin(SplitText);
 
@@ -66,31 +67,32 @@ const WwdSectionOne = React.forwardRef(({tl}, ref) => {
     return (
         <HeroWrapper ref={ref}>
             <Column className="text">
-                <SectionParagraph className="text_reveal">
-                    Fresh Air grew out of years making shows for national radio, with a mission to bring broadcast quality production values into podcasting.
-                </SectionParagraph>
+              <BlockContent blocks={text}/>
 
-                <SectionParagraph className="text_reveal">
-                    We help brands to create podcasts which people genuinely want to listen to, harnessing the power of audio to achieve measurable success with an intimate, in-depth medium that grabs and holds listeners' attention for over 20 minutes at a time.
-                </SectionParagraph>
+              {/* <SectionParagraph className="text_reveal">
+                  Fresh Air grew out of years making shows for national radio, with a mission to bring broadcast quality production values into podcasting.
+              </SectionParagraph>
 
-                <SectionParagraph className="text_reveal">
-                    We're a team of passionate audio Producers, and we've worked for some of the world's biggest brands. We're also  storytellers, journalists, finance specialists, science experts, comedy producers, fashion lovers, and much more
-                </SectionParagraph>
+              <SectionParagraph className="text_reveal">
+                  We help brands to create podcasts which people genuinely want to listen to, harnessing the power of audio to achieve measurable success with an intimate, in-depth medium that grabs and holds listeners' attention for over 20 minutes at a time.
+              </SectionParagraph>
 
-                <SectionParagraph className="text_reveal">We take the essence of a brand and bring it to life in audio.</SectionParagraph>
+              <SectionParagraph className="text_reveal">
+                  We're a team of passionate audio Producers, and we've worked for some of the world's biggest brands. We're also  storytellers, journalists, finance specialists, science experts, comedy producers, fashion lovers, and much more
+              </SectionParagraph>
+
+              <SectionParagraph className="text_reveal">We take the essence of a brand and bring it to life in audio.</SectionParagraph> */}
             </Column>
             <Column className="clipped">
-                <StaticImage
-                    src="../../assets/wwd-section-1.png"
-                    alt="What we do"
-                    placeholder="blurred"
-                    layout="fullWidth"
-                    objectPosition="0 0"
-                    className="wwdSectionImg"
-                    imgClassName=''
-                    // style={{height: '100%'}}
-                />
+              <GatsbyImage
+                image={image.asset.gatsbyImageData}
+                alt={image.alt}
+                placeholder="blurred"
+                layout="fullWidth"
+                objectPosition="0 0"
+                className="wwdSectionImg"
+                imgClassName=''
+              />
             </Column>
         </HeroWrapper>
     )

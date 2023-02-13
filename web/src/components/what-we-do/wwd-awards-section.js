@@ -117,6 +117,7 @@ const WwdAwardsSection = React.forwardRef(({tl, nodes}, ref) => {
   const [bgImageIndex, setBgImageIndex] = useState(0)
   const [nodeBg, setNodeBg] = useState('white')
 
+  console.log('nodes: ', nodes)
 
     // const { heroBackgroundImage } = useStaticQuery(
     //   graphql`
@@ -146,15 +147,6 @@ const WwdAwardsSection = React.forwardRef(({tl, nodes}, ref) => {
           "--clip": '0% 0% 0% 0%',
           delay: 0.5
         })
-        // .fromTo('.tweenText', {
-        //   yPercent: 20,
-        //   stagger: 0.75,
-        //   autoAlpha: 0
-        // }, {
-        //   autoAlpha: 1,
-        //   yPercent: 0,
-        //   stagger: 0.25
-        // }, '<+=0.5')
       }, ref);
       return () => ctx.revert()
     }, [])
@@ -166,6 +158,16 @@ const WwdAwardsSection = React.forwardRef(({tl, nodes}, ref) => {
               image={nodes[bgImageIndex].awardLeftImage.asset.localFile.childImageSharp.gatsbyImageData}
               className="background-image" 
             />
+            {/* <GatsbyImage
+              image={nodes[bgImageIndex].awardLeftImage.asset.gatsbyImageData}
+              alt="What we do"
+              placeholder="blurred"
+              layout="fullWidth"
+              objectPosition="0 0"
+              className="wwdSectionImg"
+              imgClassName=''
+              // style={{height: '100%'}}
+            /> */}
           </Column>
           <Column className="column-awards-list">
             <AwardsList>

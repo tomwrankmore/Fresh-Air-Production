@@ -2,6 +2,7 @@ import React, {useRef, useEffect} from "react";
 import { colors } from "../styles/colors";
 import { graphql } from "gatsby";
 import { mapEdgesToNodes } from "../lib/helpers";
+import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import CentralLogo from "../components/central-logo"
@@ -38,6 +39,7 @@ export const query = graphql`
             }
           }
           _rawWwdHeroText
+          wwdTickerTapeText
           _rawWwdSectionOneText
           _rawWwdSectionTwoText
           _rawWwdSectionThreeText
@@ -59,6 +61,7 @@ export const query = graphql`
               gatsbyImageData
             }
           }
+          wwdPageQuote
         }
       }
     }
@@ -74,6 +77,7 @@ export const query = graphql`
           awardLeftImage {
             alt
             asset {
+              gatsbyImageData
               localFile {
                 childImageSharp {
                   gatsbyImageData(
@@ -132,31 +136,54 @@ const WhatWeDo = props => {
         <SEO title="What We Do" />
         <CentralLogo />
         <WwdHero 
-          ref={heroRef} 
+          ref={heroRef}
           tl={heroTl}
           heroImg = {wwdPageContent.wwdHeroImage}
           heroCopy = {wwdPageContent._rawWwdHeroText}
         />
         <Marquee 
           style={{color: colors.FABlue}}
-          textContent="podcasting is a booming medium. podcasting is a booming medium. podcasting is a booming medium." 
+          textContent={wwdPageContent.wwdTickerTapeText}
           ref={marqueeRef}
         />
-        <WwdSectionOne ref={sectionOneRef} tl={section2Tl} />
+        <WwdSectionOne 
+          ref={sectionOneRef} 
+          tl={section2Tl} 
+          text={wwdPageContent._rawWwdSectionOneText}
+          image={wwdPageContent.wwdSectionOneImage}
+        />
         <Marquee 
           style={{color: colors.FABlue}}
           textContent="our ethos. our ethos. our ethos. our ethos. our ethos. our ethos." 
           ref={marqueeRef}
         />
-        <WwdSectionTwo ref={sectionTwoRef} tl={section2Tl}/>
-        <WwdQuoteSection ref={quoteSectionRef} tl={quoteSection}/>
-        <WwdSectionThree ref={sectionThreeRef} tl={section3Tl} />
+        <WwdSectionTwo 
+          ref={sectionTwoRef} 
+          tl={section2Tl}
+          text={wwdPageContent._rawWwdSectionTwoText}
+          image={wwdPageContent.wwdSectionTwoImage}
+        />
+        <WwdQuoteSection 
+          ref={quoteSectionRef} 
+          tl={quoteSection}
+          quoteText={wwdPageContent.wwdPageQuote}
+        />
+        <WwdSectionThree 
+          ref={sectionThreeRef} 
+          tl={section3Tl} 
+          text={wwdPageContent._rawWwdSectionThreeText}
+          image={wwdPageContent.wwdSectionThreeImage}
+        />
         <Marquee 
           style={{color: colors.FABlue}}
           textContent="Our Awards. Our Awards. Our Awards" 
           ref={marqueeRef}
         />
-        <WwdAwardsSection ref={sectionFourRef} tl={section4Tl} nodes={allAwardNodes} />
+        <WwdAwardsSection 
+          ref={sectionFourRef} 
+          tl={section4Tl} 
+          nodes={allAwardNodes} 
+        />
         <WwdLogoCloud ref={sectionLogoCloudRef} />
       </Layout>
     );

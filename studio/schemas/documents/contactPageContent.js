@@ -16,7 +16,7 @@ export default {
     },
     {
       name: 'contactHeroText',
-      type: 'simplePortableText',
+      type: 'projectPortableText',
       title: 'Contact hero text',
       description: 'Heading for hero'
     },

@@ -1,15 +1,39 @@
 import React, {useState} from "react";
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from "styled-components";
+import GraphQLErrorList from "../components/graphql-error-list";
 import {device} from "../styles/mediaQueries"
 import { colors } from "../styles/colors";
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { BgImage, convertToBgImage } from 'gbimage-bridge';
 import BackgroundImage from 'gatsby-background-image'
-import { Link } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import CentralLogo from "../components/central-logo"
+import BlockContent from "../components/block-content";
+
+export const query = graphql`
+  query ContactPageQuery {
+    contactPageContent: sanityContactPageContent {
+      _rawContactHeroText
+      contactHeroImage {
+        asset {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                  width: 1024, 
+                  quality: 50, 
+                  placeholder: BLURRED, 
+                  formats: AUTO
+                )
+            }
+          }
+        }
+        alt
+      }
+    }
+  }
+`;
 
 const ContactWrapper = styled.div` 
   width: 100%;
@@ -123,26 +147,17 @@ const ContactForm = styled.form`
   }
 `
 
-const ContactPage = () => {
+const ContactPage = (props) => {
+  const { data, errors } = props;
+  if (errors) {
+    return (
+      <Layout>
+        <GraphQLErrorList errors={errors} />
+      </Layout>
+    );
+  }
 
-  const { heroBackgroundImage } = useStaticQuery(
-    graphql`
-      query {
-        heroBackgroundImage: file(relativePath: { eq: "fresh-air-contact.png" }) {
-          childImageSharp {
-            gatsbyImageData(
-              width: 1024
-              quality: 50
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-            )
-          }
-        }
-      }
-    `
-  )
-  const pluginImage = getImage(heroBackgroundImage);
-  const bgImage = convertToBgImage(pluginImage);
+  const heroBgImage = data.contactPageContent.contactHeroImage.asset.localFile.childImageSharp.gatsbyImageData
 
   const [formState, setFormState] = useState({
     fname: "",
@@ -177,6 +192,8 @@ const ContactPage = () => {
       [e.target.name]: e.target.value, 
     })
   }
+
+  console.log('_rawContactHeroText_rawContactHeroText_rawContactHeroText', data.contactPageContent._rawContactHeroText)
   
   return (
     <Layout>
@@ -185,10 +202,11 @@ const ContactPage = () => {
       <ContactWrapper style={{backgroundColor:'#067BC2'}}>
         <Column>
           <h1 className="header-title">Don't be shy...<br/>Get in touch with us</h1>
+          <BlockContent blocks={data.contactPageContent._rawContactHeroText} />
         </Column>
         <Column>
           <BgImage 
-            image={pluginImage}
+            image={heroBgImage}
             className="background-image" 
           />
         </Column>

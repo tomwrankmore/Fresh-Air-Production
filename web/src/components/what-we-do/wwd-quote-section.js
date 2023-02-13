@@ -37,11 +37,11 @@ const QuoteWrapper = styled.div`
     }
 `
 
-const WwdQuoteSection = React.forwardRef((props, ref) => {
+const WwdQuoteSection = React.forwardRef(({quoteText}, ref) => {
     return (
         <QuoteWrapper ref={ref}>
             <SoundwaveGraphic className='soundwaveGraphic' />
-            <h1>“We make work that we're proud of, and we work with people we like.”</h1>
+            <h1>{quoteText}</h1>
         </QuoteWrapper>
     )
 })

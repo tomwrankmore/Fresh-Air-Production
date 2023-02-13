@@ -32,6 +32,11 @@ overflow: hidden;
   @media ${device.mediaMinMedium} {
     padding: 0;
   }
+  p {
+    line-height: 1.6rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
 }
 &.clipped {
     --clip: "0 100% 0 0";

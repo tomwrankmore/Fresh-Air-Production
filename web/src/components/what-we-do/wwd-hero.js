@@ -131,14 +131,6 @@ const WwdHero = React.forwardRef(({tl, heroImg, heroCopy}, ref) => {
           <Column>
               <div className="heroText">
                 <BlockContent blocks={heroCopy} />
-                {/* <h3 className="heroTitle">We're a team of passionate audio producers who have worked for some of the biggest brands.</h3>
-                <h3 className="heroTitle">We take the essence of a brand and bring it to life in audio.</h3>
-                <h3 className="heroTitle">Want to get in touch? Click here to email us.</h3> */}
-                {/* <div className="smaller-text-wrapper">
-                    <p className="smallPrint heroText">
-                        Your friendly neighbourhood bringer of vibes and flavour!!
-                    </p>
-                </div> */}
               </div>
           </Column>
       </HeroWrapper>
