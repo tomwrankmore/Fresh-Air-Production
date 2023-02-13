@@ -21,6 +21,13 @@ export default {
       description: 'Paragraph to sit with podcast vertical carousel.'
     },
     {
+      name: 'homePodcasts',
+      title: 'Homepage projects',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'podcast'}}],
+      validation: Rule => Rule.error('Please add 4 podcasts to be displayed on the homepage.').required().min(4).max(4),
+    },
+    {
       name: 'homeSecondTickerTape',
       type: 'string',
       title: 'Ticker tape text to sit underneath podcasts section'
@@ -75,6 +82,22 @@ export default {
       name: 'homePageQuote',
       type: 'string',
       title: 'Quote section',
+    },
+    {
+      name: 'homeFeaturedEditorial',
+      title: 'Homepage featured editorial',
+      description: 'Please enter 1 editorial here to be displayed in large on the left.',
+      type: 'reference',
+      to: [{type: 'editorial'}],
+      validation: Rule => Rule.error('You have to add an editorial to be displayed on the homepage.').required(),
+    },
+    {
+      name: 'homeEditorials',
+      title: 'Homepage editorials',
+      description: 'Please enter 8 editorials here to be displayed on the right.',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'editorial'}}],
+      validation: Rule => Rule.error('Please add 8 editorials to be displayed on the homepage.').required().min(8).max(8),
     },
   ]
 }
