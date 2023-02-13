@@ -3,7 +3,7 @@ import { device } from "../styles/mediaQueries"
 import { colors } from "../styles/colors";
 
 export const StyledFooter = styled.div` 
-    border-top: 1px solid gray;
+    /* border-top: 1px solid gray; */
     background-color:  ${colors.FAGrey};
     color: white;
 
@@ -78,13 +78,11 @@ export const Subscribe = styled.div`
     width: 100%;
     p {
         margin-bottom: 1rem;
-        max-width: 75%;
+        max-width: 100%;
+        font-size: 0.875rem;
         @media ${device.mediaMinMedium} {
           max-width: 75%;
         }
-        /* @media ${device.mediaMinLarge} {
-            max-width: 50%;
-        } */
     }
     form {
       display: flex;
@@ -94,10 +92,10 @@ export const Subscribe = styled.div`
       gap: 1rem;
     }
     input {
-      background-color: ${colors.FABlue};
+      /* background-color: ${colors.FABlue}; */
       width: 100%;
       padding: 1rem 0.5rem;
-      border: none;
+      /* border: none; */
       color: white;
     }
     button {

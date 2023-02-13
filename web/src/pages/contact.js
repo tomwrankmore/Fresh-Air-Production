@@ -1,13 +1,11 @@
 import React, {useState} from "react";
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 import styled from "styled-components";
 import { InlineWidget } from "react-calendly";
 import GraphQLErrorList from "../components/graphql-error-list";
 import {device} from "../styles/mediaQueries"
 import { colors } from "../styles/colors";
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
-import { BgImage, convertToBgImage } from 'gbimage-bridge';
-import BackgroundImage from 'gatsby-background-image'
+import { BgImage } from 'gbimage-bridge';
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import CentralLogo from "../components/central-logo"
