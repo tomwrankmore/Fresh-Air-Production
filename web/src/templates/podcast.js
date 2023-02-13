@@ -13,6 +13,7 @@ export const query = graphql`
     podcast: sanityPodcast(id: { eq: $id }) {
       id
       publishedAt
+      isLeftAlignedHeroImg
       heroBGColor {
         title
         color

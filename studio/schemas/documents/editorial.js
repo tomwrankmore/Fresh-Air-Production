@@ -33,6 +33,19 @@ export default {
       }
     },
     {
+      name: 'heroBGColor',
+      title: 'Hero background colour',
+      type: 'array',
+      type: 'reference', 
+      to: {type: 'brandColours'}
+    },
+    {
+      name: 'isLeftAlignedHeroImg',
+      title: 'Align image to the left in hero',
+      description: 'Any item with this checked will the hero image aligned to the left.',
+      type: 'boolean'
+    },
+    {
       name: 'isFeaturedPost',
       title: 'Featured Post',
       type: 'boolean'

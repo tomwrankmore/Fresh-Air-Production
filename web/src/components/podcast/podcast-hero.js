@@ -104,6 +104,10 @@ const PodcastHero = React.forwardRef(({tl, podcast}, ref) => {
 
     let heroFlexDirection;
 
+    podcast.isLeftAlignedHeroImg === true ? heroFlexDirection = 'row' : heroFlexDirection = 'row-reverse';
+
+    console.log('heroFlexDirection:', heroFlexDirection)
+
     const pluginImage = getImage(heroBackgroundImage);
     const bgImage = convertToBgImage(pluginImage);
 
@@ -140,7 +144,8 @@ const PodcastHero = React.forwardRef(({tl, podcast}, ref) => {
       <HeroWrapper 
         ref={ref} 
         style={{
-          backgroundColor: podcast.heroBGColor?.title != null ? podcast.heroBGColor.color : colors.FABlue
+          backgroundColor: podcast.heroBGColor?.title != null ? podcast.heroBGColor.color : colors.FABlue,
+          flexDirection: heroFlexDirection 
         }}
         >
         <Column className="left-column">

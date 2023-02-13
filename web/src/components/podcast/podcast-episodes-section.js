@@ -38,9 +38,7 @@ const EpisodeList = styled.ul`
 const PodcastEpisodesSection = React.forwardRef(({podcast}, ref) => {
   return (
     <PodcastEpisodesSectionWrapper>
-      
-      <iframe src={`https://omny.fm/shows/${podcast.omnyWidget}/playlists/podcast/embed?style=artwork`} allow="autoplay; clipboard-write" width="100%" height="500" frameborder="0" title={podcast.title}></iframe>
-      
+      <iframe src={`https://omny.fm/shows/${podcast.omnyWidget}/playlists/podcast/embed?style=artwork`} allow="autoplay; clipboard-write" width="100%" height="500" frameBorder="0" title={podcast.title}></iframe>
     </PodcastEpisodesSectionWrapper>
   )
 }
