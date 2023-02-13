@@ -1,185 +1,23 @@
-import React, {useLayoutEffect} from "react";
-import gsap from "gsap";
-import { StaticImage } from "gatsby-plugin-image";
+import React from "react";
 import {colors} from "../../styles/colors"
-import {device} from "../../styles/mediaQueries"
 import styled from "styled-components";
+import ClientLogoCloud from "../client-logo-cloud"
 
 const WwdLogoCloudWrapper = styled.div` 
-   padding: 2rem 2rem 0 2rem; 
-   background-color: ${colors.FABlue};
-   ul {
-    display: grid;
-    grid-gap: 30px;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: auto;
-    grid-auto-flow: row dense;
-    max-width: 840px;
-    margin: 0 auto;
-    @media ${device.mediaMinMedium} {
-      grid-template-columns: repeat(8, 1fr);
-    }
-    li {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 2rem;
-      .imgWrapper {
-        max-width: 120px;
-      }
-    }
+   padding: 2rem 0 2rem 0; 
+   background-color: white;
+
+   h1 {
+    font-weight: normal;
+    padding: 0 0 2rem 2rem;
    }
 `
 
 const WwdLogoCloud = React.forwardRef((props, ref) => {
     return (
-        <WwdLogoCloudWrapper ref={ref}>
-            <ul>
-                <li>
-                    <StaticImage
-                        src="../../assets/company-logo-holder.png"
-                        alt="Company logo"
-                        placeholder="blurred"
-                        objectFit="contain"
-                        className="imgWrapper"
-                    />
-                </li>
-                <li>
-                    <StaticImage
-                        src="../../assets/company-logo-holder.png"
-                        alt="Company logo"
-                        placeholder="blurred"
-                        objectFit="contain"
-                        className="imgWrapper"
-                    />
-                </li>
-                <li>
-                    <StaticImage
-                        src="../../assets/company-logo-holder.png"
-                        alt="Company logo"
-                        placeholder="blurred"
-                        objectFit="contain"
-                        className="imgWrapper"
-                    />
-                </li>
-                <li>
-                    <StaticImage
-                        src="../../assets/company-logo-holder.png"
-                        alt="Company logo"
-                        placeholder="blurred"
-                        objectFit="contain"
-                        className="imgWrapper"
-                    />
-                </li>
-                <li>
-                    <StaticImage
-                        src="../../assets/company-logo-holder.png"
-                        alt="Company logo"
-                        placeholder="blurred"
-                        objectFit="contain"
-                        className="imgWrapper"
-                    />
-                </li>
-                <li>
-                    <StaticImage
-                        src="../../assets/company-logo-holder.png"
-                        alt="Company logo"
-                        placeholder="blurred"
-                        objectFit="contain"
-                        className="imgWrapper"
-                    />
-                </li>
-                <li>
-                    <StaticImage
-                        src="../../assets/company-logo-holder.png"
-                        alt="Company logo"
-                        placeholder="blurred"
-                        objectFit="contain"
-                        className="imgWrapper"
-                    />
-                </li>
-                <li>
-                    <StaticImage
-                        src="../../assets/company-logo-holder.png"
-                        alt="Company logo"
-                        placeholder="blurred"
-                        objectFit="contain"
-                        className="imgWrapper"
-                    />
-                </li>
-                <li>
-                    <StaticImage
-                        src="../../assets/company-logo-holder.png"
-                        alt="Company logo"
-                        placeholder="blurred"
-                        objectFit="contain"
-                        className="imgWrapper"
-                    />
-                </li>
-                <li>
-                    <StaticImage
-                        src="../../assets/company-logo-holder.png"
-                        alt="Company logo"
-                        placeholder="blurred"
-                        objectFit="contain"
-                        className="imgWrapper"
-                    />
-                </li>
-                <li>
-                    <StaticImage
-                        src="../../assets/company-logo-holder.png"
-                        alt="Company logo"
-                        placeholder="blurred"
-                        objectFit="contain"
-                        className="imgWrapper"
-                    />
-                </li>
-                <li>
-                    <StaticImage
-                        src="../../assets/company-logo-holder.png"
-                        alt="Company logo"
-                        placeholder="blurred"
-                        objectFit="contain"
-                        className="imgWrapper"
-                    />
-                </li>
-                <li>
-                    <StaticImage
-                        src="../../assets/company-logo-holder.png"
-                        alt="Company logo"
-                        placeholder="blurred"
-                        objectFit="contain"
-                        className="imgWrapper"
-                    />
-                </li>
-                <li>
-                    <StaticImage
-                        src="../../assets/company-logo-holder.png"
-                        alt="Company logo"
-                        placeholder="blurred"
-                        objectFit="contain"
-                        className="imgWrapper"
-                    />
-                </li>
-                <li>
-                    <StaticImage
-                        src="../../assets/company-logo-holder.png"
-                        alt="Company logo"
-                        placeholder="blurred"
-                        objectFit="contain"
-                        className="imgWrapper"
-                    />
-                </li>
-                <li>
-                    <StaticImage
-                        src="../../assets/company-logo-holder.png"
-                        alt="Company logo"
-                        placeholder="blurred"
-                        objectFit="contain"
-                        className="imgWrapper"
-                    />
-                </li>
-            </ul>
+        <WwdLogoCloudWrapper>
+          <h1>Our clients</h1>
+          <ClientLogoCloud ref={ref}/>
         </WwdLogoCloudWrapper>
     )
 })
