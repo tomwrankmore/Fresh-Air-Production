@@ -17,6 +17,11 @@ export const query = graphql`
       quote
       title
       subTitle
+      isLeftAlignedHeroImg
+      heroBGColor {
+        color
+        title
+      }
       heroImage {
           asset {
             gatsbyImageData

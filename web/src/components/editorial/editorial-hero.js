@@ -96,10 +96,13 @@ const Column = styled.div`
   }
 `;
 
-const EditorialHero = React.forwardRef(({tl, heroImg, title, subTitle}, ref) => {
+const EditorialHero = React.forwardRef(({tl, heroImg, title, subTitle, isLeftAlignedHeroImg, heroBGColor}, ref) => {
 
     const pluginImage = getImage(heroImg);
     const bgImage = convertToBgImage(pluginImage);
+
+    let heroFlexDirection;
+    isLeftAlignedHeroImg === true ? heroFlexDirection = 'row' : heroFlexDirection = 'row-reverse';
 
     useLayoutEffect(() => {
       let ctx = gsap.context(() => {
@@ -124,7 +127,13 @@ const EditorialHero = React.forwardRef(({tl, heroImg, title, subTitle}, ref) => 
     }, [])
 
     return (
-      <EditorialWrapper ref={ref}>
+      <EditorialWrapper 
+        ref={ref}
+        style={{
+          backgroundColor: heroBGColor?.color != null ? heroBGColor.color : colors.FABlue,
+          flexDirection: heroFlexDirection 
+        }}
+      >
         <Column className='clipped'>
           <BgImage 
             image={pluginImage}

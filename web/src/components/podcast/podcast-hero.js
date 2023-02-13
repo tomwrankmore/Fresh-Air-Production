@@ -106,8 +106,6 @@ const PodcastHero = React.forwardRef(({tl, podcast}, ref) => {
 
     podcast.isLeftAlignedHeroImg === true ? heroFlexDirection = 'row' : heroFlexDirection = 'row-reverse';
 
-    console.log('heroFlexDirection:', heroFlexDirection)
-
     const pluginImage = getImage(heroBackgroundImage);
     const bgImage = convertToBgImage(pluginImage);
 

@@ -17,6 +17,9 @@ const EditorialWrapper = styled.div`
     @media ${device.mediaMinLarge} {
       padding: 0;
     } */
+    a {
+      color: black;
+    }
 `
 
 const Editorial = ({editorial}) => {
@@ -37,6 +40,8 @@ const Editorial = ({editorial}) => {
           heroImg={editorial.heroImage.asset.gatsbyImageData}
           title={editorial.title}
           subTitle={editorial.subTitle}
+          isLeftAlignedHeroImg={editorial.isLeftAlignedHeroImg}
+          heroBGColor={editorial.heroBGColor}
         />
         {!!editorial?._rawBody &&
           <EditorialDescriptionSection
