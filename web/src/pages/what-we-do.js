@@ -38,7 +38,6 @@ export const query = graphql`
             }
           }
           _rawWwdHeroText
-          homePageQuote
           _rawWwdSectionOneText
           _rawWwdSectionTwoText
           _rawWwdSectionThreeText
