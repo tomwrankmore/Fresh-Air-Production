@@ -23,6 +23,13 @@ export default {
       }
     },
     {
+      name: 'heroBGColor',
+      title: 'Hero background colour',
+      type: 'array',
+      type: 'reference', 
+      to: {type: 'brandColours'}
+    },
+    {
       name: 'isFeaturedPodcast',
       title: 'Featured Podcast',
       type: 'boolean'
@@ -100,7 +107,7 @@ export default {
     },
     {
       name: 'relatedProjects',
-      title: 'Related projects',
+      title: 'Related podcasts',
       type: 'array',
       of: [{type: 'reference', to: {type: 'podcast'}}]
     }

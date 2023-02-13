@@ -18,7 +18,7 @@ export default {
       name: 'contactHeroText',
       type: 'projectPortableText',
       title: 'Contact hero text',
-      description: 'Heading for hero'
+      description: 'Heading for hero - please ensure these are set to H3 for styling purposes'
     },
     {
       name: 'contactHeroImage',

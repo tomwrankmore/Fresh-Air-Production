@@ -10,6 +10,11 @@ export default {
   ],
   fields: [
     {
+      name: 'title',
+      title: 'Title',
+      type: 'string'
+    },
+    {
       name: 'homeHeroTickerTape',
       type: 'string',
       title: 'Hero ticker tape text'

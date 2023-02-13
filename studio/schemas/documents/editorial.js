@@ -90,7 +90,7 @@ export default {
     },
     {
       name: 'relatedProjects',
-      title: 'Related projects',
+      title: 'Related editorials',
       type: 'array',
       of: [{type: 'reference', to: {type: 'editorial'}}]
     }

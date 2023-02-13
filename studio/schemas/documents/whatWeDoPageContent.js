@@ -10,10 +10,15 @@ export default {
   // ],
   fields: [
     {
+      name: 'title',
+      title: 'Title',
+      type: 'string'
+    },
+    {
       name: 'wwdHeroText',
       type: 'projectPortableText',
       title: 'What We Do hero text',
-      description: 'Heading for hero'
+      description: 'Heading for hero - please ensure these are set to H3 for styling purposes'
     },
     {
       name: 'wwdHeroImage',

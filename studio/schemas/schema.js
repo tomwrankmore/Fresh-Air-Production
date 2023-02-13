@@ -16,6 +16,8 @@ import homePageContent from './documents/homePageContent'
 import homePageTestimonials from './documents/homePageTestimonials'
 import whatWeDoContent from './documents/whatWeDoPageContent'
 import contactPageContent from './documents/contactPageContent'
+import brandColours from './documents/brandColours'
+
 
 // Object types
 import bioPortableText from './objects/bioPortableText'
@@ -51,5 +53,6 @@ export default createSchema({
     homePageTestimonials,
     whatWeDoContent,
     contactPageContent,
+    brandColours
   ])
 })
