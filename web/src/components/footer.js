@@ -99,7 +99,7 @@ const Footer = ({ children }) => {
               </Subscribe> */}
               <SiteInfo>
                 <Logo className="footerLogo" />
-                <p>© {new Date().getFullYear()}, Fresh Air Productions</p>
+                <p>© {new Date().getFullYear()}, Fresh Air Production</p>
               </SiteInfo>
             </NavigationWrapper>
           </FooterWrapper>
