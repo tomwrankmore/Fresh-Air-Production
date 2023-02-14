@@ -117,24 +117,24 @@ const WwdAwardsSection = React.forwardRef(({tl, nodes}, ref) => {
   const [bgImageIndex, setBgImageIndex] = useState(0)
   const [nodeBg, setNodeBg] = useState('white')
 
-    // const { heroBackgroundImage } = useStaticQuery(
-    //   graphql`
-    //     query {
-    //       heroBackgroundImage: file(relativePath: { eq: "wwd-section-4.png" }) {
-    //         childImageSharp {
-    //           gatsbyImageData(
-    //             width: 2000
-    //             quality: 50
-    //             placeholder: BLURRED
-    //             formats: [AUTO, WEBP, AVIF]
-    //           )
-    //         }
-    //       }
-    //     }
-    //   `
-    // )
-    // const pluginImage = getImage(heroBackgroundImage);
-    // const bgImage = convertToBgImage(pluginImage);
+    const { heroBackgroundImage } = useStaticQuery(
+      graphql`
+        query {
+          heroBackgroundImage: file(relativePath: { eq: "award-holder.png" }) {
+            childImageSharp {
+              gatsbyImageData(
+                width: 1024
+                quality: 80
+                placeholder: DOMINANT_COLOR
+                formats: [AUTO, WEBP, AVIF]
+              )
+            }
+          }
+        }
+      `
+    )
+    const pluginImage = getImage(heroBackgroundImage);
+    const bgImage = convertToBgImage(pluginImage);
 
     useLayoutEffect(() => {
       let ctx = gsap.context(() => {
@@ -153,7 +153,7 @@ const WwdAwardsSection = React.forwardRef(({tl, nodes}, ref) => {
       <AwardsSectionWrapper ref={ref}>
           <Column className='awards-sticky clipped'>
             <BgImage 
-              image={nodes[bgImageIndex].awardLeftImage.asset.localFile.childImageSharp.gatsbyImageData}
+              image={pluginImage}
               className="background-image" 
             />
             {/* <GatsbyImage
@@ -171,7 +171,7 @@ const WwdAwardsSection = React.forwardRef(({tl, nodes}, ref) => {
             <AwardsList>
               {nodes && nodes.map((node, idx) => {
                 return (
-                  <li key={node.id} onMouseEnter={() => setBgImageIndex(idx)} >
+                  <li key={node.id}>
                       {/* <GatsbyImage
                         image={node.awardLogo.asset.gatsbyImageData}
                         alt={node.awardLogo.alt}

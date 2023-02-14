@@ -55,8 +55,8 @@ const ClientLogoCloud = React.forwardRef((props, ref) => {
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
         gsap.set('.cloudMarqueeLine', {xPercent: 20});
-        gsap.to('.marqueeContent1', {xPercent: -100, repeat: -1, duration: 100, ease: 'linear'}).totalProgress(0.5);
-        gsap.to('.marqueeContent2', {xPercent: -100, repeat: -1, duration: 90, ease: 'linear'}).totalProgress(0.5);
+        gsap.to('.marqueeContent1', {xPercent: -100, repeat: -1, duration: 120, ease: 'linear'}).totalProgress(0.4);
+        gsap.to('.marqueeContent2', {xPercent: -100, repeat: -1, duration: 80, ease: 'linear'}).totalProgress(0.6);
     }, ref);
     return () => ctx.revert()
   }, [])
@@ -82,10 +82,10 @@ const ClientLogoCloud = React.forwardRef((props, ref) => {
           </div>
         </MarqueeLine>
         <MarqueeLine className="cloudMarqueeLine">
-          <div className="marqueeContent marqueeContent2">
+          <div className="marqueeContent marqueeContent1">
             <ClientLogoRowThree className="clientLogoSVG" />
           </div>
-          <div className="marqueeContent marqueeContent2">
+          <div className="marqueeContent marqueeContent1">
             <ClientLogoRowThree className="clientLogoSVG" />
           </div>
         </MarqueeLine>

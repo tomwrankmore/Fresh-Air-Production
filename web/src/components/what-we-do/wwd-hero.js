@@ -16,6 +16,9 @@ const HeroWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  a {
+    color: white!important;
+  }
   @media ${device.mediaMinMedium} {
     flex-direction: row;
   }

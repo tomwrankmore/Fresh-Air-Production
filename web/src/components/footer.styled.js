@@ -97,7 +97,7 @@ export const Subscribe = styled.div`
       width: 100%;
       padding: 1rem 0.5rem;
       /* border: none; */
-      color: white;
+      color: ${colors.FAGrey};
     }
     button {
       background-color: transparent;
