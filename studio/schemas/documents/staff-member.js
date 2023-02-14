@@ -35,7 +35,13 @@ export default {
       name: 'bio',
       title: 'Bio',
       type: 'bioPortableText'
-    }
+    },
+    {
+      name: 'publishedAt',
+      title: 'Published at',
+      description: 'This field will order the staff, most recently published at the top.',
+      type: 'datetime'
+    },
   ],
   preview: {
     select: {
