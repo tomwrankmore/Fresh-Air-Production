@@ -102,7 +102,7 @@ const Footer = ({ children }) => {
                 
               </SiteInfo> */}
                 <Logo className="footerLogo" />
-                <p>© {new Date().getFullYear()}</p>
+                <p className="copyright">© {new Date().getFullYear()}</p>
             </NavigationWrapper>
           </FooterWrapper>
         </StyledFooter>

@@ -6,36 +6,41 @@ export const StyledFooter = styled.div`
     /* border-top: 1px solid gray; */
     background-color:  ${colors.FAGrey};
     color: white;
+    padding-bottom: 2rem;
 
     p.mailing-list-title {
       margin: 0 auto;
     }
 
     a {
-        color: inherit;
-        text-decoration: none;
-        &:hover {
-          text-decoration: underline;
-        }
+      color: inherit;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     .footerLogo {
-        width: 120px;
-        height: auto;
-        grid-column: 1;
+      width: 120px;
+      height: auto;
+      grid-column: 1;
+        margin-top: 4rem;
+    }
+    p.copyright {
+        margin-top: 5rem;
     }
 `
 
 
 
 export const FooterWrapper = styled.div` 
-    box-sizing: border-box;
-    /* max-width: 960px; */
-    padding: 4.5em 1.5em 1.5em;
-    margin: 0 auto;
-    @media ${device.mediaMinMedium} {
-        padding: 4rem 2rem;
-    }
+  box-sizing: border-box;
+  /* max-width: 960px; */
+  padding: 4.5em 1.5em 1.5em;
+  margin: 0 auto;
+  @media ${device.mediaMinMedium} {
+    padding: 4rem 2rem;
+  }
 `
 
 export const CompanyAddress = styled.div` 
@@ -46,7 +51,7 @@ export const CompanyAddress = styled.div`
 export const NavigationWrapper = styled.div` 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-bottom: 4rem;
+    /* margin-bottom: 4rem; */
     gap: 1rem;
     /* align-items: flex-end; */
     @media ${device.mediaMinLarge} {
