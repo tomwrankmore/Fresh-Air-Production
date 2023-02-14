@@ -170,7 +170,9 @@ const ContactPage = (props) => {
     subject: "",
     message: ""
   })
- 
+  
+  const [formSuccesState, setFormSuccesState] = useState(false)
+
   const encode = (data) => {
     return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -183,7 +185,7 @@ const ContactPage = (props) => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact-form", ...formState })
     })
-      .then(() => alert("Success!"))
+      .then(() => setFormSuccesState(true))
       .then(() => setFormState({fname: "", lname: "", email: "", subject: "", message: ""}))
       .catch(error => alert(error));
 
@@ -230,7 +232,8 @@ const ContactPage = (props) => {
 
         </Column>
         <Column className="form-columns">
-          <ContactForm 
+          {
+          !formSuccesState ? <ContactForm 
             name="contact-form"
             method="POST"
             data-netlify="true"
@@ -304,7 +307,11 @@ const ContactPage = (props) => {
             <div className="form-section">
               <button type="submit" className="submit-btn">Submit form</button>
             </div>
-          </ContactForm>
+          </ContactForm> : 
+          <h3>Thanks! We'll be in touch.</h3>
+          }
+          
+          
         </Column>
       </ContactWrapper>
       <InlineWidget url="https://calendly.com/freshairproduction/workshop?month=2023-02" />
