@@ -8,8 +8,8 @@ import BlockContent from "../components/block-content";
 import CentralLogo from "../components/central-logo"
 
 export const query = graphql`
-  query TermsQuery {
-    terms: sanityTerms {
+  query AcceptableUseQuery {
+    terms: sanityAcceptableUse {
       title
       _rawBody
     }
@@ -27,7 +27,7 @@ const TermsWrapper = styled.div`
   @media ${device.mediaMinMedium} {
     width: 75%;
   }
-  h3 {
+  h1 {
     margin-bottom: 2rem;
     font-size: 1.875rem;
     line-height: normal;

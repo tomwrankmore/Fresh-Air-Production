@@ -63,9 +63,10 @@ const Footer = ({ children }) => {
                 <li><Link to='/our-podcasts/'>Our Podcasts</Link></li>
               </LinkList>
               <LinkList>
-                <li>Careers</li>
-                <li>Fresh Ears</li>
-                <li>Awards</li>
+                <li><Link to='/terms/'>Terms</Link></li>
+                <li><Link to='/privacy-policy/'>Privacy Policy</Link></li>
+                <li><Link to='/modern-slavery-statement/'>Modern Slavery Statement</Link></li>
+                <li><Link to='/acceptable-use/'>Acceptable Use</Link></li>
               </LinkList>
               <LinkList>
                 <li>
