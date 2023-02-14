@@ -1,19 +1,14 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
 import styled from "styled-components";
-import { colors } from "../styles/colors";
 import { device } from "../styles/mediaQueries";
-import { Link } from "gatsby";
+import Layout from "../containers/layout";
+import SEO from "../components/seo";
 import BlockContent from "../components/block-content";
 import CentralLogo from "../components/central-logo"
-import {
-  mapEdgesToNodes,
-} from "../lib/helpers";
 
 export const query = graphql`
-  query EditorialsQuery {
+  query TermsQuery {
     terms: sanityTerms {
       title
       _rawBody
@@ -59,7 +54,7 @@ const TermsWrapper = styled.div`
 const TermsPage = ({data}) => {
   return (
     <Layout>
-      <SEO title="404: Not found" />
+      <SEO title="Terms" />
       <CentralLogo />
       <TermsWrapper>
         <h1>{data.terms.title}</h1>

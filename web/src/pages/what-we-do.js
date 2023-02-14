@@ -1,6 +1,6 @@
-import React, {useRef, useEffect} from "react";
-import { colors } from "../styles/colors";
+import React, {useRef} from "react";
 import { graphql } from "gatsby";
+import { colors } from "../styles/colors";
 import { mapEdgesToNodes } from "../lib/helpers";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";

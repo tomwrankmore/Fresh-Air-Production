@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import { graphql } from "gatsby";
 import { colors } from "../styles/colors";
 import { device } from "../styles/mediaQueries";

@@ -4,8 +4,6 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import {
   mapEdgesToNodes,
-  filterOutDocsWithoutSlugs,
-  filterOutDocsPublishedInTheFuture
 } from "../lib/helpers";
 import { colors } from "../styles/colors";
 import CentralLogo from "../components/central-logo"

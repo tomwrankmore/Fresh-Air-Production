@@ -6,7 +6,7 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import {device} from "../styles/mediaQueries"
 import { colors } from "../styles/colors";
 import { BgImage } from 'gbimage-bridge';
-import Layout from "../components/layout";
+import Layout from "../containers/layout";
 import SEO from "../components/seo";
 import CentralLogo from "../components/central-logo"
 import BlockContent from "../components/block-content";
@@ -307,7 +307,7 @@ const ContactPage = (props) => {
           </ContactForm>
         </Column>
       </ContactWrapper>
-      <InlineWidget url="https://calendly.com/freshairproduction/workshop?month=2023-02" />
+      {/* <InlineWidget url="https://calendly.com/freshairproduction/workshop?month=2023-02" /> */}
     </Layout>
   )
 };

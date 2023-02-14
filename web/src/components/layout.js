@@ -114,12 +114,6 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
     ctaTween.current.reverse();
   };
 
-  useEffect(()=>{
-
-    
-
-},[])
-
   return (
     <div style={{position: 'relative'}} ref={scopeRef}>
       <svg ref={svgRef} className="svgLine"></svg>

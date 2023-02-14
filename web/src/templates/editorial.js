@@ -1,10 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
+import Layout from "../containers/layout";
+import Container from "../components/container";
 import Editorial from "../components/editorial/editorial";
 import SEO from "../components/seo";
-import Layout from "../containers/layout";
 import CentralLogo from "../components/central-logo"
 
 export const query = graphql`

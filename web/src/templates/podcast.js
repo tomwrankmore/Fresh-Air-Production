@@ -1,10 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
+import Layout from "../containers/layout";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import Podcast from "../components/podcast/podcast";
 import SEO from "../components/seo";
-import Layout from "../containers/layout";
+
 import CentralLogo from "../components/central-logo"
 
 
