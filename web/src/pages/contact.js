@@ -307,7 +307,7 @@ const ContactPage = (props) => {
           </ContactForm>
         </Column>
       </ContactWrapper>
-      {/* <InlineWidget url="https://calendly.com/freshairproduction/workshop?month=2023-02" /> */}
+      <InlineWidget url="https://calendly.com/freshairproduction/workshop?month=2023-02" />
     </Layout>
   )
 };
