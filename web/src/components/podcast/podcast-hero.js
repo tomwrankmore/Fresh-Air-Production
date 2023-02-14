@@ -4,6 +4,7 @@ import {colors} from "../../styles/colors"
 import {device} from "../../styles/mediaQueries"
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from "styled-components";
+import { useMediaQuery } from 'react-responsive'
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { BgImage, convertToBgImage } from 'gbimage-bridge';
 import BackgroundImage from 'gatsby-background-image'
@@ -11,8 +12,8 @@ import BackgroundImage from 'gatsby-background-image'
 const HeroWrapper = styled.div`
   background-color: ${colors.FABlue};
   width: 100%;
-  min-height: 100vh;
-  height: 100%;
+  height: 100vh;
+  /* height: 100%; */
   display: flex;
   flex-direction: column-reverse;
   @media ${device.mediaMinMedium} {
@@ -45,9 +46,7 @@ const Column = styled.div`
       display: block;
       align-items: center;
       flex: 1;
-      @media ${device.mediaMinMedium} {
-        display: flex;
-      }
+      display: flex;
     }
   }
 
@@ -68,6 +67,9 @@ const Column = styled.div`
 
   .heroSubTitle {
     text-transform: uppercase;
+    @media ${device.mediaMaxMedium} {
+      margin-bottom: 1rem;
+    }
   }
 
   .background-image {
@@ -104,7 +106,15 @@ const PodcastHero = React.forwardRef(({tl, podcast}, ref) => {
 
     let heroFlexDirection;
 
-    podcast.isLeftAlignedHeroImg === true ? heroFlexDirection = 'row' : heroFlexDirection = 'row-reverse';
+    const isMinMedium = useMediaQuery({
+      query: '(min-width: 675px)'
+    })
+
+    if(isMinMedium) {
+      podcast.isLeftAlignedHeroImg === true ? heroFlexDirection = 'row' : heroFlexDirection = 'row-reverse';
+    } else {
+      heroFlexDirection = 'column-reverse';
+    }
 
     const pluginImage = getImage(heroBackgroundImage);
     const bgImage = convertToBgImage(pluginImage);

@@ -3,6 +3,7 @@ import gsap from "gsap";
 import {colors} from "../../styles/colors"
 import {device} from "../../styles/mediaQueries"
 import styled from "styled-components";
+import { useMediaQuery } from 'react-responsive'
 import { getImage } from "gatsby-plugin-image"
 import { BgImage, convertToBgImage } from 'gbimage-bridge';
 
@@ -98,10 +99,19 @@ const EditorialHero = React.forwardRef(({tl, heroImg, title, subTitle, isLeftAli
 
     const pluginImage = getImage(heroImg);
     const bgImage = convertToBgImage(pluginImage);
-
     let heroFlexDirection;
-    isLeftAlignedHeroImg === true ? heroFlexDirection = 'row' : heroFlexDirection = 'row-reverse';
 
+    const isMinMedium = useMediaQuery({
+      query: '(min-width: 675px)'
+    })
+
+    if(isMinMedium) {
+      isLeftAlignedHeroImg === true ? heroFlexDirection = 'row' : heroFlexDirection = 'row-reverse';
+    } else {
+      heroFlexDirection = 'column';
+    }
+
+    
     useLayoutEffect(() => {
       let ctx = gsap.context(() => {
         tl.current = gsap.timeline()

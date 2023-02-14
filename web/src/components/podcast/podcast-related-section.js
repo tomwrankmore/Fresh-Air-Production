@@ -1,6 +1,7 @@
 import React from "react";
 import {colors} from "../../styles/colors"
 import styled from "styled-components";
+import BlockContent from "../block-content";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { device } from "../../styles/mediaQueries";
 import { Link } from "gatsby";
@@ -31,6 +32,13 @@ const RelatedPodcastsWrapper = styled.div`
           color: ${colors.FAGrey};
         }
     }
+`
+
+const Excerpt = styled.div` 
+  margin-bottom: 1rem;
+  p {
+    line-height: 1.35rem;
+  }
 `
 
 const PodcastGrid = styled.ul`
@@ -118,9 +126,9 @@ const PodcastRelatedSection = React.forwardRef(({podcast}, ref) => {
                   <Typography>Find Our More</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
-                    <Typography>
-                        Richard has almost 20 years of experience of marketing some of the world's biggest media and tech brands.
-                    </Typography>
+                  <Excerpt>
+                    <BlockContent blocks={node._rawExcerpt} />
+                  </Excerpt>
                     <LinkContent>
                     <IconList>
                       {node.podcastLink && (<li><a href={node.podcastLink} target="_blank" rel="noreferrer"><FaPodcast/></a></li>)}
