@@ -44,7 +44,7 @@ const ManagementItem = ({manager}) => {
       <div>
           <GatsbyImage
               image={manager.image.asset.gatsbyImageData}
-              alt="Founder"
+              alt={manager.image.alt}
               placeholder="blurred"
               layout="fullWidth"
               objectPosition="0 0"

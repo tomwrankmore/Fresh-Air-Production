@@ -73,11 +73,11 @@ const EditorialsRelated = ({relatedPosts}) => {
         <RelatedEditorialsGrid>
         {relatedPosts && 
           relatedPosts.map(node => (
-            <Link to="/" className="editorials-link" key={node._id}>
+            <Link to={node.slug.current} className="editorials-link" key={node._id}>
               <div className="post">
                 <GatsbyImage
                     image={node.previewImage.asset.gatsbyImageData}
-                    alt="Smiling people"
+                    alt={node.previewImage.alt}
                     placeholder="blurred"
                     objectFit="cover"
                     className="imgWrapper"

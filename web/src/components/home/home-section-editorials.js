@@ -158,8 +158,8 @@ const Editorials = ({editorialNodes, featuredEditorial, homeEditorials}) => {
             <div className="editorials-left-col">
                 {featuredEditorial?.heroImage?.asset?.gatsbyImageData && 
                   <GatsbyImage
-                    image={featuredEditorial?.heroImage?.asset?.gatsbyImageData}
-                    alt="Smiling people"
+                    image={featuredEditorial.heroImage.asset.gatsbyImageData}
+                    alt={featuredEditorial.heroImage.alt}
                     placeholder="blurred"
                     objectFit="cover"
                     className="imgWrapper"

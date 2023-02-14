@@ -4,7 +4,6 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
 import gsap from "gsap";
-import BlockContent from "../block-content";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitText from "gsap/SplitText";
 import { device } from "../../styles/mediaQueries"

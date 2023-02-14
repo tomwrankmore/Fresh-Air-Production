@@ -6,12 +6,12 @@ const PodcastImgSectionWrapper = styled.div`
   padding: 0;
 `
 
-const PodcastImgSection = React.forwardRef(({podcast}, ref) => {
+const PodcastImgSection = React.forwardRef(({image}, ref) => {
   return (
     <PodcastImgSectionWrapper>
       <GatsbyImage
-          image={podcast.mainImage.asset.gatsbyImageData}
-          alt={podcast.mainImage.alt}
+          image={image.asset.gatsbyImageData}
+          alt={image.alt}
           placeholder="blurred"
           objectFit="cover"
           className="imgWrapper"

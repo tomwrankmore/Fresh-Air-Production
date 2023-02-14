@@ -2,11 +2,9 @@ import React, {useLayoutEffect, useRef} from "react";
 import gsap from "gsap";
 import {colors} from "../../styles/colors"
 import {device} from "../../styles/mediaQueries"
-import { graphql, useStaticQuery } from 'gatsby'
 import styled from "styled-components";
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image"
 import { BgImage, convertToBgImage } from 'gbimage-bridge';
-import BackgroundImage from 'gatsby-background-image'
 
 const EditorialWrapper = styled.div`
   background-color: ${colors.FABlue};

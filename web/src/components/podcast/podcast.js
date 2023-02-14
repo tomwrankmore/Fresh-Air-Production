@@ -57,7 +57,7 @@ const Podcast = ({podcast}) => {
         }
 
         {!!podcast?.mainImage?.asset?.gatsbyImageData && (
-            <PodcastImgSection podcast={podcast}/> 
+            <PodcastImgSection image={podcast.mainImage}/> 
           )
         }
         {!!podcast?.omnyWidget && (

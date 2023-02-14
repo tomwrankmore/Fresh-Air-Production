@@ -97,10 +97,11 @@ const Footer = ({ children }) => {
                   <input type="text" id="subscribe" name="sub" placeholder="Subscribe"/>
                 </form>
               </Subscribe> */}
-              <SiteInfo>
+              {/* <SiteInfo>
+                
+              </SiteInfo> */}
                 <Logo className="footerLogo" />
-                <p>© {new Date().getFullYear()}, Fresh Air Production</p>
-              </SiteInfo>
+                <p>© {new Date().getFullYear()}</p>
             </NavigationWrapper>
           </FooterWrapper>
         </StyledFooter>

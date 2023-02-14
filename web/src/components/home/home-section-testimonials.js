@@ -45,9 +45,9 @@ const Testimonials = ({testimonials}) => {
                     modules={[Pagination]}
                     className="mySwiper"
                 >
-                  {testimonials && testimonials.map(testimonial => {
+                  {testimonials && testimonials.map((testimonial, idx) => {
                     return (
-                      <SwiperSlide>
+                      <SwiperSlide key={idx}>
                         <h1>{testimonial.testimonial}</h1>
                         <p>{testimonial.client}</p>
                       </SwiperSlide>

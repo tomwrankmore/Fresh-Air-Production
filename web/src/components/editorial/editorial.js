@@ -65,7 +65,7 @@ const Editorial = ({editorial}) => {
 
         {!!editorial?.mainImage?.asset?.gatsbyImageData &&
           <EditorialImgSection
-            image={editorial.mainImage.asset.gatsbyImageData} 
+            image={editorial.mainImage} 
           />
         }
 

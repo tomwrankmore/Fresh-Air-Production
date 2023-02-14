@@ -40,7 +40,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
       <li>
         <GatsbyImage
             image={staffMember.image.asset.gatsbyImageData}
-            alt="Richard Blakem"
+            alt={staffMember.image.alt}
             placeholder="blurred"
             layout="fullWidth"
             objectPosition="0 0"

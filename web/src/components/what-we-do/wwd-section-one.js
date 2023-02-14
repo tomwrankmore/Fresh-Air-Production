@@ -5,7 +5,6 @@ import BlockContent from "../block-content";
 import { GatsbyImage } from "gatsby-plugin-image";
 import {SectionParagraph} from "../../styles/typography"
 import {HeroWrapper, Column} from "./wwd.styled"
-import styled from "styled-components";
 
 const WwdSectionOne = React.forwardRef(({tl, text, image}, ref) => {
     

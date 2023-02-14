@@ -1,7 +1,5 @@
-import React, {useLayoutEffect, useRef} from "react";
+import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
-import {colors} from "../../styles/colors"
-import {device} from "../../styles/mediaQueries"
 import styled from "styled-components";
 
 const EditorialImgSectionWrapper = styled.div` 
@@ -18,7 +16,7 @@ const EditorialImgSection = ({image}) => {
   return (
     <EditorialImgSectionWrapper>
       <GatsbyImage
-        image={image}
+        image={image.asset.gatsbyImageData}
         alt={image.alt}
         placeholder="blurred"
         layout="fullWidth"
