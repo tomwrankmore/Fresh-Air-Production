@@ -22,6 +22,7 @@ export const StyledFooter = styled.div`
     .footerLogo {
         width: 120px;
         height: auto;
+        grid-column: 1;
     }
 `
 
@@ -102,6 +103,7 @@ export const Subscribe = styled.div`
       background-color: transparent;
       border: none;
       cursor: pointer;
+      color: black!important;
     }
 `
 
