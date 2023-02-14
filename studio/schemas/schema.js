@@ -17,7 +17,9 @@ import homePageTestimonials from './documents/homePageTestimonials'
 import whatWeDoContent from './documents/whatWeDoPageContent'
 import contactPageContent from './documents/contactPageContent'
 import brandColours from './documents/brandColours'
-
+import acceptableUse from './documents/acceptable-use'
+import modernSlaveryStatement from './documents/modern-slavery-statement'
+import privacyPolicy from './documents/privacy-policy'
 
 // Object types
 import bioPortableText from './objects/bioPortableText'
@@ -53,6 +55,9 @@ export default createSchema({
     homePageTestimonials,
     whatWeDoContent,
     contactPageContent,
-    brandColours
+    brandColours,
+    acceptableUse,
+    modernSlaveryStatement,
+    privacyPolicy
   ])
 })
