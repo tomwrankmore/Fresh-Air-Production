@@ -22,6 +22,12 @@ export default {
       }
     },
     {
+      name: 'publishedAt',
+      title: 'Published at',
+      description: 'This field will order the staff, most recently published at the top.',
+      type: 'datetime'
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'figure'

@@ -29,13 +29,17 @@ export const query = graphql`
         }
       }
     }
-    staffMembers: allSanityStaffMember {
+    staffMembers: allSanityStaffMember(
+      sort: {publishedAt: DESC}
+      filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}
+    ) {
       edges {
         node {
           name
           title
           id
           _rawBio
+          publishedAt
           image {
             asset {
               gatsbyImageData
