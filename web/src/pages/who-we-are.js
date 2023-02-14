@@ -13,13 +13,16 @@ import StaffItem from '../components/who-we-are/staff-member-item'
 
 export const query = graphql`
   query WhoWeArePageQuery {
-    management: allSanityManagementMember {
+    management: allSanityManagementMember(
+      sort: {publishedAt: DESC}
+    ) {
       edges {
         node {
           name
           title
           id
           _rawBio
+          publishedAt
           image {
             asset {
               gatsbyImageData
