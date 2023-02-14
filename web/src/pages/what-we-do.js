@@ -16,7 +16,7 @@ import {
     WwdAwardsSection, 
     WwdLogoCloud, 
     WwdQuoteSection 
-} from "../components/what-we-do/"
+} from "../components/what-we-do"
 
 export const query = graphql`
   query WhatWedoPageQuery {
