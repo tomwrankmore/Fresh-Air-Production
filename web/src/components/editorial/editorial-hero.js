@@ -105,7 +105,7 @@ const EditorialHero = React.forwardRef(({tl, heroImg, title, subTitle, isLeftAli
     })
 
     if(isMinMedium) {
-      isLeftAlignedHeroImg === true ? heroFlexDirection = 'row' : heroFlexDirection = 'row-reverse';
+      isLeftAlignedHeroImg === true ? heroFlexDirection = 'row-reverse' : heroFlexDirection = 'row';
     } else {
       heroFlexDirection = 'column';
     }

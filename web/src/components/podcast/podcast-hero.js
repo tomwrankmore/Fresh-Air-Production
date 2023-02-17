@@ -111,7 +111,7 @@ const PodcastHero = React.forwardRef(({tl, podcast}, ref) => {
     })
 
     if(isMinMedium) {
-      podcast.isLeftAlignedHeroImg === true ? heroFlexDirection = 'row' : heroFlexDirection = 'row-reverse';
+      podcast.isLeftAlignedHeroImg === true ? heroFlexDirection = 'row-reverse' : heroFlexDirection = 'row';
     } else {
       heroFlexDirection = 'column-reverse';
     }
