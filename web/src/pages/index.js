@@ -13,6 +13,7 @@ import Layout from "../containers/layout";
 import Hero from "../components/home/hero";
 import Podcasts from "../components/home/home-section-podcasts"
 import Marquee from "../components/marquee"
+import WwdLogoCloud from "../components/what-we-do/wwd-logo-cloud"
 import Work from "../components/home/home-section-work"
 import Testimonials from "../components/home/home-section-testimonials";
 import Editorials from "../components/home/home-section-editorials";
@@ -199,6 +200,7 @@ const IndexPage = props => {
           panelThreeText={homePageContent._rawHomeWorkPanelThreeText}
           panelFourText={homePageContent._rawHomeWorkPanelFourText}
         />
+        <WwdLogoCloud />
         <Testimonials
           testimonials={homePageContent.homeTestimonials}
         />

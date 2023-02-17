@@ -201,7 +201,9 @@ const TagCloud = React.forwardRef((props, ref) => {
                 </MarqueeLine>
               </ExtendedContainer>
 
-                <h1>TELL YOUR STORY AND CONNECT WITH NEW AUDIENCES</h1>
+                <h1>
+                  <Link to="/our-podcasts">TELL YOUR STORY AND CONNECT WITH NEW AUDIENCES</Link>
+                </h1>
 
             </TagCloudInnerWrapper>
         </TagCloudOuterWrapper>
