@@ -56,7 +56,7 @@ export const query = graphql`
 `;
 
 const WhoWeAreWrapper = styled.div` 
-    padding: 120px 2rem 2rem;
+    padding: 2rem 2rem 2rem;
     position: relative;
     /* .css-6bxxch-MuiPaper-root-MuiAccordion-root.Mui-expanded,
     .css-o4b71y-MuiAccordionSummary-content.Mui-expanded {

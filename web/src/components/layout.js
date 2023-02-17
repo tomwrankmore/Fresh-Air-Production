@@ -115,7 +115,7 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
   };
 
   return (
-    <div style={{position: 'relative'}} ref={scopeRef}>
+    <div style={{position: 'relative', paddingTop: '82px'}} ref={scopeRef}>
       <svg ref={svgRef} className="svgLine"></svg>
       <Link 
         to="/contact"

@@ -10,39 +10,39 @@ const Header = React.forwardRef(({ onHideNav, onShowNav, showNav, siteTitle }, r
 
 gsap.registerPlugin(ScrollTrigger)
 
-useLayoutEffect(() => {
-  let mm = gsap.matchMedia(ref);
+// useLayoutEffect(() => {
+//   let mm = gsap.matchMedia(ref);
 
-  mm.add("(min-width: 675px)", () => {
+//   mm.add("(min-width: 675px)", () => {
 
-    gsap.set('.navigationLogo', {
-      visibility: 'hidden'
-    })
+//     gsap.set('.navigationLogo', {
+//       visibility: 'hidden'
+//     })
   
-    const showAnim = gsap.from(ref.current, { 
-      yPercent: -100,
-      paused: true,
-      duration: 0.2
-    }).progress(1);
+//     const showAnim = gsap.from(ref.current, { 
+//       yPercent: -100,
+//       paused: true,
+//       duration: 0.2
+//     }).progress(1);
       
-    ScrollTrigger.create({
-      start: "top top",
-      end: 99999,
-      onUpdate: (self) => {
-        self.direction === -1 ? showAnim.play() : showAnim.reverse()
-      }
-    });
+//     ScrollTrigger.create({
+//       start: "top top",
+//       end: 99999,
+//       onUpdate: (self) => {
+//         self.direction === -1 ? showAnim.play() : showAnim.reverse()
+//       }
+//     });
 
-    // when the matchMedia doesn't match anymore
-    return () => {
-      gsap.from(ref.current, { 
-        yPercent: 55
-      })
-    }
-  });
+//     // when the matchMedia doesn't match anymore
+//     return () => {
+//       gsap.from(ref.current, { 
+//         yPercent: 55
+//       })
+//     }
+//   });
 
-  return () => mm.revert();
-},[])
+//   return () => mm.revert();
+// },[])
 
   return (
   <StyledHeader ref={ref}>

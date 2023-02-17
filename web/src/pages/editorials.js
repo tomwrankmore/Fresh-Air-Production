@@ -39,7 +39,7 @@ export const query = graphql`
 `;
 
 const EditorialsWrapper = styled.div`
-    padding: 120px 0 0;
+    padding: 0 0 0;
 `
 
 const EditorialsGrid = styled.div` 

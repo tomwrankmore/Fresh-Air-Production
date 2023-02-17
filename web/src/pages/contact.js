@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 import { graphql } from 'gatsby'
 import styled from "styled-components";
 import { InlineWidget } from "react-calendly";
@@ -10,6 +10,7 @@ import Layout from "../containers/layout";
 import SEO from "../components/seo";
 import CentralLogo from "../components/central-logo"
 import BlockContent from "../components/block-content";
+import Marquee from "../components/marquee"
 
 export const query = graphql`
   query ContactPageQuery {
@@ -34,16 +35,20 @@ export const query = graphql`
   }
 `;
 
+const ContactOuterWrapper = styled.div`
+  padding: 2rem 0 ;
+`
+
 const ContactWrapper = styled.div` 
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 2rem 0;
+  padding: 4rem 0 2rem 0;
   flex-direction: column;
   &.contact-page-hero {
-    height: 100vh;
+    height: calc(100vh - 82px);
   }
   @media ${device.mediaMinMedium} {
     flex-direction: row;
@@ -163,6 +168,8 @@ const ContactPage = (props) => {
 
   const heroBgImage = data.contactPageContent.contactHeroImage.asset.localFile.childImageSharp.gatsbyImageData
 
+  const contactMarqRef = useRef()
+
   const [formState, setFormState] = useState({
     fname: "",
     lname: "",
@@ -203,9 +210,9 @@ const ContactPage = (props) => {
     <Layout>
       <SEO title="Contact" />
       <CentralLogo />
-      <ContactWrapper style={{backgroundColor:'#067BC2'}} className='contact-page-hero'>
+      <ContactOuterWrapper>
+      {/* <ContactWrapper style={{backgroundColor:'#067BC2'}} className='contact-page-hero'>
         <Column>
-          {/* <h1 className="header-title">Don't be shy...<br/>Get in touch with us</h1> */}
           <BlockContent blocks={data.contactPageContent._rawContactHeroText} />
         </Column>
         <Column>
@@ -214,106 +221,113 @@ const ContactPage = (props) => {
             className="background-image" 
           />
         </Column>
-      </ContactWrapper>
-      <ContactWrapper>
-        <Column className="form-columns">
-          <p>
-            <span>Don't be shy. You can <a href="mailto:hello@freshairproduction.co.uk" rel="noreferrer">email us</a>.</span> 
-            <span>Fill in the form on the right or <a href="tel:+442034885195" rel="noreferrer">give us a call</a> to start making podcasts, radio adverts and amazing audio.</span>
-          </p>
+      </ContactWrapper> */}
+       <Marquee 
+          style={{color: colors.FABlue}}
+          textContent="Don't be shy. Get in touch. Don't be shy. Get in touch. Don't be shy. Get in touch."
+          ref={contactMarqRef}
+          cn="home-marquee"
+        />
+        <ContactWrapper>
+          <Column className="form-columns">
+            <p>
+              <span>Don't be shy. You can <a href="mailto:hello@freshairproduction.co.uk" rel="noreferrer">email us</a>.</span> 
+              <span>Fill in the form on the right or <a href="tel:+442034885195" rel="noreferrer">give us a call</a> to start making podcasts, radio adverts and amazing audio.</span>
+            </p>
 
-          <p>
-            <span>Email: <a href="mailto:hello@freshairproduction.co.uk" rel="noreferrer">hello@freshairproduction.co.uk</a></span>
-            <span>Phone: <a href="tel:+442034885195">+44 (0)203 4885195</a></span>
-          </p>
-          <p>
-            To enquire about working for us at Fresh Air, please email <a href="mailto:work@freshairproduction.co.uk" rel="noreferrer">work@freshairproduction.co.uk</a>
-          </p>
+            <p>
+              <span>Email: <a href="mailto:hello@freshairproduction.co.uk" rel="noreferrer">hello@freshairproduction.co.uk</a></span>
+              <span>Phone: <a href="tel:+442034885195">+44 (0)203 4885195</a></span>
+            </p>
+            <p>
+              To enquire about working for us at Fresh Air, please email <a href="mailto:work@freshairproduction.co.uk" rel="noreferrer">work@freshairproduction.co.uk</a>
+            </p>
 
-        </Column>
-        <Column className="form-columns">
-          {
-          !formSuccesState ? <ContactForm 
-            name="contact-form"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            onSubmit={handleSubmit}
-          >
-            <input type="hidden" name="form-name" value="contact-form" />
-            <div className="form-section">
-              <fieldset className="name-fieldset">
-                <div>
-                  <label for="fname">First name:</label>
-                  <input 
-                    id="fname"
-                    type="text" 
-                    name="fname"
-                    onChange={handleChange}
-                    value={formState.fname}
-                    required
-                    // placeholder="Enter your first name" 
-                  />
-                </div>
-                <div>
-                  <label for="lname">Last name:</label>
-                  <input 
-                    id="lname"
-                    type="text" 
-                    name="lname"
-                    onChange={handleChange}
-                    value={formState.lname}
-                    required
-                    // placeholder="Enter your last name" 
-                  />
-                </div>
-              </fieldset>
-            </div>
-            <div className="form-section">
-              <label htmlFor="email">Email:</label>
-              <input 
-                id="email"
-                type="email" 
-                name="email"
-                onChange={handleChange}
-                value={formState.email}
-                required
-                className="email"
-                // placeholder="Enter your email"
-              />
-            </div>
-            <div className="form-section">
-              <label for="subject">Subject:</label>
+          </Column>
+          <Column className="form-columns">
+            {
+            !formSuccesState ? <ContactForm 
+              name="contact-form"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
+            >
+              <input type="hidden" name="form-name" value="contact-form" />
+              <div className="form-section">
+                <fieldset className="name-fieldset">
+                  <div>
+                    <label for="fname">First name:</label>
+                    <input 
+                      id="fname"
+                      type="text" 
+                      name="fname"
+                      onChange={handleChange}
+                      value={formState.fname}
+                      required
+                      // placeholder="Enter your first name" 
+                    />
+                  </div>
+                  <div>
+                    <label for="lname">Last name:</label>
+                    <input 
+                      id="lname"
+                      type="text" 
+                      name="lname"
+                      onChange={handleChange}
+                      value={formState.lname}
+                      required
+                      // placeholder="Enter your last name" 
+                    />
+                  </div>
+                </fieldset>
+              </div>
+              <div className="form-section">
+                <label htmlFor="email">Email:</label>
                 <input 
-                  name="subject" 
-                  type="text" 
-                  id="subject"
+                  id="email"
+                  type="email" 
+                  name="email"
                   onChange={handleChange}
-                  value={formState.subject}
+                  value={formState.email}
                   required
-                  className="subject"
-                ></input>
-            </div>
-            <div className="form-section">
-              <label>Message:</label>
-              <textarea 
-                name="message" 
-                id="message"
-                onChange={handleChange}
-                value={formState.message}
-                required
-              ></textarea>
-            </div>
-            <div className="form-section">
-              <button type="submit" className="submit-btn">Submit form</button>
-            </div>
-          </ContactForm> : 
-          <h3>Thanks! We'll be in touch.</h3>
-          }
-          
-          
-        </Column>
-      </ContactWrapper>
+                  className="email"
+                  // placeholder="Enter your email"
+                />
+              </div>
+              <div className="form-section">
+                <label for="subject">Subject:</label>
+                  <input 
+                    name="subject" 
+                    type="text" 
+                    id="subject"
+                    onChange={handleChange}
+                    value={formState.subject}
+                    required
+                    className="subject"
+                  ></input>
+              </div>
+              <div className="form-section">
+                <label>Message:</label>
+                <textarea 
+                  name="message" 
+                  id="message"
+                  onChange={handleChange}
+                  value={formState.message}
+                  required
+                ></textarea>
+              </div>
+              <div className="form-section">
+                <button type="submit" className="submit-btn">Submit form</button>
+              </div>
+            </ContactForm> : 
+            <h3>Thanks! We'll be in touch.</h3>
+            }
+            
+            
+          </Column>
+        </ContactWrapper>
+      </ContactOuterWrapper>
       <InlineWidget url="https://calendly.com/freshairproduction/workshop?month=2023-02" />
     </Layout>
   )

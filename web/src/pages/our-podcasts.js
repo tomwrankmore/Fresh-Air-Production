@@ -61,7 +61,7 @@ export const query = graphql`
 `;
 
 const OurPodcastsWrapper = styled.div` 
-    padding: 120px 2rem 2rem;
+    padding: 2rem 2rem 2rem;
     position: relative;
     .read-more-link {
       flex: 1;

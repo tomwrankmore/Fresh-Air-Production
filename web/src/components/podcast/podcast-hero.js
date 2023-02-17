@@ -12,7 +12,7 @@ import BackgroundImage from 'gatsby-background-image'
 const HeroWrapper = styled.div`
   background-color: ${colors.FABlue};
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 82px);
   /* height: 100%; */
   display: flex;
   flex-direction: column-reverse;

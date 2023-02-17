@@ -10,8 +10,7 @@ import { BgImage, convertToBgImage } from 'gbimage-bridge';
 const EditorialWrapper = styled.div`
   background-color: ${colors.FABlue};
   width: 100%;
-  min-height: 100vh;
-  height: 100%;
+  height: calc(100vh - 82px);
   display: flex;
   flex-direction: column;
   @media ${device.mediaMinMedium} {

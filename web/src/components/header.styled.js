@@ -98,6 +98,7 @@ export const Nav = styled.nav`
 
 export const StyledHeader = styled.div` 
   position: relative;
+  top: 0;
   z-index: 200;
   width: 100%;
   position: fixed;
