@@ -188,12 +188,17 @@ const Panel = styled.div`
       text-transform: uppercase;
     }
     p {
-      margin-bottom: 2rem;
       font-weight: normal;
       line-height: 1.5rem;
       font-size: 1.275rem;
+      &:last-child {
+        margin-bottom: 2rem;
+      }
+      margin-bottom: 2rem;
       @media ${device.mediaMinLarge} {
-        margin-bottom: 4rem;
+        &:last-child {
+          margin-bottom: 4rem;
+        }
       }
     }
   }
