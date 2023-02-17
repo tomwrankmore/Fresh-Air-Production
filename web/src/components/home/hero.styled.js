@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 export const HeroWrapper = styled.div` 
     background-color: ${colors.FABlue};
-    height: 100vh;
+    height: calc(100vh - 82px);
     display: flex;
     align-items: center;
     justify-content: flex-start;
