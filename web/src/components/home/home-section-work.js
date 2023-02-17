@@ -194,7 +194,6 @@ const Panel = styled.div`
       &:last-child {
         margin-bottom: 2rem;
       }
-      margin-bottom: 2rem;
       @media ${device.mediaMinLarge} {
         &:last-child {
           margin-bottom: 4rem;
