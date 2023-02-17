@@ -23,10 +23,10 @@ function SEO({ description, lang, meta, keywords, title }) {
     }
   `)
 
-  const metaDescription = description || (data.site && data.site.description) || "";
-  const siteTitle = (data.site && data.site.title) || "";
-  const siteUrl = (data.site && data.site.url) || "";
-  const siteAuthor = (data.site && data.site.author && data.site.author.name) || "";
+  const metaDescription = description || (data.site && data.site.description) || "Award-Winning Audio production company specialising in branded podcasts, radio advertising and radio programmes.";
+  const siteTitle = (data.site && data.site.title) || "Fresh Air Production";
+  const siteUrl = (data.site && data.site.url) || "https://www.freshairproduction.co.uk/";
+  const siteAuthor = (data.site && data.site.author && data.site.author.name) || "Tom Wrankmore";
   const logo = (data.site.Logo && data.site.Logo.asset && data.site.Logo.asset.gatsbyImageData.images.fallback.src) || "";
 
   return (

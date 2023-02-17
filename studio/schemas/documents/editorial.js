@@ -12,22 +12,23 @@ export default {
       title: 'Title',
       type: 'string'
     },
-    {
-      name: 'subTitle',
-      title: 'Subtitle',
-      type: 'string'
-    },
+    // {
+    //   name: 'subTitle',
+    //   title: 'Subtitle',
+    //   type: 'string'
+    // },
     {
       name: 'heroImage',
       title: 'Hero image',
+      description: 'Choose a image for the hero.',
       type: 'figure'
     },
     {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      description: 'Some frontend will require a slug to be set to be able to show the project',
-      options: {
+      description: 'This will generate a URL for the editorial.',
+      validation: Rule => Rule.error('Make sure you generate a slug.').required(),      options: {
         source: 'title',
         maxLength: 96
       }
@@ -35,6 +36,7 @@ export default {
     {
       name: 'heroBGColor',
       title: 'Hero background colour',
+      description: 'Choose a colour for the background of the hero.',
       type: 'array',
       type: 'reference', 
       to: {type: 'brandColours'}
@@ -47,13 +49,14 @@ export default {
     },
     {
       name: 'isFeaturedPost',
-      title: 'Featured Post',
+      title: 'Featured Editorial',
+      description: 'Any item with this checked will appear larger.',
       type: 'boolean'
     },
     {
       name: 'publishedAt',
       title: 'Published at',
-      description: 'You can use this field to schedule projects where you show them',
+      description: 'You can use this field to schedule projects where you show them, the podcasts are in chronological order with then newest at the top according to this field.',
       type: 'datetime'
     },
     {
@@ -64,16 +67,19 @@ export default {
     {
       name: 'excerpt',
       title: 'Preview Excerpt',
+      description: 'This paragraph will render on Our Podcasts as a description under the thumbnail image.',
       type: 'simplePortableText'
     },
     {
       name: 'body',
       title: 'Body',
+      description: 'This field will generate the main copy on the page.',
       type: 'projectPortableText'
     },
     {
       name: 'quote',
       title: 'Quote',
+      description: 'This field will generate a quote with the brand line design in the background.',
       type: 'string'
     },
     {
@@ -104,8 +110,10 @@ export default {
     {
       name: 'relatedProjects',
       title: 'Related editorials',
+      description: 'Choose a selection of related editorials which will appear at the bottom of the page. Maximum 4.',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'editorial'}}]
+      of: [{type: 'reference', to: {type: 'editorial'}}],
+      validation: Rule => Rule.error('Maximum 4 entried.').max(4),
     }
   ],
   preview: {

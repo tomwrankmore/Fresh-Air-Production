@@ -13,11 +13,6 @@ export default {
       type: 'string'
     },
     {
-      name: 'subTitle',
-      title: 'Subtitle',
-      type: 'string'
-    },
-    {
       name: 'awardLogo',
       title: 'Award Ceremony Logo',
       type: 'figure'
@@ -27,16 +22,16 @@ export default {
       title: 'Award Ceremony Image',
       type: 'figure'
     },
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      description: 'Some frontend will require a slug to be set to be able to show the project',
-      options: {
-        source: 'title',
-        maxLength: 96
-      }
-    },
+    // {
+    //   name: 'slug',
+    //   title: 'Slug',
+    //   type: 'slug',
+    //   description: 'Some frontend will require a slug to be set to be able to show the project',
+    //   options: {
+    //     source: 'title',
+    //     maxLength: 96
+    //   }
+    // },
     {
       name: 'publishedAt',
       title: 'Published at',

@@ -16,15 +16,23 @@ export default {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      description: 'Some frontend will require a slug to be set to be able to show the project',
+      description: 'This will generate a URL for the podcast.',
+      validation: Rule => Rule.error('Make sure you generate a slug.').required(),
       options: {
         source: 'title',
         maxLength: 96
       }
     },
     {
+      name: 'heroImage',
+      title: 'Hero image',
+      description: 'Choose a image for the hero.',
+      type: 'figure'
+    },
+    {
       name: 'heroBGColor',
       title: 'Hero background colour',
+      description: 'Choose a colour for the background of the hero.',
       type: 'array',
       type: 'reference', 
       to: {type: 'brandColours'}
@@ -44,79 +52,88 @@ export default {
     {
       name: 'subTitle',
       title: 'Client',
+      description: 'The client will render at the bottom of the hero.',
       type: 'string'
     },
     {
       name: 'hasPage',
       title: 'Does this podcast have it\'s own page?',
+      description: 'Any item with this checked will link through to the dedicated Podcast page, if it\'s not turned on, the podcast will not be clickable.',
       type: 'boolean'
     },
     {
       name: 'previewImage',
       title: 'Preview image',
+      description: 'This is the image that will appear as a thumbnail on the Our Podcasts page.',
       type: 'figure'
     },
     {
       name: 'podcastLink',
-      title: 'Podcast Link',
+      title: 'Podcast Link (optional)',
+      description: 'This requires an Apple Podcast link, the icon & link will only appear if you enter a URL here.',
       type: 'string'
     },
     {
       name: 'spotifyLink',
-      title: 'Spotify Link',
+      title: 'Spotify Link (optional)',
+      description: 'This requires an Spotify Podcast link, the icon & link will only appear if you enter a URL here.',
       type: 'string'
     },
     {
       name: 'amazonLink',
-      title: 'Google Link',
+      title: 'Google Link (optional)',
+      description: 'This requires an Google Podcast link, the icon & link will only appear if you enter a URL here.',
       type: 'string'
     },
     {
       name: 'iHeartRadioLink',
-      title: 'iHeartRadio Link',
+      title: 'iHeartRadio Link  (optional)',
+      description: 'This requires an iHeartRadio Podcast link, the icon & link will only appear if you enter a URL here.',
       type: 'string'
     },
     {
       name: 'omnyWidget',
-      title: 'Omny iFrame',
+      title: 'Omny iFrame (optional)',
+      description: 'This will generate an Omny player widget, REMEMBER you only need to put in the podcast name bit of the URL, so call-of-the-wild for example. The code will generate the Omny embed information.',
       type: 'string'
     },
     {
       name: 'excerpt',
       title: 'Preview Excerpt',
+      description: 'This paragraph will render on Our Podcasts as a description under the thumbnail image.',
       type: 'simplePortableText'
-    },
-    {
-      name: 'heroImage',
-      title: 'Hero image',
-      type: 'figure'
     },
     {
       name: 'publishedAt',
       title: 'Published at',
-      description: 'You can use this field to schedule projects where you show them',
+      description: 'You can use this field to schedule projects where you show them, the podcasts are in chronological order with then newest at the top according to this field.',
       type: 'datetime'
     },
     {
       name: 'body',
       title: 'Body',
+      description: 'This field will generate the main copy on the page.',
       type: 'projectPortableText'
-    },
-    {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'figure'
     },
     {
       name: 'quote',
       title: 'Quote',
+      description: 'This field will generate a quote with the brand line design in the background.',
       type: 'string'
+    },
+    {
+      name: 'mainImage',
+      title: 'Main image',
+      description: 'This field will generate a full bleed image after the quote section.',
+      type: 'figure'
     },
     {
       name: 'relatedProjects',
       title: 'Related podcasts',
+      description: 'Choose a selection of related podcasts which will appear at the bottom of the page. Maximum 4.',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'podcast'}}]
+      of: [{type: 'reference', to: {type: 'podcast'}}],
+      validation: Rule => Rule.error('Maximum 4 entried.').max(4),
     }
   ],
   initialValue: {

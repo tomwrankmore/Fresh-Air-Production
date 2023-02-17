@@ -20,6 +20,7 @@ function StructureMenuWidget (props) {
       <div className={styles.content}>
         {props.structure.items.map(item => {
           const Icon = getIconComponent(item)
+          if (item.type === "divider") return;
           return (
             <div key={item.id}>
               <Link className={styles.link} href={`/desk/${item.id}`}>

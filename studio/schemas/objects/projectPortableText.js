@@ -1,3 +1,5 @@
+import {FaRegEnvelope, FaPhone} from 'react-icons/fa'
+
 export default {
   title: 'Portable Text',
   name: 'projectPortableText',
@@ -34,10 +36,29 @@ export default {
               {
                 title: 'URL',
                 name: 'href',
-                type: 'url'
+                type: 'url',
+                validation: Rule => Rule.uri({
+                  scheme: ['http', 'https', 'mailto', 'tel']
+                })
               }
             ]
-          }
+          },
+          {
+            title: 'Email',
+            name: 'emailLink',
+            type: 'object',
+            icon: FaRegEnvelope,
+            fields: [
+              {
+                title: 'Email',
+                name: 'mailto',
+                type: 'url',
+                validation: Rule => Rule.uri({
+                  scheme: ['mailto']
+                })
+              }
+            ]
+          },
         ]
       }
     },
