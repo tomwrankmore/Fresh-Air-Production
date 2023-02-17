@@ -12,11 +12,11 @@ export default {
       title: 'Title',
       type: 'string'
     },
-    // {
-    //   name: 'subTitle',
-    //   title: 'Subtitle',
-    //   type: 'string'
-    // },
+    {
+      name: 'subTitle',
+      title: 'Subtitle',
+      type: 'string'
+    },
     {
       name: 'heroImage',
       title: 'Hero image',
