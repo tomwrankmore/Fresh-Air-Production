@@ -34,7 +34,7 @@ export const query = graphql`
     }
     staffMembers: allSanityStaffMember(
       sort: {publishedAt: DESC}
-      filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}
+      filter: {publishedAt: {ne: null}}
     ) {
       edges {
         node {
