@@ -105,6 +105,7 @@ const PodcastHero = React.forwardRef(({tl, podcast}, ref) => {
     const heroBackgroundColour = podcast?.heroBGColor?.title;
 
     let heroFlexDirection;
+    
 
     const isMinMedium = useMediaQuery({
       query: '(min-width: 675px)'

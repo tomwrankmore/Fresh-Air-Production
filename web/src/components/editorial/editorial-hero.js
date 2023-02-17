@@ -109,7 +109,6 @@ const EditorialHero = React.forwardRef(({tl, heroImg, title, subTitle, isLeftAli
     } else {
       heroFlexDirection = 'column';
     }
-
     
     useLayoutEffect(() => {
       let ctx = gsap.context(() => {
