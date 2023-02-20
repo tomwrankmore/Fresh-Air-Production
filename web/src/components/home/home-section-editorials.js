@@ -104,9 +104,9 @@ const EditorialsWrapper = styled.div`
           }
         }
         @media ${device.mediaMinMedium} {
-            height: 100vh;
+            height: calc(100vh - 82px);
             position: sticky;
-            top: 0;
+            top: 82px;
             justify-content: flex-start;
         }
     }
