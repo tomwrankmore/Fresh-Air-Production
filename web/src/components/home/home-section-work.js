@@ -17,7 +17,7 @@ const HorizontalContainer = styled.div`
     @media ${device.mediaMinLarge} {
       width: 300%;
       flex-wrap: nowrap;
-      height: 100vh;
+      height: calc(100vh - 82px);
     }
 
     .svg-bg {
@@ -231,9 +231,10 @@ const Work = React.forwardRef(({
           scrollTrigger: {
             invalidateOnRefresh: true,
             trigger: '.horizontalContainer',
-            start: 'top top',
+            start: 'top 82px',
             pin: true,
             scrub: 0.1,
+            markers: true,
             //snap: directionalSnap(1 / (sections.length - 1)),
             end: "+=3000"
           }
@@ -343,7 +344,7 @@ const Work = React.forwardRef(({
                     layout="fullWidth"
                     objectPosition="0 0"
                     className="img-r"
-                    style={{maxWidth: '290px', margin: '0 auto 2rem auto'}}
+                    style={{maxWidth: '260px', margin: '0 auto 2rem auto'}}
                     />
                     <div className="we-work-text-wrapper">
                       <h2>{panelTwoTitle}</h2>
@@ -375,7 +376,7 @@ const Work = React.forwardRef(({
                     layout="fullWidth"
                     objectPosition="0 0"
                     className="img-r"
-                    style={{maxWidth: '290px', margin: '0 auto 2rem auto'}}
+                    style={{maxWidth: '260px', margin: '0 auto 2rem auto'}}
                     />
                     <div className="we-work-text-wrapper">
                       <h2>{panelFourTitle}</h2>
