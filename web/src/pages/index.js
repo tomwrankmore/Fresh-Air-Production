@@ -64,10 +64,10 @@ export const query = graphql`
             _rawHomeWorkPanelTwoText
             _rawHomeWorkPanelThreeText
             _rawHomeWorkPanelFourText
-            homeTestimonials {
-              testimonial
-              client
-            }
+            # homeTestimonials {
+            #   testimonial
+            #   client
+            # }
             homeFeaturedEditorial {
               id
               heroImage {
