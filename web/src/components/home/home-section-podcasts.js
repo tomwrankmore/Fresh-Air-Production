@@ -21,7 +21,6 @@ const PodcastsWrapper = styled.div`
 
     div {
         flex: 1;
-        /* min-height: 100vh; */
 
         &.leftCol {
             div {
@@ -47,9 +46,9 @@ const PodcastsWrapper = styled.div`
             justify-content: center;
             padding: 0 1rem;
             @media ${device.mediaMinMedium} {
-                min-height: 100vh;
+                min-height: calc(100vh - 82px);
                 position: sticky;
-                top: 0;
+                top: 82px;
                 padding: 0;
             }
             h2 {
