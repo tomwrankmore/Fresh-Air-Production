@@ -26,6 +26,16 @@ export const query = graphql`
       description
       keywords
     }
+    testimonials: 
+      allSanityHomePageTestimonial {
+        edges {
+          node {
+            id
+            testimonial
+            client
+          }
+        }
+      }
     homePageContent:
       allSanityHomePageContent {
         edges {
@@ -167,6 +177,7 @@ const IndexPage = props => {
   }
 
   const homePageContent = data.homePageContent.edges[0].node
+  const testimonials = mapEdgesToNodes(data.testimonials)
 
   return (
       <Layout>
@@ -202,7 +213,7 @@ const IndexPage = props => {
         />
         <WwdLogoCloud />
         <Testimonials
-          testimonials={homePageContent.homeTestimonials}
+          testimonials={testimonials}
         />
         <Editorials 
           editorialNodes={editorialNodes} 

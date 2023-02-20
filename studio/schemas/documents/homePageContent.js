@@ -85,13 +85,13 @@ export default {
       type: 'simplePortableText',
       title: 'Work panel four text',
     },
-    {
-      name: 'homeTestimonials',
-      title: 'Homepage testimonials',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'homePageTestimonial'}}],
-      // validation: Rule => Rule.error('Please add 4 podcasts to be displayed on the homepage.').required().min(4).max(4),
-    },
+    // {
+    //   name: 'homeTestimonials',
+    //   title: 'Homepage testimonials',
+    //   type: 'array',
+    //   of: [{type: 'reference', to: {type: 'homePageTestimonial'}}],
+    //   // validation: Rule => Rule.error('Please add 4 podcasts to be displayed on the homepage.').required().min(4).max(4),
+    // },
     {
       name: 'homeFeaturedEditorial',
       title: 'Homepage featured editorial',
