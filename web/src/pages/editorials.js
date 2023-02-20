@@ -25,7 +25,7 @@ export const query = graphql`
           }
           title
           publishedAt
-          isFeaturedPost
+          # isFeaturedPost
           previewImage {
             alt
             asset {

@@ -47,12 +47,12 @@ export default {
       description: 'Any item with this checked will the hero image aligned to the left.',
       type: 'boolean'
     },
-    {
-      name: 'isFeaturedPost',
-      title: 'Featured Editorial',
-      description: 'Any item with this checked will appear larger.',
-      type: 'boolean'
-    },
+    // {
+    //   name: 'isFeaturedPost',
+    //   title: 'Featured Editorial',
+    //   description: 'Any item with this checked will appear larger.',
+    //   type: 'boolean'
+    // },
     {
       name: 'publishedAt',
       title: 'Published at',

@@ -62,7 +62,7 @@ export const query = graphql`
       }
       _rawSectionOneText
       _rawSectionTwoText
-      isFeaturedPost
+      # isFeaturedPost
       heroImage {
         asset {
           gatsbyImageData
