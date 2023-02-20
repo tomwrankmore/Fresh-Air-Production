@@ -82,6 +82,7 @@ export const Subscribe = styled.div`
     max-width: 450px;
     margin: 0 auto;
     width: 100%;
+    padding: 2rem 0;
     p {
         margin-bottom: 1rem;
         max-width: 100%;

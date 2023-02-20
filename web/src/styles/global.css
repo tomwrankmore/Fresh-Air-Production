@@ -187,3 +187,8 @@ a:visited {
 .our-podcasts-wrapper .css-o4b71y-MuiAccordionSummary-content p {
     text-transform: uppercase;
 } */
+
+
+.screen-reader-text {
+  visibility: hidden
+}

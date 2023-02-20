@@ -9,7 +9,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-
+import SubscribeForm from "../components/subscribe-form"
 import Logo from "../assets/FA-logo.inline.svg"
 import { StyledFooter, FooterWrapper, NavigationWrapper, SiteInfo, LinkList, Subscribe} from './footer.styled';
 
@@ -48,10 +48,7 @@ const Footer = ({ children }) => {
             <AccordionDetails>
               <Subscribe>
                 <p>Subscribe to our newsletter for news on the best new podcasts</p>
-                <form>
-                  <input type="text" id="subscribe" name="sub" placeholder="Subscribe"/>
-                  <button type="submit" className="submit-btn">Submit form</button>
-                </form>
+                <SubscribeForm />
               </Subscribe> 
             </AccordionDetails>
           </Accordion>
