@@ -234,7 +234,7 @@ const Work = React.forwardRef(({
             start: 'top 82px',
             pin: true,
             scrub: 0.1,
-            markers: true,
+            // markers: true,
             //snap: directionalSnap(1 / (sections.length - 1)),
             end: "+=3000"
           }
