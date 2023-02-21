@@ -5,12 +5,14 @@ import { InlineWidget } from "react-calendly";
 import GraphQLErrorList from "../components/graphql-error-list";
 import {device} from "../styles/mediaQueries"
 import { colors } from "../styles/colors";
-import { BgImage } from 'gbimage-bridge';
+import { getImage } from "gatsby-plugin-image"
+import { BgImage, convertToBgImage } from 'gbimage-bridge';
 import Layout from "../containers/layout";
 import SEO from "../components/seo";
 import CentralLogo from "../components/central-logo"
 import BlockContent from "../components/block-content";
 import Marquee from "../components/marquee"
+
 
 export const query = graphql`
   query ContactPageQuery {
@@ -44,12 +46,13 @@ const ContactWrapper = styled.div`
   height: auto;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding: 4rem 0 2rem 0;
+  align-items: stretch;
+  padding: 4rem 1rem 2rem 1rem;
   flex-direction: column;
-  &.contact-page-hero {
+  gap: 2rem;
+  /* &.contact-page-hero {
     height: calc(100vh - 82px);
-  }
+  } */
   @media ${device.mediaMinMedium} {
     flex-direction: row;
   }
@@ -76,11 +79,10 @@ const Column = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
 
   &.form-columns {
-    padding: 2rem;
     span {
       display: block;
     }
@@ -93,10 +95,11 @@ const Column = styled.div`
 
   .background-image {
     width: 100%;
+    height: 100%;
     min-height: 50vh;
-    @media ${device.mediaMinMedium} {
+    /* @media ${device.mediaMinMedium} {
       min-height: 100vh;
-    }
+    } */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -230,11 +233,16 @@ const ContactPage = (props) => {
         />
         <ContactWrapper>
           <Column className="form-columns">
+            <BgImage 
+              image={heroBgImage}
+              className="background-image" 
+            />
+          </Column>
+          <Column className="form-columns">
             <p>
               <span>Don't be shy. You can <a href="mailto:hello@freshairproduction.co.uk" rel="noreferrer">email us</a>.</span> 
               <span>Fill in the form on the right or <a href="tel:+442034885195" rel="noreferrer">give us a call</a> to start making podcasts, radio adverts and amazing audio.</span>
             </p>
-
             <p>
               <span>Email: <a href="mailto:hello@freshairproduction.co.uk" rel="noreferrer">hello@freshairproduction.co.uk</a></span>
               <span>Phone: <a href="tel:+442034885195">+44 (0)203 4885195</a></span>
@@ -242,9 +250,6 @@ const ContactPage = (props) => {
             <p>
               To enquire about working for us at Fresh Air, please email <a href="mailto:work@freshairproduction.co.uk" rel="noreferrer">work@freshairproduction.co.uk</a>
             </p>
-
-          </Column>
-          <Column className="form-columns">
             {
             !formSuccesState ? <ContactForm 
               name="contact-form"
