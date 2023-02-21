@@ -18,6 +18,7 @@ export const query = graphql`
   query ContactPageQuery {
     contactPageContent: sanityContactPageContent {
       _rawContactHeroText
+      _rawContactText
       contactHeroImage {
         asset {
           localFile {
@@ -250,6 +251,7 @@ const ContactPage = (props) => {
             <p>
               To enquire about working for us at Fresh Air, please email <a href="mailto:work@freshairproduction.co.uk" rel="noreferrer">work@freshairproduction.co.uk</a>
             </p>
+            {/* <BlockContent blocks={data.contactPageContent._rawContactText}/> */}
             {
             !formSuccesState ? <ContactForm 
               name="contact-form"
