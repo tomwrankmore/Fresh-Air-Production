@@ -64,12 +64,12 @@ export default {
       title: 'Preview image',
       type: 'figure'
     },
-    {
-      name: 'excerpt',
-      title: 'Preview Excerpt',
-      description: 'This paragraph will render on Our Podcasts as a description under the thumbnail image.',
-      type: 'simplePortableText'
-    },
+    // {
+    //   name: 'excerpt',
+    //   title: 'Preview Excerpt',
+    //   description: 'This paragraph will render on Our Podcasts as a description under the thumbnail image.',
+    //   type: 'simplePortableText'
+    // },
     {
       name: 'body',
       title: 'Body',
