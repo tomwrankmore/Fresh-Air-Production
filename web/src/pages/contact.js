@@ -18,7 +18,7 @@ export const query = graphql`
   query ContactPageQuery {
     contactPageContent: sanityContactPageContent {
       _rawContactHeroText
-      _rawContactText
+      # _rawContactText
       contactHeroImage {
         asset {
           localFile {
