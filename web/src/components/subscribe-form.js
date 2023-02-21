@@ -46,6 +46,7 @@ const SubscribeForm = (props) => {
     const value = target.value;
     const name = target.name;
     setFormState({
+      ...formState,
       [name]: value
     });
   };
