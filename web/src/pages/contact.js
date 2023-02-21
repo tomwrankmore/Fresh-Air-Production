@@ -18,7 +18,7 @@ export const query = graphql`
   query ContactPageQuery {
     contactPageContent: sanityContactPageContent {
       _rawContactHeroText
-      # _rawContactText
+      calendlyLink
       contactHeroImage {
         asset {
           localFile {
@@ -335,7 +335,7 @@ const ContactPage = (props) => {
           </Column>
         </ContactWrapper>
       </ContactOuterWrapper>
-      <InlineWidget url="https://calendly.com/freshairproduction/workshop?month=2023-02" />
+      <InlineWidget url={data.contactPageContent.calendlyLink} />
     </Layout>
   )
 };
