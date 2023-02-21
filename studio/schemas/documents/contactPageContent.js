@@ -31,5 +31,10 @@ export default {
       description: 'Copy to sit left of contact form',
       type: 'projectPortableText'
     },
+    {
+      name: 'calendlyLink',
+      title: 'Calendly Form',
+      type: 'string'
+    }
   ]
 }
