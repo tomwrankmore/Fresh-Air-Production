@@ -90,7 +90,7 @@ const SubscribeForm = (props) => {
             type="lname" 
             name="lname" 
             placeholder="Last name" 
-            value={formState.email}
+            value={formState.lname}
             onChange={handleInputChange}
             />
         </label>
