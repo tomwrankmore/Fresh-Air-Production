@@ -138,7 +138,7 @@ const Podcasts = React.forwardRef(({tl, podcastHeading, homePodcasts}, ref) => {
                     <Link to={`/podcast/${podcast.slug.current}`}>
                       <GatsbyImage
                           image={podcast.heroImage.asset.gatsbyImageData}
-                          alt={podcast.heroImage.alt}
+                          alt={podcast?.heroImage?.alt ? podcast?.heroImage?.alt : 'alt'}
                           placeholder="blurred"
                           layout="fullWidth"
                           className="podcastImgWrapper"

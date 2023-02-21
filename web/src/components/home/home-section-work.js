@@ -14,6 +14,7 @@ const HorizontalContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     background-color: ${colors.FABlue};
+    padding-right: 0;
     @media ${device.mediaMinLarge} {
       width: 300%;
       flex-wrap: nowrap;

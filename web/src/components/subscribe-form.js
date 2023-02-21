@@ -16,6 +16,17 @@ const StyledSubscribeForm = styled.form`
   input {
     border: solid 1px #00AFEE;
     padding: 1rem 0.75rem;
+    text-align:center;
+  }
+  p.acknowledge {
+    font-size: 0.5rem;
+    display: block;
+    margin: 1rem auto 1rem auto;
+  }
+  button.submitButton {
+    margin: 0 auto;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 `
 
@@ -24,6 +35,8 @@ const SubscribeForm = (props) => {
   const [formState, setFormState] = useState(
     {
       email: "",
+      fname: "",
+      lname: "",
       message: ""
     }
   )
@@ -39,9 +52,13 @@ const SubscribeForm = (props) => {
   
   const handleSubmit = async e => {
     e.preventDefault()
-    const result = await addToMailchimp(formState.email)
-    setFormState({message: result.msg})
-    console.log("formStateformStateformState", result.msg)
+    const result = await addToMailchimp(
+      formState.email, 
+      {
+        FNAME: formState.fname, 
+        LNAME: formState.lname
+      })
+    setFormState({email: "", fname: "", lname: "", message: result.msg})
   }
 
   return (
@@ -54,19 +71,46 @@ const SubscribeForm = (props) => {
     >
       <div className="form-row">
         <label>
-          <span className="screen-reader-text">Email address</span>
+          <span className="screen-reader-text">First name</span>
           <input 
-            className="subscribe-email" 
-            type="email" 
-            name="email" 
-            placeholder="Enter Email Address..." 
+            className="subscribe-fname" 
+            type="fname" 
+            name="fname" 
+            placeholder="First name" 
+            value={formState.fname}
+            onChange={handleInputChange}
+            />
+        </label>
+      </div>
+      <div className="form-row">
+        <label>
+          <span className="screen-reader-text">Last name</span>
+          <input 
+            className="subscribe-lname" 
+            type="lname" 
+            name="lname" 
+            placeholder="Last name" 
             value={formState.email}
             onChange={handleInputChange}
             />
         </label>
       </div>
-      <button className="button" type="submit">
-        Subscribe
+      <div className="form-row">
+        <label>
+          <span className="screen-reader-text">Email address</span>
+          <input 
+            className="subscribe-email" 
+            type="email" 
+            name="email" 
+            placeholder="Email Address" 
+            value={formState.email}
+            onChange={handleInputChange}
+            />
+        </label>
+      </div>
+      <p className="acknowledge">I ACKNOWLEDGE THAT I HAVE REVIEWED AND HEREBY AGREE TO THE PRIVACY POLICY.</p>
+      <button className="submitButton button" type="submit">
+        Sign up
       </button>
       <div className="message" dangerouslySetInnerHTML={{__html: formState.message}} />
     </StyledSubscribeForm>

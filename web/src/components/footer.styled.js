@@ -83,20 +83,22 @@ export const Subscribe = styled.div`
     margin: 0 auto;
     width: 100%;
     padding: 2rem 0;
+    line-height: 1.5;
     p {
-        margin-bottom: 1rem;
+        /* margin-bottom: 1rem; */
         max-width: 100%;
+        text-align: center;
         font-size: 0.875rem;
-        @media ${device.mediaMinMedium} {
+        /* @media ${device.mediaMinMedium} {
           max-width: 75%;
-        }
+        } */
     }
     form {
       display: flex;
       align-items: flex-end;
       justify-content: center;
       flex-direction: column;
-      gap: 1rem;
+      /* gap: 1rem; */
     }
     input {
       /* background-color: ${colors.FABlue}; */

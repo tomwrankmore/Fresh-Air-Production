@@ -14,7 +14,8 @@ import Logo from "../assets/FA-logo.inline.svg"
 import { StyledFooter, FooterWrapper, NavigationWrapper, SiteInfo, LinkList, Subscribe} from './footer.styled';
 
 const rootStyles =  {
-  boxShadow: 'none'
+  boxShadow: 'none',
+  backgroundColor: '#27D7FE'
 }
 
 const btnStyles =  {
@@ -47,7 +48,7 @@ const Footer = ({ children }) => {
             </AccordionSummary>
             <AccordionDetails>
               <Subscribe>
-                <p>Subscribe to our newsletter for news on the best new podcasts</p>
+                <p>Enter your email address to join our mailing list and news about future news and projects.</p>
                 <SubscribeForm />
               </Subscribe> 
             </AccordionDetails>

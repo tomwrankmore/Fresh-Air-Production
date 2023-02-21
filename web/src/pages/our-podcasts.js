@@ -21,6 +21,7 @@ export const query = graphql`
         node {
           id
           mainImage {
+            alt
             asset {
               _id
               gatsbyImageData(
@@ -30,7 +31,6 @@ export const query = graphql`
                 formats: AUTO
                 )
             }
-            alt
           }
           title
           isFeaturedPodcast
