@@ -53,6 +53,7 @@ export default {
     {
       name: 'homeWorkSectionImage',
       title: 'Work Section Main Image',
+      description: 'Please upload an image with similar dimensions to 800px x 550px',
       type: 'figure'
     },
     {
