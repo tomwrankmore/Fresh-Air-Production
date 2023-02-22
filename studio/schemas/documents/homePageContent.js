@@ -68,6 +68,7 @@ export default {
     {
       name: 'homeWorkPanelOneImage',
       title: 'Work panel one image',
+      description: 'Please use a landscape image',
       type: 'figure'
     },
     {
@@ -83,6 +84,7 @@ export default {
     {
       name: 'homeWorkPanelTwoImage',
       title: 'Work panel two image',
+      description: 'Please use a portrait image',
       type: 'figure'
     },
     {
@@ -98,6 +100,7 @@ export default {
     {
       name: 'homeWorkPanelThreeImage',
       title: 'Work panel three image',
+      description: 'Please use a landscape image',
       type: 'figure'
     },
     {
@@ -113,6 +116,7 @@ export default {
     {
       name: 'homeWorkPanelFourImage',
       title: 'Work panel four image',
+      description: 'Please use a portrait image',
       type: 'figure'
     },
     // {

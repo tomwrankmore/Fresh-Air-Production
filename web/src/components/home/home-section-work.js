@@ -418,7 +418,7 @@ const Work = React.forwardRef(({
                     className="img-l"
                     />
                 </div>
-                <div className="panel-equal-column reverse-on-mob" style={{paddingRight: '450px'}}>
+                <div className="panel-equal-column reverse-on-mob">
                   <GatsbyImage
                     image={panelFourImage.asset.gatsbyImageData}
                     alt={panelFourImage.alt}
