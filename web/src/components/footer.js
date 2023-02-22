@@ -68,15 +68,15 @@ const Footer = ({ children }) => {
               </LinkList>
               <LinkList>
                 <li>
-                  <a href='https://open.spotify.com/show/0HF5T1BVjaUR6dMlAamdB5' target='_blank' rel='noreferrer'>Spotify</a>
+                  <a href='https://open.spotify.com/show/48BxMP3zf9wkQkFyUmb1W5?si=11bbf25b73e94894' target='_blank' rel='noreferrer'>Spotify</a>
                 </li>
                 
                 <li>
-                  <a href='https://podcasts.apple.com/gb/podcast/fresh-air/id214089682' target='_blank' rel='noreferrer'>Apple Podcasts</a>
+                  <a href='https://podcasts.apple.com/gb/podcast/fresh-ears/id1519422034' target='_blank' rel='noreferrer'>Apple Podcasts</a>
                 </li>
                 
                 <li>
-                  <a href='https://podcasts.google.com/search/Fresh%20Air' target='_blank' rel='noreferrer'>Google Podcasts</a>
+                  <a href='https://podcasts.google.com/feed/aHR0cHM6Ly9vbW55LmZtL3Nob3dzL2ZyZXNoLWFpci1zaGFyZWQtZmlsZXMvcGxheWxpc3RzL3BvZGNhc3QucnNz?sa=X&ved=0CAMQ4aUDahcKEwjwk8nt5qj9AhUAAAAAHQAAAAAQFw' target='_blank' rel='noreferrer'>Google Podcasts</a>
                 </li>
               </LinkList>
               <LinkList>
