@@ -16,7 +16,7 @@ const HorizontalContainer = styled.div`
     background-color: ${colors.FABlue};
     padding-right: 0;
     @media ${device.mediaMinLarge} {
-      width: 300%;
+      width: 330%;
       flex-wrap: nowrap;
       height: calc(100vh - 82px);
     }
@@ -234,7 +234,7 @@ const Work = React.forwardRef(({
         // let paragraphs = gsap.utils.toArray('.panel-paragraph');
     
         let scrollTween = gsap.to(sections, {
-          xPercent: -100 * (sections.length - 1),
+          xPercent: -110 * (sections.length - 1),
           ease: "none", // <-- IMPORTANT!
           scrollTrigger: {
             invalidateOnRefresh: true,
