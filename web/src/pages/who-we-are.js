@@ -24,6 +24,7 @@ export const query = graphql`
           _rawBio
           publishedAt
           image {
+            alt
             asset {
               gatsbyImageData
               title
@@ -44,6 +45,7 @@ export const query = graphql`
           _rawBio
           publishedAt
           image {
+            alt
             asset {
               gatsbyImageData
             }

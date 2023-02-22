@@ -65,7 +65,7 @@ const SvgLogoWrapper = styled.div`
     }
 `
 
-const Hero = React.forwardRef(({heroMarqueeRef, tl, heroMarqueeText}, ref) => {
+const Hero = React.forwardRef(({heroMarqueeRef, tl, heroMarqueeText, heroImage}, ref) => {
     
   useLayoutEffect(() => {
 
@@ -137,7 +137,7 @@ const Hero = React.forwardRef(({heroMarqueeRef, tl, heroMarqueeText}, ref) => {
         className="mobile-logo"
       />
       <HeroInner className="hero-inner">
-        <img src={heroPeople} alt="alt" className="hero-img" />
+        <img src={heroImage.asset.gatsbyImageData.images.fallback.src} alt="alt" className="hero-img" />
       </HeroInner>
       <Marquee 
           style={{color: 'white'}}

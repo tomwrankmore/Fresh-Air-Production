@@ -45,6 +45,7 @@ export const query = graphql`
             homePodcasts {
               id
               heroImage {
+                alt
                 asset {
                   gatsbyImageData
                 }
@@ -64,13 +65,46 @@ export const query = graphql`
             _rawHomeWorkPanelTwoText
             _rawHomeWorkPanelThreeText
             _rawHomeWorkPanelFourText
-            # homeTestimonials {
-            #   testimonial
-            #   client
-            # }
+            heroImage {
+              alt
+              asset {
+                gatsbyImageData
+              }
+            }
+            homeWorkSectionImage {
+              alt
+              asset {
+                gatsbyImageData
+              }
+            }
+            homeWorkPanelOneImage {
+              alt
+              asset {
+                gatsbyImageData
+              }
+            }
+            homeWorkPanelTwoImage {
+              alt
+              asset {
+                gatsbyImageData
+              }
+            }
+            homeWorkPanelThreeImage {
+              alt
+              asset {
+                gatsbyImageData
+              }
+            }
+            homeWorkPanelFourImage {
+              alt
+              asset {
+                gatsbyImageData
+              }
+            }
             homeFeaturedEditorial {
               id
               heroImage {
+                alt
                 asset {
                   gatsbyImageData
                 }
@@ -83,6 +117,7 @@ export const query = graphql`
             homeEditorials {
               id
               heroImage {
+                alt
                 asset {
                   gatsbyImageData
                 }
@@ -188,6 +223,7 @@ const IndexPage = props => {
           heroMarqueeRef={heroMarqueeRef} 
           tl={heroTl.current} 
           heroMarqueeText={homePageContent.homeHeroTickerTape}
+          heroImage={homePageContent.heroImage}
         />
         <Podcasts 
           ref={podcastsRef} 
@@ -202,14 +238,19 @@ const IndexPage = props => {
         <Work 
           ref={horizontalPanelsRef} 
           workSectionHeading={homePageContent.homeWorkSectionHeading}
+          homeWorkSectionImage={homePageContent.homeWorkSectionImage}
           panelOneTitle={homePageContent.homeWorkPanelOneTitle}
-          panelTwoTitle={homePageContent.homeWorkPanelTwoTitle}
-          panelThreeTitle={homePageContent.homeWorkPanelThreeTitle}
-          panelFourTitle={homePageContent.homeWorkPanelFourTitle}
           panelOneText={homePageContent._rawHomeWorkPanelOneText}
+          panelOneImage={homePageContent.homeWorkPanelOneImage}
           panelTwoText={homePageContent._rawHomeWorkPanelTwoText}
+          panelTwoTitle={homePageContent.homeWorkPanelTwoTitle}
+          panelTwoImage={homePageContent.homeWorkPanelTwoImage}
+          panelThreeTitle={homePageContent.homeWorkPanelThreeTitle}
           panelThreeText={homePageContent._rawHomeWorkPanelThreeText}
+          panelThreeImage={homePageContent.homeWorkPanelThreeImage}
+          panelFourTitle={homePageContent.homeWorkPanelFourTitle}
           panelFourText={homePageContent._rawHomeWorkPanelFourText}
+          panelFourImage={homePageContent.homeWorkPanelFourImage}
         />
         <WwdLogoCloud />
         <Testimonials

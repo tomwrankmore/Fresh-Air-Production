@@ -1,6 +1,6 @@
 import React, {useLayoutEffect} from "react";
 import gsap from 'gsap'
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import BlockContent from "../block-content";
 import styled from "styled-components";
 import { device } from "../../styles/mediaQueries";
@@ -206,14 +206,19 @@ const Panel = styled.div`
 
 const Work = React.forwardRef(({
   workSectionHeading,
+  homeWorkSectionImage,
   panelOneTitle,
-  panelTwoTitle,
-  panelThreeTitle,
-  panelFourTitle,
   panelOneText,
+  panelOneImage,
+  panelTwoTitle,
   panelTwoText,
+  panelTwoImage,
+  panelThreeTitle,
   panelThreeText,
-  panelFourText
+  panelThreeImage,
+  panelFourTitle,
+  panelFourText,
+  panelFourImage
 }, ref) => {
 
     useLayoutEffect(() => {
@@ -224,6 +229,8 @@ const Work = React.forwardRef(({
         let sections = gsap.utils.toArray('.panel');
         let imagesL = gsap.utils.toArray('.img-l');
         let imagesR = gsap.utils.toArray('.img-r');
+        let textFromAbove = gsap.utils.toArray('.text-from-above')
+        let textFromBelow = gsap.utils.toArray('.text-from-below')
         // let paragraphs = gsap.utils.toArray('.panel-paragraph');
     
         let scrollTween = gsap.to(sections, {
@@ -241,55 +248,97 @@ const Work = React.forwardRef(({
           }
         });
     
-          sections.forEach(panel => {
-            return (
-                gsap.from(panel, {
-                    ease: "none",
-                    scrollTrigger: {
-                      trigger: panel,
-                      containerAnimation: scrollTween,
-                      start: "left right",
-                      end: "center center",
-                      id: "1",
-                      scrub: true
-                    }
-                  })
-            )
-          })
+        sections.forEach(panel => {
+          return (
+              gsap.from(panel, {
+                  ease: "none",
+                  scrollTrigger: {
+                    trigger: panel,
+                    containerAnimation: scrollTween,
+                    start: "left right",
+                    end: "center center",
+                    id: "1",
+                    scrub: 2
+                  }
+                })
+          )
+        })
+
+        textFromAbove.forEach(text => {
+          return (
+            gsap.from(text, {
+              ease: "none",
+              yPercent: -30,
+              autoAlpha: 0.5,
+              scale: 0.9,
+              scrollTrigger: {
+                trigger: text,
+                containerAnimation: scrollTween,
+                start: "left right",
+                end: "left center",
+                id: "2",
+                scrub: 2
+              }
+            })
+          )
+        })
+
+        textFromBelow.forEach(text => {
+          return (
+            gsap.from(text, {
+              ease: "none",
+              autoAlpha: 0.5,
+              yPercent: 30,
+              scale: 0.9,
+              scrollTrigger: {
+                trigger: text,
+                containerAnimation: scrollTween,
+                start: "left right",
+                end: "left center",
+                id: "2",
+                scrub: 2
+              }
+            })
+          )
+        })
     
-          imagesL.forEach(img => {
-            return (
-              gsap.from(img, {
-                ease: "none",
-                rotation: 5,
-                scrollTrigger: {
-                  trigger: img,
-                  containerAnimation: scrollTween,
-                  start: "left right",
-                  end: "center center",
-                  id: "2",
-                  scrub: true
-                }
-              })
-            )
-          })
+        imagesL.forEach(img => {
+          return (
+            gsap.from(img, {
+              ease: "none",
+              rotation: 5,
+              xPercent: 30,
+              scale: 0.9,
+              scrollTrigger: {
+                trigger: img,
+                containerAnimation: scrollTween,
+                start: "left right",
+                end: "left center",
+                id: "2",
+                scrub: 2
+              }
+            })
+          )
+        })
     
-          imagesR.forEach(img => {
-            return (
-              gsap.from(img, {
-                ease: "none",
-                rotation: -5,
-                scrollTrigger: {
-                  trigger: img,
-                  containerAnimation: scrollTween,
-                  start: "left right",
-                  end: "center center",
-                  id: "3",
-                  scrub: true
-                }
-              })
-            )
-          })
+        imagesR.forEach(img => {
+          return (
+            gsap.from(img, {
+              ease: "none",
+              rotation: -5,
+              xPercent: 30,
+              scale: 0.9,
+              scrollTrigger: {
+                trigger: img,
+                containerAnimation: scrollTween,
+                start: "left right",
+                end: "left center",
+                id: "3",
+                scrub: 2
+              }
+            })
+          )
+        })
         // when the matchMedia doesn't match anymore, make sure we revert the text
         return () => {
           // revert any splits or scrollTriggers
@@ -306,9 +355,9 @@ const Work = React.forwardRef(({
               <Panel className="panel panel1">
                 <div className="panel1-left-content">
                   <h1>We Work</h1>
-                  <StaticImage 
-                    src="../../assets/we-work/joel-muniz-bJ2Dm9ZyeIY-unsplash-cropped.png"
-                    alt="Man with microphone"
+                  <GatsbyImage 
+                    image={homeWorkSectionImage.asset.gatsbyImageData}
+                    alt={homeWorkSectionImage.alt}
                     placeholder="blurred"
                     layout="fullWidth"
                     className='panel-1-img'
@@ -324,13 +373,13 @@ const Work = React.forwardRef(({
               <Panel className="panel panel2">
                 <SvgBg className="svg-bg" />
                 <div className="panel-equal-column">
-                  <div className="we-work-text-wrapper">
+                  <div className="we-work-text-wrapper text-from-above">
                     <h2>{panelOneTitle}</h2>
-                    <BlockContent blocks={panelOneText} />
+                    <BlockContent blocks={panelOneText}/>
                   </div>
-                  <StaticImage
-                    src="../../assets/we-work/pexels-elina-araja.png"
-                    alt="Microphone"
+                  <GatsbyImage
+                    image={panelOneImage.asset.gatsbyImageData}
+                    alt={panelOneImage.alt}
                     placeholder="blurred"
                     layout="fullWidth"
                     objectPosition="0 0"
@@ -338,30 +387,30 @@ const Work = React.forwardRef(({
                     />
                 </div>
                 <div className="panel-equal-column reverse-on-mob">
-                  <StaticImage
-                    src="../../assets/we-work/pexels-los-muertos-crew.png"
-                    alt="Smiling people"
+                  <GatsbyImage
+                    image={panelTwoImage.asset.gatsbyImageData}
+                    alt={panelTwoImage.alt}
                     placeholder="blurred"
                     layout="fullWidth"
                     objectPosition="0 0"
                     className="img-r"
                     style={{maxWidth: '260px', margin: '0 auto 2rem auto'}}
                     />
-                    <div className="we-work-text-wrapper">
+                    <div className="we-work-text-wrapper text-from-below">
                       <h2>{panelTwoTitle}</h2>
-                      <BlockContent blocks={panelTwoText} />
+                      <BlockContent blocks={panelTwoText}/>
                     </div>
                 </div>
               </Panel>
               <Panel className="panel panel3">
                 <div className="panel-equal-column">
-                  <div className="we-work-text-wrapper">
+                  <div className="we-work-text-wrapper text-from-above">
                     <h2>{panelThreeTitle}</h2>
-                    <BlockContent blocks={panelThreeText} />
+                    <BlockContent blocks={panelThreeText}/>
                   </div>
-                  <StaticImage
-                    src="../../assets/we-work/pexels-jonathan-pham-12375133.jpg"
-                    alt="Smiling people"
+                  <GatsbyImage
+                    image={panelThreeImage.asset.gatsbyImageData}
+                    alt={panelThreeImage.alt}
                     placeholder="blurred"
                     layout="fullWidth"
                     aspectRatio={16/9}
@@ -369,19 +418,19 @@ const Work = React.forwardRef(({
                     className="img-l"
                     />
                 </div>
-                <div className="panel-equal-column reverse-on-mob">
-                  <StaticImage
-                    src="../../assets/we-work/pexels-cottonbro-studio-6491797.png"
-                    alt="Woman with magnifying glass"
+                <div className="panel-equal-column reverse-on-mob" style={{paddingRight: '450px'}}>
+                  <GatsbyImage
+                    image={panelFourImage.asset.gatsbyImageData}
+                    alt={panelFourImage.alt}
                     placeholder="blurred"
                     layout="fullWidth"
                     objectPosition="0 0"
                     className="img-r"
                     style={{maxWidth: '260px', margin: '0 auto 2rem auto'}}
                     />
-                    <div className="we-work-text-wrapper">
+                    <div className="we-work-text-wrapper text-from-below">
                       <h2>{panelFourTitle}</h2>
-                      <BlockContent blocks={panelFourText} />
+                      <BlockContent blocks={panelFourText}/>
                     </div>
                 </div>
               </Panel>

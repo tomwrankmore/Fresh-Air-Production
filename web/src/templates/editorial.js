@@ -23,6 +23,7 @@ export const query = graphql`
         title
       }
       heroImage {
+          alt
           asset {
             gatsbyImageData
           }
@@ -37,16 +38,16 @@ export const query = graphql`
         current
       }
       sectionOneImage {
+          alt
           asset {
             gatsbyImageData
           }
-          alt
         }
       sectionTwoImage {
+        alt
         asset {
           gatsbyImageData
         }
-        alt
       }
       relatedProjects {
         _id
@@ -55,6 +56,7 @@ export const query = graphql`
           current
         }
         previewImage {
+          alt
           asset {
             gatsbyImageData
           }
@@ -64,6 +66,7 @@ export const query = graphql`
       _rawSectionTwoText
       # isFeaturedPost
       heroImage {
+        alt
         asset {
           gatsbyImageData
         }

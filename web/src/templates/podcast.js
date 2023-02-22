@@ -20,11 +20,11 @@ export const query = graphql`
         color
       }
       mainImage {
+        alt
         asset {
           _id
           gatsbyImageData
         }
-        alt
       }
       heroImage {
         alt

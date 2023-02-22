@@ -12,6 +12,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         url
         keywords
         Logo {
+          alt
           asset {
             gatsbyImageData
           }
