@@ -20,6 +20,11 @@ export default {
       title: 'Hero ticker tape text'
     },
     {
+      name: 'heroImage',
+      title: 'Hero Image',
+      type: 'figure'
+    },
+    {
       name: 'homePodcastHeading',
       type: 'simplePortableText',
       title: 'Podcast section heading',
@@ -56,6 +61,11 @@ export default {
       title: 'Work panel one text',
     },
     {
+      name: 'homeWorkPanelOneImage',
+      title: 'Work panel one image',
+      type: 'figure'
+    },
+    {
       name: 'homeWorkPanelTwoTitle',
       type: 'string',
       title: 'Work panel two title',
@@ -64,6 +74,11 @@ export default {
       name: 'homeWorkPanelTwoText',
       type: 'simplePortableText',
       title: 'Work panel two text',
+    },
+    {
+      name: 'homeWorkPanelTwoImage',
+      title: 'Work panel two image',
+      type: 'figure'
     },
     {
       name: 'homeWorkPanelThreeTitle',
@@ -76,6 +91,11 @@ export default {
       title: 'Work panel four text',
     },
     {
+      name: 'homeWorkPanelThreeImage',
+      title: 'Work panel three image',
+      type: 'figure'
+    },
+    {
       name: 'homeWorkPanelFourTitle',
       type: 'string',
       title: 'Work panel four title',
@@ -84,6 +104,11 @@ export default {
       name: 'homeWorkPanelFourText',
       type: 'simplePortableText',
       title: 'Work panel four text',
+    },
+    {
+      name: 'homeWorkPanelFourImage',
+      title: 'Work panel four image',
+      type: 'figure'
     },
     // {
     //   name: 'homeTestimonials',
