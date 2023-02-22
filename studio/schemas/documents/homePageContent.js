@@ -51,6 +51,11 @@ export default {
       description: 'Heading in the We Work section.'
     },
     {
+      name: 'homeWorkSectionImage',
+      title: 'Work Section Main Image',
+      type: 'figure'
+    },
+    {
       name: 'homeWorkPanelOneTitle',
       type: 'string',
       title: 'Work panel one title',
