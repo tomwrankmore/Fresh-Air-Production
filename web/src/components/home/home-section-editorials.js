@@ -166,7 +166,7 @@ const Editorials = ({editorialNodes, featuredEditorial, homeEditorials}) => {
                   />
                 }
                 <div className="titleWrapper">
-                  <h3>Unearthed with Kew Gardens launches, exploring the relationship with food production and how it's made</h3>
+                  <h3>{featuredEditorial.title}</h3>
                 </div>
               </div>
           </Link>
