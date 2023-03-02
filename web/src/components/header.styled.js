@@ -4,7 +4,7 @@ import { colors } from "../styles/colors";
 
 export const Wrapper = styled.div` 
   margin: 0 auto;
-  padding: 1em;
+  padding: 1.15rem;
   display: flex;
   justify-content: flex-end;
 
