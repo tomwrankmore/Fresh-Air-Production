@@ -34,7 +34,9 @@ export default {
     {
       name: 'calendlyLink',
       title: 'Calendly Form',
-      type: 'string'
+      type: 'string',
+      description: 'Please add the Calendly Form URL here',
+      validation: Rule => Rule.error('Please add the Calendly form URL.').required(),
     }
   ]
 }

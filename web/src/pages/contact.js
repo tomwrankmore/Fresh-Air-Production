@@ -215,17 +215,6 @@ const ContactPage = (props) => {
       <SEO title="Contact" />
       <CentralLogo />
       <ContactOuterWrapper>
-      {/* <ContactWrapper style={{backgroundColor:'#067BC2'}} className='contact-page-hero'>
-        <Column>
-          <BlockContent blocks={data.contactPageContent._rawContactHeroText} />
-        </Column>
-        <Column>
-          <BgImage 
-            image={heroBgImage}
-            className="background-image" 
-          />
-        </Column>
-      </ContactWrapper> */}
        <Marquee 
           style={{color: colors.FABlue}}
           textContent="Don't be shy. Get in touch. Don't be shy. Get in touch. Don't be shy. Get in touch."
@@ -330,7 +319,6 @@ const ContactPage = (props) => {
             </ContactForm> : 
             <h3>Thanks! We'll be in touch.</h3>
             }
-            
             
           </Column>
         </ContactWrapper>
