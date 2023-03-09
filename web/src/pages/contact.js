@@ -113,6 +113,9 @@ const Column = styled.div`
 `
 
 const ContactPage = (props) => {
+
+  const isBrowser = typeof window !== "undefined"
+
   const { data, errors } = props;
   if (errors) {
     return (
@@ -159,8 +162,7 @@ const ContactPage = (props) => {
             </p>
             {/* <InlineWidget url={data.contactPageContent.calendlyLink}/> */}
             {/* <BlockContent blocks={data.contactPageContent._rawContactText}/> */}
-
-            <PopupWidget
+            {isBrowser ? <PopupWidget
               url={data.contactPageContent.calendlyLink}
               /*
               * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
@@ -170,7 +172,8 @@ const ContactPage = (props) => {
               text="Click here to schedule a meeting!"
               textColor="#ffffff"
               color={colors.FABlue}
-            />
+            /> : null }
+            
 
           </Column>
         </ContactWrapper>
