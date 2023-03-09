@@ -162,19 +162,15 @@ const ContactPage = (props) => {
             </p>
             {/* <InlineWidget url={data.contactPageContent.calendlyLink}/> */}
             {/* <BlockContent blocks={data.contactPageContent._rawContactText}/> */}
-            {isBrowser ? <PopupWidget
+           
+           {/* {isBrowser ? <PopupWidget
               url={data.contactPageContent.calendlyLink}
-              /*
-              * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
-              * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
-              */
               rootElement={document.getElementById("root")}
               text="Click here to schedule a meeting!"
               textColor="#ffffff"
               color={colors.FABlue}
-            /> : null }
+            /> : null } */}
             
-
           </Column>
         </ContactWrapper>
       </ContactOuterWrapper>
