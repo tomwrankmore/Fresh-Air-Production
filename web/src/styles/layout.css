@@ -188,3 +188,9 @@ line {
   stroke-width: 20;
   stroke-linecap: round;
 }
+
+.calendly-badge-widget {
+  position: relative !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}

@@ -36,6 +36,9 @@ function SEO({ description, lang, meta, keywords, title }) {
       htmlAttributes={{ lang }}
       title={title}
       titleTemplate={title === siteTitle ? "%s" : `%s | ${siteTitle}`}
+      bodyAttributes={{
+          id: 'root'
+      }}
       meta={[
         {
           name: "viewport",

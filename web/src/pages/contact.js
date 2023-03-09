@@ -1,7 +1,7 @@
-import React, {useState, useRef} from "react";
+import React, {useState, useRef, useEffect} from "react";
 import { graphql } from 'gatsby'
 import styled from "styled-components";
-import { InlineWidget } from "react-calendly";
+import { InlineWidget, PopupWidget } from "react-calendly";
 import GraphQLErrorList from "../components/graphql-error-list";
 import {device} from "../styles/mediaQueries"
 import { colors } from "../styles/colors";
@@ -112,54 +112,6 @@ const Column = styled.div`
   }
 `
 
-const ContactForm = styled.form` 
-
-  max-width: 500px;
-  width: 100%;
-
-  div.form-section {
-    margin-bottom: 1rem;
-    fieldset.name-fieldset {
-      display: flex;
-      gap: 1rem;
-      div {
-        flex: 1;
-        input {
-          width: 100%;
-        }
-      }
-    }
-    label {
-      margin-right: 0.5rem;
-      margin-bottom: 0.25rem;
-      display: block;
-    }
-    input,
-    textarea#message {
-      border: solid 1px ${colors.FABlue};
-      padding: 1rem 0.75rem;
-    }
-    input.email, 
-    input.subject {
-      width: 100%;
-    }
-    textarea#message {
-      width: 100%;
-    }
-    button.submit-btn {
-      background-color: transparent;
-      border: none;
-      text-decoration: underline;
-      font-size: 1rem;
-      padding: 0;
-      &:hover {
-        cursor: pointer;
-        color: ${colors.FABlue}
-      }
-    }
-  }
-`
-
 const ContactPage = (props) => {
   const { data, errors } = props;
   if (errors) {
@@ -173,48 +125,13 @@ const ContactPage = (props) => {
   const heroBgImage = data.contactPageContent.contactHeroImage.asset.localFile.childImageSharp.gatsbyImageData
 
   const contactMarqRef = useRef()
-
-  const [formState, setFormState] = useState({
-    fname: "",
-    lname: "",
-    email: "",
-    subject: "",
-    message: ""
-  })
-  
-  const [formSuccesState, setFormSuccesState] = useState(false)
-
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-  }
-
-  const handleSubmit = e => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact-form", ...formState })
-    })
-      .then(() => setFormSuccesState(true))
-      .then(() => setFormState({fname: "", lname: "", email: "", subject: "", message: ""}))
-      .catch(error => alert(error));
-
-    e.preventDefault();
-  }
-
-  const handleChange = e => {
-    setFormState({
-      ...formState,
-      [e.target.name]: e.target.value, 
-    })
-  }
+  const outerWrapperRef = useRef()
 
   return (
     <Layout>
       <SEO title="Contact" />
       <CentralLogo />
-      <ContactOuterWrapper>
+      <ContactOuterWrapper ref={outerWrapperRef}>
        <Marquee 
           style={{color: colors.FABlue}}
           textContent="Don't be shy. Get in touch. Don't be shy. Get in touch. Don't be shy. Get in touch."
@@ -240,90 +157,25 @@ const ContactPage = (props) => {
             <p>
               To enquire about working for us at Fresh Air, please email <a href="mailto:work@freshairproduction.co.uk" rel="noreferrer">work@freshairproduction.co.uk</a>
             </p>
+            {/* <InlineWidget url={data.contactPageContent.calendlyLink}/> */}
             {/* <BlockContent blocks={data.contactPageContent._rawContactText}/> */}
-            {
-            !formSuccesState ? <ContactForm 
-              name="contact-form"
-              method="POST"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-              onSubmit={handleSubmit}
-            >
-              <input type="hidden" name="form-name" value="contact-form" />
-              <div className="form-section">
-                <fieldset className="name-fieldset">
-                  <div>
-                    <label for="fname">First name:</label>
-                    <input 
-                      id="fname"
-                      type="text" 
-                      name="fname"
-                      onChange={handleChange}
-                      value={formState.fname}
-                      required
-                      // placeholder="Enter your first name" 
-                    />
-                  </div>
-                  <div>
-                    <label for="lname">Last name:</label>
-                    <input 
-                      id="lname"
-                      type="text" 
-                      name="lname"
-                      onChange={handleChange}
-                      value={formState.lname}
-                      required
-                      // placeholder="Enter your last name" 
-                    />
-                  </div>
-                </fieldset>
-              </div>
-              <div className="form-section">
-                <label htmlFor="email">Email:</label>
-                <input 
-                  id="email"
-                  type="email" 
-                  name="email"
-                  onChange={handleChange}
-                  value={formState.email}
-                  required
-                  className="email"
-                  // placeholder="Enter your email"
-                />
-              </div>
-              <div className="form-section">
-                <label for="subject">Subject:</label>
-                  <input 
-                    name="subject" 
-                    type="text" 
-                    id="subject"
-                    onChange={handleChange}
-                    value={formState.subject}
-                    required
-                    className="subject"
-                  ></input>
-              </div>
-              <div className="form-section">
-                <label>Message:</label>
-                <textarea 
-                  name="message" 
-                  id="message"
-                  onChange={handleChange}
-                  value={formState.message}
-                  required
-                ></textarea>
-              </div>
-              <div className="form-section">
-                <button type="submit" className="submit-btn">Submit form</button>
-              </div>
-            </ContactForm> : 
-            <h3>Thanks! We'll be in touch.</h3>
-            }
-            
+
+            <PopupWidget
+              url={data.contactPageContent.calendlyLink}
+              /*
+              * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
+              * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
+              */
+              rootElement={document.getElementById("root")}
+              text="Click here to schedule a meeting!"
+              textColor="#ffffff"
+              color={colors.FABlue}
+            />
+
           </Column>
         </ContactWrapper>
       </ContactOuterWrapper>
-      <InlineWidget url={data.contactPageContent.calendlyLink} />
+      
     </Layout>
   )
 };
