@@ -1,13 +1,8 @@
 import React from "react";
-import { Link } from "gatsby";
-import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { colors } from "../../styles/colors";
 import styled from "styled-components";
 import BlockContent from "../block-content";
-
-import { FaSpotify, FaPodcast, FaAmazon, FaArrowRight } from 'react-icons/fa';
-import { SiIheartradio } from "react-icons/si";
-import { BsFillPlayFill } from "react-icons/bs";
 
 // Material UI
 import Accordion from "@mui/material/Accordion";

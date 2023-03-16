@@ -1,9 +1,6 @@
-import React, {useLayoutEffect, useRef} from "react";
-import {colors} from "../../styles/colors"
+import React from "react";
 import {device} from "../../styles/mediaQueries"
 import styled from "styled-components";
-import { FaSpotify, FaPodcast, FaAmazon } from 'react-icons/fa';
-import { SiIheartradio } from "react-icons/si";
 
 const PodcastEpisodesSectionWrapper = styled.div` 
   padding: 2rem;
