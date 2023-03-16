@@ -86,6 +86,12 @@ export default {
       type: 'string'
     },
     {
+      name: 'googleLink',
+      title: 'Amazon Link (optional)',
+      description: 'This requires an Amazon Podcast link, the icon & link will only appear if you enter a URL here.',
+      type: 'string'
+    },
+    {
       name: 'iHeartRadioLink',
       title: 'iHeartRadio Link  (optional)',
       description: 'This requires an iHeartRadio Podcast link, the icon & link will only appear if you enter a URL here.',

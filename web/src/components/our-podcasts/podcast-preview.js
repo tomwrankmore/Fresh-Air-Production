@@ -5,7 +5,7 @@ import { colors } from "../../styles/colors";
 import styled from "styled-components";
 import BlockContent from "../block-content";
 
-import { FaSpotify, FaPodcast, FaAmazon, FaArrowRight } from 'react-icons/fa';
+import { FaGoogle, FaSpotify, FaPodcast, FaAmazon, FaArrowRight } from 'react-icons/fa';
 import { SiIheartradio } from "react-icons/si";
 import { BsFillPlayFill } from "react-icons/bs";
 
@@ -117,7 +117,8 @@ const PodcastPreview = ({node}) => {
             <IconList>
               {node.podcastLink && (<li><a href={node.podcastLink} target="_blank" rel="noreferrer"><FaPodcast/></a></li>)}
               {node.spotifyLink && (<li><a href={node.spotifyLink} target="_blank" rel="noreferrer"><FaSpotify/></a></li>)}
-              {node.amazonLink && (<li><a href={node.amazonLink} target="_blank" rel="noreferrer"><FaAmazon/></a></li>)}
+              {node.amazonLink && (<li><a href={node.amazonLink} target="_blank" rel="noreferrer"><FaGoogle/></a></li>)}
+              {node.googleLink && (<li><a href={node.amazonLink} target="_blank" rel="noreferrer"><FaAmazon/></a></li>)}
               {node.iHeartRadioLink && (<li><a href={node.iHeartRadioLink} target="_blank" rel="noreferrer"><SiIheartradio/></a></li>)}
             </IconList>
         </LinkContent>

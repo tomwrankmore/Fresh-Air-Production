@@ -1,11 +1,10 @@
 import React, {useState, useRef, useEffect} from "react";
 import { graphql } from 'gatsby'
 import styled from "styled-components";
-import { InlineWidget, PopupWidget } from "react-calendly";
+import { PopupWidget } from "react-calendly";
 import GraphQLErrorList from "../components/graphql-error-list";
 import {device} from "../styles/mediaQueries"
 import { colors } from "../styles/colors";
-import { getImage } from "gatsby-plugin-image"
 import { BgImage, convertToBgImage } from 'gbimage-bridge';
 import Layout from "../containers/layout";
 import SEO from "../components/seo";
