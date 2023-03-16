@@ -129,13 +129,15 @@ const Hero = React.forwardRef(({heroMarqueeRef, tl, heroMarqueeText, heroImage},
           <AirSvg className="air-svg" />
         </div>
       </SvgLogoWrapper>
-      <StaticImage
-        src="../../assets/FA-logo-mob.png"
-        alt="Fresh Air Logo"
-        placeholder="blurred"
-        objectFit="contain"
-        className="mobile-logo"
-      />
+      <div className="mobile-logo">
+        <StaticImage
+          src="../../assets/FA-logo-mob.png"
+          alt="Fresh Air Logo"
+          placeholder="blurred"
+          objectFit="contain"
+          className="mobile-logo"
+        />
+      </div>
       <HeroInner className="hero-inner">
         <img src={heroImage.asset.gatsbyImageData.images.fallback.src} alt="alt" className="hero-img" />
       </HeroInner>

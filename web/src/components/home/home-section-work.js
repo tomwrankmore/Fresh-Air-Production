@@ -65,10 +65,10 @@ const Panel = styled.div`
     }
 
     .panel-1-img {
-      width: 100%; 
+      width: 300px; 
       margin: 2rem auto;
       @media ${device.mediaMinLarge} {
-        width: 60%; 
+        width: 420px; 
         margin: 30px auto;
       }
     }
@@ -181,6 +181,7 @@ const Panel = styled.div`
 
     .gatsby-image-wrapper {
       width: 100%;
+      max-width: 420px;
       height: auto;
     }
     

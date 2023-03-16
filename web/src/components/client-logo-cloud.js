@@ -67,10 +67,10 @@ const ClientLogoCloud = React.forwardRef((props, ref) => {
       <ExtendedContainer>
         <MarqueeLine className="cloudMarqueeLine">
           <div className="marqueeContent marqueeContent1">
-            <ClientLogoRowOne  className="clientLogoSVG" />
+            <ClientLogoRowOne className="clientLogoSVG" />
           </div>
           <div className="marqueeContent marqueeContent1">
-            <ClientLogoRowOne  className="clientLogoSVG" />
+            <ClientLogoRowOne className="clientLogoSVG" />
           </div>
         </MarqueeLine>
         <MarqueeLine className="cloudMarqueeLine">

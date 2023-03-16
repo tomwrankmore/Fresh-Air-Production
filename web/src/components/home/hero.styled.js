@@ -3,6 +3,7 @@ import { device } from "../../styles/mediaQueries"
 import styled from "styled-components"
 
 export const HeroWrapper = styled.div` 
+    display: none;
     background-color: ${colors.FABlue};
     height: calc(100vh - 82px);
     display: flex;
