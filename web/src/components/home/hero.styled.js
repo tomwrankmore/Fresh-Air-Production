@@ -43,7 +43,8 @@ export const HeroInner = styled.div`
         position: absolute;
         width: 100%;
         bottom: 0;
-        right: -20px;
+        /* right: -20px; */
+        right: 0px;
         --clip: 100% 0 0 0;
         clip-path: inset(var(--clip));
     }

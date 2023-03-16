@@ -1,6 +1,7 @@
 import React, {useLayoutEffect} from "react";
 import gsap from 'gsap'
 import { GatsbyImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
 import BlockContent from "../block-content";
 import styled from "styled-components";
 import { device } from "../../styles/mediaQueries";
@@ -189,8 +190,9 @@ const Panel = styled.div`
       margin-bottom: 2rem;
       text-transform: uppercase;
     }
-    p {
+    p, a {
       font-weight: normal;
+      text-decoration: none;
       line-height: 1.5rem;
       font-size: 1.275rem;
       &:last-child {
@@ -201,6 +203,10 @@ const Panel = styled.div`
           margin-bottom: 4rem;
         }
       }
+    }
+    a:hover {
+      text-decoration: underline;
+      color: white;
     }
   }
 `
@@ -431,7 +437,8 @@ const Work = React.forwardRef(({
                     />
                     <div className="we-work-text-wrapper text-from-below">
                       <h2>{panelFourTitle}</h2>
-                      <BlockContent blocks={panelFourText}/>
+                      <BlockContent blocks={panelFourText} style={{marginBottom: '1rem'}}/>
+                      <Link to="/podcasts">Let's get making a podcast</Link>
                     </div>
                 </div>
               </Panel>

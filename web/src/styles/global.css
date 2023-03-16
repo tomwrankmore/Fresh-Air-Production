@@ -76,11 +76,15 @@ body {
   overflow-y: scroll;
 }
 
-a:hover,
+a {
+  color: white;
+}
+
+/* a:hover,
 a:active,
 a:visited {
   color: #30323D;
-}
+} */
 
 .swiper {
   width: 100%;
