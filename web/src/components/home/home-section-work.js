@@ -238,7 +238,6 @@ const Work = React.forwardRef(({
         let imagesR = gsap.utils.toArray('.img-r');
         let textFromAbove = gsap.utils.toArray('.text-from-above')
         let textFromBelow = gsap.utils.toArray('.text-from-below')
-        // let paragraphs = gsap.utils.toArray('.panel-paragraph');
     
         let scrollTween = gsap.to(sections, {
           xPercent: -110 * (sections.length - 1),
@@ -438,7 +437,7 @@ const Work = React.forwardRef(({
                     <div className="we-work-text-wrapper text-from-below">
                       <h2>{panelFourTitle}</h2>
                       <BlockContent blocks={panelFourText} style={{marginBottom: '1rem'}}/>
-                      <Link to="/podcasts">Let's get making a podcast</Link>
+                      <Link to="/podcasts" style={{marginBottom: '1rem'}}>Let's get making a podcast</Link>
                     </div>
                 </div>
               </Panel>

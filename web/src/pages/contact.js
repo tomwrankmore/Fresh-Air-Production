@@ -17,6 +17,7 @@ export const query = graphql`
   query ContactPageQuery {
     contactPageContent: sanityContactPageContent {
       _rawContactHeroText
+      _rawContactText
       calendlyLink
       contactHeroImage {
         asset {
@@ -148,7 +149,7 @@ const ContactPage = (props) => {
             />
           </Column>
           <Column className="form-columns">
-            <p>
+            {/* <p>
               <span>Don't be shy. You can <a href="mailto:hello@freshairproduction.co.uk" rel="noreferrer">email us</a>.</span> 
               <span>Fill in the form on the right or <a href="tel:+442034885195" rel="noreferrer">give us a call</a> to start making podcasts, radio adverts and amazing audio.</span>
             </p>
@@ -158,9 +159,9 @@ const ContactPage = (props) => {
             </p>
             <p>
               To enquire about working for us at Fresh Air, please email <a href="mailto:work@freshairproduction.co.uk" rel="noreferrer">work@freshairproduction.co.uk</a>
-            </p>
+            </p> */}
             
-            {/* <BlockContent blocks={data.contactPageContent._rawContactText}/> */}
+          <BlockContent blocks={data.contactPageContent._rawContactText}/>
            
            {isBrowser ? <PopupWidget
               url={data.contactPageContent.calendlyLink}

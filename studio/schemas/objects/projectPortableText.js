@@ -44,15 +44,15 @@ export default {
             ]
           },
           {
-            title: 'Email',
             name: 'emailLink',
             type: 'object',
+            title: 'Email',
             icon: FaRegEnvelope,
             fields: [
               {
-                title: 'Email',
                 name: 'mailto',
                 type: 'url',
+                title: 'Email',
                 validation: Rule => Rule.uri({
                   scheme: ['mailto']
                 })

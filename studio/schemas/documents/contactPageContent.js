@@ -25,12 +25,12 @@ export default {
       title: 'Contact hero Image',
       type: 'figure'
     },
-    // {
-    //   name: 'contactText',
-    //   title: 'Contact Text',
-    //   description: 'Copy to sit left of contact form',
-    //   type: 'projectPortableText'
-    // },
+    {
+      name: 'contactText',
+      title: 'Contact Text',
+      description: 'Copy to sit left of contact form',
+      type: 'projectPortableText'
+    },
     {
       name: 'calendlyLink',
       title: 'Calendly Form',

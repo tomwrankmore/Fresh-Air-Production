@@ -6,6 +6,15 @@ import { Figure } from "./figure";
 const components = {
   types: {
     figure: Figure
+  },
+  marks: {
+    emailLink: ({children, value}) => {
+      return (
+        <a href={value.mailto} rel='noreferrer'>
+          {children}
+        </a>
+      )
+    }
   }
 };
 
