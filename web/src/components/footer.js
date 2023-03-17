@@ -44,7 +44,7 @@ const Footer = ({ children }) => {
               id="panel1a-header"
               sx={btnStyles}
             >
-            <Typography className="mailing-list-title">SIGN UP TO PODCAST RECOMMENDS'</Typography>
+            <Typography className="mailing-list-title">SIGN UP TO PODCAST RECOMMENDS</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Subscribe>
