@@ -22,6 +22,12 @@ const HorizontalContainer = styled.div`
       height: calc(100vh - 82px);
     }
 
+    .work-podcast-link {
+      display: block; 
+      margin-bottom: 1rem,;
+      text-decoration: underline!important;
+    }
+
     .svg-bg {
       height: 100%;
       position: absolute;
@@ -65,13 +71,19 @@ const Panel = styled.div`
       padding-top: 0;
     }
 
-    .panel-1-img {
-      width: 300px; 
+    .panel-1-img-wrapper {
+      width: auto;
+      height: 30vh;
       margin: 2rem auto;
       @media ${device.mediaMinLarge} {
-        width: 420px; 
-        margin: 30px auto;
+        height: 50vh;
       }
+    }
+
+    .panel-1-img {
+      height: 100%!important;
+      width: auto!important;
+      margin: 0 auto!important;
     }
 
     .panel1-right-content, 
@@ -357,90 +369,92 @@ const Work = React.forwardRef(({
 
     return (
         <div style={{position: 'relative'}} ref={ref}>
-            <HorizontalContainer className="horizontalContainer">
-              <Panel className="panel panel1">
-                <div className="panel1-left-content">
-                  <h1>We Work</h1>
-                  <GatsbyImage 
-                    image={homeWorkSectionImage.asset.gatsbyImageData}
-                    alt={homeWorkSectionImage.alt}
-                    placeholder="blurred"
-                    layout="fullWidth"
-                    className='panel-1-img'
+          <HorizontalContainer className="horizontalContainer">
+            <Panel className="panel panel1">
+              <div className="panel1-left-content">
+                <h1>We Work</h1>
+                <GatsbyImage 
+                  image={homeWorkSectionImage.asset.gatsbyImageData}
+                  alt={homeWorkSectionImage.alt}
+                  placeholder="blurred"
+                  layout="fullWidth"
+                  className='panel-1-img-wrapper'
+                  imgClassName='panel-1-img'
+                />
+                <h1>With You</h1>
+              </div>
+              <div className="panel1-right-content">
+                <BsArrowRight style={{fontSize: '3rem', marginBottom: '1rem'}}  className='hide-on-mob'/>
+                <h4 className='hide-on-mob'>Take a scroll with us</h4>
+                <h3>{workSectionHeading}</h3>
+              </div>
+            </Panel>
+            <Panel className="panel panel2">
+              <SvgBg className="svg-bg" />
+              <div className="panel-equal-column">
+                <div className="we-work-text-wrapper text-from-above">
+                  <h2>{panelOneTitle}</h2>
+                  <BlockContent blocks={panelOneText}/>
+                </div>
+                <GatsbyImage
+                  image={panelOneImage.asset.gatsbyImageData}
+                  alt={panelOneImage.alt}
+                  placeholder="blurred"
+                  layout="fullWidth"
+                  objectPosition="0 0"
+                  className="img-l"
                   />
-                  <h1>With You</h1>
-                </div>
-                <div className="panel1-right-content">
-                  <BsArrowRight style={{fontSize: '3rem', marginBottom: '1rem'}}  className='hide-on-mob'/>
-                  <h4 className='hide-on-mob'>Take a scroll with us</h4>
-                  <h3>{workSectionHeading}</h3>
-                </div>
-              </Panel>
-              <Panel className="panel panel2">
-                <SvgBg className="svg-bg" />
-                <div className="panel-equal-column">
-                  <div className="we-work-text-wrapper text-from-above">
-                    <h2>{panelOneTitle}</h2>
-                    <BlockContent blocks={panelOneText}/>
+              </div>
+              <div className="panel-equal-column reverse-on-mob">
+                <GatsbyImage
+                  image={panelTwoImage.asset.gatsbyImageData}
+                  alt={panelTwoImage.alt}
+                  placeholder="blurred"
+                  layout="fullWidth"
+                  objectPosition="0 0"
+                  className="img-r"
+                  style={{maxWidth: '260px', margin: '0 auto 2rem auto'}}
+                  />
+                  <div className="we-work-text-wrapper text-from-below">
+                    <h2>{panelTwoTitle}</h2>
+                    <BlockContent blocks={panelTwoText}/>
                   </div>
-                  <GatsbyImage
-                    image={panelOneImage.asset.gatsbyImageData}
-                    alt={panelOneImage.alt}
-                    placeholder="blurred"
-                    layout="fullWidth"
-                    objectPosition="0 0"
-                    className="img-l"
-                    />
+              </div>
+            </Panel>
+            <Panel className="panel panel3">
+              <div className="panel-equal-column">
+                <div className="we-work-text-wrapper text-from-above">
+                  <h2>{panelThreeTitle}</h2>
+                  <BlockContent blocks={panelThreeText}/>
                 </div>
-                <div className="panel-equal-column reverse-on-mob">
-                  <GatsbyImage
-                    image={panelTwoImage.asset.gatsbyImageData}
-                    alt={panelTwoImage.alt}
-                    placeholder="blurred"
-                    layout="fullWidth"
-                    objectPosition="0 0"
-                    className="img-r"
-                    style={{maxWidth: '260px', margin: '0 auto 2rem auto'}}
-                    />
-                    <div className="we-work-text-wrapper text-from-below">
-                      <h2>{panelTwoTitle}</h2>
-                      <BlockContent blocks={panelTwoText}/>
-                    </div>
-                </div>
-              </Panel>
-              <Panel className="panel panel3">
-                <div className="panel-equal-column">
-                  <div className="we-work-text-wrapper text-from-above">
-                    <h2>{panelThreeTitle}</h2>
-                    <BlockContent blocks={panelThreeText}/>
+                <GatsbyImage
+                  image={panelThreeImage.asset.gatsbyImageData}
+                  alt={panelThreeImage.alt}
+                  placeholder="blurred"
+                  layout="fullWidth"
+                  aspectRatio={16/9}
+                  objectPosition="0 0"
+                  className="img-l"
+                  />
+              </div>
+              <div className="panel-equal-column reverse-on-mob">
+                <GatsbyImage
+                  image={panelFourImage.asset.gatsbyImageData}
+                  alt={panelFourImage.alt}
+                  placeholder="blurred"
+                  layout="fullWidth"
+                  objectPosition="0 0"
+                  className="img-r"
+                  style={{maxWidth: '260px', margin: '0 auto 2rem auto'}}
+                  />
+                  <div className="we-work-text-wrapper text-from-below">
+                    <h2>{panelFourTitle}</h2>
+                    <BlockContent blocks={panelFourText}/>
+                    <br/>
+                    <Link to="/contact" className="work-podcast-link">Let's get making a podcast</Link>
                   </div>
-                  <GatsbyImage
-                    image={panelThreeImage.asset.gatsbyImageData}
-                    alt={panelThreeImage.alt}
-                    placeholder="blurred"
-                    layout="fullWidth"
-                    aspectRatio={16/9}
-                    objectPosition="0 0"
-                    className="img-l"
-                    />
-                </div>
-                <div className="panel-equal-column reverse-on-mob">
-                  <GatsbyImage
-                    image={panelFourImage.asset.gatsbyImageData}
-                    alt={panelFourImage.alt}
-                    placeholder="blurred"
-                    layout="fullWidth"
-                    objectPosition="0 0"
-                    className="img-r"
-                    style={{maxWidth: '260px', margin: '0 auto 2rem auto'}}
-                    />
-                    <div className="we-work-text-wrapper text-from-below">
-                      <h2>{panelFourTitle}</h2>
-                      <BlockContent blocks={panelFourText} style={{marginBottom: '1rem'}}/>
-                      <Link to="/podcasts" style={{marginBottom: '1rem'}}>Let's get making a podcast</Link>
-                    </div>
-                </div>
-              </Panel>
+              </div>
+            </Panel>
           </HorizontalContainer>
         </div>
     )

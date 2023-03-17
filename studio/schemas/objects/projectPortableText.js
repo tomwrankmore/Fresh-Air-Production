@@ -59,6 +59,22 @@ export default {
               }
             ]
           },
+          {
+            name: 'phoneLink',
+            type: 'object',
+            title: 'Tel',
+            icon: FaPhone,
+            fields: [
+              {
+                name: 'tel',
+                type: 'url',
+                title: 'Telephone',
+                validation: Rule => Rule.uri({
+                  scheme: ['tel']
+                })
+              }
+            ]
+          },
         ]
       }
     },

@@ -14,6 +14,13 @@ const components = {
           {children}
         </a>
       )
+    },
+    phoneLink: ({children, value}) => {
+      return (
+        <a href={value.tel} rel='noreferrer'>
+          {children}
+        </a>
+      )
     }
   }
 };
