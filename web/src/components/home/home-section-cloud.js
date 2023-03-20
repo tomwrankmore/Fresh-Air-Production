@@ -106,20 +106,20 @@ const TagCloud = React.forwardRef((props, ref) => {
                   onMouseLeave={() => setBgColor(blue)}
                 >
                   <div className="marqueeContent marqueeContent1 hoverGrey">
-                    <Link to="/podcasts">INTERVIEW</Link>
-                    <Link to="/podcasts">DOCUMENTARY</Link>
-                    <Link to="/podcasts">SUSTAINABILITY</Link>
-                    <Link to="/podcasts">SCIENCE</Link>
-                    <Link to="/podcasts">WELLNESS</Link>
-                    <Link to="/podcasts">FINANCE</Link>
+                    <Link to="/our-podcasts/">INTERVIEW</Link>
+                    <Link to="/our-podcasts/">DOCUMENTARY</Link>
+                    <Link to="/our-podcasts/">SUSTAINABILITY</Link>
+                    <Link to="/our-podcasts/">SCIENCE</Link>
+                    <Link to="/our-podcasts/">WELLNESS</Link>
+                    <Link to="/our-podcasts/">FINANCE</Link>
                   </div>
                   <div className="marqueeContent marqueeContent1 hoverGrey">
-                    <Link to="/podcasts">DOCUMENTARY</Link>
-                    <Link to="/podcasts">SUSTAINABILITY</Link>
-                    <Link to="/podcasts">SCIENCE</Link>
-                    <Link to="/podcasts">WELLNESS</Link>
-                    <Link to="/podcasts">FINANCE</Link>
-                    <Link to="/podcasts">INTERVIEW</Link>
+                    <Link to="/our-podcasts/">DOCUMENTARY</Link>
+                    <Link to="/our-podcasts/">SUSTAINABILITY</Link>
+                    <Link to="/our-podcasts/">SCIENCE</Link>
+                    <Link to="/our-podcasts/">WELLNESS</Link>
+                    <Link to="/our-podcasts/">FINANCE</Link>
+                    <Link to="/our-podcasts/">INTERVIEW</Link>
                   </div>
                 </MarqueeLine>
                 <MarqueeLine 
@@ -127,20 +127,20 @@ const TagCloud = React.forwardRef((props, ref) => {
                   onMouseEnter={() => setBgColor(darkBlue)} 
                   onMouseLeave={() => setBgColor(blue)}>
                   <div className="marqueeContent marqueeContent2 hoverBlue">
-                    <Link to="/podcasts">DOCUMENTARY</Link>
-                    <Link to="/podcasts">SUSTAINABILITY</Link>
-                    <Link to="/podcasts">SCIENCE</Link>
-                    <Link to="/podcasts">WELLNESS</Link>
-                    <Link to="/podcasts">FINANCE</Link>
-                    <Link to="/podcasts">INTERVIEW</Link>
+                    <Link to="/our-podcasts/">DOCUMENTARY</Link>
+                    <Link to="/our-podcasts/">SUSTAINABILITY</Link>
+                    <Link to="/our-podcasts/">SCIENCE</Link>
+                    <Link to="/our-podcasts/">WELLNESS</Link>
+                    <Link to="/our-podcasts/">FINANCE</Link>
+                    <Link to="/our-podcasts/">INTERVIEW</Link>
                   </div>
                   <div className="marqueeContent marqueeContent2 hoverBlue">
-                    <Link to="/podcasts">SUSTAINABILITY</Link>
-                    <Link to="/podcasts">SCIENCE</Link>
-                    <Link to="/podcasts">WELLNESS</Link>
-                    <Link to="/podcasts">FINANCE</Link>
-                    <Link to="/podcasts">INTERVIEW</Link>
-                    <Link to="/podcasts">DOCUMENTARY</Link>
+                    <Link to="/our-podcasts/">SUSTAINABILITY</Link>
+                    <Link to="/our-podcasts/">SCIENCE</Link>
+                    <Link to="/our-podcasts/">WELLNESS</Link>
+                    <Link to="/our-podcasts/">FINANCE</Link>
+                    <Link to="/our-podcasts/">INTERVIEW</Link>
+                    <Link to="/our-podcasts/">DOCUMENTARY</Link>
                   </div>
                 </MarqueeLine>
                 <MarqueeLine 
@@ -149,20 +149,20 @@ const TagCloud = React.forwardRef((props, ref) => {
                   onMouseLeave={() => setBgColor(blue)}
                 >
                   <div className="marqueeContent marqueeContent1 hoverGreen">
-                    <Link to="/podcasts">SUSTAINABILITY</Link>
-                    <Link to="/podcasts">SCIENCE</Link>
-                    <Link to="/podcasts">WELLNESS</Link>
-                    <Link to="/podcasts">FINANCE</Link>
-                    <Link to="/podcasts">INTERVIEW</Link>
-                    <Link to="/podcasts">DOCUMENTARY</Link>
+                    <Link to="/our-podcasts/">SUSTAINABILITY</Link>
+                    <Link to="/our-podcasts/">SCIENCE</Link>
+                    <Link to="/our-podcasts/">WELLNESS</Link>
+                    <Link to="/our-podcasts/">FINANCE</Link>
+                    <Link to="/our-podcasts/">INTERVIEW</Link>
+                    <Link to="/our-podcasts/">DOCUMENTARY</Link>
                   </div>
                   <div className="marqueeContent marqueeContent1 hoverGreen">
-                    <Link to="/podcasts">SUSTAINABILITY</Link>
-                    <Link to="/podcasts">SCIENCE</Link>
-                    <Link to="/podcasts">WELLNESS</Link>
-                    <Link to="/podcasts">FINANCE</Link>
-                    <Link to="/podcasts">INTERVIEW</Link>
-                    <Link to="/podcasts">DOCUMENTARY</Link>
+                    <Link to="/our-podcasts/">SUSTAINABILITY</Link>
+                    <Link to="/our-podcasts/">SCIENCE</Link>
+                    <Link to="/our-podcasts/">WELLNESS</Link>
+                    <Link to="/our-podcasts/">FINANCE</Link>
+                    <Link to="/our-podcasts/">INTERVIEW</Link>
+                    <Link to="/our-podcasts/">DOCUMENTARY</Link>
                   </div>
                 </MarqueeLine>
                 <MarqueeLine 
@@ -171,20 +171,20 @@ const TagCloud = React.forwardRef((props, ref) => {
                     onMouseLeave={() => setBgColor(blue)}
                 >
                   <div className="marqueeContent marqueeContent2 hoverOrange">
-                    <Link to="/podcasts">SCIENCE</Link>
-                    <Link to="/podcasts">WELLNESS</Link>
-                    <Link to="/podcasts">FINANCE</Link>
-                    <Link to="/podcasts">INTERVIEW</Link>
-                    <Link to="/podcasts">DOCUMENTARY</Link>
-                    <Link to="/podcasts">SUSTAINABILITY</Link>
+                    <Link to="/our-podcasts/">SCIENCE</Link>
+                    <Link to="/our-podcasts/">WELLNESS</Link>
+                    <Link to="/our-podcasts/">FINANCE</Link>
+                    <Link to="/our-podcasts/">INTERVIEW</Link>
+                    <Link to="/our-podcasts/">DOCUMENTARY</Link>
+                    <Link to="/our-podcasts/">SUSTAINABILITY</Link>
                   </div>
                   <div className="marqueeContent marqueeContent2 hoverOrange">
-                    <Link to="/podcasts">SCIENCE</Link>
-                    <Link to="/podcasts">WELLNESS</Link>
-                    <Link to="/podcasts">FINANCE</Link>
-                    <Link to="/podcasts">INTERVIEW</Link>
-                    <Link to="/podcasts">DOCUMENTARY</Link>
-                    <Link to="/podcasts">SUSTAINABILITY</Link>
+                    <Link to="/our-podcasts/">SCIENCE</Link>
+                    <Link to="/our-podcasts/">WELLNESS</Link>
+                    <Link to="/our-podcasts/">FINANCE</Link>
+                    <Link to="/our-podcasts/">INTERVIEW</Link>
+                    <Link to="/our-podcasts/">DOCUMENTARY</Link>
+                    <Link to="/our-podcasts/">SUSTAINABILITY</Link>
                   </div>
                 </MarqueeLine>
                 <MarqueeLine 
@@ -193,20 +193,20 @@ const TagCloud = React.forwardRef((props, ref) => {
                   onMouseLeave={() => setBgColor(blue)}
                 >
                   <div className="marqueeContent marqueeContent1 hoverTurq">
-                    <Link to="/podcasts">WELLNESS</Link>
-                    <Link to="/podcasts">FINANCE</Link>
-                    <Link to="/podcasts">INTERVIEW</Link>
-                    <Link to="/podcasts">DOCUMENTARY</Link>
-                    <Link to="/podcasts">SUSTAINABILITY</Link>
-                    <Link to="/podcasts">SCIENCE</Link>
+                    <Link to="/our-podcasts/">WELLNESS</Link>
+                    <Link to="/our-podcasts/">FINANCE</Link>
+                    <Link to="/our-podcasts/">INTERVIEW</Link>
+                    <Link to="/our-podcasts/">DOCUMENTARY</Link>
+                    <Link to="/our-podcasts/">SUSTAINABILITY</Link>
+                    <Link to="/our-podcasts/">SCIENCE</Link>
                   </div>
                   <div className="marqueeContent marqueeContent1 hoverTurq">
-                    <Link to="/podcasts">WELLNESS</Link>
-                    <Link to="/podcasts">FINANCE</Link>
-                    <Link to="/podcasts">INTERVIEW</Link>
-                    <Link to="/podcasts">DOCUMENTARY</Link>
-                    <Link to="/podcasts">SUSTAINABILITY</Link>
-                    <Link to="/podcasts">SCIENCE</Link>
+                    <Link to="/our-podcasts/">WELLNESS</Link>
+                    <Link to="/our-podcasts/">FINANCE</Link>
+                    <Link to="/our-podcasts/">INTERVIEW</Link>
+                    <Link to="/our-podcasts/">DOCUMENTARY</Link>
+                    <Link to="/our-podcasts/">SUSTAINABILITY</Link>
+                    <Link to="/our-podcasts/">SCIENCE</Link>
                   </div>
                 </MarqueeLine>
               </ExtendedContainer>
