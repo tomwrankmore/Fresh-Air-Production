@@ -435,7 +435,7 @@ const Work = React.forwardRef(({
               </div>
               <div className="panel-equal-column">
                 <div className="we-work-img-container">
-                  <img src={panelTwoImage.asset.gatsbyImageData.images.fallback.src} alt={panelTwoImage.alt} className="we-work-static-img" />
+                  <img src={panelTwoImage.asset.gatsbyImageData.images.fallback.src} alt={panelTwoImage.alt} className="we-work-static-img img-r" />
                   </div>
                   <div className="we-work-text-container text-from-below">
                     <div>
