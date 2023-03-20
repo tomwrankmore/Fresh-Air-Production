@@ -24,7 +24,7 @@ const HorizontalContainer = styled.div`
 
     .work-podcast-link {
       display: block; 
-      margin-bottom: 1rem,;
+      margin-bottom: 1rem;
       text-decoration: underline!important;
     }
 
@@ -34,7 +34,7 @@ const HorizontalContainer = styled.div`
       top: 50%;
       left: 0%;
       z-index: 1;
-      width: 200vw;
+      width: 300%;
       transform: translateY(-50%);
       display: none;
       @media ${device.mediaMinLarge} {
@@ -134,9 +134,9 @@ const Panel = styled.div`
         font-size: 1.5rem;
         font-weight: normal; 
       }
-      h4, h5 {
+      /* h4, h5 {
         margin-bottom: 2rem;
-      }
+      } */
 
       .hide-on-mob {
         display: none;
@@ -148,19 +148,19 @@ const Panel = styled.div`
   }
 
   .panel-equal-column {
-    display: flex;
-    flex-direction: column;
     flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
     padding: 0 2rem 2rem 2rem;
     text-align: center;
     z-index: 101;
     margin-bottom: 1rem;
-    /* border-bottom: solid 1px white; */
+    height: 100%;
     @media ${device.mediaMinLarge} {
       border-bottom: none;
       padding: 0 60px;
       margin-bottom: 0;
-      display: block;
       .img {
         transform-origin: center center;
       }
@@ -180,26 +180,44 @@ const Panel = styled.div`
     }
 
     @media ${device.mediaMinXLarge} {
-      padding: 0 120px;
+      padding: 2rem 120px;
     }
 
     &.reverse-on-mob {
       flex-direction: column-reverse;
     }
 
-    .we-work-text-wrapper {
+    .we-work-text-container {
       position: relative;
       z-index: 100;
+      h2 {
+        margin-bottom: 1rem;
+      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
     }
 
-    .gatsby-image-wrapper {
+    .we-work-img-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .we-work-static-img {
+      max-height: calc(50vh - 83px);
+      height: 100%;
+    }
+
+    /* .gatsby-image-wrapper {
       width: 100%;
       max-width: 420px;
       height: auto;
-    }
+    } */
     
     h2 {
-      margin-bottom: 2rem;
+      /* margin-bottom: 2rem; */
       text-transform: uppercase;
     }
     p, a {
@@ -207,14 +225,14 @@ const Panel = styled.div`
       text-decoration: none;
       line-height: 1.5rem;
       font-size: 1.275rem;
-      &:last-child {
+      /* &:last-child {
         margin-bottom: 2rem;
-      }
-      @media ${device.mediaMinLarge} {
+      } */
+      /* @media ${device.mediaMinLarge} {
         &:last-child {
           margin-bottom: 4rem;
         }
-      }
+      } */
     }
     a:hover {
       text-decoration: underline;
@@ -239,6 +257,8 @@ const Work = React.forwardRef(({
   panelFourText,
   panelFourImage
 }, ref) => {
+
+  console.log('homeWorkSectionImage', homeWorkSectionImage.asset.gatsbyImageData.images.fallback)
 
     useLayoutEffect(() => {
       let mm = gsap.matchMedia(ref);
@@ -357,6 +377,7 @@ const Work = React.forwardRef(({
             })
           )
         })
+
         // when the matchMedia doesn't match anymore, make sure we revert the text
         return () => {
           // revert any splits or scrollTriggers
@@ -377,7 +398,8 @@ const Work = React.forwardRef(({
                   image={homeWorkSectionImage.asset.gatsbyImageData}
                   alt={homeWorkSectionImage.alt}
                   placeholder="blurred"
-                  layout="fullWidth"
+                  layout="constrained"
+                  height="100%"
                   className='panel-1-img-wrapper'
                   imgClassName='panel-1-img'
                 />
@@ -392,67 +414,79 @@ const Work = React.forwardRef(({
             <Panel className="panel panel2">
               <SvgBg className="svg-bg" />
               <div className="panel-equal-column">
-                <div className="we-work-text-wrapper text-from-above">
-                  <h2>{panelOneTitle}</h2>
-                  <BlockContent blocks={panelOneText}/>
+                <div className="we-work-text-container text-from-above">
+                  <div>
+                    <h2>{panelOneTitle}</h2>
+                    <BlockContent blocks={panelOneText}/>
+                  </div>
                 </div>
-                <GatsbyImage
-                  image={panelOneImage.asset.gatsbyImageData}
-                  alt={panelOneImage.alt}
-                  placeholder="blurred"
-                  layout="fullWidth"
-                  objectPosition="0 0"
-                  className="img-l"
-                  />
+                <div className="we-work-img-container">
+                  <img src={panelOneImage.asset.gatsbyImageData.images.fallback.src} alt={panelOneImage.alt} className="we-work-static-img img-l" />
+                  {/* <GatsbyImage
+                    image={panelOneImage.asset.gatsbyImageData}
+                    alt={panelOneImage.alt}
+                    placeholder="blurred"
+                    layout="constrained"
+                    height="100%"
+                    objectPosition="0 0"
+                    className="img-l"
+                  /> */}
+                </div>
               </div>
-              <div className="panel-equal-column reverse-on-mob">
-                <GatsbyImage
-                  image={panelTwoImage.asset.gatsbyImageData}
-                  alt={panelTwoImage.alt}
-                  placeholder="blurred"
-                  layout="fullWidth"
-                  objectPosition="0 0"
-                  className="img-r"
-                  style={{maxWidth: '260px', margin: '0 auto 2rem auto'}}
-                  />
-                  <div className="we-work-text-wrapper text-from-below">
-                    <h2>{panelTwoTitle}</h2>
-                    <BlockContent blocks={panelTwoText}/>
+              <div className="panel-equal-column">
+                <div className="we-work-img-container">
+                  <img src={panelTwoImage.asset.gatsbyImageData.images.fallback.src} alt={panelTwoImage.alt} className="we-work-static-img" />
+                  </div>
+                  <div className="we-work-text-container text-from-below">
+                    <div>
+                      <h2>{panelTwoTitle}</h2>
+                      <BlockContent blocks={panelTwoText}/>
+                    </div>
                   </div>
               </div>
             </Panel>
             <Panel className="panel panel3">
               <div className="panel-equal-column">
-                <div className="we-work-text-wrapper text-from-above">
-                  <h2>{panelThreeTitle}</h2>
-                  <BlockContent blocks={panelThreeText}/>
+                <div className="we-work-text-container text-from-above">
+                  <div>
+                    <h2>{panelThreeTitle}</h2>
+                    <BlockContent blocks={panelThreeText}/>
+                  </div>
                 </div>
-                <GatsbyImage
-                  image={panelThreeImage.asset.gatsbyImageData}
-                  alt={panelThreeImage.alt}
-                  placeholder="blurred"
-                  layout="fullWidth"
-                  aspectRatio={16/9}
-                  objectPosition="0 0"
-                  className="img-l"
-                  />
+                <div className="we-work-img-container">
+                  <img src={panelThreeImage.asset.gatsbyImageData.images.fallback.src} alt={panelThreeImage.alt} className="we-work-static-img img-l" />
+                  {/* <GatsbyImage
+                    image={panelThreeImage.asset.gatsbyImageData}
+                    alt={panelThreeImage.alt}
+                    placeholder="blurred"
+                    layout="constrained"
+                    height="100%"
+                    objectPosition="0 0"
+                    className="img-l"
+                  /> */}
+                </div>
               </div>
-              <div className="panel-equal-column reverse-on-mob">
-                <GatsbyImage
+              <div className="panel-equal-column">
+              <div className="we-work-img-container">
+                <img src={panelFourImage.asset.gatsbyImageData.images.fallback.src} alt={panelFourImage.alt} className="we-work-static-img img-r" />
+                {/* <GatsbyImage
                   image={panelFourImage.asset.gatsbyImageData}
                   alt={panelFourImage.alt}
                   placeholder="blurred"
-                  layout="fullWidth"
+                  layout="constrained"
+                  height="100%"
                   objectPosition="0 0"
                   className="img-r"
-                  style={{maxWidth: '260px', margin: '0 auto 2rem auto'}}
-                  />
-                  <div className="we-work-text-wrapper text-from-below">
+                /> */}
+              </div>
+                <div className="we-work-text-container text-from-below">
+                  <div>
                     <h2>{panelFourTitle}</h2>
                     <BlockContent blocks={panelFourText}/>
                     <br/>
                     <Link to="/contact" className="work-podcast-link">Let's get making a podcast</Link>
                   </div>
+                </div>
               </div>
             </Panel>
           </HorizontalContainer>
