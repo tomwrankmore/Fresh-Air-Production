@@ -206,7 +206,7 @@ const Panel = styled.div`
     }
 
     .we-work-static-img {
-      max-height: calc(50vh - 83px);
+      max-height: calc(50vh - 41px);
       height: 100%;
     }
 
@@ -257,8 +257,6 @@ const Work = React.forwardRef(({
   panelFourText,
   panelFourImage
 }, ref) => {
-
-  console.log('homeWorkSectionImage', homeWorkSectionImage.asset.gatsbyImageData.images.fallback)
 
     useLayoutEffect(() => {
       let mm = gsap.matchMedia(ref);
@@ -421,7 +419,12 @@ const Work = React.forwardRef(({
                   </div>
                 </div>
                 <div className="we-work-img-container">
-                  <img src={panelOneImage.asset.gatsbyImageData.images.fallback.src} alt={panelOneImage.alt} className="we-work-static-img img-l" />
+                  <img 
+                    src={panelOneImage.asset.gatsbyImageData.images.fallback.src}
+                    srcSet={panelOneImage.asset.gatsbyImageData.images.fallback.srcSet}
+                    alt={panelOneImage.alt} 
+                    className="we-work-static-img img-l" 
+                  />
                   {/* <GatsbyImage
                     image={panelOneImage.asset.gatsbyImageData}
                     alt={panelOneImage.alt}
@@ -435,7 +438,12 @@ const Work = React.forwardRef(({
               </div>
               <div className="panel-equal-column">
                 <div className="we-work-img-container">
-                  <img src={panelTwoImage.asset.gatsbyImageData.images.fallback.src} alt={panelTwoImage.alt} className="we-work-static-img img-r" />
+                  <img 
+                    src={panelTwoImage.asset.gatsbyImageData.images.fallback.src} 
+                    srcSet={panelTwoImage.asset.gatsbyImageData.images.fallback.srcSet}
+                    alt={panelTwoImage.alt} 
+                    className="we-work-static-img img-r" 
+                  />
                   </div>
                   <div className="we-work-text-container text-from-below">
                     <div>
@@ -454,7 +462,12 @@ const Work = React.forwardRef(({
                   </div>
                 </div>
                 <div className="we-work-img-container">
-                  <img src={panelThreeImage.asset.gatsbyImageData.images.fallback.src} alt={panelThreeImage.alt} className="we-work-static-img img-l" />
+                  <img 
+                    src={panelThreeImage.asset.gatsbyImageData.images.fallback.src}
+                    srcSet={panelThreeImage.asset.gatsbyImageData.images.fallback.srcSet}
+                    alt={panelThreeImage.alt} 
+                    className="we-work-static-img img-l"
+                  />
                   {/* <GatsbyImage
                     image={panelThreeImage.asset.gatsbyImageData}
                     alt={panelThreeImage.alt}
@@ -468,7 +481,12 @@ const Work = React.forwardRef(({
               </div>
               <div className="panel-equal-column">
               <div className="we-work-img-container">
-                <img src={panelFourImage.asset.gatsbyImageData.images.fallback.src} alt={panelFourImage.alt} className="we-work-static-img img-r" />
+                <img 
+                  src={panelFourImage.asset.gatsbyImageData.images.fallback.src} 
+                  srcSet={panelFourImage.asset.gatsbyImageData.images.fallback.srcSet}
+                  alt={panelFourImage.alt} 
+                  className="we-work-static-img img-r"
+                />
                 {/* <GatsbyImage
                   image={panelFourImage.asset.gatsbyImageData}
                   alt={panelFourImage.alt}
