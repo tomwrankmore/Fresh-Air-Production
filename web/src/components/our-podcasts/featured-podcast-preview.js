@@ -65,6 +65,7 @@ const btnStyles =  {
 }
 
 const FeaturedPodcastPreview = ({node}) => {
+
   return (
     <div>
       <Link to={`/podcast/${node.slug.current}`}>

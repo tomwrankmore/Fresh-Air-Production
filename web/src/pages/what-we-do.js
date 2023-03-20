@@ -146,6 +146,7 @@ const WhatWeDo = props => {
           textContent={wwdPageContent.wwdTickerTapeText}
           ref={marqueeRef}
         />
+        <WwdLogoCloud ref={sectionLogoCloudRef} />
         <WwdSectionOne 
           ref={sectionOneRef} 
           tl={section2Tl} 
@@ -184,7 +185,6 @@ const WhatWeDo = props => {
           tl={section4Tl} 
           nodes={allAwardNodes} 
         />
-        <WwdLogoCloud ref={sectionLogoCloudRef} />
       </Layout>
     );
   };

@@ -10,13 +10,11 @@ exports.onClientEntry = () => {
   // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
   if (!(`IntersectionObserver` in window)) {
     import(`intersection-observer`)
-    console.log(`# IntersectionObserver is polyfilled!`)
+    // console.log(`# IntersectionObserver is polyfilled!`)
   }
 }
 
 exports.onRouteUpdate = ({ location, prevLocation }) => {
-  console.log("new pathname", location.pathname)
-  console.log("old pathname", prevLocation ? prevLocation.pathname : null)
   
   const isBrowser = typeof document !== "undefined"
     if(isBrowser) {
