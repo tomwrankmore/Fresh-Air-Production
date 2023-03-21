@@ -141,11 +141,11 @@ const WhatWeDo = props => {
           heroImg = {wwdPageContent.wwdHeroImage}
           heroCopy = {wwdPageContent._rawWwdHeroText}
         />
-        <Marquee 
+        {/* <Marquee 
           style={{color: colors.FABlue}}
           textContent={wwdPageContent.wwdTickerTapeText}
           ref={marqueeRef}
-        />
+        /> */}
         <WwdLogoCloud ref={sectionLogoCloudRef} />
         <WwdSectionOne 
           ref={sectionOneRef} 
