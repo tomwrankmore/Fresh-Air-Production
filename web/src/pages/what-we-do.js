@@ -38,6 +38,22 @@ export const query = graphql`
               }
             }
           }
+          awardLeftImage {
+            alt
+            asset {
+              gatsbyImageData
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    width: 1024, 
+                    quality: 75, 
+                    placeholder: BLURRED, 
+                    formats: AUTO
+                  )
+                }
+              }
+            }
+          }
           _rawWwdHeroText
           wwdTickerTapeText
           _rawWwdSectionOneText
@@ -113,6 +129,7 @@ const WhatWeDo = props => {
   }
   const wwdPageContent = data && data.whatWeDoPageContent.edges[0].node;
   const allAwardNodes = data && data.awards && mapEdgesToNodes(data.awards);
+  const awardLeftImage = data && data.whatWeDoPageContent.edges[0].node.awardLeftImage
 
   // Section refs
   const heroRef = useRef(null)
@@ -184,6 +201,7 @@ const WhatWeDo = props => {
           ref={sectionFourRef} 
           tl={section4Tl} 
           nodes={allAwardNodes} 
+          awardLeftImage={awardLeftImage}
         />
       </Layout>
     );

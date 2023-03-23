@@ -112,7 +112,8 @@ const Column = styled.div`
     }
 `
 
-const WwdAwardsSection = React.forwardRef(({tl, nodes}, ref) => {
+const WwdAwardsSection = React.forwardRef(({tl, nodes, awardLeftImage}, ref) => {
+  console.log('awardLeftImage.asset.gatsbyImageData.localFile.childImageSharp: ', awardLeftImage.asset.localFile.childImageSharp)
 
   const [bgImageIndex, setBgImageIndex] = useState(0)
   const [nodeBg, setNodeBg] = useState('white')
@@ -133,7 +134,7 @@ const WwdAwardsSection = React.forwardRef(({tl, nodes}, ref) => {
         }
       `
     )
-    const pluginImage = getImage(heroBackgroundImage);
+    const pluginImage = getImage(awardLeftImage.asset.localFile.childImageSharp);
     const bgImage = convertToBgImage(pluginImage);
 
     useLayoutEffect(() => {
@@ -151,46 +152,46 @@ const WwdAwardsSection = React.forwardRef(({tl, nodes}, ref) => {
 
     return (
       <AwardsSectionWrapper ref={ref}>
-          <Column className='awards-sticky clipped'>
-            <BgImage 
-              image={pluginImage}
-              className="background-image" 
-            />
-            {/* <GatsbyImage
-              image={nodes[bgImageIndex].awardLeftImage.asset.gatsbyImageData}
-              alt="What we do"
-              placeholder="blurred"
-              layout="fullWidth"
-              objectPosition="0 0"
-              className="wwdSectionImg"
-              imgClassName=''
-              // style={{height: '100%'}}
-            /> */}
-          </Column>
-          <Column className="column-awards-list">
-            <AwardsList>
-              {nodes && nodes.map((node, idx) => {
-                return (
-                  <li key={node.id}>
-                      {/* <GatsbyImage
-                        image={node.awardLogo.asset.gatsbyImageData}
-                        alt={node.awardLogo.alt}
-                        aspectRatio={1/1}
-                        placeholder="blurred"
-                        layout="fullWidth"
-                        objectPosition="0 0"
-                        className="podcastsSectionImg"
-                      /> */}
-                      
-                     <h3 className="title">{node.title}</h3>
-                     <BlockContent blocks={node._rawBody} />
-                  </li>
-                )
-              })}
-            </AwardsList>
-          </Column>
+        <Column className='awards-sticky clipped'>
+          <BgImage 
+            image={pluginImage}
+            className="background-image" 
+          />
+          {/* <GatsbyImage
+            image={nodes[bgImageIndex].awardLeftImage.asset.gatsbyImageData}
+            alt="What we do"
+            placeholder="blurred"
+            layout="fullWidth"
+            objectPosition="0 0"
+            className="wwdSectionImg"
+            imgClassName=''
+            // style={{height: '100%'}}
+          /> */}
+        </Column>
+        <Column className="column-awards-list">
+          <AwardsList>
+            {nodes && nodes.map((node, idx) => {
+              return (
+                <li key={node.id}>
+                  {/* <GatsbyImage
+                    image={node.awardLogo.asset.gatsbyImageData}
+                    alt={node.awardLogo.alt}
+                    aspectRatio={1/1}
+                    placeholder="blurred"
+                    layout="fullWidth"
+                    objectPosition="0 0"
+                    className="podcastsSectionImg"
+                  /> */}
+                  
+                  <h3 className="title">{node.title}</h3>
+                  <BlockContent blocks={node._rawBody} />
+                </li>
+              )
+            })}
+          </AwardsList>
+        </Column>
       </AwardsSectionWrapper>
     )
-})
+  })
 
 export default WwdAwardsSection

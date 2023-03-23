@@ -65,5 +65,11 @@ export default {
       type: 'string',
       title: 'Quote section',
     },
+    {
+      name: 'awardLeftImage',
+      title: 'Award Ceremony Image',
+      description: 'This is the image that will sit on the left.',
+      type: 'figure'
+    },
   ]
 }
