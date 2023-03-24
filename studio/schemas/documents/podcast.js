@@ -99,8 +99,8 @@ export default {
     },
     {
       name: 'omnyWidget',
-      title: 'Omny iFrame (optional)',
-      description: 'This will generate an Omny player widget, REMEMBER you only need to put in the podcast name bit of the URL, so call-of-the-wild for example. The code will generate the Omny embed information.',
+      title: 'Omny iFrame (required)',
+      description: 'This will generate an Omny player widget as well as the play button for all Podcast posts. REMEMBER you only need to put in the podcast name bit of the URL, so call-of-the-wild for example. The code will generate the Omny embed and Play button URL information.',
       type: 'string'
     },
     {
