@@ -113,7 +113,6 @@ const Column = styled.div`
 `
 
 const WwdAwardsSection = React.forwardRef(({tl, nodes, awardLeftImage}, ref) => {
-  console.log('awardLeftImage.asset.gatsbyImageData.localFile.childImageSharp: ', awardLeftImage.asset.localFile.childImageSharp)
 
   const [bgImageIndex, setBgImageIndex] = useState(0)
   const [nodeBg, setNodeBg] = useState('white')
