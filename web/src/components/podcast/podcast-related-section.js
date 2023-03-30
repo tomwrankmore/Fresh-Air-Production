@@ -123,7 +123,7 @@ const PodcastRelatedSection = React.forwardRef(({podcast}, ref) => {
                       id="panel1a-header"
                       sx={btnStyles}
                   >
-                  <Typography>Find Our More</Typography>
+                  <Typography>Find Out More</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
                   <Excerpt>
