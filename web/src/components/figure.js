@@ -6,7 +6,7 @@ import clientConfig from "../../client-config";
 import * as styles from "./figure.module.css";
 
 export function Figure({ node }) {
-  if (!node.asset) {
+  if (!!!node?.asset) {
     return null;
   }
 
