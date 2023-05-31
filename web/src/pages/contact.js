@@ -112,7 +112,91 @@ const Column = styled.div`
   }
 `
 
+const ContactForm = styled.form` 
+
+  max-width: 500px;
+  width: 100%;
+
+  div.form-section {
+    margin-bottom: 1rem;
+    fieldset.name-fieldset {
+      display: flex;
+      gap: 1rem;
+      div {
+        flex: 1;
+        input {
+          width: 100%;
+        }
+      }
+    }
+    label {
+      margin-right: 0.5rem;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+    input,
+    textarea#message {
+      border: solid 1px ${colors.FABlue};
+      padding: 1rem 0.75rem;
+    }
+    input.email, 
+    input.subject {
+      width: 100%;
+    }
+    textarea#message {
+      width: 100%;
+    }
+    button.submit-btn {
+      background-color: transparent;
+      border: none;
+      text-decoration: underline;
+      font-size: 1rem;
+      padding: 0;
+      &:hover {
+        cursor: pointer;
+        color: ${colors.FABlue}
+      }
+    }
+  }
+`
+
 const ContactPage = (props) => {
+
+  const [formState, setFormState] = useState({
+    fname: "",
+    lname: "",
+    email: "",
+    subject: "",
+    message: ""
+  })
+
+  const [formSuccesState, setFormSuccesState] = useState(false)
+
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  }
+
+  const handleSubmit = e => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact-form", ...formState })
+    })
+      .then(() => setFormSuccesState(true))
+      .then(() => setFormState({fname: "", lname: "", email: "", subject: "", message: ""}))
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  }
+
+  const handleChange = e => {
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value, 
+    })
+  }
 
   const isBrowser = typeof window !== "undefined"
 
@@ -149,27 +233,94 @@ const ContactPage = (props) => {
             />
           </Column>
           <Column className="form-columns">
-            {/* <p>
-              <span>Don't be shy. You can <a href="mailto:hello@freshairproduction.co.uk" rel="noreferrer">email us</a>.</span> 
-              <span>Fill in the form on the right or <a href="tel:+442034885195" rel="noreferrer">give us a call</a> to start making podcasts, radio adverts and amazing audio.</span>
-            </p>
-            <p>
-              <span>Email: <a href="mailto:hello@freshairproduction.co.uk" rel="noreferrer">hello@freshairproduction.co.uk</a></span>
-              <span>Phone: <a href="tel:+442034885195">+44 (0)203 4885195</a></span>
-            </p>
-            <p>
-              To enquire about working for us at Fresh Air, please email <a href="mailto:work@freshairproduction.co.uk" rel="noreferrer">work@freshairproduction.co.uk</a>
-            </p> */}
             
           <BlockContent blocks={data.contactPageContent._rawContactText}/>
            
-           {isBrowser ? <PopupWidget
+           {/* {isBrowser ? <PopupWidget
               url={data.contactPageContent.calendlyLink}
               rootElement={document.getElementById("root")}
               text="Click here to schedule a meeting!"
               textColor="#ffffff"
               color={colors.FABlue}
-            /> : null }
+            /> : null } */}
+
+            {
+            !formSuccesState ? <ContactForm 
+              name="contact-form"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
+            >
+              <input type="hidden" name="contact-form" value="contact-form" />
+              <div className="form-section">
+                <fieldset className="name-fieldset">
+                  <div>
+                    <label for="fname">First name:</label>
+                    <input 
+                      id="fname"
+                      type="text" 
+                      name="fname"
+                      onChange={handleChange}
+                      value={formState.fname}
+                      required
+                      // placeholder="Enter your first name" 
+                    />
+                  </div>
+                  <div>
+                    <label for="lname">Last name:</label>
+                    <input 
+                      id="lname"
+                      type="text" 
+                      name="lname"
+                      onChange={handleChange}
+                      value={formState.lname}
+                      required
+                      // placeholder="Enter your last name" 
+                    />
+                  </div>
+                </fieldset>
+              </div>
+              <div className="form-section">
+                <label htmlFor="email">Email:</label>
+                <input 
+                  id="email"
+                  type="email" 
+                  name="email"
+                  onChange={handleChange}
+                  value={formState.email}
+                  required
+                  className="email"
+                  // placeholder="Enter your email"
+                />
+              </div>
+              <div className="form-section">
+                <label for="subject">Subject:</label>
+                  <input 
+                    name="subject" 
+                    type="text" 
+                    id="subject"
+                    onChange={handleChange}
+                    value={formState.subject}
+                    required
+                    className="subject"
+                  ></input>
+              </div>
+              <div className="form-section">
+                <label>Message:</label>
+                <textarea 
+                  name="message" 
+                  id="message"
+                  onChange={handleChange}
+                  value={formState.message}
+                  required
+                ></textarea>
+              </div>
+              <div className="form-section">
+                <button type="submit" className="submit-btn">Submit form</button>
+              </div>
+            </ContactForm> : 
+              <h3>Thanks! We'll be in touch.</h3>
+            }
 
           </Column>
         </ContactWrapper>

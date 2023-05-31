@@ -243,9 +243,9 @@ const ContactPage = (props) => {
             <p>
               To enquire about working for us at Fresh Air, please email <a href="mailto:work@freshairproduction.co.uk" rel="noreferrer">work@freshairproduction.co.uk</a>
             </p>
-            <InlineWidget url={data.contactPageContent.calendlyLink}/>
+            {/* <InlineWidget url={data.contactPageContent.calendlyLink}/> */}
             {/* <BlockContent blocks={data.contactPageContent._rawContactText}/> */}
-            {/* {
+            {
             !formSuccesState ? <ContactForm 
               name="contact-form"
               method="POST"
@@ -322,12 +322,11 @@ const ContactPage = (props) => {
               </div>
             </ContactForm> : 
             <h3>Thanks! We'll be in touch.</h3>
-            } */}
+            }
             
           </Column>
         </ContactWrapper>
       </ContactOuterWrapper>
-      
     </Layout>
   )
 };
