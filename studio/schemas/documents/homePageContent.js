@@ -143,5 +143,23 @@ export default {
       of: [{type: 'reference', to: {type: 'editorial'}}],
       validation: Rule => Rule.error('Please add 8 editorials to be displayed on the homepage.').required().min(8).max(8),
     },
+    {
+      name: 'homeClientsRowOne',
+      title: 'Clients Row One',
+      type: 'figure',
+      description: 'Upload an SVG for first row of scrolling client logos.',
+    },
+    {
+      name: 'homeClientsRowTwo',
+      title: 'Clients Row Two',
+      type: 'figure',
+      description: 'Upload an SVG for second row of scrolling client logos.',
+    },
+    {
+      name: 'homeClientsRowThree',
+      title: 'Clients Row Three',
+      type: 'figure',
+      description: 'Upload an SVG for third row of scrolling client logos.',
+    },
   ]
 }
