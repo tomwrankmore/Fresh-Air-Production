@@ -25,6 +25,8 @@ const EditorialWrapper = styled.div`
 
 const Editorial = ({editorial}) => {
 
+  // console.log(editorial.omnyWidget)
+
   // Section refs
   const heroRef = useRef(null)
   const marqueeRef = useRef(null)

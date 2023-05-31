@@ -10,6 +10,7 @@ import CentralLogo from "../components/central-logo"
 export const query = graphql`
   query EditorialTemplateQuery($id: String!) {
     editorial: sanityEditorial(id: { eq: $id }) {
+      omnyWidget
       id
       publishedAt
       id
