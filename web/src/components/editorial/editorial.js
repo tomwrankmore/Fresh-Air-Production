@@ -9,7 +9,8 @@ import {
   EditorialSectionOne,
   EditorialSectionTwo,
   EditorialImgSection,
-  EditorialsRelated
+  EditorialsRelated,
+  EditorialOmnySection
 } from "./"
 
 const EditorialWrapper = styled.div`
@@ -43,6 +44,11 @@ const Editorial = ({editorial}) => {
           isLeftAlignedHeroImg={editorial.isLeftAlignedHeroImg}
           heroBGColor={editorial.heroBGColor}
         />
+
+        {!!editorial?.omnyWidget &&
+          <EditorialOmnySection editorial={editorial}  />
+        }
+
         {!!editorial?._rawBody &&
           <EditorialDescriptionSection
             bodyText={editorial._rawBody}
