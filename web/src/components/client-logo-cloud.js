@@ -50,7 +50,13 @@ const MarqueeLine = styled.div`
     }
 `
 
-const ClientLogoCloud = React.forwardRef((props, ref) => {
+const ClientLogoCloud = React.forwardRef(({imageOne, imageTwo, imageThree}, ref) => {
+
+  const clientLogosOne = imageOne.asset.gatsbyImageData.images.fallback.src;
+  const clientLogosTwo = imageTwo.asset.gatsbyImageData.images.fallback.src;
+  const clientLogosThree = imageThree.asset.gatsbyImageData.images.fallback.src;
+
+  console.log('clientLogosOneclientLogosOne: ', clientLogosOne)
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -67,26 +73,26 @@ const ClientLogoCloud = React.forwardRef((props, ref) => {
       <ExtendedContainer>
         <MarqueeLine className="cloudMarqueeLine">
           <div className="marqueeContent marqueeContent1">
-            <ClientLogoRowOne className="clientLogoSVG" />
+            <img src={clientLogosOne} className="clientLogoSVG" />
           </div>
           <div className="marqueeContent marqueeContent1">
-            <ClientLogoRowOne className="clientLogoSVG" />
+            <img src={clientLogosOne} className="clientLogoSVG" />
           </div>
         </MarqueeLine>
         <MarqueeLine className="cloudMarqueeLine">
           <div className="marqueeContent marqueeContent2">
-            <ClientLogoRowTwo className="clientLogoSVG" />
+          <img src={clientLogosTwo} className="clientLogoSVG" />
           </div>
           <div className="marqueeContent marqueeContent2">
-            <ClientLogoRowTwo className="clientLogoSVG" />
+            <img src={clientLogosTwo} className="clientLogoSVG" />
           </div>
         </MarqueeLine>
         <MarqueeLine className="cloudMarqueeLine">
           <div className="marqueeContent marqueeContent1">
-            <ClientLogoRowThree className="clientLogoSVG" />
+            <img src={clientLogosThree} className="clientLogoSVG" />
           </div>
           <div className="marqueeContent marqueeContent1">
-            <ClientLogoRowThree className="clientLogoSVG" />
+            <img src={clientLogosThree} className="clientLogoSVG" />
           </div>
         </MarqueeLine>
       </ExtendedContainer>

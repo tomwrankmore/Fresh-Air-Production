@@ -13,11 +13,17 @@ const WwdLogoCloudWrapper = styled.div`
    }
 `
 
-const WwdLogoCloud = React.forwardRef((props, ref) => {
+const WwdLogoCloud = React.forwardRef(({imageOne, imageTwo, imageThree}, ref) => {
+
     return (
         <WwdLogoCloudWrapper>
           <h1>Our clients</h1>
-          <ClientLogoCloud ref={ref}/>
+          <ClientLogoCloud 
+            ref={ref}
+            imageOne={imageOne}
+            imageTwo={imageTwo}
+            imageThree={imageThree}
+          />
         </WwdLogoCloudWrapper>
     )
 })
