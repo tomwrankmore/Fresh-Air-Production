@@ -71,6 +71,12 @@ export default {
     //   type: 'simplePortableText'
     // },
     {
+      name: 'omnyWidget',
+      title: 'Omny iFrame',
+      description: 'This will generate an Omny player widget as well as the play button for all Podcast posts. REMEMBER you only need to put in the podcast name bit of the URL, so call-of-the-wild for example. The code will generate the Omny embed and Play button URL information.',
+      type: 'string'
+    },
+    {
       name: 'body',
       title: 'Body',
       description: 'This field will generate the main copy on the page.',
@@ -80,12 +86,6 @@ export default {
       name: 'quote',
       title: 'Quote',
       description: 'This field will generate a quote with the brand line design in the background.',
-      type: 'string'
-    },
-    {
-      name: 'omnyWidget',
-      title: 'Omny iFrame',
-      description: 'This will generate an Omny player widget as well as the play button for all Podcast posts. REMEMBER you only need to put in the podcast name bit of the URL, so call-of-the-wild for example. The code will generate the Omny embed and Play button URL information.',
       type: 'string'
     },
     {
