@@ -20,6 +20,27 @@ import {
 
 export const query = graphql`
   query WhatWedoPageQuery {
+    homePageContent: allSanityHomePageContent {
+      edges {
+        node {
+          homeClientsRowOne {
+            asset {
+              gatsbyImageData
+            }
+          }
+          homeClientsRowTwo {
+            asset {
+              gatsbyImageData
+            }
+          }
+          homeClientsRowThree {
+            asset {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
     whatWeDoPageContent: allSanityWhatWeDoContent {
       edges {
         node {
@@ -120,6 +141,9 @@ export const query = graphql`
 
 const WhatWeDo = props => {
   const { data, errors } = props;
+
+  const homePageContent = data.homePageContent.edges[0].node;
+
   if (errors) {
     return (
       <Layout>
@@ -163,7 +187,12 @@ const WhatWeDo = props => {
           textContent={wwdPageContent.wwdTickerTapeText}
           ref={marqueeRef}
         /> */}
-        <WwdLogoCloud ref={sectionLogoCloudRef} />
+        <WwdLogoCloud 
+          ref={sectionLogoCloudRef} 
+          imageOne={homePageContent.homeClientsRowOne}
+          imageTwo={homePageContent.homeClientsRowTwo}
+          imageThree={homePageContent.homeClientsRowThree}
+        />
         <WwdSectionOne 
           ref={sectionOneRef} 
           tl={section2Tl} 

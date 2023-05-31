@@ -56,7 +56,6 @@ const ClientLogoCloud = React.forwardRef(({imageOne, imageTwo, imageThree}, ref)
   const clientLogosTwo = imageTwo.asset.gatsbyImageData.images.fallback.src;
   const clientLogosThree = imageThree.asset.gatsbyImageData.images.fallback.src;
 
-  console.log('clientLogosOneclientLogosOne: ', clientLogosOne)
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
