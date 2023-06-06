@@ -18,6 +18,13 @@ export const query = graphql`
     contactPageContent: sanityContactPageContent {
       _rawContactHeroText
       _rawContactText
+      firstNameField
+      surnameNameField
+      emailField
+      subjectField
+      messageField
+      submitField
+      formCompleteField
       calendlyLink
       contactHeroImage {
         asset {
@@ -255,7 +262,7 @@ const ContactPage = (props) => {
               <div className="form-section">
                 <fieldset className="name-fieldset">
                   <div>
-                    <label for="fname">First name:</label>
+                    <label for="fname">{data.contactPageContent.firstNameField}:</label>
                     <input 
                       id="fname"
                       type="text" 
@@ -267,7 +274,7 @@ const ContactPage = (props) => {
                     />
                   </div>
                   <div>
-                    <label for="lname">Last name:</label>
+                    <label for="lname">{data.contactPageContent.surnameNameField}:</label>
                     <input 
                       id="lname"
                       type="text" 
@@ -281,7 +288,7 @@ const ContactPage = (props) => {
                 </fieldset>
               </div>
               <div className="form-section">
-                <label htmlFor="email">Email:</label>
+                <label htmlFor="email">{data.contactPageContent.emailField}:</label>
                 <input 
                   id="email"
                   type="email" 
@@ -294,7 +301,7 @@ const ContactPage = (props) => {
                 />
               </div>
               <div className="form-section">
-                <label for="subject">Subject:</label>
+                <label for="subject">{data.contactPageContent.subjectField}:</label>
                   <input 
                     name="subject" 
                     type="text" 
@@ -316,10 +323,10 @@ const ContactPage = (props) => {
                 ></textarea>
               </div>
               <div className="form-section">
-                <button type="submit" className="submit-btn">Submit form</button>
+                <button type="submit" className="submit-btn">{data.contactPageContent.submitField}</button>
               </div>
             </ContactForm> : 
-              <h3>Thanks! We'll be in touch.</h3>
+              <h3>{data.contactPageContent.formCompleteField}</h3>
             }
 
           </Column>
