@@ -18,6 +18,7 @@ export const query = graphql`
     contactPageContent: sanityContactPageContent {
       _rawContactHeroText
       _rawContactText
+      marqueeText
       firstNameField
       surnameNameField
       emailField
@@ -228,7 +229,7 @@ const ContactPage = (props) => {
       <ContactOuterWrapper ref={outerWrapperRef}>
        <Marquee 
           style={{color: colors.FABlue}}
-          textContent="Don't be shy. Get in touch. Don't be shy. Get in touch. Don't be shy. Get in touch."
+          textContent={data.contactPageContent.marqueeText}
           ref={contactMarqRef}
           cn="home-marquee"
         />
