@@ -26,6 +26,11 @@ export default {
       type: 'figure'
     },
     {
+      name: 'marqueeText',
+      title: 'Scrolling marquee text',
+      type: 'string'
+    },
+    {
       name: 'contactText',
       title: 'Contact Text',
       description: 'Copy to sit left of contact form',
