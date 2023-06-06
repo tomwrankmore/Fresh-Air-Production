@@ -32,6 +32,41 @@ export default {
       type: 'projectPortableText'
     },
     {
+      name: 'firstNameField',
+      title: 'First Name Field',
+      type: 'string'
+    },
+    {
+      name: 'surnameNameField',
+      title: 'Surname Name Field',
+      type: 'string'
+    },
+    {
+      name: 'emailField',
+      title: 'Email Field',
+      type: 'string'
+    },
+    {
+      name: 'subjectField',
+      title: 'Subject Field',
+      type: 'string'
+    },
+    {
+      name: 'messageField',
+      title: 'Message Field',
+      type: 'string'
+    },
+    {
+      name: 'submitField',
+      title: 'Submit Buttom Text',
+      type: 'string'
+    },
+    {
+      name: 'formCompleteField',
+      title: 'Form submission success text',
+      type: 'string'
+    },
+    {
       name: 'calendlyLink',
       title: 'Calendly Form',
       type: 'string',

@@ -236,15 +236,15 @@ const ContactPage = (props) => {
             
           <BlockContent blocks={data.contactPageContent._rawContactText}/>
            
-           {isBrowser ? <PopupWidget
+           {/* {isBrowser ? <PopupWidget
               url={data.contactPageContent.calendlyLink}
               rootElement={document.getElementById("root")}
               text="Click here to schedule a meeting!"
               textColor="#ffffff"
               color={colors.FABlue}
-            /> : null }
+            /> : null } */}
 
-            {/* {
+            {
             !formSuccesState ? <ContactForm 
               name="contact-form"
               data-netlify="true"
@@ -320,7 +320,7 @@ const ContactPage = (props) => {
               </div>
             </ContactForm> : 
               <h3>Thanks! We'll be in touch.</h3>
-            } */}
+            }
 
           </Column>
         </ContactWrapper>
