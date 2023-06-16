@@ -69,13 +69,13 @@ module.exports = {
     //     trackingId: process.env.GA_TRACKING_ID,
     //   },
     // },
-    // {
-    //   resolve: "gatsby-plugin-google-tagmanager",
-    //   options: {
-    //     id: "G-94HGRECTKX",
-    //     includeInDevelopment: false,
-    //   },
-    // },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "G-94HGRECTKX",
+        includeInDevelopment: false,
+      },
+    },
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
