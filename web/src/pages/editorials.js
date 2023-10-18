@@ -1,7 +1,6 @@
-import React, {useEffect, useRef} from "react";
+import React from "react";
 import { graphql } from "gatsby";
 import { Link } from "gatsby";
-import gsap from "gsap";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { colors } from "../styles/colors";
 import { device } from "../styles/mediaQueries";

@@ -174,6 +174,8 @@ const ContactPage = (props) => {
 
   const heroBgImage = data.contactPageContent.contactHeroImage.asset.localFile.childImageSharp.gatsbyImageData
 
+  console.log('data: ', data)
+
   const contactMarqRef = useRef()
   const outerWrapperRef = useRef()
 
