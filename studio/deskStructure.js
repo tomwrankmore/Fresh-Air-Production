@@ -91,16 +91,16 @@ export default () =>
           .child(S.documentTypeList('editorial').title('Editorials'))
           .icon(FaBook),
         S.divider(),
-        S.listItem()
-          .title('Contact page content')
-          .child(
-            S.editor()
-              .id('contactPageContent')
-              .schemaType('contactPageContent')
-              .documentId('contactPageContent')
-          )
-          .icon(FaEnvelope),
-        S.divider(),
+        // S.listItem()
+        //   .title('Contact page content')
+        //   .child(
+        //     S.editor()
+        //       .id('contactPageContent')
+        //       .schemaType('contactPageContent')
+        //       .documentId('contactPageContent')
+        //   )
+        //   .icon(FaEnvelope),
+        // S.divider(),
         S.listItem()
           .title('Contact page')
           .child(
