@@ -129,7 +129,7 @@ const ContactFormSubmittedPage = props => {
   }
 
   const heroBgImage =
-    data.contactPageContent.contactHeroImage.asset.localFile.childImageSharp.gatsbyImageData;
+  data?.contactPageContent?.contactHeroImage?.asset?.localFile.childImageSharp.gatsbyImageData;
 
   const contactMarqRef = useRef();
   const outerWrapperRef = useRef();
