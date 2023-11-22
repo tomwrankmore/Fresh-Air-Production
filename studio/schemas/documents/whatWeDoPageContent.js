@@ -2,12 +2,6 @@ export default {
   name: 'whatWeDoContent',
   type: 'document',
   title: 'What We Do page Content',
-  // __experimental_actions: [
-  //   // 'create',
-  //   'update',
-  //   // 'delete',
-  //   'publish'
-  // ],
   fields: [
     {
       name: 'title',

@@ -2,12 +2,6 @@ export default {
   name: 'homePageContent',
   type: 'document',
   title: 'Homepage Content',
-  __experimental_actions: [
-    'create',
-    'update',
-    // 'delete',
-    'publish'
-  ],
   fields: [
     {
       name: 'title',
