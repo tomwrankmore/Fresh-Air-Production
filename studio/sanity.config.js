@@ -35,7 +35,7 @@ export default defineConfig({
               apiId: "adfc1430-1339-4906-a105-4044baf3f9d5",
               buildHookId: "636a2397d0a90e1b7ebcc81f",
               name: "fresh-air-production",
-              url: "https://my-sanity-deployment.com"
+              url: "https://freshairproduction.co.uk/"
             }
           ],
           data: [

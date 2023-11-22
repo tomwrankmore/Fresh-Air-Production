@@ -1,15 +1,15 @@
 import {defineArrayMember, defineField, defineType} from 'sanity'
 
-export const pageType = defineType({
-  name: 'page',
+const GenericPageType = defineType({
+  name: 'genericPageType',
   type: 'document',
-  title: 'Page',
+  title: 'Generic Page',
   fields: [
     defineField({name: 'title', type: 'string'}),
     defineField({
       name: 'pageBuilder',
       type: 'array',
-      title: 'Page builder',
+      title: 'Generic page builder',
       of: [
         defineArrayMember({
           name: 'hero',
@@ -41,3 +41,5 @@ export const pageType = defineType({
     }),
   ],
 })
+
+export default GenericPageType

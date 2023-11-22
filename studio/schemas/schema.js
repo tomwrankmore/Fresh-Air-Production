@@ -14,7 +14,7 @@ import brandColours from "./documents/brandColours";
 import acceptableUse from "./documents/acceptable-use";
 import modernSlaveryStatement from "./documents/modern-slavery-statement";
 import privacyPolicy from "./documents/privacy-policy";
-import {pageType} from "./documents/genericPageType.js";
+import genericPageType from "./documents/genericPageType.js";
 
 // Object types
 import bioPortableText from "./objects/bioPortableText";
@@ -51,7 +51,7 @@ export default [
   modernSlaveryStatement,
   privacyPolicy,
   // Generic Page Type Objects
-  pageType,
+  genericPageType,
   // promotionType,
   formType,
   heroType,

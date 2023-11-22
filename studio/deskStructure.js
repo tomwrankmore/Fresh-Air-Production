@@ -1,4 +1,3 @@
-
 import { MdSettings, MdPersonPin } from "react-icons/md";
 import { FaHome, FaWrench, FaEnvelope, FaPodcast, FaAward, FaBook } from "react-icons/fa";
 import { HiOutlineDocumentText } from "react-icons/hi";
@@ -6,21 +5,22 @@ import { GrDocumentText } from "react-icons/gr";
 
 const hiddenDocTypes = listItem =>
   ![
-    'siteSettings',
-    'homePageContent',
-    'homePageTestimonial',
-    'whatWeDoContent',
-    'award',
-    'staffMember',
-    'managementMember',
-    'podcast',
-    'editorial',
-    'contactPage',
-    'terms',
-    'privacyPolicy',
-    'modernSlaveryStatement',
-    'acceptableUse'
-  ].includes(listItem.getId())
+    "siteSettings",
+    "homePageContent",
+    "homePageTestimonial",
+    "whatWeDoContent",
+    "award",
+    "staffMember",
+    "managementMember",
+    "podcast",
+    "editorial",
+    "contactPage",
+    "terms",
+    "privacyPolicy",
+    "modernSlaveryStatement",
+    "acceptableUse",
+    "genericPageType"
+  ].includes(listItem.getId());
 
 export default S =>
   S.list()
@@ -126,6 +126,15 @@ export default S =>
             .documentId("acceptableUse")
         )
         .icon(GrDocumentText),
+      S.listItem()
+        .title("Generic page builder")
+        .child(
+          S.editor()
+            .id("genericPageType")
+            .schemaType("genericPageType")
+            .documentId("genericPageType")
+        ),
+      S.divider(),
 
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
