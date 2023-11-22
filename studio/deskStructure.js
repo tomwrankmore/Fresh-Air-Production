@@ -16,6 +16,7 @@ const hiddenDocTypes = listItem =>
     'podcast',
     'editorial',
     'contactPageContent',
+    'contactPage',
     'terms',
     'privacyPolicy',
     'modernSlaveryStatement',
@@ -97,6 +98,16 @@ export default () =>
               .id('contactPageContent')
               .schemaType('contactPageContent')
               .documentId('contactPageContent')
+          )
+          .icon(FaEnvelope),
+        S.divider(),
+        S.listItem()
+          .title('Contact page')
+          .child(
+            S.editor()
+              .id('contactPage')
+              .schemaType('contactPage')
+              .documentId('contactPage')
           )
           .icon(FaEnvelope),
         S.divider(),

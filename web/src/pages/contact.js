@@ -14,7 +14,7 @@ import Marquee from "../components/marquee";
 
 export const query = graphql`
   query ContactPageQuery {
-    contactPageContent: sanityContactPageContent {
+    contactPageContent: sanityContactPage {
       _rawContactHeroText
       _rawContactText
       marqueeText
@@ -27,6 +27,7 @@ export const query = graphql`
       formCompleteField
       calendlyLink
       contactHeroImage {
+        alt
         asset {
           localFile {
             childImageSharp {
@@ -213,11 +214,12 @@ const ContactPage = props => {
     );
   }
 
-  const heroBgImage =
-    data.contactPageContent.contactHeroImage.asset.localFile.childImageSharp.gatsbyImageData;
+  const heroBgImage = data.contactPageContent.contactHeroImage.asset.localFile.childImageSharp.gatsbyImageData;
 
   const contactMarqRef = useRef();
   const outerWrapperRef = useRef();
+
+  console.log('data', data)
 
   return (
     <Layout>

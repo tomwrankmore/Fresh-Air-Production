@@ -1,7 +1,7 @@
 export default {
-  name: 'contactPageContent',
+  name: 'contactPage',
   type: 'document',
-  title: 'Contact page content',
+  title: 'Contact page',
   fields: [
     {
       name: 'title',

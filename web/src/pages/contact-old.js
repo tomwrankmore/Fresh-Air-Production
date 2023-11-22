@@ -16,7 +16,7 @@ import Marquee from "../components/marquee"
 
 export const query = graphql`
   query ContactPageQuery {
-    contactPageContent: sanityContactPageContent {
+    contactPageContent: sanityContactPage {
       _rawContactHeroText
       calendlyLink
       contactHeroImage {

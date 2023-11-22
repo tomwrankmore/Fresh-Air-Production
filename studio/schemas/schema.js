@@ -16,6 +16,7 @@ import homePageContent from './documents/homePageContent'
 import homePageTestimonials from './documents/homePageTestimonials'
 import whatWeDoContent from './documents/whatWeDoPageContent'
 import contactPageContent from './documents/contactPageContent'
+import contactPage from './documents/contactPage'
 import brandColours from './documents/brandColours'
 import acceptableUse from './documents/acceptable-use'
 import modernSlaveryStatement from './documents/modern-slavery-statement'
@@ -54,6 +55,7 @@ export default createSchema({
     homePageContent,
     homePageTestimonials,
     whatWeDoContent,
+    contactPage,
     contactPageContent,
     brandColours,
     acceptableUse,
