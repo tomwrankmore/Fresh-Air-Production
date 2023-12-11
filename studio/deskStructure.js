@@ -88,6 +88,12 @@ export default S =>
         .schemaType("editorial")
         .child(S.documentTypeList("editorial").title("Editorials"))
         .icon(FaBook),
+      // S.divider(),
+      // S.listItem()
+      //   .title("Generic page builder")
+      //   .schemaType("genericPageType")
+      //   .child(S.documentTypeList("genericPageType").title("Page"))
+      //   .icon(FaBook),
       S.divider(),
       S.listItem()
         .title("Contact page")
@@ -126,19 +132,8 @@ export default S =>
             .documentId("acceptableUse")
         )
         .icon(GrDocumentText),
-      S.listItem()
-        .title("Generic page builder")
-        .child(
-          S.editor()
-            .id("genericPageType")
-            .schemaType("genericPageType")
-            .documentId("genericPageType")
-        ),
-      S.divider(),
 
-      // This returns an array of all the document types
-      // defined in schema.js. We filter out those that we have
-      // defined the structure above
+      // This returns an array of all the document types defined in schema.js. We filter out those that we have defined the structure above
       ...S.documentTypeListItems().filter(hiddenDocTypes)
     ]);
 

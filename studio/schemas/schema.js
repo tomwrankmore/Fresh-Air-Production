@@ -57,5 +57,5 @@ export default [
   heroType,
   imageGalleryType,
   textWithImageType,
-  videoType
+  videoType,
 ];

@@ -28,7 +28,8 @@ export default {
       title: 'Slug',
       type: 'slug',
       description: 'This will generate a URL for the editorial.',
-      validation: Rule => Rule.error('Make sure you generate a slug.').required(),      options: {
+      validation: Rule => Rule.error('Make sure you generate a slug.').required(),
+      options: {
         source: 'title',
         maxLength: 96
       }
