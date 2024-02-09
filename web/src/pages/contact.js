@@ -380,6 +380,34 @@ const ContactPage = props => {
         })(window, document)
         `}
       </Script>
+
+      {/* Second Spotify Pixel Feb 2024 */}
+
+      <Script>
+        {`
+          (function(w, d){
+            var id='spdt-capture', n='script';
+            if (!d.getElementById(id)) {
+              w.spdt =
+                w.spdt ||
+                function() {
+                  (w.spdt.q = w.spdt.q || []).push(arguments);
+                };
+              var e = d.createElement(n); e.id = id; e.async=1;
+              e.src = 'https://pixel.byspotify.com/ping.min.js';
+              var s = d.getElementsByTagName(n)[0];
+              s.parentNode.insertBefore(e, s);
+            }
+            w.spdt('conf', { key: 'f4d14b1d6dd7407f95aa43d929665572' });
+            w.spdt('lead', {
+              category: 'Contact Form',
+              type: '',  // Dynamically populate from session data
+              value: '5',  // Dynamically populate from session data
+              currency: 'GBP',  
+            });
+          })(window, document);
+        `}
+      </Script>
     </Layout>
   );
 };
