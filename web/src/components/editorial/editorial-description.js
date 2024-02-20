@@ -1,5 +1,4 @@
-import React, {useLayoutEffect, useRef} from "react";
-import {colors} from "../../styles/colors"
+import React from "react";
 import {device} from "../../styles/mediaQueries"
 import styled from "styled-components";
 import BlockContent from "../block-content";

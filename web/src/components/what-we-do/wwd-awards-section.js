@@ -1,4 +1,4 @@
-import React, {useLayoutEffect, useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import gsap from "gsap";
 import {colors} from "../../styles/colors"
 import {device} from "../../styles/mediaQueries"
@@ -136,7 +136,7 @@ const WwdAwardsSection = React.forwardRef(({tl, nodes, awardLeftImage}, ref) => 
     const pluginImage = getImage(awardLeftImage.asset.localFile.childImageSharp);
     const bgImage = convertToBgImage(pluginImage);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
       let ctx = gsap.context(() => {
         tl.current = gsap.timeline()
         .to('.clipped', {

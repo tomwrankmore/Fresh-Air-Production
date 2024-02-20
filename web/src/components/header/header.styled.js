@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { device } from "../styles/mediaQueries";
-import { colors } from "../styles/colors";
+import { device } from "../../styles/mediaQueries";
+import { colors } from "../../styles/colors";
 
 export const Wrapper = styled.div` 
   margin: 0 auto;

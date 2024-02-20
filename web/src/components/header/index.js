@@ -1,9 +1,9 @@
 import { Link } from "gatsby";
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger"
-import Icon from "./icon";
-import Logo from "../assets/FA-nav-logo.inline.svg"
+import Icon from "../icon";
+import Logo from "../../assets/FA-nav-logo.inline.svg"
 import { Wrapper, StyledHeader, Nav, ToggleNavButton } from "./header.styled";
 
 const Header = React.forwardRef(({ onHideNav, onShowNav, showNav, siteTitle }, ref) => {

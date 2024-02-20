@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef, useLayoutEffect} from "react";
+import React, {useState, useEffect} from "react";
 import gsap from "gsap"
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
@@ -86,7 +86,7 @@ const TagCloud = React.forwardRef((props, ref) => {
 
     const [bgColor, setBgColor] = useState(blue)
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         let ctx = gsap.context(() => {
             gsap.set('.cloudMarqueeLine', {xPercent: 20});
             gsap.to('.marqueeContent1', {xPercent: -100, repeat: -1, duration: 140, ease: 'linear'}).totalProgress(0.6);

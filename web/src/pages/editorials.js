@@ -107,9 +107,6 @@ const EditorialsGrid = styled.div`
           font-weight: normal;
           text-align: left;
           padding: 0.875rem 0rem;
-          /* @media ${device.mediaMinMedium} {
-              padding: 0.875rem 0rem;
-          } */
         }
     }
 `
@@ -117,8 +114,8 @@ const EditorialsGrid = styled.div`
 const Editorials = ({data}) => {
 
   const editorialNodes = data && data.editorials && mapEdgesToNodes(data.editorials);
-  const every_nth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);
-  const newboy = every_nth(editorialNodes, 9)
+  // const every_nth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);
+  // const newboy = every_nth(editorialNodes, 9)
 
     return (
         <Layout>

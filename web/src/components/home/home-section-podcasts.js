@@ -1,4 +1,4 @@
-import React, {useLayoutEffect, useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 import styled from "styled-components";
@@ -85,7 +85,7 @@ const Podcasts = React.forwardRef(({tl, podcastHeading, homePodcasts}, ref) => {
 
     gsap.registerPlugin(ScrollTrigger, SplitText);
 
-      useLayoutEffect(() => {
+      useEffect(() => {
         let mm = gsap.matchMedia(root);
     
         mm.add("(min-width: 675px)", () => {
@@ -132,9 +132,9 @@ const Podcasts = React.forwardRef(({tl, podcastHeading, homePodcasts}, ref) => {
     return (
         <PodcastsWrapper ref={root}>
             <div className="leftCol">
-              {homePodcasts && homePodcasts.map(podcast => {
+              {homePodcasts && homePodcasts.map((podcast, idx) => {
                 return (
-                  <Podcast>
+                  <Podcast key={idx}>
                     <Link to={`/podcast/${podcast.slug.current}`}>
                       <GatsbyImage
                         image={podcast.heroImage.asset.gatsbyImageData}

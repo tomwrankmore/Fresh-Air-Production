@@ -6,8 +6,7 @@ import styled from "styled-components";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-const Wrapper = styled.div` 
-`
+const Wrapper = styled.div``
 
 function Scroll ({ children }) {
 

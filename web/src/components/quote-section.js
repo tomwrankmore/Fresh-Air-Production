@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from "react";
+import React from "react";
 import gsap from "gsap";
 import {colors} from "../styles/colors"
 import {device} from "../styles/mediaQueries"

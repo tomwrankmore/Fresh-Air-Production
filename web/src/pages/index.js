@@ -16,6 +16,8 @@ import Work from "../components/home/home-section-work";
 import Testimonials from "../components/home/home-section-testimonials";
 import Editorials from "../components/home/home-section-editorials";
 import TagCloud from "../components/home/home-section-cloud";
+import { homePageQuery } from "../queries";
+import HorizontalScrollSection from "../components/horizontal-scroll-section/"
 
 export const query = graphql`
   query IndexPageQuery {
@@ -185,6 +187,7 @@ const IndexPage = props => {
   const centralLogoRef = useRef(null);
   const podcastsRef = useRef(null);
   const horizontalPanelsRef = useRef(null);
+  const horizontalScrollRef = useRef(null);
   const heroMarqueeRef = useRef(null);
   const marqueeRef = useRef(null);
   const tagCloudRef = useRef(null);
@@ -241,12 +244,12 @@ const IndexPage = props => {
         podcastHeading={homePageContent._rawHomePodcastHeading[0].children[0].text}
         homePodcasts={homePageContent.homePodcasts}
       />
-      <Marquee
+      {/* <Marquee
         style={{ color: colors.FABlue }}
         textContent={homePageContent.homeSecondTickerTape}
         ref={marqueeRef}
-      />
-      <Work
+      /> */}
+      {/* <Work
         ref={horizontalPanelsRef}
         workSectionHeading={homePageContent.homeWorkSectionHeading}
         homeWorkSectionImage={homePageContent.homeWorkSectionImage}
@@ -262,12 +265,15 @@ const IndexPage = props => {
         panelFourTitle={homePageContent.homeWorkPanelFourTitle}
         panelFourText={homePageContent._rawHomeWorkPanelFourText}
         panelFourImage={homePageContent.homeWorkPanelFourImage}
-      />
-      <WwdLogoCloud
+      /> */}
+
+      <HorizontalScrollSection ref={horizontalScrollRef} />
+
+      {/* <WwdLogoCloud
         imageOne={homePageContent.homeClientsRowOne}
         imageTwo={homePageContent.homeClientsRowTwo}
         imageThree={homePageContent.homeClientsRowThree}
-      />
+      /> */}
       <Testimonials testimonials={testimonials} />
       <Editorials
         editorialNodes={editorialNodes}

@@ -1,73 +1,18 @@
-import React, {useLayoutEffect} from "react";
+import React, {useEffect} from "react";
 import gsap from "gsap";
 import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 import Marquee from "../marquee"
-import { HeroWrapper, Fresh, Air, HeroInner, HeroGrid } from "./hero.styled";
+import { SvgLogoWrapper, HeroWrapper, Fresh, Air, HeroInner, HeroGrid } from "./hero.styled";
 import heroPeople from '../../assets/HPHeaderImage.png';
 import FreshSvg from '../../assets/Fresh.inline.svg'
 import AirSvg from '../../assets/Air.inline.svg'
 import { device } from "../../styles/mediaQueries";
 import MobileLogo from "../../assets/FA-logo.png"
 
-const SvgLogoWrapper = styled.div`
-    width: 100%;
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transform: translateX(0);
-    z-index: 100;
-    width: auto;
-    align-items: flex-end;
-    padding: 1.5rem 1rem;
-    display: none;
-
-    @media ${device.mediaMinMedium} {
-      padding: 1.5rem 0;
-      display: inline-block;
-      width: 720px; 
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .LogoContainer {
-      @media ${device.mediaMinSmall} {
-        margin: 0 auto;
-        width: 420px;
-        height: 160px;
-        display: flex;
-        justify-content: space-between;
-      }
-    }
-
-    .fresh-svg {
-      width: 300px;
-      height: auto;
-      /* transform: translateY(-140px); */
-      visibility: hidden;
-      align-self: flex-end;
-      @media ${device.mediaMinSmall} {
-        transform: translateY(0);
-      }
-    }
-
-    .air-svg {
-        width: 100px;
-        height: auto;
-        /* float: right; */
-        visibility: hidden;
-        align-self: flex-start;
-        @media ${device.mediaMinMedium} {
-          width: 110px;
-        }
-    }
-`
-
 const Hero = React.forwardRef(({heroMarqueeRef, tl, heroMarqueeText, heroImage}, ref) => {
     
-  useLayoutEffect(() => {
+  useEffect(() => {
 
     let ctx = gsap.context(() => {
       const mover = ref.current.clientHeight - 270

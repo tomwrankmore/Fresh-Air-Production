@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { colors } from "../styles/colors";
-import styled from "styled-components";
+import { colors } from "../../styles/colors";
 
 // Material UI
 import Accordion from "@mui/material/Accordion";
@@ -9,8 +8,8 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import SubscribeForm from "../components/subscribe-form"
-import Logo from "../assets/FA-logo.inline.svg"
+import SubscribeForm from "../subscribe-form"
+import Logo from "../../assets/FA-logo.inline.svg"
 import { StyledFooter, FooterWrapper, NavigationWrapper, SiteInfo, LinkList, Subscribe} from './footer.styled';
 
 const rootStyles =  {
@@ -23,13 +22,6 @@ const btnStyles =  {
   backgroundColor: colors.FADarkerBlue,
   textTransform: 'uppercase'
 }
-
-const Excerpt = styled.div` 
-  margin-bottom: 1rem;
-  p {
-    line-height: 1.35rem;
-  }
-`
 
 const Footer = ({ children }) => {
     return (

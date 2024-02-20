@@ -1,4 +1,4 @@
-import React, {useLayoutEffect, useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import gsap from "gsap";
 import {colors} from "../../styles/colors"
 import {device} from "../../styles/mediaQueries"
@@ -100,7 +100,7 @@ const WwdHero = React.forwardRef(({tl, heroImg, heroCopy}, ref) => {
 
     const heroBgImage = heroImg.asset.localFile.childImageSharp.gatsbyImageData
 
-    useLayoutEffect(() => {
+    useEffect(() => {
       let ctx = gsap.context(() => {
         tl.current = gsap.timeline()
         .to('.clipped', {
