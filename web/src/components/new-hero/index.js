@@ -30,12 +30,11 @@ const NewHero = () => {
 
       const tl = gsap.timeline()
       .to('.overlay', {
-        yPercent: -100,
+        yPercent: -110,
         duration: 1,
         ease: "inOut"
       })
       .to(lines, {
-        delay: 1,
         yPercent: 0,
         autoAlpha: 1,
         ease: "back",
