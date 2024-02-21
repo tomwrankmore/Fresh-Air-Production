@@ -30,7 +30,7 @@ const NewHero = () => {
 
       const tl = gsap.timeline()
       .to('.overlay', {
-        yPercent: -110,
+        height: 0,
         duration: 1,
         ease: "inOut"
       })
@@ -41,7 +41,7 @@ const NewHero = () => {
         stagger: {
           amount: 0.25
         }
-      }, '>');
+      }, '-=0.5');
     }, heroRef);
     return () => ctx.revert();
   }, []);
