@@ -28,14 +28,21 @@ const NewHero = () => {
 
       gsap.set(lines, { autoAlpha: 0 , yPercent: 100,});
 
-      const tl = gsap.timeline().to(lines, {
+      const tl = gsap.timeline()
+      .to('.overlay', {
+        yPercent: -100,
+        duration: 1,
+        ease: "inOut"
+      })
+      .to(lines, {
+        delay: 1,
         yPercent: 0,
         autoAlpha: 1,
         ease: "back",
         stagger: {
           amount: 0.25
         }
-      });
+      }, '>');
     }, heroRef);
     return () => ctx.revert();
   }, []);
@@ -59,10 +66,9 @@ const NewHero = () => {
 
   const pluginImage = getImage(heroBackgroundImage.childImageSharp);
 
-  console.log(pluginImage);
-
   return (
     <div className={styles.hero} ref={heroRef}>
+      <div className={`${styles.hero__overlay} overlay`} />
       <div className={styles.hero__gradientOverlay} />
       <div className={styles.hero__headingContainer}>
         <h1 className="hero-heading">We create amazing podcasts for innovative brands.</h1>
