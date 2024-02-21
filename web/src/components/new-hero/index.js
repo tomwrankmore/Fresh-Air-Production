@@ -26,9 +26,11 @@ const NewHero = () => {
 
       const { lines } = childLines;
 
-      const tl = gsap.timeline().from(lines, {
-        yPercent: 100,
-        autoAlpha: 0,
+      gsap.set(lines, { autoAlpha: 0 , yPercent: 100,});
+
+      const tl = gsap.timeline().to(lines, {
+        yPercent: 0,
+        autoAlpha: 1,
         ease: "back",
         stagger: {
           amount: 0.25
