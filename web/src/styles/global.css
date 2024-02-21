@@ -200,3 +200,9 @@ a:visited {
 .screen-reader-text {
   visibility: hidden
 }
+
+h3 {font-weight: bold;}
+
+.lineParent {
+  overflow: hidden;
+}

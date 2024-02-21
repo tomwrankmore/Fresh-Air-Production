@@ -31,7 +31,7 @@ const FourZeroFour = styled.div`
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
-    <CentralLogo />
+    {/* <CentralLogo /> */}
     <FourZeroFour>
       <h1>Sorry, that page doesn't appear to exist!</h1>
       <Link to="/">Take me home...</Link>

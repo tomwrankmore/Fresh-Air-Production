@@ -55,7 +55,7 @@ const AcceptableUsePage = ({data}) => {
   return (
     <Layout>
       <SEO title="Acceptable Use" />
-      <CentralLogo />
+      {/* <CentralLogo /> */}
       <TermsWrapper>
         <h1>{data.terms.title}</h1>
         <BlockContent blocks={data.terms._rawBody} />

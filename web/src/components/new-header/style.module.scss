@@ -1,0 +1,40 @@
+.header {
+
+  @apply bg-white w-screen fixed top-0 z-50 grid grid-cols-3 items-center h-[82px] px-4 border-b border-black border-solid;
+  
+  &__mainNav {
+    @apply flex items-center justify-start gap-8 text-sm;
+  }
+
+  &__listItem {
+    
+  }
+
+  &__navLink {
+    @apply text-black;
+
+    &--contactLink {
+
+    }
+  }
+
+  &__logo {
+    @apply flex items-center justify-center;
+  }
+
+  &__secondaryNav {
+    @apply h-full flex items-center justify-end gap-8;
+
+    li {
+      @apply h-full flex items-center justify-center;
+
+      a {
+        @apply text-black;
+      }
+    }
+
+    &_contactLink {
+      @apply bg-FADarkerBlue h-full flex items-center justify-center px-4 text-white;
+    }
+  }
+}

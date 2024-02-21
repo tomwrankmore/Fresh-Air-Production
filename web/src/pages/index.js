@@ -18,6 +18,7 @@ import Editorials from "../components/home/home-section-editorials";
 import TagCloud from "../components/home/home-section-cloud";
 import { homePageQuery } from "../queries";
 import HorizontalScrollSection from "../components/horizontal-scroll-section/"
+import NewHero from "../components/new-hero";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -228,17 +229,20 @@ const IndexPage = props => {
   const homePageContent = data.homePageContent.edges[0].node;
   const testimonials = mapEdgesToNodes(data.testimonials);
 
+  const heroImage = homePageContent.heroImage.asset.gatsbyImageData
+
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <CentralLogo ref={centralLogoRef} />
-      <Hero
+      {/* <Hero
         ref={heroRef}
         heroMarqueeRef={heroMarqueeRef}
         tl={heroTl.current}
         heroMarqueeText={homePageContent.homeHeroTickerTape}
         heroImage={homePageContent.heroImage}
-      />
+      /> */}
+      <NewHero heroImage = {heroImage} />
       <Podcasts
         ref={podcastsRef}
         podcastHeading={homePageContent._rawHomePodcastHeading[0].children[0].text}

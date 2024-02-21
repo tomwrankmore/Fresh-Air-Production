@@ -55,7 +55,7 @@ const ModernSlaveryStatementPage = ({data}) => {
   return (
     <Layout>
       <SEO title="Modern Slavery Statement" />
-      <CentralLogo />
+      {/* <CentralLogo /> */}
       <TermsWrapper>
         <h1>{data.terms.title}</h1>
         <BlockContent blocks={data.terms._rawBody} />

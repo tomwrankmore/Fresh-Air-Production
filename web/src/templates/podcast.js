@@ -73,7 +73,7 @@ const PodcastTemplate = props => {
     <Layout>
       {errors && <SEO title="GraphQL Error" />}
       {podcast && <SEO title={podcast.title || "Untitled"} />}
-      <CentralLogo />
+      {/* <CentralLogo /> */}
       {errors && (
         <Container>
           <GraphQLErrorList errors={errors} />

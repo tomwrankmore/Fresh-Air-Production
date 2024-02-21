@@ -1,7 +1,7 @@
 import React from "react";
-import { buildImageObj } from "../lib/helpers";
-import { imageUrlFor } from "../lib/image-url";
-import { ucfirst } from "../lib/string-utils";
+import { buildImageObj } from "../../lib/helpers";
+import { imageUrlFor } from "../../lib/image-url";
+import { ucfirst } from "../../lib/string-utils";
 
 import * as styles from "./role-list.module.css";
 

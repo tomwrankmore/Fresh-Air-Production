@@ -1,7 +1,7 @@
 import { PortableText } from "@portabletext/react";
 import React from "react";
 
-import { Figure } from "./figure";
+import { Figure } from "./figure/figure";
 
 const components = {
   types: {

@@ -120,7 +120,7 @@ const Editorials = ({data}) => {
     return (
         <Layout>
           <SEO title="Editorials" />
-          <CentralLogo />
+          {/* <CentralLogo /> */}
           <EditorialsWrapper>
             <EditorialsGrid>
               {editorialNodes && 

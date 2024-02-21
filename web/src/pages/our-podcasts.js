@@ -100,7 +100,7 @@ const OurPodcasts = (props) => {
   return (
     <Layout>
       <SEO title="Our Podcasts" />
-      <CentralLogo />
+      {/* <CentralLogo /> */}
       <OurPodcastsWrapper className="our-podcasts-wrapper">
         {featuredPodcastNodes && featuredPodcastNodes.length > 0 && <FeaturedPodcastGrid nodes={featuredPodcastNodes} />}
         {podcastNodes && podcastNodes.length > 0 && <PodcastGrid nodes={podcastNodes} />}

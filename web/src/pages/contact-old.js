@@ -218,7 +218,7 @@ const ContactPage = (props) => {
   return (
     <Layout>
       <SEO title="Contact" />
-      <CentralLogo />
+      {/* <CentralLogo /> */}
       <ContactOuterWrapper ref={outerWrapperRef}>
        <Marquee 
           style={{color: colors.FABlue}}
