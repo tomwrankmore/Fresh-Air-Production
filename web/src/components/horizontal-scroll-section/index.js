@@ -1,10 +1,11 @@
 import React, { useRef, useEffect } from "react";
 import * as styles from "./styles.module.scss";
-
 import horizontalContainerAnim from "./horizontal-scroll-section.gsap";
 import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import BlockContent from "../block-content";
+import { BsArrowRight } from "react-icons/bs";
+import SvgBg from "../../assets/work-svg-path.inline.svg"
 
 const HorizontalScrollSection = React.forwardRef((props, ref) => {
   const {
@@ -31,10 +32,13 @@ const HorizontalScrollSection = React.forwardRef((props, ref) => {
   }, []);
 
   return (
-    <div className="relative bg-FABlue" ref={containerRef}>
+    <div className={styles.horizontalWrapper} ref={containerRef}>
+      
       <div className={`horizontalContainer ${styles.horizontalContainer}`}>
-        <div className={`${styles.horizontalContainer__panel} panel`}>
-          <div className={styles.horizontalContainer__panel_column}>
+        
+        <div className={`${styles.horizontalContainer__first_panel} panel`}>
+          <SvgBg className={styles.svgBg} />
+          <div className={styles.horizontalContainer__first_panel_column}>
             <h1>We Work</h1>
             <GatsbyImage
               image={homeWorkSectionImage.asset.gatsbyImageData}
@@ -47,7 +51,8 @@ const HorizontalScrollSection = React.forwardRef((props, ref) => {
             />
             <h1>With You</h1>
           </div>
-          <div className={styles.horizontalContainer__panel_column}>
+          <div className={styles.horizontalContainer__first_panel_column}>
+            <BsArrowRight size={70} />
             <h3>
               Take a scroll with us.
               <br />
@@ -59,8 +64,8 @@ const HorizontalScrollSection = React.forwardRef((props, ref) => {
 
         <section className={`${styles.horizontalContainer__panel} ${styles.gray} panel`}>
           <div className={styles.horizontalContainer__panel_column}>
-            <div className="flex flex-col items-center justify-center p-12">
-              <h1 className="text-2xl font-bold mb-4">{panelOneTitle}</h1>
+            <div className={styles.horizontalContainer__panel_column_text}>
+              <h3>{panelOneTitle}</h3>
               <BlockContent blocks={panelOneText} />
             </div>
             <GatsbyImage
@@ -83,8 +88,8 @@ const HorizontalScrollSection = React.forwardRef((props, ref) => {
               objectPosition="0 0"
               className="img-l"
             />
-            <div className="flex flex-col items-center justify-center p-12">
-              <h2>{panelTwoTitle}</h2>
+            <div className={styles.horizontalContainer__panel_column_text}>
+              <h3>{panelTwoTitle}</h3>
               <BlockContent blocks={panelTwoText} />
             </div>
           </div>
@@ -92,8 +97,8 @@ const HorizontalScrollSection = React.forwardRef((props, ref) => {
 
         <section className={`${styles.horizontalContainer__panel} ${styles.blue} panel`}>
           <div className={styles.horizontalContainer__panel_column}>
-            <div className="flex flex-col items-center justify-center p-12">
-              <h2>{panelThreeTitle}</h2>
+            <div className={styles.horizontalContainer__panel_column_text}>
+              <h3>{panelThreeTitle}</h3>
               <BlockContent blocks={panelThreeText} />
             </div>
             <GatsbyImage
@@ -116,13 +121,16 @@ const HorizontalScrollSection = React.forwardRef((props, ref) => {
               objectPosition="0 0"
               className="img-r"
             />
-            <div className="flex flex-col items-center justify-center p-12">
-              <h2>{panelFourTitle}</h2>
+            <div className={styles.horizontalContainer__panel_column_text}>
+              <h3>{panelFourTitle}</h3>
               <BlockContent blocks={panelFourText} />
               <br />
-              <Link to="/contact" className="work-podcast-link">
-                Let's get making a podcast
-              </Link>
+
+              <p>
+                <Link to="/contact" className="work-podcast-link">
+                  Let's get making a podcast
+                </Link>
+              </p>
             </div>
           </div>
         </section>

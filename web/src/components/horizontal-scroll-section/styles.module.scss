@@ -1,42 +1,68 @@
-/* body {
-  background: slateblue;;
-  color: #ddd;
-  font-size: 18px;
-  line-height: 1.4;
-  font-weight: 300;
-} */
-/* h1, h2 {
-  color: white;
-  font-weight: 400;
-  margin-bottom: 0;
-} */
+// .box {
+//   width: 100px;
+//   height: 80px;
+//   text-align: center;
+//   line-height: 80px;
+//   background-color: white;
+//   border-radius: 8px;
+//   color: #222;
+//   font-weight: 700;
+//   margin-left: 20px;
+//   will-change: transform;
+// }
 
-.box {
-  width: 100px;
-  height: 80px;
-  text-align: center;
-  line-height: 80px;
-  background-color: white;
-  border-radius: 8px;
-  color: #222;
-  font-weight: 700;
-  margin-left: 20px;
-  will-change: transform;
+// .box.active {
+//   background-color: orange;
+//   border: 2px solid white;
+// }
+
+// .description,
+// .final {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 10px;
+//   min-height: 80vh;
+// }
+
+@mixin full-screen-pseudo-element {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.box.active {
-  background-color: orange;
-  border: 2px solid white;
+.horizontalWrapper {
+  @apply relative bg-FABlue;
+
+  // &:before {
+  //   @include  full-screen-pseudo-element;
+  //   background-image: "../../assets/work-svg-path.inline.svg";
+  //   background-size: cover; // Adjust as needed
+  //   background-position: center;
+  //   // background-color: red;
+  //   z-index: 100;
+  // }
+
+  .svgBg {
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 100;
+    width: 300%;
+    transform: translateY(-50%);
+    display: inline-block;
+
+    @media (--media-min-medium) {
+      display: inline-block;
+    }
+  }
 }
 
-.description,
-.final {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  min-height: 80vh;
-}
+
 
 .horizontalContainer {
   width: 300%;
@@ -44,13 +70,46 @@
   display: flex;
   flex-wrap: nowrap;
 
+  @apply text-white relative;
+
+  &__first_panel {
+    @apply w-full h-full flex justify-center text-center relative;
+
+    &_column {
+      @apply flex-1 flex items-center justify-center flex-col gap-6 p-24;
+      // display: grid;
+      // grid-template-rows: 1fr 1fr;
+
+      h1 {
+        @apply text-6xl font-bold uppercase;
+      }
+
+      h3 {
+        @apply text-3xl;
+      }
+      
+    }
+  }
+
   &__panel {
     @apply w-full h-full flex justify-center text-center relative;
 
     &_column {
-      @apply flex-1;
+      @apply flex-1 p-24;
       display: grid;
       grid-template-rows: 1fr 1fr;
+
+      &_text {
+        @apply flex flex-col items-center justify-center;
+
+        p {
+          @apply text-xl;
+        }
+
+        h3 {
+        @apply text-2xl font-bold mb-4;
+        }
+      }
     }
   }
 }

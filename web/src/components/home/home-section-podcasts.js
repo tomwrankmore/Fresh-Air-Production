@@ -56,6 +56,7 @@ const PodcastsWrapper = styled.div`
                 text-align: center;
                 line-height: inherit;
                 font-size: 2.25rem;
+                font-weight: bold;
                 @media ${device.mediaMinMedium} {
                     max-width: 85%;
                     line-height: 3.5rem;

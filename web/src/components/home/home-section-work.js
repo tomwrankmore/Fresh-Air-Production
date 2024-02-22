@@ -156,7 +156,7 @@ const Work = React.forwardRef(({
     return (
         <div style={{position: 'relative'}} ref={ref}>
           <HorizontalContainer className="horizontalContainer">
-            {/* <Panel className="panel panel1">
+            <Panel className="panel panel1">
               <div className="panel1-left-content">
                 <h1>We Work</h1>
                 <GatsbyImage 
@@ -175,7 +175,7 @@ const Work = React.forwardRef(({
                 <h4 className='hide-on-mob'>Take a scroll with us</h4>
                 <h3>{workSectionHeading}</h3>
               </div>
-            </Panel> */}
+            </Panel>
             <Panel className="panel panel2">
               <SvgBg className="svg-bg" />
               <div className="panel-equal-column">
