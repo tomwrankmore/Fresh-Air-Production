@@ -13,7 +13,7 @@ const ScrollingMarquee = () => {
   const orange = { background: colors.FAOrange };
   const turq = { background: colors.FATurquoise };
 
-  const [bgColor, setBgColor] = useState(grey);
+  const [bgColor, setBgColor] = useState(blue);
 
   return (
     <div className={styles.marqueeWrapper} style={bgColor}>
