@@ -19,6 +19,7 @@ import TagCloud from "../components/home/home-section-cloud";
 import { homePageQuery } from "../queries";
 import HorizontalScrollSection from "../components/horizontal-scroll-section/"
 import NewHero from "../components/new-hero";
+import ScrollingMarquee from "../components/scrolling-marquee";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -234,7 +235,7 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      <CentralLogo ref={centralLogoRef} />
+      {/* <CentralLogo ref={centralLogoRef} /> */}
       {/* <Hero
         ref={heroRef}
         heroMarqueeRef={heroMarqueeRef}
@@ -284,7 +285,9 @@ const IndexPage = props => {
         featuredEditorial={homePageContent.homeFeaturedEditorial}
         homeEditorials={homePageContent.homeEditorials}
       />
-      <TagCloud ref={tagCloudRef} />
+      {/* <TagCloud ref={tagCloudRef} /> */}
+      <ScrollingMarquee />
+
     </Layout>
   );
 };

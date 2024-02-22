@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
 import gsap from "gsap"
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
 import { device } from "../../styles/mediaQueries";
