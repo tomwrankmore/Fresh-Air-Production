@@ -272,7 +272,23 @@ const IndexPage = props => {
         panelFourImage={homePageContent.homeWorkPanelFourImage}
       /> */}
 
-      <HorizontalScrollSection ref={horizontalScrollRef} />
+      <HorizontalScrollSection 
+        ref={horizontalScrollRef} 
+        workSectionHeading={homePageContent.homeWorkSectionHeading}
+        homeWorkSectionImage={homePageContent.homeWorkSectionImage}
+        panelOneTitle={homePageContent.homeWorkPanelOneTitle}
+        panelOneText={homePageContent._rawHomeWorkPanelOneText}
+        panelOneImage={homePageContent.homeWorkPanelOneImage}
+        panelTwoText={homePageContent._rawHomeWorkPanelTwoText}
+        panelTwoTitle={homePageContent.homeWorkPanelTwoTitle}
+        panelTwoImage={homePageContent.homeWorkPanelTwoImage}
+        panelThreeTitle={homePageContent.homeWorkPanelThreeTitle}
+        panelThreeText={homePageContent._rawHomeWorkPanelThreeText}
+        panelThreeImage={homePageContent.homeWorkPanelThreeImage}
+        panelFourTitle={homePageContent.homeWorkPanelFourTitle}
+        panelFourText={homePageContent._rawHomeWorkPanelFourText}
+        panelFourImage={homePageContent.homeWorkPanelFourImage}
+      />
 
       {/* <WwdLogoCloud
         imageOne={homePageContent.homeClientsRowOne}

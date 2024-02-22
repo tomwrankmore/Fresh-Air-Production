@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import { colors } from "../../styles/colors";
 
 const ScrollingMarquee = () => {
+ 
   const wordList = ["Documentary", "Sustainability", "Science", "Wellness", "Finance", "Interview"];
 
   const blue = { background: colors.FABlue };

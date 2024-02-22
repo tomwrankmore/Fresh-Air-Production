@@ -3,8 +3,27 @@ import * as styles from "./styles.module.scss";
 
 import horizontalContainerAnim from "./horizontal-scroll-section.gsap";
 import { Link } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
+import BlockContent from "../block-content";
 
-const HorizontalScrollSection = React.forwardRef(({}, ref) => {
+const HorizontalScrollSection = React.forwardRef((props, ref) => {
+  const {
+    workSectionHeading,
+    homeWorkSectionImage,
+    panelOneTitle,
+    panelOneText,
+    panelOneImage,
+    panelTwoText,
+    panelTwoTitle,
+    panelTwoImage,
+    panelThreeTitle,
+    panelThreeText,
+    panelThreeImage,
+    panelFourTitle,
+    panelFourText,
+    panelFourImage
+  } = props;
+
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -16,9 +35,17 @@ const HorizontalScrollSection = React.forwardRef(({}, ref) => {
       <div className={`horizontalContainer ${styles.horizontalContainer}`}>
         <div className={`${styles.horizontalContainer__panel} panel`}>
           <div className={styles.horizontalContainer__panel_column}>
-            <h1 className="">We Work</h1>
-            <h1>image goes here</h1>
-            <h1>With you</h1>
+            <h1>We Work</h1>
+            <GatsbyImage
+              image={homeWorkSectionImage.asset.gatsbyImageData}
+              alt={homeWorkSectionImage.alt}
+              placeholder="blurred"
+              layout="constrained"
+              height="100%"
+              className="panel-1-img-wrapper"
+              imgClassName="panel-1-img"
+            />
+            <h1>With You</h1>
           </div>
           <div className={styles.horizontalContainer__panel_column}>
             <h3>
@@ -32,53 +59,71 @@ const HorizontalScrollSection = React.forwardRef(({}, ref) => {
 
         <section className={`${styles.horizontalContainer__panel} ${styles.gray} panel`}>
           <div className={styles.horizontalContainer__panel_column}>
-            <div>
-              <h1>STRATEGY & CREATIVE</h1>
-              <p>
-                What is the podcast that only you can make? We turn your brand into a podcast that
-                audiences will love. We take broadcast quality producers and turn your talent into
-                podcast stars, your brand purpose into a killer format, and your expertise into a
-                brilliant conversation.
-              </p>
+            <div className="flex flex-col items-center justify-center p-12">
+              <h1 className="text-2xl font-bold mb-4">{panelOneTitle}</h1>
+              <BlockContent blocks={panelOneText} />
             </div>
-            <div className="bg-red-200">Image placeholder</div>
+            <GatsbyImage
+              image={panelOneImage.asset.gatsbyImageData}
+              alt={panelOneImage.alt}
+              placeholder="blurred"
+              layout="constrained"
+              height="100%"
+              objectPosition="0 0"
+              className="img-l"
+            />
           </div>
           <div className={styles.horizontalContainer__panel_column}>
-            <div className="bg-red-200">Image placeholder</div>
-            <div>
-              <h1>RECORD AND PRODUCE</h1>
-              <p>
-                We're a collective of best in the business audio producers, and we've worked for
-                some of the world's biggest brands. We're also storytellers, journalists, finance
-                specialists, science experts, comedy producers, fashion lovers, and much more.
-              </p>
+            <GatsbyImage
+              image={panelTwoImage.asset.gatsbyImageData}
+              alt={panelTwoImage.alt}
+              placeholder="blurred"
+              layout="constrained"
+              height="100%"
+              objectPosition="0 0"
+              className="img-l"
+            />
+            <div className="flex flex-col items-center justify-center p-12">
+              <h2>{panelTwoTitle}</h2>
+              <BlockContent blocks={panelTwoText} />
             </div>
           </div>
         </section>
 
         <section className={`${styles.horizontalContainer__panel} ${styles.blue} panel`}>
           <div className={styles.horizontalContainer__panel_column}>
-            <div>
-              <h1>ADVERTISE AND PROMOTE</h1>
-              <p>
-                We're a team of podcast growth specialists running strategy, media, design and PR to
-                make a podcast into a hit.Our plans bring an audience to the content we produce and
-                strategically distribute it to where the audience already are.
-              </p>
+            <div className="flex flex-col items-center justify-center p-12">
+              <h2>{panelThreeTitle}</h2>
+              <BlockContent blocks={panelThreeText} />
             </div>
-
-            <div className="bg-red-200">Image placeholder</div>
+            <GatsbyImage
+              image={panelThreeImage.asset.gatsbyImageData}
+              alt={panelThreeImage.alt}
+              placeholder="blurred"
+              layout="constrained"
+              height="100%"
+              objectPosition="0 0"
+              className="img-l"
+            />
           </div>
           <div className={styles.horizontalContainer__panel_column}>
-            <div>
-              <h1>ANALYSE YOUR DATA</h1>
-              <p>
-                We set clear goals to drive the best return for your business. We ruthlessly iterate
-                to make your podcast as successful as it can be. And we show the value so Series 2
-                is a no-brainer.
-              </p>
+            <GatsbyImage
+              image={panelFourImage.asset.gatsbyImageData}
+              alt={panelFourImage.alt}
+              placeholder="blurred"
+              layout="constrained"
+              height="100%"
+              objectPosition="0 0"
+              className="img-r"
+            />
+            <div className="flex flex-col items-center justify-center p-12">
+              <h2>{panelFourTitle}</h2>
+              <BlockContent blocks={panelFourText} />
+              <br />
+              <Link to="/contact" className="work-podcast-link">
+                Let's get making a podcast
+              </Link>
             </div>
-            <div className="bg-red-200">Image placeholder</div>
           </div>
         </section>
       </div>

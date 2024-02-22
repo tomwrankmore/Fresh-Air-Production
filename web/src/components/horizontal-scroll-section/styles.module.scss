@@ -45,10 +45,12 @@
   flex-wrap: nowrap;
 
   &__panel {
-    @apply w-full h-full flex justify-center items-center text-center relative;
+    @apply w-full h-full flex justify-center text-center relative;
 
     &_column {
-      @apply flex-1 flex items-center justify-center flex-col p-24;
+      @apply flex-1;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
     }
   }
 }
