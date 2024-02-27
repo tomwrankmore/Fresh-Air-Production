@@ -6,7 +6,7 @@ export const wrapPageElement = ({ element }) => {
     <>
       {element}
       {/* <!-- Podscribe pixel --> */}
-      {/* <Script id="podscribe-pixel-id">
+      <Script id="podscribe-pixel-id">
         {`
             (function (w, d) {
               var id = 'podscribe-capture',
@@ -23,7 +23,7 @@ export const wrapPageElement = ({ element }) => {
               })
             })(window, document);
           `}
-      </Script> */}
+      </Script>
 
       <Script id="spotify-pixel-id">
         {`
