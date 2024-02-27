@@ -6,6 +6,8 @@
 
 // You can delete this file if you're not using it
 
+const { wrapPageElement } = require("./gatsby-shared-pixel-scripts");
+
 exports.onClientEntry = () => {
   // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
   if (!(`IntersectionObserver` in window)) {
@@ -32,4 +34,6 @@ exports.shouldUpdateScroll = ({ routerProps: { location }, getSavedScrollPositio
   return false;
 };
 
-export { wrapPageElement } from "./gatsby-shared-pixel-scripts";
+module.exports = {
+  wrapPageElement: wrapPageElement
+};
