@@ -38,6 +38,14 @@ justify-content: center;
 flex-direction: column;
 overflow: hidden;
 &.text {
+  ul {
+  list-style: disc;
+
+  li {
+    @apply ml-4;
+    @apply mb-4;
+  }
+}
   p {
     line-height: 1.4rem;
     font-size: 1.2rem;

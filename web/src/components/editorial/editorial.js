@@ -14,18 +14,12 @@ import {
 } from "./"
 
 const EditorialWrapper = styled.div`
-    /* padding: 120px 0 0;
-    @media ${device.mediaMinLarge} {
-      padding: 0;
-    } */
     a {
       color: black;
     }
 `
 
 const Editorial = ({editorial}) => {
-
-  // console.log(editorial.omnyWidget)
 
   // Section refs
   const heroRef = useRef(null)
