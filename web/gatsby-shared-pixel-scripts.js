@@ -5,6 +5,26 @@ export const wrapPageElement = ({ element }) => {
   return (
     <>
       {element}
+      <Script id="spotify-pixel-id">
+        {`
+          (function(w, d){
+            var id='spdt-capture', n='script';
+            if (!d.getElementById(id)) {
+              w.spdt =
+                w.spdt ||
+                function() {
+                  (w.spdt.q = w.spdt.q || []).push(arguments);
+                };
+              var e = d.createElement(n); e.id = id; e.async=1;
+              e.src = 'https://pixel.byspotify.com/ping.min.js';
+              var s = d.getElementsByTagName(n)[0];
+              s.parentNode.insertBefore(e, s);
+            }
+            w.spdt('conf', { key: 'f4d14b1d6dd7407f95aa43d929665572' });
+            w.spdt('view');
+          })(window, document);
+        `}
+      </Script>
       {/* <!-- Podscribe pixel --> */}
       <Script id="podscribe-pixel-id">
         {`
@@ -25,27 +45,24 @@ export const wrapPageElement = ({ element }) => {
           `}
       </Script>
 
-      <Script id="spotify-pixel-id">
-        {`
-          (function(w, d){
-            var id='spdt-capture', 
-            n='script';
-            if (!d.getElementById(id)) {
-              w.spdt =
-                w.spdt ||
-                function() {
-                  (w.spdt.q = w.spdt.q || []).push(arguments);
-                };
-              var e = d.createElement(n); e.id = id; e.async=1;
-              e.src = 'https://pixel.byspotify.com/ping.min.js';
-              var s = d.getElementsByTagName(n)[0];
-              s.parentNode.insertBefore(e, s);
-            }
-            w.spdt('conf', { key: 'f4d14b1d6dd7407f95aa43d929665572' });
-            w.spdt('view');
-          })(window, document);
-        `}
-      </Script>
+      {/* <Script id="main-spotify-pixel-id">
+        {`(function(w, d){
+          var id='spdt-capture', 
+          n='script';
+          if (!d.getElementById(id)) {
+            w.spdt = 
+              w.spdt || function() { 
+                (w.spdt.q = w.spdt.q || []).push(arguments);
+                }; 
+                var e = d.createElement(n); 
+                e.id = id; 
+                e.async=1; 
+                e.src = 'https://pixel.byspotify.com/ping.min.js'; 
+                var s = d.getElementsByTagName(n)[0]; s.parentNode.insertBefore(e, s); } 
+                w.spdt('conf', { key: '4e992a6ef705413fbe4c8768ddc3b801' }); 
+                w.spdt('view');
+                })(window, document)`}
+      </Script> */}
     </>
   );
 };
