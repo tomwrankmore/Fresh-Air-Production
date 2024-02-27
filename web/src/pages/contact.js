@@ -332,7 +332,7 @@ const ContactPage = props => {
       </ContactOuterWrapper>
 
       {/* <!-- Podscribe pixel --> */}
-      <Script strategy="off-main-thread">
+      <Script id="podscribe-contact-pixel">
         {`
             (function (w, d) {
               var id = 'podscribe-capture',
@@ -355,7 +355,7 @@ const ContactPage = props => {
       {/* <!-- /Podscribe pixel --> */}
 
       {/* Spotify Lead Pixel */}
-      <Script>
+      {/* <Script>
         {`
         (function(w, d){
           var id='spdt-capture', n='script';
@@ -379,11 +379,11 @@ const ContactPage = props => {
           });
         })(window, document)
         `}
-      </Script>
+      </Script> */}
 
       {/* Second Spotify Pixel Feb 2024 */}
 
-      <Script>
+      <Script id="spotify-contact-pixel">
         {`
           (function(w, d){
             var id='spdt-capture', n='script';

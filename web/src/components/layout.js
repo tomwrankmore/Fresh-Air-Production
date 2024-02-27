@@ -114,8 +114,24 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
 
   return (
     <>
+      <div style={{ position: "relative", paddingTop: "82px" }} ref={scopeRef}>
+        <svg ref={svgRef} className="svgLine"></svg>
+        <Link to="/contact" onMouseEnter={onMouseEnterHandler} onMouseLeave={onMouseLeaveHandler}>
+          <HeroCta ref={ctaRef} />
+        </Link>
+        <Header
+          siteTitle={siteTitle}
+          onHideNav={onHideNav}
+          onShowNav={onShowNav}
+          showNav={showNav}
+          ref={navigationRef}
+        />
+        <Content>{children}</Content>
+        <Footer />
+      </div>
+
       {/* <!-- Podscribe pixel --> */}
-        <Script>
+      <Script id="podscribe-pixel-id">
           {`
             (function (w, d) {
               var id = 'podscribe-capture',
@@ -136,9 +152,9 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
       {/* <!-- /Podscribe pixel --> */}
       
       {/* SPOTIFY AD ANALYTICS PIXEL */}
-      <Script>{`(function(w, d){var id='spdt-capture', n='script';if (!d.getElementById(id)) {w.spdt = w.spdt || function() { (w.spdt.q = w.spdt.q || []).push(arguments);}; var e = d.createElement(n); e.id = id; e.async=1; e.src = 'https://pixel.byspotify.com/ping.min.js'; var s = d.getElementsByTagName(n)[0]; s.parentNode.insertBefore(e, s); } w.spdt('conf', { key: '4e992a6ef705413fbe4c8768ddc3b801' }); w.spdt('view');})(window, document)`}</Script>
+      {/* <Script>{`(function(w, d){var id='spdt-capture', n='script';if (!d.getElementById(id)) {w.spdt = w.spdt || function() { (w.spdt.q = w.spdt.q || []).push(arguments);}; var e = d.createElement(n); e.id = id; e.async=1; e.src = 'https://pixel.byspotify.com/ping.min.js'; var s = d.getElementsByTagName(n)[0]; s.parentNode.insertBefore(e, s); } w.spdt('conf', { key: '4e992a6ef705413fbe4c8768ddc3b801' }); w.spdt('view');})(window, document)`}</Script> */}
 
-      <Script>
+      <Script id="spotify-pixel-id">
         {/* Second Spotify pixel Feb 2024 */}
         {`
           (function(w, d){
@@ -159,22 +175,6 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
           })(window, document);
         `}
       </Script>
-
-      <div style={{ position: "relative", paddingTop: "82px" }} ref={scopeRef}>
-        <svg ref={svgRef} className="svgLine"></svg>
-        <Link to="/contact" onMouseEnter={onMouseEnterHandler} onMouseLeave={onMouseLeaveHandler}>
-          <HeroCta ref={ctaRef} />
-        </Link>
-        <Header
-          siteTitle={siteTitle}
-          onHideNav={onHideNav}
-          onShowNav={onShowNav}
-          showNav={showNav}
-          ref={navigationRef}
-        />
-        <Content>{children}</Content>
-        <Footer />
-      </div>
     </>
   );
 };
