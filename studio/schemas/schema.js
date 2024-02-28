@@ -15,6 +15,7 @@ import acceptableUse from "./documents/acceptable-use";
 import modernSlaveryStatement from "./documents/modern-slavery-statement";
 import privacyPolicy from "./documents/privacy-policy";
 import genericPageType from "./documents/genericPageType.js";
+import homePageType from "./documents/homePage.js";
 
 // Object types
 import bioPortableText from "./objects/bioPortableText";
@@ -28,6 +29,11 @@ import {heroType} from "./objects/heroType";
 import {imageGalleryType} from "./objects/imageGalleryType";
 import {textWithImageType} from "./objects/textWithImageType.js";
 import {videoType} from "./objects/videoType";
+import { 
+  homeHero, 
+  homepagePodcasts, 
+  homeTickerTape 
+} from "./objects/homepage";
 
 export default [
   bioPortableText,
@@ -58,4 +64,9 @@ export default [
   imageGalleryType,
   textWithImageType,
   videoType,
+  // Homepage Builder Objects
+  homePageType,
+  homeHero, 
+  homepagePodcasts, 
+  homeTickerTape 
 ];

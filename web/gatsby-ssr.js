@@ -6,7 +6,7 @@
 
 // You can delete this file if you're not using it
 
-import * as React from "react"
+import * as React from "react";
 
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
@@ -51,60 +51,62 @@ export const onRenderBody = ({ setHeadComponents }) => {
       key="interFont"
     />,
     <link
-    rel="preload"
-    href="/fonts/Ambit-Bold.otf"
-    as="font"
-    type="font/woff2"
-    crossOrigin="anonymous"
-    key="interFont"
-  />,
-  <link
-    rel="preload"
-    href="/fonts/Ambit-Regular.otf"
-    as="font"
-    type="font/woff2"
-    crossOrigin="anonymous"
-    key="interFont"
-  />,
-  <link
-    rel="preload"
-    href="/fonts/Ambit-SemiBold.otf"
-    as="font"
-    type="font/woff2"
-    crossOrigin="anonymous"
-    key="interFont"
-  />,
-  <link 
-    rel="preload" 
-    href="/fonts/PolySans-Slim.woff2" 
-    as="font" 
-    type="font/woff2" 
-    crossOrigin="anonymous"
-    key="interFont"
-  />,
-  <link 
-    rel="preload" 
-    href="/fonts/Ambit-SemiBold.woff2" 
-    as="font" 
-    type="font/woff2" 
-    crossOrigin="anonymous" 
-    key="interFont"
-  />,
-  <link 
-    rel="preload" 
-    href="/fonts/Ambit-Regular.woff2" 
-    as="font" 
-    type="font/woff2" 
-    crossOrigin="anonymous" 
-    key="interFont"
-  />,
-  <link 
-    rel="preload" 
-    href="/fonts/Ambit-Bold.woff2" 
-    as="font" 
-    type="font/woff2" 
-    crossOrigin="anonymous"
-    key="interFont"
-  />
-  ])
-}
+      rel="preload"
+      href="/fonts/Ambit-Bold.otf"
+      as="font"
+      type="font/woff2"
+      crossOrigin="anonymous"
+      key="interFont"
+    />,
+    <link
+      rel="preload"
+      href="/fonts/Ambit-Regular.otf"
+      as="font"
+      type="font/woff2"
+      crossOrigin="anonymous"
+      key="interFont"
+    />,
+    <link
+      rel="preload"
+      href="/fonts/Ambit-SemiBold.otf"
+      as="font"
+      type="font/woff2"
+      crossOrigin="anonymous"
+      key="interFont"
+    />,
+    <link
+      rel="preload"
+      href="/fonts/PolySans-Slim.woff2"
+      as="font"
+      type="font/woff2"
+      crossOrigin="anonymous"
+      key="interFont"
+    />,
+    <link
+      rel="preload"
+      href="/fonts/Ambit-SemiBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossOrigin="anonymous"
+      key="interFont"
+    />,
+    <link
+      rel="preload"
+      href="/fonts/Ambit-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossOrigin="anonymous"
+      key="interFont"
+    />,
+    <link
+      rel="preload"
+      href="/fonts/Ambit-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossOrigin="anonymous"
+      key="interFont"
+    />
+  ]);
+};
+
+export { wrapPageElement } from "./gatsby-shared-pixel-scripts";
