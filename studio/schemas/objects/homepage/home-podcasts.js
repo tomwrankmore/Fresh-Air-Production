@@ -7,6 +7,12 @@ const homePodcastsType = defineType({
   title: 'Homepage podcasts',
   fields: [
     defineField({
+      name: 'visibleOnPage',
+      title: 'Visible on homepage?',
+      description: 'If unchecked this block will not render on the homepage.',
+      type: 'boolean'
+    }),
+    defineField({
       name: 'homePodcastHeading',
       type: 'simplePortableText',
       title: 'Podcast section heading',
@@ -21,6 +27,9 @@ const homePodcastsType = defineType({
       validation: Rule => Rule.error('Please add 4 podcasts to be displayed on the homepage.').required().min(4).max(4),
     })
   ],
+  initialValue: {
+    visibleOnPage: true
+  },
   icon: DocumentTextIcon,
   preview: {
     select: {
