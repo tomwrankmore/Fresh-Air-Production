@@ -151,6 +151,7 @@ export const query = graphql`
         ... on SanityHomeHero {
           _key
           _type
+          visibleOnPage
           heading
           image {
             asset {
@@ -161,10 +162,12 @@ export const query = graphql`
         ... on SanityHomeTickerTape {
           _key
           _type
+          # visibleOnPage
           homeTickerTapeText
         }
         ... on SanityHomepagePodcasts {
           _type
+          # visibleOnPage
           homePodcasts {
             heroImage {
               asset {
