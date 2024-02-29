@@ -9,7 +9,9 @@ import SplitText from "gsap/SplitText";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
-const NewHero = () => {
+const NewHero = ({data}) => {
+  console.log("New hero data: ", data )
+
   const heroRef = useRef(null);
 
   useEffect(() => {
@@ -63,14 +65,14 @@ const NewHero = () => {
     `
   );
 
-  const pluginImage = getImage(heroBackgroundImage.childImageSharp);
+  const pluginImage = getImage(data.image.asset);
 
   return (
     <div className={styles.hero} ref={heroRef}>
       <div className={`${styles.hero__overlay} overlay`} />
       <div className={styles.hero__gradientOverlay} />
       <div className={styles.hero__headingContainer}>
-        <h1 className="hero-heading">We create amazing podcasts for innovative brands.</h1>
+        <h1 className="hero-heading">{data.heading}</h1>
       </div>
       <BgImage image={pluginImage} className={styles.hero__backgroundImg} />
     </div>

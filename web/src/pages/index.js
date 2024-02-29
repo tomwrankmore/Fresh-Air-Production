@@ -17,9 +17,10 @@ import Testimonials from "../components/home/home-section-testimonials";
 import Editorials from "../components/home/home-section-editorials";
 import TagCloud from "../components/home/home-section-cloud";
 import { homePageQuery } from "../queries";
-import HorizontalScrollSection from "../components/horizontal-scroll-section/"
+import HorizontalScrollSection from "../components/horizontal-scroll-section/";
 import NewHero from "../components/new-hero";
 import ScrollingMarquee from "../components/scrolling-marquee";
+import HomeComponentMapper from "../components/home/homeComponentMapper";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -145,6 +146,41 @@ export const query = graphql`
         }
       }
     }
+    newHomeContent: sanityHomePageType {
+      homePageBuilder {
+        ... on SanityHomeHero {
+          _key
+          _type
+          heading
+          image {
+            asset {
+              gatsbyImageData(width: 1024, placeholder: DOMINANT_COLOR, formats: [AUTO, WEBP, AVIF])
+            }
+          }
+        }
+        ... on SanityHomeTickerTape {
+          _key
+          _type
+          homeTickerTapeText
+        }
+        ... on SanityHomepagePodcasts {
+          _type
+          homePodcasts {
+            heroImage {
+              asset {
+                gatsbyImageData
+              }
+              alt
+            }
+            _rawExcerpt
+            slug {
+              current
+            }
+          }
+          _rawHomePodcastHeading
+        }
+      }
+    }
     editorials: allSanityEditorial(
       sort: { publishedAt: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
@@ -230,7 +266,9 @@ const IndexPage = props => {
   const homePageContent = data.homePageContent.edges[0].node;
   const testimonials = mapEdgesToNodes(data.testimonials);
 
-  const heroImage = homePageContent.heroImage.asset.gatsbyImageData
+  const heroImage = homePageContent.heroImage.asset.gatsbyImageData;
+
+  const homeBlocks = data.newHomeContent.homePageBuilder;
 
   return (
     <Layout>
@@ -243,12 +281,15 @@ const IndexPage = props => {
         heroMarqueeText={homePageContent.homeHeroTickerTape}
         heroImage={homePageContent.heroImage}
       /> */}
-      <NewHero heroImage = {heroImage} />
-      <Podcasts
+
+      <HomeComponentMapper homeBlocks={homeBlocks} />
+
+      {/* <NewHero heroImage={heroImage} /> */}
+      {/* <Podcasts
         ref={podcastsRef}
         podcastHeading={homePageContent._rawHomePodcastHeading[0].children[0].text}
         homePodcasts={homePageContent.homePodcasts}
-      />
+      /> */}
       {/* <Marquee
         style={{ color: colors.FABlue }}
         textContent={homePageContent.homeSecondTickerTape}
@@ -272,8 +313,8 @@ const IndexPage = props => {
         panelFourImage={homePageContent.homeWorkPanelFourImage}
       /> */}
 
-      <HorizontalScrollSection 
-        ref={horizontalScrollRef} 
+      <HorizontalScrollSection
+        ref={horizontalScrollRef}
         workSectionHeading={homePageContent.homeWorkSectionHeading}
         homeWorkSectionImage={homePageContent.homeWorkSectionImage}
         panelOneTitle={homePageContent.homeWorkPanelOneTitle}
@@ -303,7 +344,6 @@ const IndexPage = props => {
       />
       {/* <TagCloud ref={tagCloudRef} /> */}
       <ScrollingMarquee />
-
     </Layout>
   );
 };
