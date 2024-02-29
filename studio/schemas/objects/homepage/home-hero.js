@@ -7,6 +7,12 @@ const homeHeroType = defineType({
   title: 'Homepage hero',
   fields: [
     defineField({
+      name: 'visibleOnHomePage',
+      title: 'Visible on homepage?',
+      description: 'If unchecked this block will not render on the homepage.',
+      type: 'boolean'
+    }),
+    defineField({
       name: 'heading',
       type: 'string',
     }),
@@ -22,6 +28,9 @@ const homeHeroType = defineType({
       ],
     }),
   ],
+  initialValue: {
+    visibleOnPage: true
+  },
   icon: DocumentTextIcon,
   preview: {
     select: {
