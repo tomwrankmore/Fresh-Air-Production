@@ -1,4 +1,5 @@
 import {DocumentTextIcon} from '@sanity/icons'
+import { FaPodcast } from "react-icons/fa";
 import {defineField, defineType} from 'sanity'
 
 const homePodcastsType = defineType({
@@ -30,7 +31,7 @@ const homePodcastsType = defineType({
   initialValue: {
     visibleOnPage: true
   },
-  icon: DocumentTextIcon,
+  icon: FaPodcast,
   preview: {
     select: {
       title: 'heading',
@@ -40,7 +41,7 @@ const homePodcastsType = defineType({
       return {
         title: title || 'Homepage podcasts',
         subtitle: 'Homepage podcasts',
-        media: image || DocumentTextIcon,
+        media: image || FaPodcast,
       }
     },
   },
