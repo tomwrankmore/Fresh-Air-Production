@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import * as styles from "./style.module.scss";
+import * as styles from "./home-block-hero.module.scss";
 import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
 import gsap from "gsap";
@@ -9,7 +9,7 @@ import SplitText from "gsap/SplitText";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
-const NewHero = ({data}) => {
+const HomeHero = ({data}) => {
   console.log("New hero data: ", data )
 
   const heroRef = useRef(null);
@@ -79,4 +79,4 @@ const NewHero = ({data}) => {
   );
 };
 
-export default NewHero;
+export default HomeHero;

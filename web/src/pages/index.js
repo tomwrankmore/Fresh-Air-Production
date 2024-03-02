@@ -18,7 +18,6 @@ import Editorials from "../components/home/home-section-editorials";
 import TagCloud from "../components/home/home-section-cloud";
 import { homePageQuery } from "../queries";
 import HorizontalScrollSection from "../components/horizontal-scroll-section/";
-import NewHero from "../components/new-hero";
 import ScrollingMarquee from "../components/scrolling-marquee";
 import HomeComponentMapper from "../components/home/homeComponentMapper";
 
@@ -162,12 +161,12 @@ export const query = graphql`
         ... on SanityHomeTickerTape {
           _key
           _type
-          # visibleOnPage
+          visibleOnPage
           homeTickerTapeText
         }
         ... on SanityHomepagePodcasts {
           _type
-          # visibleOnPage
+          visibleOnPage
           homePodcasts {
             heroImage {
               asset {
