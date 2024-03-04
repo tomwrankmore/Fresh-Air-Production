@@ -1,3 +1,8 @@
 export { default as homeHero } from './home-hero'
 export { default as homepagePodcasts } from './home-podcasts'
 export { default as homeTickerTape } from './home-ticker-tape'
+export { default as homeWeWork } from './home-we-work'
+export { default as homeClients } from './home-clients'
+export { default as homeTestimonials } from './home-testimonials'
+export { default as homeEditorials} from './home-editorials'
+export { default as homeTagCloud} from './home-tag-cloud'

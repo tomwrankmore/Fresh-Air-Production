@@ -21,6 +21,26 @@ const HomePageType = defineType({
         defineArrayMember({
           name: "homeTickerTape",
           type: "homeTickerTape"
+        }),
+        defineArrayMember({
+          name: "homeWeWork",
+          type: "homeWeWork"
+        }),
+        defineArrayMember({
+          name: "homeClients",
+          type: "homeClients"
+        }),
+        defineArrayMember({
+          name: "homeTestimonials",
+          type: "homeTestimonials"
+        }),
+        defineArrayMember({
+          name: "homeEditorials",
+          type: "homeEditorials"
+        }),
+        defineArrayMember({
+          name: "homeTagCloud",
+          type: "homeTagCloud"
         })
       ]
     })
