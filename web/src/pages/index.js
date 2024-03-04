@@ -292,11 +292,11 @@ const IndexPage = props => {
         podcastHeading={homePageContent._rawHomePodcastHeading[0].children[0].text}
         homePodcasts={homePageContent.homePodcasts}
       /> */}
-      {/* <Marquee
+      <Marquee
         style={{ color: colors.FABlue }}
         textContent={homePageContent.homeSecondTickerTape}
         ref={marqueeRef}
-      /> */}
+      />
       {/* <Work
         ref={horizontalPanelsRef}
         workSectionHeading={homePageContent.homeWorkSectionHeading}

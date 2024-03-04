@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import * as styles from "./styles.module.scss";
+import * as styles from "./home-block-logo-cloud.module.scss";
 import { Link } from "gatsby";
 import { colors } from "../../styles/colors";
 

@@ -1,138 +1,68 @@
-import React, { useEffect, useState, useRef } from "react";
-import * as styles from "./home-block-marquee.module.scss";
-import { Link } from "gatsby";
-import { colors } from "../../styles/colors";
+import React, { useEffect } from "react";
+import gsap from "gsap";
+import styled from "styled-components";
+import { device } from "../../../styles/mediaQueries";
+import classNames from "classnames";
+import * as styles from "./home-block-marquee.module.scss"
 
-const ScrollingMarquee = () => {
- 
-  const wordList = ["Documentary", "Sustainability", "Science", "Wellness", "Finance", "Interview"];
+const StyledMarquee = styled.section`
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.25rem;
+  padding: 3rem 0;
+  position: relative;
+  overflow: hidden;
+  @media ${device.mediaMinLarge} {
+    font-size: 1.875rem;
+  }
 
-  const blue = { background: colors.FABlue };
-  const grey = { background: colors.FAGrey };
-  const darkBlue = { background: colors.FADarkerBlue };
-  const lightGreen = { background: colors.FALightGreen };
-  const orange = { background: colors.FAOrange };
-  const turq = { background: colors.FATurquoise };
+  &.home-marquee {
+    position: relative;
+    padding: 0;
+    @media ${device.mediaMinMedium} {
+      position: absolute;
+    }
+  }
+`;
 
-  const [bgColor, setBgColor] = useState(blue);
+const MarqueeInner = styled.div`
+  -webkit-font-smoothing: antialiased;
+  width: fit-content;
+  display: flex;
+  flex: auto;
+  flex-direction: row;
+`;
+
+const MarqueePart = styled.div`
+  flex-shrink: 0;
+  padding: 0 4px;
+  font-smooth: always;
+`;
+
+
+const Marquee = React.forwardRef(({ textContent, style, cn }, ref) => {
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.set(".marquee__inner", { xPercent: -50 });
+      gsap
+        .to(".marquee__part", { xPercent: -100, repeat: -1, duration: 40, ease: "linear" })
+        .totalProgress(0.5);
+    }, ref);
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <div className={styles.marqueeWrapper} style={bgColor}>
-      {/* section one */}
-      <div
-        className={styles.marqueeItems}
-        onMouseEnter={() => setBgColor(grey)}
-        onMouseLeave={() => setBgColor(blue)}
-      >
-        <div className={`${styles.marqueeItems__slide} ${styles.marqueeItems__slide_left} ${styles.hoverBlue}`}>
-          {wordList.map(item => (
-            <Link to="/our-podcasts">
-              <span>{item}</span>
-            </Link>
-          ))}
-        </div>
-
-        <div className={`${styles.marqueeItems__slide} ${styles.marqueeItems__slide_left} ${styles.hoverBlue}`}>
-          {wordList.map(item => (
-            <Link to="/our-podcasts">
-              <span>{item}</span>
-            </Link>
-          ))}
-        </div>
+    <section className={classNames(cn, styles.marquee, "marquee")} ref={ref} style={style}>
+      <div aria-hidden="true" className={classNames(cn, styles.marqueeInner, "marquee__inner")}>
+        <div className={ classNames(styles.marqueePart, "marquee__part") }>{textContent}</div>
+        <div className={ classNames(styles.marqueePart, "marquee__part") }>{textContent}</div>
+        <div className={ classNames(styles.marqueePart, "marquee__part") }>{textContent}</div>
+        <div className={ classNames(styles.marqueePart, "marquee__part") }>{textContent}</div>
+        <div className={ classNames(styles.marqueePart, "marquee__part") }>{textContent}</div>
+        <div className={ classNames(styles.marqueePart, "marquee__part") }>{textContent}</div>
       </div>
-
-      {/* section two */}
-      <div
-        className={styles.marqueeItems}
-        onMouseEnter={() => setBgColor(darkBlue)}
-        onMouseLeave={() => setBgColor(blue)}
-      >
-        <div className={`${styles.marqueeItems__slide} ${styles.marqueeItems__slide_right} ${styles.hoverTurq}`}>
-          {wordList.map(item => (
-            <Link to="/our-podcasts">
-              <span>{item}</span>
-            </Link>
-          ))}
-        </div>
-        <div className={`${styles.marqueeItems__slide} ${styles.marqueeItems__slide_right} ${styles.hoverTurq}`}>
-          {wordList.map(item => (
-            <Link to="/our-podcasts">
-              <span>{item}</span>
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      {/* section three */}
-      <div
-        className={styles.marqueeItems}
-        onMouseEnter={() => setBgColor(lightGreen)}
-        onMouseLeave={() => setBgColor(blue)}
-      >
-        <div className={`${styles.marqueeItems__slide} ${styles.marqueeItems__slide_left_slower} ${styles.hoverDarkBlue}`}>
-          {wordList.map(item => (
-            <Link to="/our-podcasts">
-              <span>{item}</span>
-            </Link>
-          ))}
-        </div>
-
-        <div className={`${styles.marqueeItems__slide} ${styles.marqueeItems__slide_left_slower} ${styles.hoverDarkBlue}`}>
-          {wordList.map(item => (
-            <Link to="/our-podcasts">
-              <span>{item}</span>
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      {/* section four */}
-      <div
-        className={styles.marqueeItems}
-        onMouseEnter={() => setBgColor(orange)}
-        onMouseLeave={() => setBgColor(blue)}
-      >
-        <div className={`${styles.marqueeItems__slide} ${styles.marqueeItems__slide_right_slower} ${styles.hoverGrey}`}>
-          {wordList.map(item => (
-            <Link to="/our-podcasts">
-              <span>{item}</span>
-            </Link>
-          ))}
-        </div>
-
-        <div className={`${styles.marqueeItems__slide} ${styles.marqueeItems__slide_right_slower} ${styles.hoverGrey}`}>
-          {wordList.map(item => (
-            <Link to="/our-podcasts">
-              <span>{item}</span>
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      {/* section five */}
-      <div
-        className={styles.marqueeItems}
-        onMouseEnter={() => setBgColor(turq)}
-        onMouseLeave={() => setBgColor(blue)}
-      >
-        <div className={`${styles.marqueeItems__slide} ${styles.marqueeItems__slide_left_slower} ${styles.hoverDarkBlue}`}>
-          {wordList.map(item => (
-            <Link to="/our-podcasts">
-              <span>{item}</span>
-            </Link>
-          ))}
-        </div>
-
-        <div className={`${styles.marqueeItems__slide} ${styles.marqueeItems__slide_left_slower} ${styles.hoverDarkBlue}`}>
-          {wordList.map(item => (
-            <Link to="/our-podcasts">
-              <span>{item}</span>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </div>
+    </section>
   );
-};
+});
 
-export default ScrollingMarquee;
+export default Marquee;

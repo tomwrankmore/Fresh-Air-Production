@@ -1,79 +1,32 @@
-@keyframes marqueeSlideLeft {
-  from {
-    transform: translateX(0);
+section.tickerTape {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.25rem;
+  padding: 3rem 0;
+  position: relative;
+  overflow: hidden;
+  @media (--media-min-large) {
+    font-size: 1.875rem;
   }
-  to {
-    transform: translateX(-100%);
+
+  &.home-marquee {
+    position: relative;
+    padding: 0;
+    @media (--media-min-medium) {
+      position: absolute;
+    }
   }
 }
 
-@keyframes marqueeSlideRight {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-.marqueeWrapper {
-  transition: background-color 0.25s ease-in 0s;
-}
-
-.marqueeItems {
-  @apply whitespace-nowrap;
-  // @apply bg-FABlue;
-
-  &:hover .marqueeItems__slide {
-    animation-play-state: paused;
-  }
-
-  &__slide {
-    @apply inline-block;
-
-    &_left {
-      animation: marqueeSlideLeft 70s infinite linear forwards;
-    }
-
-    &_left_slower {
-      animation: marqueeSlideLeft 100s infinite linear forwards;
-    }
-
-    &_right {
-      animation: marqueeSlideRight 90s infinite linear forwards;
-    }
-
-    &_right_slower {
-      animation: marqueeSlideRight 120s infinite linear forwards;
-    }
-    span {
-      @apply text-6xl inline-block p-4 font-black uppercase;
-    }
-
-    &.hoverGrey {
-      a:hover {
-        @apply text-FAGrey;
-      }
-    }
-    &.hoverBlue {
-      a:hover {
-        @apply text-FABlue;
-      }
-    }
-    &.hoverDarkBlue {
-      a:hover {
-        @apply text-FADarkerBlue;
-      }
-    }
-    &.hoverOrange {
-      a:hover {
-        @apply text-FAGrey;
-      }
-    }
-    &.hoverTurq {
-      a:hover {
-        @apply text-FATurquoise;
-      }
-    }
+div.tickerTapeInner {
+  -webkit-font-smoothing: antialiased;
+  width: fit-content;
+  display: flex;
+  flex: auto;
+  flex-direction: row;
+  div.tickerTapePart {
+    flex-shrink: 0;
+    padding: 0 4px;
+    font-smooth: always;
   }
 }
