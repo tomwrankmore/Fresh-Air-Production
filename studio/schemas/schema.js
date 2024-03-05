@@ -24,15 +24,20 @@ import projectMember from "./objects/projectMember";
 import projectPortableText from "./objects/projectPortableText";
 import simplePortableText from "./objects/simplePortableText";
 // import {promotionType} from "./objects/promotionType";
-import {formType} from "./objects/formType.js";
-import {heroType} from "./objects/heroType";
-import {imageGalleryType} from "./objects/imageGalleryType";
-import {textWithImageType} from "./objects/textWithImageType.js";
-import {videoType} from "./objects/videoType";
-import { 
-  homeHero, 
-  homepagePodcasts, 
-  homeTickerTape 
+import { formType } from "./objects/formType.js";
+import { heroType } from "./objects/heroType";
+import { imageGalleryType } from "./objects/imageGalleryType";
+import { textWithImageType } from "./objects/textWithImageType.js";
+import { videoType } from "./objects/videoType";
+import {
+  homeHero,
+  homepagePodcasts,
+  homeTickerTape,
+  homeWeWork,
+  homeClients,
+  homeTestimonials,
+  homeEditorials,
+  homeTagCloud
 } from "./objects/homepage";
 
 export default [
@@ -66,7 +71,12 @@ export default [
   videoType,
   // Homepage Builder Objects
   homePageType,
-  homeHero, 
-  homepagePodcasts, 
-  homeTickerTape 
+  homeHero,
+  homepagePodcasts,
+  homeTickerTape,
+  homeWeWork,
+  homeClients,
+  homeTestimonials,
+  homeEditorials,
+  homeTagCloud
 ];

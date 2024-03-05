@@ -1,10 +1,10 @@
 import {DocumentTextIcon} from '@sanity/icons'
 import {defineField, defineType} from 'sanity'
 
-const homeHeroType = defineType({
-  name: 'homeHero',
+const homeTestimonialsType = defineType({
+  name: 'homeTestimonials',
   type: 'object',
-  title: 'Homepage hero',
+  title: 'Homepage Testimonials',
   fields: [
     defineField({
       name: 'visibleOnHomePage',
@@ -47,4 +47,4 @@ const homeHeroType = defineType({
   },
 })
 
-export default homeHeroType;
+export default homeTestimonialsType;
