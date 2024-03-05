@@ -7,7 +7,7 @@ const homeTickerType = defineType({
   title: 'Home Ticker Tape',
   fields: [
     defineField({
-      name: 'visibleOnHomePage',
+      name: 'visibleOnPage',
       title: 'Visible on homepage?',
       description: 'If unchecked this block will not render on the homepage.',
       type: 'boolean'
