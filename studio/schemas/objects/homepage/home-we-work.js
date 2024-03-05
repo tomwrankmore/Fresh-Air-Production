@@ -7,7 +7,7 @@ const homeHowWeWorkType = defineType({
   title: 'Homepage We Work',
   fields: [
     defineField({
-      name: 'visibleOnHomePage',
+      name: 'visibleOnPage',
       title: 'Visible on homepage?',
       description: 'If unchecked this block will not render on the homepage.',
       type: 'boolean'
