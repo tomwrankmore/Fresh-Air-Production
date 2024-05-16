@@ -23,7 +23,6 @@ const homeTickerType = defineType({
     visibleOnPage: true
   },
   icon: DocumentTextIcon,
-  icon: DocumentTextIcon,
   preview: {
     select: {
       title: 'Home Ticker Tape',
