@@ -4,7 +4,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { mapEdgesToNodes } from "../lib/helpers";
 import { colors } from "../styles/colors";
-import CentralLogo from "../components/central-logo";
+import CentralLogo from "../components/central-logo-old"
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
@@ -386,13 +386,14 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      {/* <Hero
+      <Hero
         ref={heroRef}
         heroMarqueeRef={heroMarqueeRef}
         tl={heroTl.current}
         heroMarqueeText={homePageContent.homeHeroTickerTape}
         heroImage={homePageContent.heroImage}
-      /> */}
+      />
+      <CentralLogo />
       <HomeComponentMapper homeBlocks={homeBlocks} />
 
       {/* <ScrollingLogoCloud /> */}

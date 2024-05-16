@@ -7,7 +7,7 @@ import styled from "styled-components";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, filterOutNonFeaturedDocs } from "../lib/helpers";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
-import CentralLogo from "../components/central-logo"
+import CentralLogo from "../components/central-logo-old"
 import PodcastGrid from "../components/our-podcasts/podcast-preview-grid";
 import FeaturedPodcastGrid from "../components/our-podcasts/featured-podcast-preview-grid";
 

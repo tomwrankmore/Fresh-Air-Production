@@ -6,7 +6,7 @@ import { colors } from "../styles/colors";
 import { device } from "../styles/mediaQueries";
 import styled from "styled-components";
 import { mapEdgesToNodes } from "../lib/helpers";
-import CentralLogo from "../components/central-logo"
+import CentralLogo from "../components/central-logo-old"
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 

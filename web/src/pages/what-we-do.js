@@ -5,7 +5,7 @@ import { mapEdgesToNodes } from "../lib/helpers";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
-import CentralLogo from "../components/central-logo"
+import CentralLogo from "../components/central-logo-old"
 import Marquee from "../components/marquee"
 
 import {

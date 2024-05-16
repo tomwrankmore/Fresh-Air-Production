@@ -6,7 +6,7 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import Podcast from "../components/podcast/podcast";
 import SEO from "../components/seo";
 
-import CentralLogo from "../components/central-logo";
+import CentralLogo from "../components/central-logo-old"
 
 export const query = graphql`
   query GenericPageTemplateQuery($id: String!) {

@@ -5,7 +5,7 @@ import Layout from "../containers/layout";
 import Container from "../components/container";
 import Editorial from "../components/editorial/editorial";
 import SEO from "../components/seo";
-import CentralLogo from "../components/central-logo"
+import CentralLogo from "../components/central-logo-old"
 
 export const query = graphql`
   query EditorialTemplateQuery($id: String!) {
