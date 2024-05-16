@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { mapEdgesToNodes } from "../lib/helpers";
-import CentralLogo from "../components/central-logo-old"
+import CentralLogo from "../components/central-logo-old";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
@@ -150,6 +150,7 @@ export const query = graphql`
         ... on SanityHomepagePodcasts {
           _type
           visibleOnPage
+          homePodcastHeading
           homePodcasts {
             heroImage {
               asset {
@@ -162,7 +163,6 @@ export const query = graphql`
               current
             }
           }
-          # _rawHomePodcastHeading
         }
         ... on SanityHomeTickerTape {
           _key
@@ -173,7 +173,7 @@ export const query = graphql`
         ... on SanityHomeWeWork {
           _type
           visibleOnPage
-          homeWeWorkHeading
+          _rawHomeWeWorkHeading
           homeWeWorkMainImage {
             alt
             asset {

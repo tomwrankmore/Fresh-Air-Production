@@ -34,7 +34,7 @@ const HomeBlockWeWork = ({ data }) => {
             <h1>With You</h1>
           </div>
           <div className={styles.horizontalContainer__first_panel_column}>
-            <BsArrowRight size={70} />
+            <BsArrowRight size={70} className="rotate-90 lg:rotate-0"/>
             <h3>
               Take a scroll with us.
               <br />
@@ -57,7 +57,7 @@ const HomeBlockWeWork = ({ data }) => {
               layout="constrained"
               height="100%"
               objectPosition="0 0"
-              className="img-l"
+              className="img-l order-2 lg:order-none"
             />
           </div>
           <div className={`${styles.horizontalContainer__panel_column} panel_section`}>
@@ -68,7 +68,7 @@ const HomeBlockWeWork = ({ data }) => {
               layout="constrained"
               height="100%"
               objectPosition="0 0"
-              className="img-l"
+              className="img-l order-2 lg:order-none"
             />
             <div className={styles.horizontalContainer__panel_column_text}>
               <h3>{data.panelTwoTitle}</h3>
@@ -90,7 +90,7 @@ const HomeBlockWeWork = ({ data }) => {
               layout="constrained"
               height="100%"
               objectPosition="0 0"
-              className="img-l"
+              className="img-l order-2 lg:order-none"
             />
           </div>
           <div className={`${styles.horizontalContainer__panel_column} panel_section`}>
@@ -101,7 +101,7 @@ const HomeBlockWeWork = ({ data }) => {
               layout="constrained"
               height="100%"
               objectPosition="0 0"
-              className="img-r"
+              className="img-r order-2 lg:order-none"
             />
             <div className={styles.horizontalContainer__panel_column_text}>
               <h3>{data.panelFourTitle}</h3>

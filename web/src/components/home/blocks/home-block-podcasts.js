@@ -37,7 +37,7 @@ function HomeBlockPodcasts({ data }) {
           })}
       </div>
       <div className={styles.podcastsWrapper__rightCol}>
-        <h2 className="podcastHeading">{data._rawHomePodcastHeading}</h2>
+        <h2 className="podcastHeading">{data.homePodcastHeading}</h2>
       </div>
     </div>
   );

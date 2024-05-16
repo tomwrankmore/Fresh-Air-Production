@@ -8,7 +8,7 @@
 }
 
 .marqueeItems {
-  @apply whitespace-nowrap;
+  @apply whitespace-nowrap my-6;
   @apply text-FABlue;
 
   &__slide {

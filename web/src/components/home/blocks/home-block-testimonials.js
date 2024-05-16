@@ -32,7 +32,7 @@ const HomeBlockTestimonials = ({ data }) => {
             testimonials.map((testimonial, idx) => {
               return (
                 <SwiperSlide key={idx}>
-                  <h1>{testimonial.testimonial}</h1>
+                  <h1 className="text-white mb-12 max-w-[75%] font-bold text-xl md:text-2xl lg:text-4xl">{testimonial.testimonial}</h1>
                   <p>{testimonial.client}</p>
                 </SwiperSlide>
               );

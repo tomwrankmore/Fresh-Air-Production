@@ -1,29 +1,5 @@
-// .box {
-//   width: 100px;
-//   height: 80px;
-//   text-align: center;
-//   line-height: 80px;
-//   background-color: white;
-//   border-radius: 8px;
-//   color: #222;
-//   font-weight: 700;
-//   margin-left: 20px;
-//   will-change: transform;
-// }
-
-// .box.active {
-//   background-color: orange;
-//   border: 2px solid white;
-// }
-
-// .description,
-// .final {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   padding: 10px;
-//   min-height: 80vh;
-// }
+@import "../../../styles/custom-media.css";
+@import "../../../styles/custom-properties.css";
 
 @mixin full-screen-pseudo-element {
   content: "";
@@ -74,12 +50,19 @@
 }
 
 .horizontalContainer {
-  width: 300%;
-  height: calc(100vh - 81px);
+  width: 100%;
+  height: auto;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  color: white;
+  position: relative;
 
-  @apply text-white relative;
+  @media (--media-min-x-large) {
+    width: 300%;
+    height: calc(100vh - 81px);
+    display: flex;
+    flex-wrap: nowrap;
+  }
 
   &__first_panel {
     @apply w-full h-full flex justify-center text-center relative;
@@ -119,7 +102,6 @@
     }
   }
 }
-
 
 /* HEADINGS */
 .header-section {

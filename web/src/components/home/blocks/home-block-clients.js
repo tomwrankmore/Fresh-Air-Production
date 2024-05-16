@@ -8,6 +8,7 @@ const HomeBlockClients = ({ data }) => {
 
   return (
     <div className={styles.logoCloudOuterWrapper}>
+      <h1 className="text-4xl my-6 ml-24 relative z-50">Our Clients</h1>
       <div>
         <div className={`${styles.marqueeLine} ${styles.marqueeLine__left}`}>
           <div className={styles.marqueeLine__marqueeContent}>
