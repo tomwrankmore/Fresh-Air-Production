@@ -29,7 +29,7 @@ const homeHowWeWorkType = defineType({
     }),
     defineField({
       name: "homeWeWorkHeading",
-      type: "string"
+      type: "projectPortableText"
     }),
     defineField({
       name: "homeWeWorkMainImage",
