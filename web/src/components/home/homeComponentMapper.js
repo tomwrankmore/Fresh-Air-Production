@@ -15,6 +15,7 @@ function HomeComponentMapper({ homeBlocks }) {
     <>
       {homeBlocks.map((block, index) => (
         <div key={index}>
+          {/* NEW HOME HERO */}
           {/* {block._type === "homeHero" && block.visibleOnPage === true && <HomeHero data={block} />} */}
           {block._type === "homepagePodcasts" && block.visibleOnPage === true && (
             <HomePodcasts data={block} />

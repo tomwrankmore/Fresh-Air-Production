@@ -383,7 +383,7 @@ const IndexPage = props => {
         heroImage={homePageContent.heroImage}
       />
       <CentralLogo ref={centralLogoRef} />
-      # <HomeComponentMapper homeBlocks={homeBlocks} />
+      <HomeComponentMapper homeBlocks={homeBlocks} />
 
       {/* <ScrollingLogoCloud /> */}
     </Layout>
