@@ -175,7 +175,7 @@ const WhatWeDo = props => {
     return (
       <Layout>
         <SEO title="What We Do" />
-        {/* <CentralLogo /> */}
+        <CentralLogo />
         <WwdHero 
           ref={heroRef}
           tl={heroTl}

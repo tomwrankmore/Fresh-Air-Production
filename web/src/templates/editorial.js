@@ -83,7 +83,7 @@ const EditorialTemplate = props => {
     <Layout>
       {errors && <SEO title="GraphQL Error" />}
       {editorial && <SEO title={editorial.title || "Untitled"} />}
-      {/* <CentralLogo /> */}
+      <CentralLogo />
       {errors && (
         <Container>
           <GraphQLErrorList errors={errors} />

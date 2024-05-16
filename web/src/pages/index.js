@@ -343,17 +343,17 @@ const IndexPage = props => {
   const marqueeRef = useRef(null);
   const tagCloudRef = useRef(null);
 
-  // useEffect(() => {
-  //   gsap.set(centralLogoRef.current, { visibility: "hidden" });
-  //   gsap.to(centralLogoRef.current, {
-  //     autoAlpha: 1,
-  //     scrollTrigger: {
-  //       trigger: podcastsRef.current,
-  //       start: "bottom top",
-  //       toggleActions: "play none none reverse"
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    gsap.set(centralLogoRef.current, { visibility: "hidden" });
+    gsap.to(centralLogoRef.current, {
+      autoAlpha: 1,
+      scrollTrigger: {
+        trigger: podcastsRef.current,
+        start: "bottom top",
+        toggleActions: "play none none reverse"
+      }
+    });
+  }, []);
 
   if (errors) {
     return (
@@ -386,13 +386,13 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      <Hero
+      {/* <Hero
         ref={heroRef}
         heroMarqueeRef={heroMarqueeRef}
         tl={heroTl.current}
         heroMarqueeText={homePageContent.homeHeroTickerTape}
         heroImage={homePageContent.heroImage}
-      />
+      /> */}
       <HomeComponentMapper homeBlocks={homeBlocks} />
 
       {/* <ScrollingLogoCloud /> */}

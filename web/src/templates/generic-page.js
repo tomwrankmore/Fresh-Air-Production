@@ -75,7 +75,7 @@ const FreshPageTemplate = props => {
     <Layout>
       {errors && <SEO title="GraphQL Error" />}
       {page && <SEO title={page.title || "Untitled"} />}
-      {/* <CentralLogo /> */}
+      <CentralLogo />
       {errors && (
         <Container>
           <GraphQLErrorList errors={errors} />

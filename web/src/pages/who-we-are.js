@@ -135,7 +135,7 @@ const WhoWeAre = (props) => {
     return (
         <Layout>
             <SEO title="Who We Are" />
-            {/* <CentralLogo /> */}
+            <CentralLogo />
             <WhoWeAreWrapper>
                 <Directors>
                   {managementNodes && 

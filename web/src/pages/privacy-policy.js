@@ -55,7 +55,7 @@ const PrivacyPolicyPage = ({data}) => {
   return (
     <Layout>
       <SEO title="Privacy Policy" />
-      {/* <CentralLogo /> */}
+      <CentralLogo />
       <TermsWrapper>
         <h1>{data.terms.title}</h1>
         <BlockContent blocks={data.terms._rawBody} />
