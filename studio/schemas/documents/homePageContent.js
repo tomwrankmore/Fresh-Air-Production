@@ -90,7 +90,7 @@ export default {
     {
       name: 'homeWorkPanelThreeText',
       type: 'simplePortableText',
-      title: 'Work panel four text',
+      title: 'Work panel three text',
     },
     {
       name: 'homeWorkPanelThreeImage',
