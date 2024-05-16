@@ -50,7 +50,6 @@
 }
 
 .horizontalContainer {
-  
   display: flex;
   flex-wrap: wrap;
   color: white;
@@ -83,17 +82,25 @@
 
     &_column {
       @apply flex flex-col flex-1 py-12 px-24 gap-8 lg:gap-0;
-      
+
       @media (min-width: 1024px) {
         display: grid;
         grid-template-rows: 1fr 1fr;
+        gap: 1rem;
       }
 
       &_text {
         @apply flex flex-col items-center justify-center;
 
         p {
-          @apply text-xl;
+          @apply text-lg xl:text-xl leading-tight mb-2;
+        }
+
+        a {
+          text-decoration: underline;
+          &:hover {
+            font-weight: bold;
+          }
         }
 
         h3 {
