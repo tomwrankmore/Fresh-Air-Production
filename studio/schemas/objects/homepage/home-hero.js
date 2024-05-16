@@ -39,7 +39,7 @@ const homeHeroType = defineType({
     },
     prepare({title, image}) {
       return {
-        title: title || 'Untitled',
+        title: 'Hero scrolling text',
         subtitle: 'Hero',
         media: image || DocumentTextIcon,
       }
