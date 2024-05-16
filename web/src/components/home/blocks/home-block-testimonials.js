@@ -13,7 +13,6 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 
 const HomeBlockTestimonials = ({ data }) => {
-  console.log(data.homePageTestimonials);
 
   const testimonials = data.homePageTestimonials;
 

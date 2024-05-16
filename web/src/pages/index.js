@@ -386,7 +386,13 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      <Hero />
+      <Hero
+        ref={heroRef}
+        heroMarqueeRef={heroMarqueeRef}
+        tl={heroTl.current}
+        heroMarqueeText={homePageContent.homeHeroTickerTape}
+        heroImage={homePageContent.heroImage}
+      />
       <HomeComponentMapper homeBlocks={homeBlocks} />
 
       {/* <ScrollingLogoCloud /> */}
