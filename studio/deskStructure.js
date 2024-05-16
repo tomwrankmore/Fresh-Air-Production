@@ -20,7 +20,7 @@ const hiddenDocTypes = listItem =>
     "modernSlaveryStatement",
     "acceptableUse",
     "genericPageType",
-    // "homePageType"
+    "homePageType"
   ].includes(listItem.getId());
 
 export default S =>
@@ -90,12 +90,12 @@ export default S =>
         .child(S.documentTypeList("editorial").title("Editorials"))
         .icon(FaBook),
       S.divider(),
-      S.listItem()
-        .title("Generic page builder")
-        .schemaType("genericPageType")
-        .child(S.documentTypeList("genericPageType").title("Page"))
-        .icon(FaBook),
-      S.divider(),
+      // S.listItem()
+      //   .title("Generic page builder")
+      //   .schemaType("genericPageType")
+      //   .child(S.documentTypeList("genericPageType").title("Page"))
+      //   .icon(FaBook),
+      // S.divider(),
       S.listItem()
         .title("Home page builder")
         .child(
