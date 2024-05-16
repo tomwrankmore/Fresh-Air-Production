@@ -169,14 +169,14 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
         <Link to="/contact" onMouseEnter={onMouseEnterHandler} onMouseLeave={onMouseLeaveHandler}>
           <HeroCta ref={ctaRef} />
         </Link>
-        {/* <Header
+        <Header
           siteTitle={siteTitle}
           onHideNav={onHideNav}
           onShowNav={onShowNav}
           showNav={showNav}
           ref={navigationRef}
-        /> */}
-        <NewHeader />
+        />
+        {/* <NewHeader /> */}
         <Content>{children}</Content>
         <Footer />
       </div>
