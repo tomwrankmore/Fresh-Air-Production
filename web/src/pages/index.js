@@ -3,22 +3,11 @@ import { graphql } from "gatsby";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { mapEdgesToNodes } from "../lib/helpers";
-import { colors } from "../styles/colors";
 import CentralLogo from "../components/central-logo-old"
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import Hero from "../components/home/hero";
-import Podcasts from "../components/home/home-section-podcasts";
-import Marquee from "../components/marquee";
-import WwdLogoCloud from "../components/what-we-do/wwd-logo-cloud";
-import Work from "../components/home/home-section-work";
-import Testimonials from "../components/home/home-section-testimonials";
-import Editorials from "../components/home/home-section-editorials";
-import TagCloud from "../components/home/home-section-cloud";
-import { homePageQuery } from "../queries";
-import HorizontalScrollSection from "../components/horizontal-scroll-section/";
-import ScrollingLogoCloud from "../components/scrolling-marquee/home-block-tag-cloud";
 import HomeComponentMapper from "../components/home/homeComponentMapper";
 
 export const query = graphql`
@@ -56,7 +45,7 @@ export const query = graphql`
             }
           }
           homeHeroTickerTape
-          _rawHomePodcastHeading
+          # _rawHomePodcastHeading
           homePodcasts {
             id
             heroImage {
@@ -173,7 +162,7 @@ export const query = graphql`
               current
             }
           }
-          _rawHomePodcastHeading
+          # _rawHomePodcastHeading
         }
         ... on SanityHomeTickerTape {
           _key
@@ -379,9 +368,9 @@ const IndexPage = props => {
   const homePageContent = data.homePageContent.edges[0].node;
   const testimonials = mapEdgesToNodes(data.testimonials);
 
-  const heroImage = homePageContent.heroImage.asset.gatsbyImageData;
+  const heroImage = homePageContent?.heroImage?.asset?.gatsbyImageData;
 
-  const homeBlocks = data.newHomeContent.homePageBuilder;
+  const homeBlocks = data?.newHomeContent?.homePageBuilder;
 
   return (
     <Layout>
@@ -394,7 +383,7 @@ const IndexPage = props => {
         heroImage={homePageContent.heroImage}
       />
       <CentralLogo ref={centralLogoRef} />
-      <HomeComponentMapper homeBlocks={homeBlocks} />
+      # <HomeComponentMapper homeBlocks={homeBlocks} />
 
       {/* <ScrollingLogoCloud /> */}
     </Layout>
