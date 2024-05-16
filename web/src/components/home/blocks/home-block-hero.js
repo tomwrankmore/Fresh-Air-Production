@@ -10,7 +10,6 @@ import SplitText from "gsap/SplitText";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const HomeHero = ({data}) => {
-  console.log("New hero data: ", data )
 
   const heroRef = useRef(null);
 

@@ -1,4 +1,4 @@
-@import '../../../styles/custom-media.css';
+@import "../../../styles/custom-media.css";
 
 .podcastsWrapper {
   width: 100vw;
@@ -19,6 +19,16 @@
       color: white;
       padding: 0.5rem 0;
     }
+  }
+
+  &__rightCol {
+    flex: 1;
+    min-height: 35vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
     h2 {
       max-width: 100%;
       text-align: center;
@@ -34,16 +44,6 @@
         font-size: 3rem;
       }
     }
-  }
-
-  &__rightCol {
-    flex: 1;
-    min-height: 35vh;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 1rem;
     @media (--media-min-medium) {
       min-height: calc(100vh - 82px);
       position: sticky;
@@ -51,7 +51,7 @@
       padding: 0;
     }
   }
-};
+}
 
 .podcast {
   position: relative;
@@ -60,4 +60,4 @@
   h3 {
     text-transform: uppercase;
   }
-};
+}

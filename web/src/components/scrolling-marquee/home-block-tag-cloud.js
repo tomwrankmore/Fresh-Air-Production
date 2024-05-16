@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
-import * as styles from "./home-block-logo-cloud.module.scss";
+import * as styles from "./home-block-tag-cloud.module.scss";
 import { Link } from "gatsby";
 import { colors } from "../../styles/colors";
 
-const ScrollingMarquee = () => {
+const ScrollingTagCloud = () => {
  
   const wordList = ["Documentary", "Sustainability", "Science", "Wellness", "Finance", "Interview"];
 
@@ -135,4 +135,4 @@ const ScrollingMarquee = () => {
   );
 };
 
-export default ScrollingMarquee;
+export default ScrollingTagCloud;

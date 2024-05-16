@@ -12,18 +12,13 @@ import BlockContent from "../../block-content";
 import * as styles from "./home-block-podcasts.module.scss";
 
 function HomeBlockPodcasts({ data }) {
-  console.log(data);
-
-  const heading = data._rawHomePodcastHeading;
-  const podcasts = data.homePodcasts;
-  console.log("podcasts:", podcasts);
   const root = useRef(null);
 
   return (
     <div className={styles.podcastsWrapper} ref={root}>
       <div className={styles.podcastsWrapper__leftCol}>
-        {podcasts &&
-          podcasts.map((podcast, idx) => {
+        {data.homePodcasts &&
+          data.homePodcasts.map((podcast, idx) => {
             return (
               <div className="podcast" key={idx}>
                 <Link to={`/podcast/${podcast.slug.current}`}>
@@ -41,8 +36,8 @@ function HomeBlockPodcasts({ data }) {
             );
           })}
       </div>
-      <div  className={styles.podcastsWrapper__rightCol}>
-        <BlockContent blocks={heading} />
+      <div className={styles.podcastsWrapper__rightCol}>
+        <h2 className="podcastHeading">{data._rawHomePodcastHeading}</h2>
       </div>
     </div>
   );

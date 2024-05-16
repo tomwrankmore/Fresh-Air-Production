@@ -219,8 +219,6 @@ const ContactPage = props => {
   const contactMarqRef = useRef();
   const outerWrapperRef = useRef();
 
-  console.log('data', data)
-
   return (
     <Layout>
       <SEO title="Contact" />

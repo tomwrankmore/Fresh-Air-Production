@@ -18,7 +18,7 @@ import Editorials from "../components/home/home-section-editorials";
 import TagCloud from "../components/home/home-section-cloud";
 import { homePageQuery } from "../queries";
 import HorizontalScrollSection from "../components/horizontal-scroll-section/";
-import ScrollingMarquee from "../components/scrolling-marquee";
+import ScrollingLogoCloud from "../components/scrolling-marquee/home-block-tag-cloud";
 import HomeComponentMapper from "../components/home/homeComponentMapper";
 
 export const query = graphql`
@@ -158,12 +158,6 @@ export const query = graphql`
             }
           }
         }
-        ... on SanityHomeTickerTape {
-          _key
-          _type
-          visibleOnPage
-          homeTickerTapeText
-        }
         ... on SanityHomepagePodcasts {
           _type
           visibleOnPage
@@ -181,6 +175,124 @@ export const query = graphql`
           }
           _rawHomePodcastHeading
         }
+        ... on SanityHomeTickerTape {
+          _key
+          _type
+          visibleOnPage
+          homeTickerTapeText
+        }
+        ... on SanityHomeWeWork {
+          _type
+          visibleOnPage
+          homeWeWorkHeading
+          homeWeWorkMainImage {
+            alt
+            asset {
+              gatsbyImageData
+            }
+          }
+          _rawPanelOneText
+          _rawPanelTwoText
+          _rawPanelThreeText
+          _rawPanelFourText
+          panelOneTitle
+          panelTwoTitle
+          panelThreeTitle
+          panelFourTitle
+          panelOneImage {
+            alt
+            asset {
+              gatsbyImageData
+            }
+          }
+          panelTwoImage {
+            alt
+            asset {
+              gatsbyImageData
+            }
+          }
+          panelThreeImage {
+            alt
+            asset {
+              gatsbyImageData
+            }
+          }
+          panelFourImage {
+            alt
+            asset {
+              gatsbyImageData
+            }
+          }
+        }
+        ... on SanityHomeClients {
+          _key
+          _type
+          visibleOnPage
+          homeClientsRowOne {
+            asset {
+              gatsbyImageData
+            }
+          }
+          homeClientsRowTwo {
+            asset {
+              gatsbyImageData
+            }
+          }
+          homeClientsRowThree {
+            asset {
+              gatsbyImageData
+            }
+          }
+        }
+        ... on SanityHomeTestimonials {
+          _key
+          _type
+          visibleOnPage
+          homePageTestimonials {
+            testimonial
+            client
+          }
+        }
+        ... on SanityHomeEditorials {
+          _type
+          homeEditorials {
+            id
+            heroImage {
+              alt
+              asset {
+                gatsbyImageData
+              }
+            }
+            slug {
+              current
+            }
+            title
+            previewImage {
+              alt
+              asset {
+                gatsbyImageData
+              }
+            }
+          }
+          homeFeaturedEditorial {
+            id
+            heroImage {
+              asset {
+                gatsbyImageData
+              }
+            }
+            slug {
+              current
+            }
+            title
+          }
+          visibleOnPage
+        }
+        ... on SanityHomeTagCloud {
+          _key
+          _type
+          visibleOnPage
+        }
       }
     }
     editorials: allSanityEditorial(
@@ -196,7 +308,6 @@ export const query = graphql`
           }
           title
           publishedAt
-          # isFeaturedPost
           previewImage {
             alt
             asset {
@@ -232,17 +343,17 @@ const IndexPage = props => {
   const marqueeRef = useRef(null);
   const tagCloudRef = useRef(null);
 
-  useEffect(() => {
-    gsap.set(centralLogoRef.current, { visibility: "hidden" });
-    gsap.to(centralLogoRef.current, {
-      autoAlpha: 1,
-      scrollTrigger: {
-        trigger: podcastsRef.current,
-        start: "bottom top",
-        toggleActions: "play none none reverse"
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   gsap.set(centralLogoRef.current, { visibility: "hidden" });
+  //   gsap.to(centralLogoRef.current, {
+  //     autoAlpha: 1,
+  //     scrollTrigger: {
+  //       trigger: podcastsRef.current,
+  //       start: "bottom top",
+  //       toggleActions: "play none none reverse"
+  //     }
+  //   });
+  // }, []);
 
   if (errors) {
     return (
@@ -275,77 +386,10 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      {/* <CentralLogo ref={centralLogoRef} /> */}
-      {/* <Hero
-        ref={heroRef}
-        heroMarqueeRef={heroMarqueeRef}
-        tl={heroTl.current}
-        heroMarqueeText={homePageContent.homeHeroTickerTape}
-        heroImage={homePageContent.heroImage}
-      /> */}
-
+      <Hero />
       <HomeComponentMapper homeBlocks={homeBlocks} />
 
-      {/* <NewHero heroImage={heroImage} /> */}
-      {/* <Podcasts
-        ref={podcastsRef}
-        podcastHeading={homePageContent._rawHomePodcastHeading[0].children[0].text}
-        homePodcasts={homePageContent.homePodcasts}
-      /> */}
-      <Marquee
-        style={{ color: colors.FABlue }}
-        textContent={homePageContent.homeSecondTickerTape}
-        ref={marqueeRef}
-      />
-      {/* <Work
-        ref={horizontalPanelsRef}
-        workSectionHeading={homePageContent.homeWorkSectionHeading}
-        homeWorkSectionImage={homePageContent.homeWorkSectionImage}
-        panelOneTitle={homePageContent.homeWorkPanelOneTitle}
-        panelOneText={homePageContent._rawHomeWorkPanelOneText}
-        panelOneImage={homePageContent.homeWorkPanelOneImage}
-        panelTwoText={homePageContent._rawHomeWorkPanelTwoText}
-        panelTwoTitle={homePageContent.homeWorkPanelTwoTitle}
-        panelTwoImage={homePageContent.homeWorkPanelTwoImage}
-        panelThreeTitle={homePageContent.homeWorkPanelThreeTitle}
-        panelThreeText={homePageContent._rawHomeWorkPanelThreeText}
-        panelThreeImage={homePageContent.homeWorkPanelThreeImage}
-        panelFourTitle={homePageContent.homeWorkPanelFourTitle}
-        panelFourText={homePageContent._rawHomeWorkPanelFourText}
-        panelFourImage={homePageContent.homeWorkPanelFourImage}
-      /> */}
-
-      <HorizontalScrollSection
-        ref={horizontalScrollRef}
-        workSectionHeading={homePageContent.homeWorkSectionHeading}
-        homeWorkSectionImage={homePageContent.homeWorkSectionImage}
-        panelOneTitle={homePageContent.homeWorkPanelOneTitle}
-        panelOneText={homePageContent._rawHomeWorkPanelOneText}
-        panelOneImage={homePageContent.homeWorkPanelOneImage}
-        panelTwoText={homePageContent._rawHomeWorkPanelTwoText}
-        panelTwoTitle={homePageContent.homeWorkPanelTwoTitle}
-        panelTwoImage={homePageContent.homeWorkPanelTwoImage}
-        panelThreeTitle={homePageContent.homeWorkPanelThreeTitle}
-        panelThreeText={homePageContent._rawHomeWorkPanelThreeText}
-        panelThreeImage={homePageContent.homeWorkPanelThreeImage}
-        panelFourTitle={homePageContent.homeWorkPanelFourTitle}
-        panelFourText={homePageContent._rawHomeWorkPanelFourText}
-        panelFourImage={homePageContent.homeWorkPanelFourImage}
-      />
-
-      {/* <WwdLogoCloud
-        imageOne={homePageContent.homeClientsRowOne}
-        imageTwo={homePageContent.homeClientsRowTwo}
-        imageThree={homePageContent.homeClientsRowThree}
-      /> */}
-      <Testimonials testimonials={testimonials} />
-      <Editorials
-        editorialNodes={editorialNodes}
-        featuredEditorial={homePageContent.homeFeaturedEditorial}
-        homeEditorials={homePageContent.homeEditorials}
-      />
-      {/* <TagCloud ref={tagCloudRef} /> */}
-      <ScrollingMarquee />
+      {/* <ScrollingLogoCloud /> */}
     </Layout>
   );
 };

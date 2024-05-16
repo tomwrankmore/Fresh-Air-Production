@@ -1,32 +1,22 @@
-section.tickerTape {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1.25rem;
-  padding: 3rem 0;
-  position: relative;
-  overflow: hidden;
-  @media (--media-min-large) {
-    font-size: 1.875rem;
+@keyframes marqueeSlide {
+  from {
+    transform: translateX(0);
   }
-
-  &.home-marquee {
-    position: relative;
-    padding: 0;
-    @media (--media-min-medium) {
-      position: absolute;
-    }
+  to {
+    transform: translateX(-100%);
   }
 }
 
-div.tickerTapeInner {
-  -webkit-font-smoothing: antialiased;
-  width: fit-content;
-  display: flex;
-  flex: auto;
-  flex-direction: row;
-  div.tickerTapePart {
-    flex-shrink: 0;
-    padding: 0 4px;
-    font-smooth: always;
+.marqueeItems {
+  @apply whitespace-nowrap;
+  @apply text-FABlue;
+
+  &__slide {
+    @apply inline-block;
+    animation: marqueeSlide 40s infinite linear forwards;
+    span {
+      @apply text-3xl inline-block py-4 font-black uppercase;
+      font-smooth: always;
+    }
   }
 }
