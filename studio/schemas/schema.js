@@ -37,7 +37,8 @@ import {
   homeClients,
   homeTestimonials,
   homeEditorials,
-  homeTagCloud
+  homeTagCloud,
+  homePageTestimonial
 } from "./objects/homepage";
 
 export default [
@@ -77,6 +78,7 @@ export default [
   homeWeWork,
   homeClients,
   homeTestimonials,
+  // homePageTestimonial,
   homeEditorials,
   homeTagCloud
 ];

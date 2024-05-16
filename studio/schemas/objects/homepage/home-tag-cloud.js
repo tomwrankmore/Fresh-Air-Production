@@ -1,32 +1,28 @@
-import {DocumentTextIcon} from '@sanity/icons'
-import {defineField, defineType} from 'sanity'
+import { DocumentTextIcon } from "@sanity/icons";
+import { defineField, defineType } from "sanity";
 
 const homeTagCloudType = defineType({
-  name: 'homeTagCloud',
-  type: 'object',
-  title: 'Homepage Tag Cloud',
+  name: "homeTagCloud",
+  type: "object",
+  title: "Homepage Tag Cloud",
   fields: [
     defineField({
-      name: 'visibleOnPage',
-      title: 'Visible on homepage?',
-      description: 'If unchecked this block will not render on the homepage.',
-      type: 'boolean'
+      name: "visibleOnPage",
+      title: "Visible on homepage?",
+      description: "If unchecked this block will not render on the homepage.",
+      type: "boolean"
     }),
+
     defineField({
-      name: 'heading',
-      type: 'string',
-    }),
-    defineField({
-      name: 'image',
-      type: 'image',
-      fields: [
-        defineField({
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative text',
-        }),
-      ],
-    }),
+      name: "tagnames",
+      type: "array",
+      title: "Tag names for the scrolling tag cloud",
+      description: "Add tag names that describes the company.",
+      of: [{ type: "string" }],
+      options: {
+        layout: "tags"
+      }
+    })
   ],
   initialValue: {
     visibleOnPage: true
@@ -39,12 +35,12 @@ const homeTagCloudType = defineType({
     },
     prepare({title, image}) {
       return {
-        title: title || 'Untitled',
-        subtitle: 'Hero',
+        title: title || 'Homepage Tag Cloud',
+        subtitle: 'Tag Cloud',
         media: image || DocumentTextIcon,
       }
     },
   },
-})
+});
 
 export default homeTagCloudType;

@@ -1,5 +1,5 @@
-import {DocumentTextIcon} from '@sanity/icons'
-import {defineField, defineType} from 'sanity'
+import {DocumentTextIcon, BlockquoteIcon} from '@sanity/icons'
+import {defineArrayMember, defineField, defineType} from 'sanity'
 
 const homeTestimonialsType = defineType({
   name: 'homeTestimonials',
@@ -13,20 +13,16 @@ const homeTestimonialsType = defineType({
       type: 'boolean'
     }),
     defineField({
-      name: 'heading',
-      type: 'string',
-    }),
-    defineField({
-      name: 'image',
-      type: 'image',
-      fields: [
-        defineField({
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative text',
+      name: "homePageTestimonials",
+      type: "array",
+      title: "Choose which testimonials appear on the home page",
+      of: [
+        defineArrayMember({
+          name: "homePageTestimonial",
+          type: "homePageTestimonial"
         }),
-      ],
-    }),
+      ]
+    })
   ],
   initialValue: {
     visibleOnPage: true
@@ -39,9 +35,9 @@ const homeTestimonialsType = defineType({
     },
     prepare({title, image}) {
       return {
-        title: title || 'Untitled',
-        subtitle: 'Hero',
-        media: image || DocumentTextIcon,
+        title: title || 'Homepage Testimonials',
+        subtitle: 'Testimonials',
+        media: image || BlockquoteIcon,
       }
     },
   },

@@ -6,3 +6,5 @@ export { default as homeClients } from './home-clients'
 export { default as homeTestimonials } from './home-testimonials'
 export { default as homeEditorials} from './home-editorials'
 export { default as homeTagCloud} from './home-tag-cloud'
+export { default as homePageTestimonial} from './home-testimonial'
+
