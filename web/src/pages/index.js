@@ -393,7 +393,7 @@ const IndexPage = props => {
         heroMarqueeText={homePageContent.homeHeroTickerTape}
         heroImage={homePageContent.heroImage}
       />
-      <CentralLogo />
+      <CentralLogo ref={centralLogoRef} />
       <HomeComponentMapper homeBlocks={homeBlocks} />
 
       {/* <ScrollingLogoCloud /> */}
