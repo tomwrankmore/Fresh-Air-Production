@@ -37,7 +37,7 @@ export default {
       name: 'homeSecondTickerTape',
       type: 'string',
       title: 'Ticker tape.',
-      title: 'Please enter some copy for the scrolling text underneath the podcast section.'
+      description: 'Please enter some copy for the scrolling text underneath the podcast section.'
     },
     {
       name: 'homeWorkSectionHeading',
