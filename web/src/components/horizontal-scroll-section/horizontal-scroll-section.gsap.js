@@ -5,7 +5,7 @@ function horizontalContainerAnim(containerRef) {
   gsap.registerPlugin(ScrollTrigger);
   let mm = gsap.matchMedia(containerRef.current);
 
-  mm.add("(min-width: 900px)", () => {
+  mm.add("(min-width: 1024px)", () => {
     let sections = gsap.utils.toArray(".panel");
     // let panelSections = gsap.utils.toArray(".panel_section")
 

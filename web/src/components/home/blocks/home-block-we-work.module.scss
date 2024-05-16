@@ -50,25 +50,23 @@
 }
 
 .horizontalContainer {
-  width: 100%;
-  height: auto;
+  
   display: flex;
   flex-wrap: wrap;
   color: white;
   position: relative;
 
-  @media (--media-min-x-large) {
+  @media (min-width: 1024px) {
     width: 300%;
     height: calc(100vh - 81px);
-    display: flex;
     flex-wrap: nowrap;
   }
 
   &__first_panel {
-    @apply w-full h-full flex justify-center text-center relative;
+    @apply w-full h-full flex justify-center text-center relative flex-col lg:flex-row;
 
     &_column {
-      @apply flex-1 flex items-center justify-center flex-col gap-6 p-24;
+      @apply flex-1 flex items-center justify-center flex-col gap-6 px-24 pt-16 pb-4 lg:p-24;
 
       h1 {
         @apply text-6xl font-bold uppercase;
@@ -81,12 +79,15 @@
   }
 
   &__panel {
-    @apply w-full h-full flex justify-center text-center relative;
+    @apply w-full h-full lg:flex lg:justify-center text-center relative;
 
     &_column {
-      @apply flex-1 py-12 px-24;
-      display: grid;
-      grid-template-rows: 1fr 1fr;
+      @apply flex flex-col flex-1 py-12 px-24 gap-8 lg:gap-0;
+      
+      @media (min-width: 1024px) {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+      }
 
       &_text {
         @apply flex flex-col items-center justify-center;

@@ -25,133 +25,133 @@ const Work = React.forwardRef(({
   panelFourImage
 }, ref) => {
 
-    useEffect(() => {
-      let mm = gsap.matchMedia(ref);
+    // useEffect(() => {
+    //   let mm = gsap.matchMedia(ref);
     
-      mm.add("(min-width: 900px)", () => {
-        // gsap logic here
-        let sections = gsap.utils.toArray('.panel');
-        let imagesL = gsap.utils.toArray('.img-l');
-        let imagesR = gsap.utils.toArray('.img-r');
-        let textFromAbove = gsap.utils.toArray('.text-from-above')
-        let textFromBelow = gsap.utils.toArray('.text-from-below')
+    //   mm.add("(min-width: 900px)", () => {
+    //     // gsap logic here
+    //     let sections = gsap.utils.toArray('.panel');
+    //     let imagesL = gsap.utils.toArray('.img-l');
+    //     let imagesR = gsap.utils.toArray('.img-r');
+    //     let textFromAbove = gsap.utils.toArray('.text-from-above')
+    //     let textFromBelow = gsap.utils.toArray('.text-from-below')
     
-        let scrollTween = gsap.to(sections, {
-          xPercent: -110 * (sections.length - 1),
-          ease: "none", // <-- IMPORTANT!
-          scrollTrigger: {
-            invalidateOnRefresh: true,
-            trigger: '.horizontalContainer',
-            start: 'top 82px',
-            pin: true,
-            scrub: 0.1,
-            // markers: true,
-            //snap: directionalSnap(1 / (sections.length - 1)),
-            end: "+=3000"
-          }
-        });
+    //     let scrollTween = gsap.to(sections, {
+    //       xPercent: -110 * (sections.length - 1),
+    //       ease: "none", // <-- IMPORTANT!
+    //       scrollTrigger: {
+    //         invalidateOnRefresh: true,
+    //         trigger: '.horizontalContainer',
+    //         start: 'top 82px',
+    //         pin: true,
+    //         scrub: 0.1,
+    //         // markers: true,
+    //         //snap: directionalSnap(1 / (sections.length - 1)),
+    //         end: "+=3000"
+    //       }
+    //     });
     
-        // sections.forEach(panel => {
-        //   return (
-        //       gsap.from(panel, {
-        //           ease: "none",
-        //           scrollTrigger: {
-        //             trigger: panel,
-        //             containerAnimation: scrollTween,
-        //             start: "left right",
-        //             end: "center center",
-        //             id: "1",
-        //             // scrub: 2
-        //           }
-        //         })
-        //   )
-        // })
+    //     // sections.forEach(panel => {
+    //     //   return (
+    //     //       gsap.from(panel, {
+    //     //           ease: "none",
+    //     //           scrollTrigger: {
+    //     //             trigger: panel,
+    //     //             containerAnimation: scrollTween,
+    //     //             start: "left right",
+    //     //             end: "center center",
+    //     //             id: "1",
+    //     //             // scrub: 2
+    //     //           }
+    //     //         })
+    //     //   )
+    //     // })
 
-        // textFromAbove.forEach(text => {
-        //   return (
-        //     gsap.from(text, {
-        //       ease: "none",
-        //       yPercent: -30,
-        //       autoAlpha: 0.5,
-        //       scale: 0.9,
-        //       scrollTrigger: {
-        //         trigger: text,
-        //         containerAnimation: scrollTween,
-        //         start: "left right",
-        //         end: "left center",
-        //         id: "2",
-        //         scrub: 2
-        //       }
-        //     })
-        //   )
-        // })
+    //     // textFromAbove.forEach(text => {
+    //     //   return (
+    //     //     gsap.from(text, {
+    //     //       ease: "none",
+    //     //       yPercent: -30,
+    //     //       autoAlpha: 0.5,
+    //     //       scale: 0.9,
+    //     //       scrollTrigger: {
+    //     //         trigger: text,
+    //     //         containerAnimation: scrollTween,
+    //     //         start: "left right",
+    //     //         end: "left center",
+    //     //         id: "2",
+    //     //         scrub: 2
+    //     //       }
+    //     //     })
+    //     //   )
+    //     // })
 
-        // textFromBelow.forEach(text => {
-        //   return (
-        //     gsap.from(text, {
-        //       ease: "none",
-        //       autoAlpha: 0.5,
-        //       yPercent: 30,
-        //       scale: 0.9,
-        //       scrollTrigger: {
-        //         trigger: text,
-        //         containerAnimation: scrollTween,
-        //         start: "left right",
-        //         end: "left center",
-        //         id: "2",
-        //         scrub: 2
-        //       }
-        //     })
-        //   )
-        // })
+    //     // textFromBelow.forEach(text => {
+    //     //   return (
+    //     //     gsap.from(text, {
+    //     //       ease: "none",
+    //     //       autoAlpha: 0.5,
+    //     //       yPercent: 30,
+    //     //       scale: 0.9,
+    //     //       scrollTrigger: {
+    //     //         trigger: text,
+    //     //         containerAnimation: scrollTween,
+    //     //         start: "left right",
+    //     //         end: "left center",
+    //     //         id: "2",
+    //     //         scrub: 2
+    //     //       }
+    //     //     })
+    //     //   )
+    //     // })
     
-        // imagesL.forEach(img => {
-        //   return (
-        //     gsap.from(img, {
-        //       ease: "none",
-        //       rotation: 5,
-        //       xPercent: 30,
-        //       scale: 0.9,
-        //       scrollTrigger: {
-        //         trigger: img,
-        //         containerAnimation: scrollTween,
-        //         start: "left right",
-        //         end: "left center",
-        //         id: "2",
-        //         scrub: 2
-        //       }
-        //     })
-        //   )
-        // })
+    //     // imagesL.forEach(img => {
+    //     //   return (
+    //     //     gsap.from(img, {
+    //     //       ease: "none",
+    //     //       rotation: 5,
+    //     //       xPercent: 30,
+    //     //       scale: 0.9,
+    //     //       scrollTrigger: {
+    //     //         trigger: img,
+    //     //         containerAnimation: scrollTween,
+    //     //         start: "left right",
+    //     //         end: "left center",
+    //     //         id: "2",
+    //     //         scrub: 2
+    //     //       }
+    //     //     })
+    //     //   )
+    //     // })
     
-        // imagesR.forEach(img => {
-        //   return (
-        //     gsap.from(img, {
-        //       ease: "none",
-        //       rotation: -5,
-        //       xPercent: 30,
-        //       scale: 0.9,
-        //       scrollTrigger: {
-        //         trigger: img,
-        //         containerAnimation: scrollTween,
-        //         start: "left right",
-        //         end: "left center",
-        //         id: "3",
-        //         scrub: 2
-        //       }
-        //     })
-        //   )
-        // })
+    //     // imagesR.forEach(img => {
+    //     //   return (
+    //     //     gsap.from(img, {
+    //     //       ease: "none",
+    //     //       rotation: -5,
+    //     //       xPercent: 30,
+    //     //       scale: 0.9,
+    //     //       scrollTrigger: {
+    //     //         trigger: img,
+    //     //         containerAnimation: scrollTween,
+    //     //         start: "left right",
+    //     //         end: "left center",
+    //     //         id: "3",
+    //     //         scrub: 2
+    //     //       }
+    //     //     })
+    //     //   )
+    //     // })
 
-        // when the matchMedia doesn't match anymore, make sure we revert the text
-        return () => {
-          // revert any splits or scrollTriggers
-          scrollTween.kill()
-        };
-      });
+    //     // when the matchMedia doesn't match anymore, make sure we revert the text
+    //     return () => {
+    //       // revert any splits or scrollTriggers
+    //       scrollTween.kill()
+    //     };
+    //   });
     
-      return () => mm.revert();
-    }, []);
+    //   return () => mm.revert();
+    // }, []);
 
     return (
         <div style={{position: 'relative'}} ref={ref}>
