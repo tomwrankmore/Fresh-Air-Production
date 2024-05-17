@@ -29,6 +29,7 @@ export const query = graphql`
     homePageContent: allSanityHomePageContent {
       edges {
         node {
+          _rawHomePodcastHeading
           homeClientsRowOne {
             asset {
               gatsbyImageData
@@ -45,7 +46,6 @@ export const query = graphql`
             }
           }
           homeHeroTickerTape
-          # _rawHomePodcastHeading
           homePodcasts {
             id
             heroImage {
