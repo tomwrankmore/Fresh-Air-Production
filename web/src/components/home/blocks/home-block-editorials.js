@@ -8,7 +8,7 @@ const HomeBlockEditorials = ({ data }) => {
   return (
     <>
       <div className={styles.editorialsTitleWrapper}>
-        <h1>Our Editorials</h1>
+        <h1 className="text-4xl">Our Editorials</h1>
         <Link to="/editorials/" className={styles.view_all_editorials}>
           View all Editorials
         </Link>
@@ -29,7 +29,7 @@ const HomeBlockEditorials = ({ data }) => {
               />
             )}
             <div className={styles.titleWrapper}>
-              <h3 className="text-black">{data.homeFeaturedEditorial.title}</h3>
+              <h3 className="text-black text-xl">{data.homeFeaturedEditorial.title}</h3>
             </div>
           </div>
         </Link>
@@ -51,7 +51,7 @@ const HomeBlockEditorials = ({ data }) => {
                       className={styles.imgWrapper}
                     />
                     <div className={`${styles.titleWrapper} ${styles.titleWrapperRight}`}>
-                      <h3>{node.title}</h3>
+                      <h3 className="text-lg">{node.title}</h3>
                     </div>
                   </div>
                 </Link>

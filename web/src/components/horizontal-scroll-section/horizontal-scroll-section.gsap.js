@@ -25,7 +25,6 @@ function horizontalContainerAnim(containerRef) {
 
     panelSections.forEach((panel, index) => {
       if (index < panelSections.length - 1) {
-        // return (
         gsap
           .timeline({
             scrollTrigger: {
@@ -39,7 +38,6 @@ function horizontalContainerAnim(containerRef) {
           })
           .from(panel, {
             yPercent: 30,
-            opacity: 0,
             ease: "none"
           })
           .to(
@@ -47,45 +45,12 @@ function horizontalContainerAnim(containerRef) {
             {
               yPercent: -30,
               opacity: 0.5,
-              // scale: 0.8,
               ease: "none"
             },
             ">"
           );
       }
     });
-
-    // gsap.set(".box1, .box2", { y: 100 });
-    // ScrollTrigger.defaults({ markers: { startColor: "white", endColor: "white" } });
-
-    // red section
-    // gsap.to(".box1", {
-    //   y: -130,
-    //   duration: 2,
-    //   ease: "elastic",
-    //   scrollTrigger: {
-    //     trigger: ".box1",
-    //     containerAnimation: scrollTween,
-    //     start: "left center",
-    //     toggleActions: "play none none reset",
-    //     id: "1"
-    //   }
-    // });
-
-    // gray section
-    // gsap.to(".box2", {
-    //   y: -120,
-    //   backgroundColor: "#1e90ff",
-    //   ease: "none",
-    //   scrollTrigger: {
-    //     trigger: ".box2",
-    //     containerAnimation: scrollTween,
-    //     start: "center 80%",
-    //     end: "center 20%",
-    //     scrub: true,
-    //     id: "2"
-    //   }
-    // });
 
     // when the matchMedia doesn't match anymore, make sure we revert the text
     return () => {
