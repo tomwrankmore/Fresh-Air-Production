@@ -1,4 +1,4 @@
-import React, {useLayoutEffect, useRef} from "react";
+import React from "react";
 import {colors} from "../../styles/colors"
 import {device} from "../../styles/mediaQueries"
 import styled from "styled-components";

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* @font-face {
   font-family: 'Ambit-Regular';
   font-weight: 100 900;
@@ -195,4 +199,15 @@ a:visited {
 
 .screen-reader-text {
   visibility: hidden
+}
+
+h3 {font-weight: bold;}
+
+.lineParent {
+  overflow: hidden;
+}
+
+.lineChild {
+  visibility: hidden;
+  padding-right: 5px;
 }

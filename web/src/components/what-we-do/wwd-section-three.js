@@ -1,16 +1,15 @@
-import React, {useLayoutEffect} from "react";
+import React, {useEffect} from "react";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
 import BlockContent from "../block-content";
 import { GatsbyImage } from "gatsby-plugin-image";
-import {SectionParagraph} from "../../styles/typography"
 import {HeroWrapper, Column} from "./wwd.styled"
 
 const WwdSectionThree = React.forwardRef(({tl, text, image}, ref) => {
     
     gsap.registerPlugin(SplitText);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         let ctx = gsap.context(() => {
 
         tl.current = gsap.timeline({

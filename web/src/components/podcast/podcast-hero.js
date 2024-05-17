@@ -1,4 +1,4 @@
-import React, {useLayoutEffect, useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import gsap from "gsap";
 import {colors} from "../../styles/colors"
 import {device} from "../../styles/mediaQueries"
@@ -120,7 +120,7 @@ const PodcastHero = React.forwardRef(({tl, podcast}, ref) => {
     const pluginImage = getImage(heroBackgroundImage);
     const bgImage = convertToBgImage(pluginImage);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
       let mm = gsap.matchMedia(ref);
 
       mm.add("(min-width: 675px)", () => {

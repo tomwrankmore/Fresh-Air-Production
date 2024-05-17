@@ -1,29 +1,14 @@
-import React, {useLayoutEffect} from "react";
+import React from "react";
 import { Link } from "gatsby";
-import styled from "styled-components";
-import { device } from "../styles/mediaQueries";
 import Logo from "../assets/FA-nav-logo.inline.svg"
-
-const StyledCentralLogo = styled.div` 
-    /* width: 100vw; */
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 200;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    top: 0;
-`
 
 const CentralLogo = React.forwardRef((props, ref) => {
     return (
-        <StyledCentralLogo ref={ref}>
+        <div className="fixed left-1/2 transform -translate-x-1/2 z-20 flex items-center justify-center p-4 top-0" ref={ref}>
             <Link to="/" className="centralLogo">
                 <Logo className="logoSVG" style={{width: '140px', height: 'auto'}}/>
             </Link>
-        </StyledCentralLogo>
+        </div>
         )
     }
 );

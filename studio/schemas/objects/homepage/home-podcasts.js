@@ -15,7 +15,7 @@ const homePodcastsType = defineType({
     }),
     defineField({
       name: "homePodcastHeading",
-      type: "simplePortableText",
+      type: "string",
       title: "Podcast section heading",
       description: "Paragraph to sit with podcast vertical carousel.",
     }),

@@ -1,12 +1,13 @@
-import React, { useLayoutEffect, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { Script } from "gatsby";
 import { Link } from "gatsby";
 import Header from "./header";
 import gsap from "gsap";
 import HeroCta from "../components/hero-cta";
 import { Content } from "./layout.styled";
-import Footer from "./footer";
+import Footer from "./footer/";
 import "../styles/layout.css";
+import NewHeader from "./new-header";
 
 const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
   const scopeRef = useRef(null);
@@ -15,7 +16,7 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
   const ctaTween = useRef(null);
   const navigationRef = useRef(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     let mm = gsap.matchMedia(scopeRef);
 
     mm.add("(min-width: 675px)", () => {
@@ -175,6 +176,7 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
           showNav={showNav}
           ref={navigationRef}
         />
+        {/* <NewHeader /> */}
         <Content>{children}</Content>
         <Footer />
       </div>

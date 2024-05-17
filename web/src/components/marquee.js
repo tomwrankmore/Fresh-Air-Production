@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from "react";
+import React, {useEffect} from "react";
 import gsap from "gsap"
 import styled from "styled-components";
 import { colors } from "../styles/colors";
@@ -40,7 +40,7 @@ const MarqueePart = styled.div`
 `
 const Marquee = React.forwardRef(({textContent, style, cn}, ref) => {
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         let ctx = gsap.context(() => {
             gsap.set(".marquee__inner", {xPercent: -50});
             gsap.to('.marquee__part', {xPercent: -100, repeat: -1, duration: 40, ease: "linear"}).totalProgress(0.5);

@@ -1,4 +1,4 @@
-import React, {useLayoutEffect, useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import gsap from "gsap";
 import {colors} from "../../styles/colors"
 import {device} from "../../styles/mediaQueries"
@@ -110,7 +110,7 @@ const EditorialHero = React.forwardRef(({tl, heroImg, title, subTitle, isLeftAli
       heroFlexDirection = 'column';
     }
     
-    useLayoutEffect(() => {
+    useEffect(() => {
       let ctx = gsap.context(() => {
         tl.current = gsap.timeline()
         .to('.clipped', {

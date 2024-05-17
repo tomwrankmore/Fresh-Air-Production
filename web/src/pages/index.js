@@ -3,19 +3,12 @@ import { graphql } from "gatsby";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { mapEdgesToNodes } from "../lib/helpers";
-import { colors } from "../styles/colors";
-import CentralLogo from "../components/central-logo";
+import CentralLogo from "../components/central-logo-old";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import Hero from "../components/home/hero";
-import Podcasts from "../components/home/home-section-podcasts";
-import Marquee from "../components/marquee";
-import WwdLogoCloud from "../components/what-we-do/wwd-logo-cloud";
-import Work from "../components/home/home-section-work";
-import Testimonials from "../components/home/home-section-testimonials";
-import Editorials from "../components/home/home-section-editorials";
-import TagCloud from "../components/home/home-section-cloud";
+import HomeComponentMapper from "../components/home/homeComponentMapper";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -141,6 +134,156 @@ export const query = graphql`
         }
       }
     }
+    newHomeContent: sanityHomePageType {
+      homePageBuilder {
+        ... on SanityHomeHero {
+          _key
+          _type
+          visibleOnPage
+          heading
+          image {
+            asset {
+              gatsbyImageData(width: 1024, placeholder: DOMINANT_COLOR, formats: [AUTO, WEBP, AVIF])
+            }
+          }
+        }
+        ... on SanityHomepagePodcasts {
+          _type
+          visibleOnPage
+          homePodcastHeading
+          homePodcasts {
+            heroImage {
+              asset {
+                gatsbyImageData
+              }
+              alt
+            }
+            _rawExcerpt
+            slug {
+              current
+            }
+          }
+        }
+        ... on SanityHomeTickerTape {
+          _key
+          _type
+          visibleOnPage
+          homeTickerTapeText
+        }
+        ... on SanityHomeWeWork {
+          _type
+          visibleOnPage
+          _rawHomeWeWorkHeading
+          homeWeWorkMainImage {
+            alt
+            asset {
+              gatsbyImageData
+            }
+          }
+          _rawPanelOneText
+          _rawPanelTwoText
+          _rawPanelThreeText
+          _rawPanelFourText
+          panelOneTitle
+          panelTwoTitle
+          panelThreeTitle
+          panelFourTitle
+          panelOneImage {
+            alt
+            asset {
+              gatsbyImageData
+            }
+          }
+          panelTwoImage {
+            alt
+            asset {
+              gatsbyImageData
+            }
+          }
+          panelThreeImage {
+            alt
+            asset {
+              gatsbyImageData
+            }
+          }
+          panelFourImage {
+            alt
+            asset {
+              gatsbyImageData
+            }
+          }
+        }
+        ... on SanityHomeClients {
+          _key
+          _type
+          visibleOnPage
+          homeClientsRowOne {
+            asset {
+              gatsbyImageData
+            }
+          }
+          homeClientsRowTwo {
+            asset {
+              gatsbyImageData
+            }
+          }
+          homeClientsRowThree {
+            asset {
+              gatsbyImageData
+            }
+          }
+        }
+        ... on SanityHomeTestimonials {
+          _key
+          _type
+          visibleOnPage
+          homePageTestimonials {
+            testimonial
+            client
+          }
+        }
+        ... on SanityHomeEditorials {
+          _type
+          homeEditorials {
+            id
+            heroImage {
+              alt
+              asset {
+                gatsbyImageData
+              }
+            }
+            slug {
+              current
+            }
+            title
+            previewImage {
+              alt
+              asset {
+                gatsbyImageData
+              }
+            }
+          }
+          homeFeaturedEditorial {
+            id
+            heroImage {
+              asset {
+                gatsbyImageData
+              }
+            }
+            slug {
+              current
+            }
+            title
+          }
+          visibleOnPage
+        }
+        ... on SanityHomeTagCloud {
+          _key
+          _type
+          visibleOnPage
+        }
+      }
+    }
     editorials: allSanityEditorial(
       sort: { publishedAt: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
@@ -154,7 +297,6 @@ export const query = graphql`
           }
           title
           publishedAt
-          # isFeaturedPost
           previewImage {
             alt
             asset {
@@ -185,6 +327,7 @@ const IndexPage = props => {
   const centralLogoRef = useRef(null);
   const podcastsRef = useRef(null);
   const horizontalPanelsRef = useRef(null);
+  const horizontalScrollRef = useRef(null);
   const heroMarqueeRef = useRef(null);
   const marqueeRef = useRef(null);
   const tagCloudRef = useRef(null);
@@ -225,10 +368,13 @@ const IndexPage = props => {
   const homePageContent = data.homePageContent.edges[0].node;
   const testimonials = mapEdgesToNodes(data.testimonials);
 
+  const heroImage = homePageContent?.heroImage?.asset?.gatsbyImageData;
+
+  const homeBlocks = data?.newHomeContent?.homePageBuilder;
+
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      <CentralLogo ref={centralLogoRef} />
       <Hero
         ref={heroRef}
         heroMarqueeRef={heroMarqueeRef}
@@ -236,45 +382,10 @@ const IndexPage = props => {
         heroMarqueeText={homePageContent.homeHeroTickerTape}
         heroImage={homePageContent.heroImage}
       />
-      <Podcasts
-        ref={podcastsRef}
-        podcastHeading={homePageContent._rawHomePodcastHeading[0].children[0].text}
-        homePodcasts={homePageContent.homePodcasts}
-      />
-      <Marquee
-        style={{ color: colors.FABlue }}
-        textContent={homePageContent.homeSecondTickerTape}
-        ref={marqueeRef}
-      />
-      <Work
-        ref={horizontalPanelsRef}
-        workSectionHeading={homePageContent.homeWorkSectionHeading}
-        homeWorkSectionImage={homePageContent.homeWorkSectionImage}
-        panelOneTitle={homePageContent.homeWorkPanelOneTitle}
-        panelOneText={homePageContent._rawHomeWorkPanelOneText}
-        panelOneImage={homePageContent.homeWorkPanelOneImage}
-        panelTwoText={homePageContent._rawHomeWorkPanelTwoText}
-        panelTwoTitle={homePageContent.homeWorkPanelTwoTitle}
-        panelTwoImage={homePageContent.homeWorkPanelTwoImage}
-        panelThreeTitle={homePageContent.homeWorkPanelThreeTitle}
-        panelThreeText={homePageContent._rawHomeWorkPanelThreeText}
-        panelThreeImage={homePageContent.homeWorkPanelThreeImage}
-        panelFourTitle={homePageContent.homeWorkPanelFourTitle}
-        panelFourText={homePageContent._rawHomeWorkPanelFourText}
-        panelFourImage={homePageContent.homeWorkPanelFourImage}
-      />
-      <WwdLogoCloud
-        imageOne={homePageContent.homeClientsRowOne}
-        imageTwo={homePageContent.homeClientsRowTwo}
-        imageThree={homePageContent.homeClientsRowThree}
-      />
-      <Testimonials testimonials={testimonials} />
-      <Editorials
-        editorialNodes={editorialNodes}
-        featuredEditorial={homePageContent.homeFeaturedEditorial}
-        homeEditorials={homePageContent.homeEditorials}
-      />
-      <TagCloud ref={tagCloudRef} />
+      <CentralLogo ref={centralLogoRef} />
+      <HomeComponentMapper homeBlocks={homeBlocks} />
+
+      {/* <ScrollingLogoCloud /> */}
     </Layout>
   );
 };

@@ -21,6 +21,7 @@ module.exports = {
     'gatsby-plugin-styled-components',
     `gatsby-plugin-material-ui`,
     'gatsby-source-sanity-transform-images',
+    `gatsby-plugin-sass`,
     {
       resolve: 'gatsby-source-sanity',
       options: {

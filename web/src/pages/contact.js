@@ -8,7 +8,7 @@ import { colors } from "../styles/colors";
 import { BgImage, convertToBgImage } from "gbimage-bridge";
 import Layout from "../containers/layout";
 import SEO from "../components/seo";
-import CentralLogo from "../components/central-logo";
+import CentralLogo from "../components/central-logo-old"
 import BlockContent from "../components/block-content";
 import Marquee from "../components/marquee";
 
@@ -218,8 +218,6 @@ const ContactPage = props => {
 
   const contactMarqRef = useRef();
   const outerWrapperRef = useRef();
-
-  console.log('data', data)
 
   return (
     <Layout>

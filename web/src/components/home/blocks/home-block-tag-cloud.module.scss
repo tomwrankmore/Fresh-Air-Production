@@ -1,0 +1,83 @@
+@keyframes marqueeSlideLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marqueeSlideRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.marqueeWrapper {
+  transition: background-color 0.25s ease-in 0s;
+}
+
+.marqueeItems {
+  @apply whitespace-nowrap;
+  // @apply bg-FABlue;
+
+  &:hover .marqueeItems__slide {
+    animation-play-state: paused;
+  }
+
+  &__slide {
+    @apply inline-block;
+
+    &_left {
+      animation: marqueeSlideLeft 70s infinite linear forwards;
+    }
+
+    &_left_slower {
+      animation: marqueeSlideLeft 100s infinite linear forwards;
+    }
+
+    &_right {
+      animation: marqueeSlideRight 90s infinite linear forwards;
+    }
+
+    &_right_slower {
+      animation: marqueeSlideRight 120s infinite linear forwards;
+    }
+    span {
+      @apply text-6xl inline-block p-4 font-black uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      &:hover {
+        color: white;
+      }
+    }
+
+    &.hoverGrey {
+      a:hover {
+        @apply text-FAGrey;
+      }
+    }
+    &.hoverBlue {
+      a:hover {
+        @apply text-FABlue;
+      }
+    }
+    &.hoverDarkBlue {
+      a:hover {
+        @apply text-FADarkerBlue;
+      }
+    }
+    &.hoverOrange {
+      a:hover {
+        @apply text-FAGrey;
+      }
+    }
+    &.hoverTurq {
+      a:hover {
+        @apply text-FATurquoise;
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@ import SEO from "../components/seo";
 import styled from "styled-components";
 import { colors } from "../styles/colors";
 import { Link } from "gatsby";
-import CentralLogo from "../components/central-logo"
+import CentralLogo from "../components/central-logo-old"
 
 const FourZeroFour = styled.div` 
   width: 100%;

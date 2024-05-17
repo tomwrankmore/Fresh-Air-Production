@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from "react";
+import React, {useEffect} from "react";
 import gsap from "gsap"
 import styled from "styled-components";
 import { device } from "../styles/mediaQueries";
@@ -57,7 +57,7 @@ const ClientLogoCloud = React.forwardRef(({imageOne, imageTwo, imageThree}, ref)
   const clientLogosThree = imageThree.asset.gatsbyImageData.images.fallback.src;
 
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     let ctx = gsap.context(() => {
         gsap.set('.cloudMarqueeLine', {xPercent: 20});
         gsap.to('.marqueeContent1', {xPercent: -100, repeat: -1, duration: 120, ease: 'linear'}).totalProgress(0.4);

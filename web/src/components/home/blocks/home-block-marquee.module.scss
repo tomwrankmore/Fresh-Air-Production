@@ -1,0 +1,22 @@
+@keyframes marqueeSlide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.marqueeItems {
+  @apply whitespace-nowrap my-6;
+  @apply text-FABlue;
+
+  &__slide {
+    @apply inline-block;
+    animation: marqueeSlide 40s infinite linear forwards;
+    span {
+      @apply text-3xl inline-block py-4 font-black uppercase;
+      font-smooth: always;
+    }
+  }
+}

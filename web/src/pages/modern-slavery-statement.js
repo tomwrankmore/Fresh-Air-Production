@@ -5,7 +5,7 @@ import { device } from "../styles/mediaQueries";
 import Layout from "../containers/layout";
 import SEO from "../components/seo";
 import BlockContent from "../components/block-content";
-import CentralLogo from "../components/central-logo"
+import CentralLogo from "../components/central-logo-old"
 
 export const query = graphql`
   query ModernSlaveryStatementQuery {

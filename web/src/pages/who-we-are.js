@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { mapEdgesToNodes } from "../lib/helpers";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
-import CentralLogo from "../components/central-logo"
+import CentralLogo from "../components/central-logo-old"
 
 import ManagementItem from '../components/who-we-are/management-item'
 import StaffItem from '../components/who-we-are/staff-member-item'

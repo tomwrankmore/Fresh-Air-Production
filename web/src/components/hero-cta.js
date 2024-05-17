@@ -5,9 +5,10 @@ import { colors } from "../styles/colors";
 import { device } from "../styles/mediaQueries"
 
 const StyledCTA = styled.div` 
-  background-color: ${colors.FAGrey};
+  background-color: ${colors.FABlue};
   border-radius: 0;
   display: flex;
+  border: solid 4px white;
   align-items: center;
   justify-content: center;
   position: fixed;
