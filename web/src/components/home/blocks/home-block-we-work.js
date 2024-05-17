@@ -30,7 +30,7 @@ const HomeBlockWeWork = ({ data }) => {
               height="100%"
               className="panel-1-img-wrapper"
               imgClassName="panel-1-img"
-              aspectRatio={16/9}
+              
             />
             <h1>With You</h1>
           </div>
@@ -59,7 +59,7 @@ const HomeBlockWeWork = ({ data }) => {
               height="100%"
               objectPosition="0 0"
               className="img-l order-2 lg:order-none"
-              aspectRatio={16/9}
+              
             />
           </div>
           <div className={`${styles.horizontalContainer__panel_column} panel_section`}>
@@ -71,7 +71,7 @@ const HomeBlockWeWork = ({ data }) => {
               height="100%"
               objectPosition="0 0"
               className="img-l order-2 lg:order-none"
-              aspectRatio={16/9}
+              
             />
             <div className={`${styles.horizontalContainer__panel_column_text} justify-start`}>
               <h3>{data.panelTwoTitle}</h3>
@@ -94,7 +94,7 @@ const HomeBlockWeWork = ({ data }) => {
               height="100%"
               objectPosition="0 0"
               className="img-l order-2 lg:order-none"
-              aspectRatio={16/9}
+              
             />
           </div>
           <div className={`${styles.horizontalContainer__panel_column} panel_section`}>
@@ -106,7 +106,7 @@ const HomeBlockWeWork = ({ data }) => {
               height="100%"
               objectPosition="0 0"
               className="img-r order-2 lg:order-none"
-              aspectRatio={16/9}
+              
             />
             <div className={`${styles.horizontalContainer__panel_column_text} justify-start`}>
               <h3>{data.panelFourTitle}</h3>
