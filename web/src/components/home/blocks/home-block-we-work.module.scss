@@ -90,10 +90,10 @@
       }
 
       &_text {
-        @apply flex flex-col items-center justify-center;
+        @apply flex flex-col items-center;
 
         p {
-          @apply text-lg xl:text-xl leading-tight mb-2;
+          @apply text-lg xl:text-2xl 2xl:text-3xl leading-tight mb-2;
         }
 
         a {
