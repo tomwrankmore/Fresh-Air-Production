@@ -38,20 +38,31 @@ export default S =>
         .icon(MdSettings),
       S.divider(),
       S.listItem()
-        .title("Homepage content")
+        .title("Home page builder")
         .child(
           S.editor()
-            .id("homePageContent")
-            .schemaType("homePageContent")
-            .documentId("homePageContent")
+            .id("homePageType")
+            .title("Home page builder")
+            .schemaType("homePageType")
+            .documentId("homePageType")
         )
-        .icon(FaHome),
-      S.listItem()
-        .title("Homepage testimonials")
-        .schemaType("homePageTestimonial")
-        .child(S.documentTypeList("homePageTestimonial").title("Homepage testimonials"))
-        .icon(FaHome),
+        .icon(FaBook),
       S.divider(),
+      // S.listItem()
+      //   .title("Homepage content")
+      //   .child(
+      //     S.editor()
+      //       .id("homePageContent")
+      //       .schemaType("homePageContent")
+      //       .documentId("homePageContent")
+      //   )
+      //   .icon(FaHome),
+      // S.listItem()
+      //   .title("Homepage testimonials")
+      //   .schemaType("homePageTestimonial")
+      //   .child(S.documentTypeList("homePageTestimonial").title("Homepage testimonials"))
+      //   .icon(FaHome),
+      // S.divider(),
       S.listItem()
         .title("What we do page content")
         .child(
@@ -96,17 +107,6 @@ export default S =>
       //   .child(S.documentTypeList("genericPageType").title("Page"))
       //   .icon(FaBook),
       // S.divider(),
-      S.listItem()
-        .title("Home page builder")
-        .child(
-          S.editor()
-            .id("homePageType")
-            .title("Home page builder")
-            .schemaType("homePageType")
-            .documentId("homePageType")
-        )
-        .icon(FaBook),
-      S.divider(),
       S.listItem()
         .title("Contact page")
         .child(
